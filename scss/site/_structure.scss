@@ -87,9 +87,20 @@ h4, .link {
   }
 }
 h2 {
-  font-family: $h2-header-font-family;
+  font-family: $serif-font-family;
   color: $h2-header-color;
   margin-bottom: rem-calc(28);
+}
+figure {
+	margin: rem-calc(40) rem-calc(-50);
+}
+figcaption {
+	font-family: $serif-font-family;
+	font-style: italic;
+	font-size: rem-calc(15);
+	color: #A9A9A9;
+	text-align: center;
+	margin-top: rem-calc(20);
 }
 
 	/**
@@ -381,6 +392,13 @@ footer {
 	 */
 
 	// Story Posts
+	%excerpt {
+		font-family: $serif-font-family;
+		font-style: italic;
+		font-weight: 400;
+		font-size: rem-calc(18);
+		line-height: 1.9;
+	}
 	.story-wrap {
 		background-size: cover;
 		background-position: center center;
@@ -400,15 +418,34 @@ footer {
 		color: #666666;
 	}
 	.excerpt {
-		font-family: $serif-font-family;
-		font-style: italic;
-		font-weight: 400;
-		font-size: rem-calc(19);
+		@extend %excerpt;
 	}
 	.full-image {
 		width: 100%;
 		background-size: cover;
 		background-position: center center;
+		clear: both;
+	}
+	.full-blockquote {
+		p {
+			@extend %excerpt;
+			margin-bottom: 0;
+		}
+		.icon-quote-left:before {
+			content: '\e804';
+			color: #CCCCCC;
+			font-size: rem-calc(25);
+			position: absolute;
+			left: rem-calc(20);
+			@media #{$large-only} { left: rem-calc(80); }
+			@media #{$xlarge-only} { left: rem-calc(300); font-size: rem-calc(30); }
+		}
+		width: 100%;
+		clear: both;
+		padding: rem-calc(50);
+		padding-left: rem-calc(60);
+		@media #{$large-only} { padding: rem-calc(50) rem-calc(200) rem-calc(50) rem-calc(120); }
+		@media #{$xlarge-only} { padding: rem-calc(50) rem-calc(400) rem-calc(50) rem-calc(350); }
 	}
 
 	/**

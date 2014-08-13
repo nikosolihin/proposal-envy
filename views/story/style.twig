@@ -4,6 +4,9 @@
 .story-content {
   background-color: {{ (post.get_field('story_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
 }
-.story-excerpt {
+.story-excerpt, .full-blockquote p {
   color: {{post.get_field('story_color')}};
+}
+.full-blockquote {
+  background-color: rgba({{post.get_field('story_color')|toRGB}},0.15);
 }

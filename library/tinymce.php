@@ -35,7 +35,7 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
           array(
             'title'     => __('Full Width','wpex'),
             'selector'  => 'img',
-            'classes'   => 'huge-image'
+            'classes'   => 'full-image'
           )
         )
       )
