@@ -23,7 +23,16 @@ $(function() {
   $('.close-reveal-modal').click(function(){
     $('#hero-video').get(0).play();
   });
-  $('#play-video').on('click', function(ev) {
 
-  });
+  var imgSource = $('.huge-image').attr('src');
+  var imgHeight = $('.huge-image').height();
+  var imgWidth = $('.huge-image').width();
+  var divClasses = $('.huge-image').parent().parent().attr('class');
+  $('.huge-image').parent().addClass('removed');
+  $('.huge-image').parent().empty();
+  var temp = $('.removed').parent().parent().html().split('<figure class="removed"></figure>');
+  var fresh = temp[0]+'</div><div class="full-image columns"></div><div class="'+divClasses+'">'+temp[1];
+  $('.entry-content').html(fresh);
+  $('.full-image').css('background-image', 'url(' + imgSource +')');
+  $('.full-image').css('height', imgHeight);
 });

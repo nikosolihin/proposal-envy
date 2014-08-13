@@ -405,6 +405,11 @@ footer {
 		font-weight: 400;
 		font-size: rem-calc(19);
 	}
+	.full-image {
+		width: 100%;
+		background-size: cover;
+		background-position: center center;
+	}
 
 	/**
 	 * 4.3 Widgets
