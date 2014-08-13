@@ -1,0 +1,25 @@
+{% include 'html-header.twig' %}
+
+<body class="{{body_class}}" data-template="base.twig">
+  <style type="text/css" scoped>
+    {% block style %}
+      Error loading custom fields stylesheet.
+    {% endblock %}
+  </style>
+  <main>
+    {% include 'menu.twig' %}
+
+    {% block header %}
+      Error loading header unit.
+    {% endblock %}
+
+    {% block content %}
+      Error loading content unit.
+    {% endblock %}
+
+    {% include 'footer.twig' %}
+    {{ function('wp_footer') }}
+  </main>
+  <script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>

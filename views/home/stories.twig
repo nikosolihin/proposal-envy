@@ -1,0 +1,24 @@
+<section class="stories text-center">
+  <div class="row max-width">
+    <div class="success-story large-6 columns" style="background-image: linear-gradient(rgba({{post.get_field('success_tint')|toRGB}},0.85),rgba({{post.get_field('success_tint')|toRGB}},0.85)),url({{TimberImage(success.get_field('story_bg')).src}});">
+      <h5>Featured Success Story</h5>
+      <h2>{{success.title}}</h2>
+      <h6>{{success.get_field('story_place_name')}} {{success.get_field('story_time')}}</h6>
+      <hr>
+      <p>{{success.get_field('story_excerpt')}}</p>
+      <a href="#" class="button wire">Watch Video</a>
+      <a href="#" class="button coral">Read Story</a>
+    </div>
+    <div class="proposal-story large-6 columns" style="background-image: linear-gradient(rgba({{post.get_field('proposal_tint')|toRGB}},0.85), rgba({{post.get_field('proposal_tint')|toRGB}},0.85)),url({{TimberImage(proposal.get_field('story_bg')).src}});">
+      <div class="tint">
+        <h5>Featured Proposal Story</h5>
+        <h2>{{proposal.title}}</h2>
+        <h6>{{proposal.get_field('story_place_name')}} {{proposal.get_field('story_time')}}</h6>
+        <hr>
+        <p>{{proposal.get_field('story_excerpt')}}</p>
+        <a href="#" class="button wire">Watch Video</a>
+        <a href="#" class="button white">Read Story</a>
+      </div>
+    </div>
+  </div>
+</section>

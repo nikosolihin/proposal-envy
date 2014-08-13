@@ -1,0 +1,9 @@
+.story-wrap {
+  background-image: linear-gradient(rgba({{post.get_field('story_color')|toRGB}},0.50),rgba({{post.get_field('story_color')|toRGB}},0.50)),url({{TimberImage(post.get_field('story_bg')).src}});
+}
+.story-content {
+  background-color: {{ (post.get_field('story_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
+}
+.story-excerpt {
+  color: {{post.get_field('story_color')}};
+}

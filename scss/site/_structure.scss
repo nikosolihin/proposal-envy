@@ -1,0 +1,449 @@
+/**
+ * Table of Contents for FoundationPress:
+ *
+ * 1.0 - Custom settings
+ * 2.0 - Typography
+ * 3.0 - Header, sidebar and footer
+ * 4.0 - Content
+ *	4.1 - Pages
+ *	4.2 - Posts
+ *	4.3	- Widgets
+ *	4.4 - Comments
+  *	4.5 - Lists
+  * 4.6 - Forms
+ * 5.0 - Plugins
+
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 1.0 Custom Global Settings
+ * ----------------------------------------------------------------------------
+ */
+
+// Reset margin and padding on figure element
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+// Add some basic styling for figcaption element
+figcaption {
+	margin-bottom: rem-calc(20);
+	margin-top: rem-calc(10);
+	color: #6f6f6f;
+}
+
+// Add some whitespace between top bar and content
+.top-bar-container, .tab-bar {
+	margin-bottom: rem-calc(32);
+}
+
+// Fix the issue where the WP adminbar overlaps the mobile menu
+#wpadminbar {
+	position: fixed !important;
+}
+
+// 100% max width instead of 95%
+.max-width {
+	max-width: 100% !important;
+}
+
+.packages, .hint, .success-story, .proposal-story {
+	background-size: cover;
+	background-position: center center;
+}
+
+html, body, main {
+	height: 100%;
+}
+
+
+/**
+ * 2.0 Typography
+ * ----------------------------------------------------------------------------
+ */
+
+h5, h6 {
+  font-family: $demi-font-family;
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: $h5-header-letter-spacing;
+  margin-bottom: rem-calc(15);
+}
+h6 {
+  text-transform: none;
+  color: white;
+}
+h4, .link {
+	font-family: $demi-font-family;
+	font-size: rem-calc(15); // Only for .link
+  color: #777777;
+  text-transform: uppercase;
+  letter-spacing: $h4-header-letter-spacing;
+  margin-bottom: rem-calc(15);
+  &.active {
+		color: $primary-color;
+  }
+}
+h2 {
+  font-family: $h2-header-font-family;
+  color: $h2-header-color;
+  margin-bottom: rem-calc(28);
+}
+
+	/**
+	 * 2.1 Icons
+	 * ------------------------------------
+	 */
+
+	[class^="icon-"]:before, [class*=" icon-"]:before {
+		font-family: "fontello";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+		display: inline-block;
+		text-decoration: inherit;
+		margin-top: rem-calc(1);
+		text-align: center;
+		font-variant: normal;
+		text-transform: none;
+		color: $footer-bg;
+		/* font-size: 120%; */
+	}
+	.icon-pinterest:before { content: '\e800'; }
+	.icon-twitter:before { content: '\e801'; }
+	.icon-facebook:before { content: '\e802'; }
+	.icon-instagram:before { content: '\e803'; }
+	.icon-quote-left:before { content: '\e804'; }
+	.icon-quote-right:before { content: '\e805'; }
+	.icon-left-dir:before { content: '\e806'; }
+	.icon-share:before { content: '\e807'; }
+	.icon-phone-squared:before { content: '\e808'; }
+	.icon-email:before { content: '\e809'; }
+	.icon-location:before { content: '\e80a'; }
+	.icon-bbm:before { content: '\e80b'; }
+	.icon-whatsapp:before { content: '\e80c'; }
+	.icon-youtube-play:before { content: '\e80e'; }
+
+
+/**
+ * 3.0 Menu
+ * ----------------------------------------------------------------------------
+ */
+
+.menu-wrap {
+	position: fixed;
+	z-index: 10;
+}
+.logo {
+	padding-top: rem-calc(5);
+}
+.current-menu-item .nav-item, .current_page_item .nav-item {
+	color: $primary-color;
+}
+footer .current-menu-item .nav-item,footer .current_page_item .nav-item {
+	color: inherit;
+}
+footer .current-menu-item .nav-item:hover,footer .current_page_item .nav-item:hover {
+	color: $primary-color;
+}
+
+/**
+ * 3.0 Footer
+ * ----------------------------------------------------------------------------
+ */
+
+footer {
+	background-color: $footer-bg;
+	padding: rem-calc(70) 0 rem-calc(10) 0;
+	color: #ABABAB;
+	a { color: #ABABAB; }
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	p, li {
+		margin-bottom: rem-calc(10);
+	}
+	h5, ul, a, p {
+		font-size: rem-calc(14);
+	}
+	.button {
+		margin: 0;
+	}
+}
+.social {
+	margin-top: rem-calc(20);
+		li a {
+		-webkit-border-radius: $footer-icon-radius;
+		-khtml-border-radius: $footer-icon-radius;
+		-moz-border-radius: $footer-icon-radius;
+		border-radius: $footer-icon-radius;
+		background-color: #bbbbbb;
+		cursor: pointer;
+		height: $footer-icon-radius*2;
+		width: $footer-icon-radius*2;
+		display: table;
+		text-align: center;
+		transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-webkit-transition: all 0.5s ease;
+		position: relative;
+		&>i {
+			font-size: $footer-icon-font-size;
+			color: #f2f2f2;
+			display: table-cell;
+			vertical-align: middle;
+			transition: all 1.5s ease;
+			-moz-transition: all 1.5s ease;
+			-webkit-transition: all 1.5s ease;
+		}
+	}
+}
+.footer-info {
+	border-top: 1px solid #e8e8e8;
+	margin-top: rem-calc(50);
+	padding-top: rem-calc(10);
+	p {
+		font-size: rem-calc(12);
+	}
+}
+
+
+/**
+ * 4.0 Content
+ * ----------------------------------------------------------------------------
+ */
+
+	/**
+	 * 4.1 Pages
+	 * ------------------------------------
+	 */
+
+	/* Home
+	* -------------------------------------
+	*/
+
+	// Hero Section ///////////////////////
+	.hero, #hero-mask {
+		height: 100vh;
+		height: 100%;
+		@extend %vertical-align-parent;
+	}
+	.hero-bg {
+		background-image: url('../assets/img/hero-bg.jpg');
+		background-size: cover;
+		background-position: 76% center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1000;
+	}
+	#hero-video {
+		position: fixed;
+		z-index: -100;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		background-position: center center;
+		background-size: cover;
+	}
+	.hero-action {
+		@extend %vertical-align;
+	}
+	#hero-mask {
+		background-color: #000000;
+		opacity: 0;
+		transform: translate3d(0, 0, 0);
+		height: 100%;
+	}
+	.hero-subtitle {
+		font-size: rem-calc(21);
+		font-family: $serif-font-family;
+		font-style: italic;
+		color: #fff;
+		line-height: 2.2;
+		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+	}
+	.hero-title {
+		font-size: rem-calc(88);
+		letter-spacing: rem-calc(10);
+		font-family: $demi-font-family;
+		text-transform: uppercase;
+		color: #fff;
+		line-height: 1;
+		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+	}
+	.hero-tagline {
+		color: #ffffff;
+		margin-bottom: rem-calc(40);
+		font-family: $body-font-family;
+		letter-spacing: rem-calc(1.82);
+	}
+
+	// About Section //////////////////////
+	.about, .packages {
+		color: #909090;
+		position: relative;
+	}
+	.about {
+		background-color: #ffffff;
+		padding: rem-calc(80) 0 rem-calc(60) 0;
+		hr {
+			@include divider(#EBEAE5);
+		}
+	}
+	.reasons p {
+		padding: 0 rem-calc(40);
+	}
+	.icon {
+		margin: rem-calc(70) 0 rem-calc(30) 0;
+	}
+	.divider {
+		border-right: rem-calc(1) solid #dfdfdf;
+		height: rem-calc(23);
+		padding-top: rem-calc(5);
+	}
+	.about-blurb {
+		background: rgba(255,255,255, 0.1) url("../assets/img/icons/watermark.svg") no-repeat center center;
+		margin-top: rem-calc(10);
+	}
+	.gradient-text {
+		height: rem-calc(250);
+		padding-top: rem-calc(78);
+		@media #{$large-up} {
+			padding-top: rem-calc(90);
+		}
+		@media #{$xlarge-up} {
+			padding-top: rem-calc(103);
+		}
+		font-family: $h2-header-font-family;
+		font-weight: 400;
+		font-size: rem-calc(20);
+		background: transparent;
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #FF7968), color-stop(80%, #80C896));
+		background: -webkit-linear-gradient(-45deg, #FF7968 15%, #80C896 80%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		strong {
+			font-style: italic;
+			font-weight: 900;
+		}
+	}
+	// Packages Section ///////////////////
+	.packages {
+		padding: rem-calc(80) 0;
+		hr {
+			@include divider(#777);
+		}
+	}
+	// Featured Stories Section ///////////
+	.stories {
+		hr {
+			@include divider(#fff);
+		}
+		h2, h5, p {
+			color: #fff;
+		}
+		h2 {
+			margin-bottom: rem-calc(13);
+		}
+		h6 {
+			margin-bottom: rem-calc(35);
+		}
+	}
+	.success-story, .proposal-story {
+		padding: rem-calc(75) rem-calc(100);
+		@media #{$xlarge-up} {
+			padding: rem-calc(75) rem-calc(170);
+		}
+	}
+	// Hint Section ///////////
+	.hint {
+		h5, p {
+			color: #fff;
+		}
+		padding: rem-calc(55) 0 rem-calc(30);
+	}
+
+
+	/**
+	 * 4.2 Posts
+	 * ------------------------------------
+	 */
+
+	// Story Posts
+	.story-wrap {
+		background-size: cover;
+		background-position: center center;
+		h2, h4 {
+			color: #ffffff;
+		}
+		h4 {
+			font-family: $regular-font-family;
+			letter-spacing: rem-calc(4);
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: rem-calc(48);
+		}
+	}
+	.story-content {
+		color: #666666;
+	}
+	.excerpt {
+		font-family: $serif-font-family;
+		font-style: italic;
+		font-weight: 400;
+		font-size: rem-calc(19);
+	}
+
+	/**
+	 * 4.3 Widgets
+	 * ------------------------------------
+	 */
+
+	// Insert styles here
+
+
+	/**
+	 * 4.4 Comments
+	 * ------------------------------------
+	 */
+
+	// Insert styles here
+
+
+	/**
+	 * 4.5 Lists
+	 * ------------------------------------
+	 */
+
+	// Insert styles here
+
+
+	/**
+	 * 4.6 Forms
+	 * ------------------------------------
+	 */
+
+	input {
+		padding: rem-calc(10);
+	}
+
+
+
+/**
+ * 5.0 Plugins
+ * ----------------------------------------------------------------------------
+ */
+
+// Insert styles here

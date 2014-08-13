@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" {{site.language_attributes}} > <![endif]-->
+<html class="no-js" {{site.language_attributes}} >
+  <head>
+    <meta charset="{{site.charset}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{site.description}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{% if post.post_type == 'page' %}This is a page | {{wp_title}}{% else %}This is a post{% endif %}</title>
+
+    <link rel="stylesheet" href="{{site.theme.link}}/css/app.css" />
+    <link rel="pingback" href="{{site.pingback_url}}" />
+    <link rel="icon" href="{{site.theme.link}}/assets/img/icons/favicon.ico" type="image/x-icon">
+    <!--[if IE]><link rel="shortcut icon" href="{{site.theme.link}}/assets/img/icons/favicon.ico"><![endif]-->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.theme.link}}/assets/img/icons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.theme.link}}/assets/img/icons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.theme.link}}/assets/img/icons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{site.theme.link}}/assets/img/icons/apple-touch-icon-precomposed.png">
+
+    {{function('wp_head')}}
+  </head>

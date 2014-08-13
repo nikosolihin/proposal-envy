@@ -1,0 +1,18 @@
+/* Global config */
+@import "config/font";
+@import "config/settings"; // Default settings file. Uncomment each setting you need to change
+
+/* Normalize.css */
+@import "normalize";
+
+/* Foundation 5 */
+@import "foundation"; // Foundation 5 by Zurb
+
+/* My Custom Elements */
+@import "site/elements";
+
+/* My Custom Mixins */
+@import "site/mixins";
+
+/* Site structure */
+@import "site/structure"; // Your site structure

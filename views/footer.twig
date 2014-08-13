@@ -1,0 +1,94 @@
+<footer>
+  <div class="row">
+    <div class="medium-3 columns">
+      <h5>Quick Links</h5>
+      <div class="row">
+        <div class="medium-4 columns">
+          <ul>
+            {% for item in menu.get_items %}
+              <li class="{{item.classes | join(' ')}}">
+                <a href="{{item.get_link}}" class="nav-item {{item.attr_title | join(' ')}}">{{item.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="medium-4 columns contact">
+      <h5>Keep in touch</h5>
+      <div class="row">
+        <div class="medium-1 columns">
+          <ul>
+            <li>icon</li>
+            <li>icon</li>
+            <li>icon</li>
+            <li>icon</li>
+          </ul>
+        </div>
+        <div class="medium-9 end columns">
+          <ul>
+            <li>{{options.contact_email}}</li>
+            <li>{{options.contact_phone}}</li>
+            <li>{{options.contact_bbm}}</li>
+            <li>{{options.contact_address}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="medium-5 columns newsletter">
+      <div class="row">
+        <div class="medium-12 columns">
+          <h5>Don't Be A Stranger</h5>
+          <p>Sign up for updates &amp; exciting offers from us.</p>
+        </div>
+      </div>
+      <div class="row collapse">
+        <div class="small-6 columns">
+          <input type="text" placeholder="Your Email Address" class="radius">
+        </div>
+        <div class="small-3 end columns">
+          <button type="submit" class="button postfix radius">Subscribe</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-12 columns">
+          <ul class="inline-list social text-center">
+            <li>
+              <a href="" target="_blank">
+                <i class="icon-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank">
+                <i class="icon-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank">
+                <i class="icon-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank">
+                <i class="icon-pinterest"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank">
+                <i class="icon-youtube-play"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footer-info">
+    <div class="large-2 columns text-left">
+      <img src="{{site.theme.link}}/assets/svg/svgs/logo-light.svg" alt="Copyright - Proposal Envy">
+    </div>
+    <div class="large-10 columns text-right">
+      <p> &copy; {{now|date('Y')}} Proposal Envy. All rights reserved</p>
+    </div>
+  </div>
+</footer>

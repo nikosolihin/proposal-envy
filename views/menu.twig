@@ -1,0 +1,22 @@
+<div class="contain-to-grid menu-wrap">
+  <nav class="top-bar" role="navigation" data-topbar>
+    <ul class="title-area">
+      <li class="logo">
+        <h1>
+          <a href="proposalenvy.dev">
+            <img src="{{site.theme.link}}/assets/svg/svgs/menu.svg" alt="Proposal Envy">
+          </a>
+        </h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        {% for item in menu.get_items %}
+          <li class="{{item.classes | join(' ')}}">
+            <a href="{{item.get_link}}" class="nav-item {{item.attr_title | join(' ')}}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </nav>
+</div>

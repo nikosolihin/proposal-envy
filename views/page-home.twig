@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  {% include 'home/hero.twig' %}
+{% endblock %}
+
+{% block content %}
+  {% for item in post.get_field('home_order') %}
+    {% if item.home_section_name == "about" %}
+     {% include 'home/about.twig' %}
+    {% elseif item.home_section_name == "stories" %}
+      {% include 'home/stories.twig' %}
+    {% elseif item.home_section_name == "package" %}
+      {% include 'home/packages.twig' %}
+    {% elseif item.home_section_name == "hint" %}
+      {% include 'home/hint.twig' %}
+    {% else %}
+      {% include 'home/instafeed.twig' %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
