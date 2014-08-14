@@ -24,35 +24,34 @@ $(function() {
     $("#hero-video").get(0).play();
   });
 
-  $(".full-image").each(function() {
-    var imgSource = $(this).attr('src');
-    var imgPosition = $(this).attr('class').split(' align').pop();
-    var imgHeight = $(this).attr('title') ? $(this).attr('title') : 450;
-    var divClasses = $(this).parent().parent().attr('class');
-    $(this).parent().addClass('removed');
-    $(this).parent().empty();
-    var temp = $(".removed").parent().parent().html().split('<figure class="removed"></figure>');
-    var fresh = temp[0]+'</div><div class="full-image"></div><div class="'+divClasses+'">'+temp[1];
-    $(".entry-content").html(fresh);
-    $("div.full-image").css('background-image', 'url(' + imgSource +')');
-    $("div.full-image").css('background-position', 'center '+imgPosition);
-    $("div.full-image").css('height', imgHeight);
-  });
+  // $(".full-image").each(function() {
+  //   var imgSource = $(this).attr('src');
+  //   var imgPosition = $(this).attr('class').split(' align').pop();
+  //   var imgHeight = $(this).attr('title') ? $(this).attr('title') : 450;
+  //   var divClasses = $(this).parent().parent().attr('class');
+  //   $(this).parent().addClass('removed');
+  //   $(this).parent().empty();
+  //   var temp = $(".removed").parent().parent().html().split('<figure class="removed"></figure>');
+  //   var fresh = temp[0]+'</div><div class="full-image"></div><div class="'+divClasses+'">'+temp[1];
+  //   $(".entry-content").html(fresh);
+  //   $("div.full-image").css('background-image', 'url(' + imgSource +')');
+  //   $("div.full-image").css('background-position', 'center '+imgPosition);
+  //   $("div.full-image").css('height', imgHeight);
+  // });
 
+  // $("blockquote").each(function(index) {
+  //   var blockquote;
+  //   blockquote = '<blockquote class="full-blockquote">';
+  //   blockquote = blockquote + '<i class="icon-quote-left"></i>';
+  //   blockquote = blockquote + '<p>' + $("blockquote").text() + '</p>';
+  //   blockquote = blockquote + '</blockquote>';
 
-  // var blockquote;
-  // blockquote = '<blockquote class="full-blockquote">';
-  // blockquote = blockquote + '<i class="icon-quote-left"></i>';
-  // blockquote = blockquote + '<p>' + $("blockquote").text() + '</p>';
-  // blockquote = blockquote + '</blockquote>';
-
-  // var divClasses = $("blockquote").parent().attr("class");
-  // $("blockquote").addClass("removed");
-  // $("blockquote").empty();
-  // var temp = $(".removed").parent().parent().html().split("<blockquote class="removed"></blockquote>");
-  // var fresh = temp[0]+'</div>'+blockquote+'<div class="'+divClasses+'">'+temp[1];
-  // $(".entry-content").html(fresh);
-
-
+  //   var divClasses = $("blockquote").parent().attr("class");
+  //   $("blockquote").addClass("removed"+index);
+  //   $("blockquote").empty();
+  //   var temp = $(".removed"+index).parent().parent().html().split('<blockquote class="removed"></blockquote>');
+  //   var fresh = temp[0]+'</div>'+blockquote+'<div class="'+divClasses+'">'+temp[1];
+  //   $(".entry-content").html(fresh);
+  // });
 
 });

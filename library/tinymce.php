@@ -1,8 +1,7 @@
 <?php
-
 // Disable unused headings and pre formatting
 function wpa_45815($arr){
-    $arr['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
+    $arr['block_formats'] = 'Huge=h2;Heading=h3;Paragraph=p';
     return $arr;
   }
 add_filter('tiny_mce_before_init', 'wpa_45815');
@@ -14,19 +13,15 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
     // Create array of new styles
     $new_styles = array(
       array(
-        'title' => __( 'Custom Styles', 'wpex' ),
+        'title' => __( 'Video', 'wpex' ),
         'items' => array(
           array(
-            'title'     => __('Theme Button','wpex'),
-            'selector'  => 'a',
-            'classes'   => 'theme-button'
-          ),
-          array(
-            'title'     => __('Highlight','wpex'),
-            'inline'    => 'div',
-            'classes'   => 'max-width'
+            'title'     => __('Youtube','wpex'),
+            'wrapper'  => true,
+            'block'    => 'div',
+            'classes'   => 'flex-video widescreen'
           )
-        ),
+        )
     ),
     array(
         'title' => __( 'Image Styles', 'wpex' ),
@@ -40,7 +35,7 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
       )
     );
     // Merge old & new styles
-    $settings['style_formats_merge'] = true;
+    $settings['style_formats_merge'] = false;
     // Add new styles
     $settings['style_formats'] = json_encode( $new_styles );
     // Return New Settings

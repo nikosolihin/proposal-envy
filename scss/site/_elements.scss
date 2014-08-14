@@ -1,11 +1,6 @@
-// .reveal-modal {
-//   position: fixed;
-//   @extend %vertical-align-parent;
-// }
-// .flex-video {
-//   @extend %vertical-align;
-// }
-
+.flex-video {
+  margin-top: rem-calc(35);
+}
 .top-bar-section ul li a {
   text-transform: uppercase;
   letter-spacing: rem-calc(1);

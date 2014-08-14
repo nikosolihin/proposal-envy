@@ -7,7 +7,10 @@
       <a href="{{post.get_field('hero_page_url')}}" class="button coral">
         {{post.get_field('hero_page_url') | slice(24,length-1)}}
       </a>
-      <a href="#" data-reveal-id="videoModal" class="button wire" id="play-button">Play Video</a>
+      <a href="#" data-reveal-id="videoModal" class="button wire" id="play-button">
+        <i class="icon-play"></i>
+        Play Video
+      </a>
       <div id="videoModal" class="reveal-modal large" data-reveal>
         <div class="flex-video">
           <iframe id="video-iframe" src="http://www.youtube.com/embed/{{post.get_field('hero_video_url')}}" frameborder="0" allowfullscreen></iframe>

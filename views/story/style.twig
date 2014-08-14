@@ -1,5 +1,5 @@
 .story-wrap {
-  background-image: linear-gradient(rgba({{post.get_field('story_color')|toRGB}},0.50),rgba({{post.get_field('story_color')|toRGB}},0.50)),url({{TimberImage(post.get_field('story_bg')).src}});
+  background-image: linear-gradient(rgba({{post.get_field('story_color')|toRGB}},0.50),rgba({{post.get_field('story_color')|toRGB}},0.50)),url({{post.thumbnail.src}});
 }
 .story-content {
   background-color: {{ (post.get_field('story_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
@@ -11,5 +11,11 @@ p a, p a:hover, p a:focus {
   color: {{post.get_field('story_color')}};
 }
 .full-blockquote {
-  background-color: rgba({{post.get_field('story_color')|toRGB}},0.15);
+  background-color: rgba({{post.get_field('story_color')|toRGB}},0.05);
+}
+.story-next {
+    background-image: linear-gradient(rgba({{post.next.get_field('story_color')|toRGB}},0.50),rgba({{post.next.get_field('story_color')|toRGB}},0.50)),url({{post.next.thumbnail.src}});
+}
+.story-prev {
+    background-image: linear-gradient(rgba({{post.prev.get_field('story_color')|toRGB}},0.50),rgba({{post.prev.get_field('story_color')|toRGB}},0.50)),url({{post.prev.thumbnail.src}});
 }

@@ -17,6 +17,10 @@ if( function_exists('acf_add_options_sub_page') )
         'title' => 'Hint',
         'menu' => 'Hint Options'
     ));
+    acf_add_options_sub_page(array(
+        'title' => 'Misc',
+        'menu' => 'Misc Options'
+    ));
 }
 function my_acf_options_page_settings( $settings )
 {
