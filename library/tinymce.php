@@ -1,12 +1,11 @@
 <?php
-// Add Formats Dropdown Menu To MCE
-if ( ! function_exists( 'wpex_style_select' ) ) {
-  function wpex_style_select( $buttons ) {
-    array_push( $buttons, 'styleselect' );
-    return $buttons;
+
+// Disable unused headings and pre formatting
+function wpa_45815($arr){
+    $arr['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
+    return $arr;
   }
-}
-add_filter( 'mce_buttons', 'wpex_style_select' );
+add_filter('tiny_mce_before_init', 'wpa_45815');
 
 // Add new styles to the TinyMCE "formats" menu dropdown
 if ( ! function_exists( 'wpex_styles_dropdown' ) ) {

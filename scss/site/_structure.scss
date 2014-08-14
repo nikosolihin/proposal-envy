@@ -118,7 +118,7 @@ h2 {
 	.icon-instagram:before { content: '\e803'; }
 	.icon-quote-left:before { content: '\e804'; }
 	.icon-quote-right:before { content: '\e805'; }
-	.icon-left-dir:before { content: '\e806'; }
+	.icon-left-dir:before { content: '\e806'; color: $primary-color; }
 	.icon-share:before { content: '\e807'; }
 	.icon-phone-squared:before { content: '\e808'; }
 	.icon-email:before { content: '\e809'; }
@@ -390,9 +390,7 @@ footer {
 		line-height: 1.9;
 	}
 	.story-wrap {
-
 		@include grid-debug(350px);
-
 		padding: rem-calc(110) rem-calc(10) rem-calc(0);
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
 		@media #{$large-up} { padding: rem-calc(140) rem-calc(160) rem-calc(0); }
@@ -427,8 +425,36 @@ footer {
 			}
 		}
 	}
-	.excerpt {
-		@extend %excerpt;
+	.little-nav {
+		border-bottom: rem-calc(1) solid #EBEBEB;
+		.excerpt-branding {
+			background: url('../assets/svg/svgs/watermark.svg') no-repeat center center;
+			display: block;
+			width: 200px;
+		}
+	}
+	.all-posts {
+		margin-top: rem-calc(35);
+		h4 {
+			margin-left: rem-calc(15);
+		}
+	}
+	.story-excerpt {
+		border-bottom: rem-calc(1) solid #EBEBEB;
+		padding: rem-calc(50) 0 rem-calc(25);
+		.excerpt {
+			@extend %excerpt;
+			margin: 0;
+			text-shadow: 0 1px 0 #efefef;
+		}
+	}
+	.entry-content {
+		padding-top: rem-calc(60);
+		h1,h2,h3,h4,h5,h6 {
+			font-family: $serif-font-family;
+			font-weight: 700;
+			color: #444444;
+		}
 	}
 	.full-image {
 		width: 100%;
