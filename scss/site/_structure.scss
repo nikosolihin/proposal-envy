@@ -91,17 +91,7 @@ h2 {
   color: $h2-header-color;
   margin-bottom: rem-calc(28);
 }
-figure {
-	margin: rem-calc(40) rem-calc(-50);
-}
-figcaption {
-	font-family: $serif-font-family;
-	font-style: italic;
-	font-size: rem-calc(15);
-	color: #A9A9A9;
-	text-align: center;
-	margin-top: rem-calc(20);
-}
+
 
 	/**
 	 * 2.1 Icons
@@ -400,6 +390,14 @@ footer {
 		line-height: 1.9;
 	}
 	.story-wrap {
+
+		@include grid-debug(350px);
+
+		padding: rem-calc(110) rem-calc(10) rem-calc(0);
+		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
+		@media #{$large-up} { padding: rem-calc(140) rem-calc(160) rem-calc(0); }
+		@media #{$xlarge-up} { padding: rem-calc(140) rem-calc(140) rem-calc(0); }
+		height: rem-calc(400);
 		background-size: cover;
 		background-position: center center;
 		h2, h4 {
@@ -409,13 +407,25 @@ footer {
 			font-family: $regular-font-family;
 			letter-spacing: rem-calc(4);
 			margin-bottom: 0;
+			font-size: rem-calc(12);
+			@media #{$medium-up} { font-size: rem-calc(13); }
+			@media #{$large-up} { font-size: rem-calc(14); }
 		}
 		h2 {
-			font-size: rem-calc(48);
+			font-weight: 700;
+			font-size: rem-calc(34);
+			@media #{$medium-up} { font-size: rem-calc(36); }
+			@media #{$large-up} { font-size: rem-calc(48); }
+			@media #{$xlarge-up} { font-size: rem-calc(54); }
 		}
 	}
 	.story-content {
 		color: #666666;
+		p {
+			strong {
+				font-family: $demi-font-family;
+			}
+		}
 	}
 	.excerpt {
 		@extend %excerpt;
@@ -425,6 +435,18 @@ footer {
 		background-size: cover;
 		background-position: center center;
 		clear: both;
+	}
+	figure {
+		margin: rem-calc(40) rem-calc(-50);
+		@media #{$small-only} { margin: rem-calc(0); }
+	}
+	figcaption {
+		font-family: $serif-font-family;
+		font-style: italic;
+		font-size: rem-calc(15);
+		color: #A9A9A9;
+		text-align: center;
+		margin-top: rem-calc(20);
 	}
 	.full-blockquote {
 		p {

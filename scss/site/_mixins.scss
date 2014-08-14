@@ -28,6 +28,41 @@
   backface-visibility: hidden;
 }
 
+@mixin grid-debug($top) {
+  @media #{$small-only} {
+    &:before {
+      color: white;
+     content: 'This is small';
+     position: absolute;
+     top: $top;
+    }
+  }
+  @media #{$medium-only} {
+    &:before {
+      color: white;
+     content: 'This is medium';
+     position: absolute;
+     top: $top;
+    }
+  }
+  @media #{$large-only} {
+    &:before {
+      color: white;
+     content: 'This is large';
+     position: absolute;
+     top: $top;
+    }
+  }
+  @media #{$xlarge-only} {
+    &:before {
+      color: white;
+     content: 'This is xlarge';
+     position: absolute;
+     top: $top;
+    }
+  }
+}
+
 /*
 _______
 
