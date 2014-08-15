@@ -13,21 +13,16 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
     // Create array of new styles
     $new_styles = array(
       array(
-        'title' => __( 'Video', 'wpex' ),
+        'title' => __( 'Styling', 'wpex' ),
         'items' => array(
           array(
-            'title'     => __('Youtube','wpex'),
+            'title'     => __('Video','wpex'),
             'wrapper'  => true,
             'block'    => 'div',
             'classes'   => 'flex-video widescreen'
-          )
-        )
-    ),
-    array(
-        'title' => __( 'Image Styles', 'wpex' ),
-        'items' => array(
+          ),
           array(
-            'title'     => __('Full Width','wpex'),
+            'title'     => __('Full Width Image','wpex'),
             'selector'  => 'img',
             'classes'   => 'full-image'
           )
