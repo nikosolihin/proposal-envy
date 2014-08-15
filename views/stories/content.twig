@@ -1,0 +1,17 @@
+<section class="stories-content">
+  <div class="row">
+    {% for post in posts %}
+      <article class="small-12 medium-6 columns">
+        <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}" target="_blank">
+          <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
+
+          </div>
+          <div class="post-info">
+            <h2>{{post.title}}</h2>
+            <p>{{post.get_field('story_excerpt')}}</p>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>

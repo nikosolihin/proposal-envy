@@ -22,13 +22,14 @@
  */
 
 $stories_args = array(
-  'post_type' => 'story',
-  'orderby' => 'most_recent'
+  'post_type' => 'page',
+  'number' => 1,
+  'name' => 'stories-settings'
 );
 
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['options'] = get_fields('options');
-$context['stories'] = Timber::get_posts($stories_args);
+$context['stories'] = Timber::get_post($stories_args);
 Timber::render(array('page-stories.twig'), $context);

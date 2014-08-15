@@ -233,9 +233,15 @@ footer {
 	* -------------------------------------
 	*/
 
-	// Header Section ///////////////////////
 	.stories-wrap {
-		height: rem-calc(450);
+		height: rem-calc(400);
+		background-size: cover;
+		background-position: center center;
+		@include grid-debug(350px);
+	}
+	.post-image {
+		// height: rem-calc(200);
+		padding-top: 50%;
 		background-size: cover;
 		background-position: center center;
 	}
@@ -424,7 +430,6 @@ footer {
 		margin: 0 0 rem-calc(40) 0;
 	}
 	.story-wrap {
-		// @include grid-debug(350px);
 		padding: rem-calc(110) rem-calc(10) rem-calc(0);
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
 		@media #{$large-up} { padding: rem-calc(120) rem-calc(160) rem-calc(0); }
