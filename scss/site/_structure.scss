@@ -392,7 +392,7 @@ footer {
 		font-family: $serif-font-family;
 		font-weight: 400;
 		font-size: rem-calc(20);
-		line-height: 1.9;
+		line-height: 1.8;
 		text-align: left;
 	}
 	.little-nav {
@@ -410,7 +410,7 @@ footer {
 
 	.excerpt {
 		@extend %excerpt;
-		margin: 0 0 rem-calc(50) 0;
+		margin: 0 0 rem-calc(40) 0;
 	}
 	.story-wrap {
 		// @include grid-debug(350px);
@@ -468,7 +468,7 @@ footer {
 		background-size: cover;
 		background-position: center center;
 		clear: both;
-		margin-bottom: rem-calc(70);
+		margin-bottom: rem-calc(50);
 	}
 	figure {
 		margin: rem-calc(40 -50);

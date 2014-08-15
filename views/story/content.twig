@@ -1,12 +1,12 @@
 <section class="story-content">
   <div class="row max-width entry-content">
-    <div class="little-nav medium-2 large-3 xlarge-4 columns text-right">
+    <div class="little-nav medium-2 large-3 xlarge-4 columns text-right hide-for-small-only">
       <a href="{{site.url}}/{{post.post_type}}/" class="all-posts">
         <i class="icon-left-dir"></i>
         All Stories
       </a>
     </div>
-    <div class="medium-8 large-6 xlarge-4 end columns">
+    <div class="small-12 medium-8 large-6 xlarge-4 end columns">
       <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
       {{post.content}}
     </div>
