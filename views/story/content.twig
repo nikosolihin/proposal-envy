@@ -1,5 +1,13 @@
+<section class="story-content">
   <div class="row max-width entry-content">
-    <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
+    <div class="little-nav medium-2 large-3 xlarge-4 columns text-right">
+      <a href="{{site.url}}/{{post.post_type}}/" class="all-posts">
+        <i class="icon-left-dir"></i>
+        All Stories
+      </a>
+    </div>
+    <div class="medium-8 large-6 xlarge-4 end columns">
+      <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
       {{post.content}}
     </div>
   </div>

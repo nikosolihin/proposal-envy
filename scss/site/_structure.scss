@@ -390,10 +390,27 @@ footer {
 	// Story Posts
 	%excerpt {
 		font-family: $serif-font-family;
-		font-style: italic;
 		font-weight: 400;
-		font-size: rem-calc(18);
+		font-size: rem-calc(20);
 		line-height: 1.9;
+		text-align: left;
+	}
+	.little-nav {
+		padding-top: rem-calc(10);
+		i { margin-right: rem-calc(5); }
+		.all-posts {
+			margin: 0;
+			font-family: $medium-font-family;
+			// text-transform: uppercase;
+			font-size: rem-calc(15);
+			letter-spacing: rem-calc(1);
+			color: #888;
+		}
+	}
+
+	.excerpt {
+		@extend %excerpt;
+		margin: 0 0 rem-calc(50) 0;
 	}
 	.story-wrap {
 		// @include grid-debug(350px);
@@ -424,6 +441,7 @@ footer {
 		}
 	}
 	.story-content {
+		padding-top: rem-calc(50);
 		color: #666666;
 		p {
 			strong {
@@ -431,30 +449,7 @@ footer {
 			}
 		}
 	}
-	.little-nav {
-		border-bottom: rem-calc(1) solid #EBEBEB;
-		.excerpt-branding {
-			background: url('../assets/svg/svgs/watermark.svg') no-repeat center center;
-			display: block;
-			width: 200px;
-		}
-	}
-	.all-posts {
-		margin-top: rem-calc(35);
-		h4 {
-			margin-left: rem-calc(15);
-		}
-	}
-	.story-excerpt {
-		border-bottom: rem-calc(1) solid #EBEBEB;
-		padding: rem-calc(50) 0 rem-calc(25);
-		.excerpt {
-			@extend %excerpt;
-			margin: 0;
-		}
-	}
 	.entry-content {
-		padding-top: rem-calc(50);
 		h1,h2,h3,h4,h5,h6 {
 			font-family: $serif-font-family;
 			font-weight: 700;
