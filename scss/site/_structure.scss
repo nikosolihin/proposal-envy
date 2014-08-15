@@ -228,6 +228,19 @@ footer {
 	 * ------------------------------------
 	 */
 
+
+	/* Stories
+	* -------------------------------------
+	*/
+
+	// Header Section ///////////////////////
+	.stories-wrap {
+		height: rem-calc(450);
+		background-size: cover;
+		background-position: center center;
+	}
+
+
 	/* Home
 	* -------------------------------------
 	*/
@@ -401,13 +414,11 @@ footer {
 		.all-posts {
 			margin: 0;
 			font-family: $medium-font-family;
-			// text-transform: uppercase;
 			font-size: rem-calc(15);
 			letter-spacing: rem-calc(1);
 			color: #888;
 		}
 	}
-
 	.excerpt {
 		@extend %excerpt;
 		margin: 0 0 rem-calc(40) 0;
@@ -416,7 +427,7 @@ footer {
 		// @include grid-debug(350px);
 		padding: rem-calc(110) rem-calc(10) rem-calc(0);
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
-		@media #{$large-up} { padding: rem-calc(140) rem-calc(160) rem-calc(0); }
+		@media #{$large-up} { padding: rem-calc(120) rem-calc(160) rem-calc(0); }
 		@media #{$xlarge-up} { padding: rem-calc(140) rem-calc(140) rem-calc(0); }
 		height: rem-calc(400);
 		background-size: cover;
@@ -521,15 +532,10 @@ footer {
 			letter-spacing: rem-calc(4);
 			margin-bottom: rem-calc(25);
 			font-size: rem-calc(12);
-			@media #{$medium-up} { font-size: rem-calc(13); }
-			@media #{$large-up} { font-size: rem-calc(14); }
 		}
 		h2 {
 			font-weight: 700;
 			font-size: rem-calc(32);
-			// @media #{$medium-up} { font-size: rem-calc(36); }
-			// @media #{$large-up} { font-size: rem-calc(48); }
-			// @media #{$xlarge-up} { font-size: rem-calc(54); }
 		}
 	}
 	.story-social {

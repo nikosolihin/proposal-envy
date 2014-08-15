@@ -157,7 +157,7 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 
 // Clean the output of attributes of images in editor
 function image_tag_class($class, $id, $align, $size) {
-    $align = 'align' . esc_attr($align);
+    $align = esc_attr($align);
     return $align;
 }
 

@@ -21,8 +21,14 @@
  * @since    Timber 0.1
  */
 
+$stories_args = array(
+  'post_type' => 'story',
+  'orderby' => 'most_recent'
+);
+
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['options'] = get_fields('options');
-Timber::render(array('page-'.$post->post_name.'.twig', 'page.twig'), $context);
+$context['stories'] = Timber::get_posts($stories_args);
+Timber::render(array('page-stories.twig'), $context);
