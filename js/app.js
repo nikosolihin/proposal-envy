@@ -1080,24 +1080,28 @@
     $("#hero-video").get(0).play();
   });
 
-    // var imgSource = $(".full-image").attr('src');
-    // console.log(imgSource);
-    // // var imgPosition = $(".full-image").attr('class').split(' ');
-    // var imgHeight = $(".full-image").attr('title') ? $(".full-image").attr('title') : 450;
-    // console.log(imgHeight);
-    // var divClasses = $(".full-image").parent().parent().attr('class');
-    // console.log(divClasses);
-    // $(".full-image").parent().addClass('bookmark');
-    // console.log('class added');
-    // $(".full-image").parent().empty();
-    // console.log('emptied');
-    // var temp = $(".bookmark").parent().parent().html().split('<figure class="bookmark"></figure>');
-    // var fresh = temp[0]+'</div><div class="full-image"></div><div class="'+divClasses+'">'+temp[1];
-    // $(".entry-content").html(fresh);
-    // $(".full-image").css('background-image', 'url(' + imgSource +')');
-    // // $(".full-image-").css('background-position', 'center '+imgPosition);
-    // $(".full-image").css('height', imgHeight);
-    // $(".bookmark").remove();
+
+  var divClasses = $(".story-carousel").parent().attr('class');
+  var carousel = '<div class="story-carousel">' + $(".story-carousel").html() + '</div>';
+  $(".story-carousel").empty();
+  var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
+  var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+  $(".entry-content").html(fresh);
+  // Set top margin here because css won't work
+  $('.story-carousel').prev().css('margin-bottom', 40);
+  $('.story-carousel').css('margin-bottom', 80);
+
+  $('.story-carousel').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    swipe: true,
+    touchMove: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
 
 
   // $("blockquote").each(function(index) {

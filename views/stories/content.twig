@@ -17,25 +17,29 @@
       </div>
       <div class="row stories-latest">
         <h2>Latest Stories</h2>
-        {% for post in proposals %}
-          <article class="small-12 medium-4 large-3 columns end post-article">
-            <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}">
-              <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
-              </div>
-              <div class="post-info">
-                <h4>{{post.title}}</h4>
-                <p>{{post.get_field('story_excerpt')|excerpt(10)}}</p>
-              </div>
-            </a>
-          </article>
-        {% endfor %}
-        <ul class="post-list">
-          <li>
-            <a href="/blog/freedom-to-forge-a-unique-educational-path">
-              <em class="post-date">June 17, 2014</em> Freedom to Forge a Unique Educational Path
-            </a>
-          </li>
-        </ul>
+        <div class="row">
+          {% for post in proposals %}
+            <article class="small-12 medium-4 large-3 columns end post-article">
+              <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}">
+                <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
+                </div>
+                <div class="post-info">
+                  <h4>{{post.title}}</h4>
+                  <p>{{post.get_field('story_excerpt')|excerpt(10)}}</p>
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="row">
+          <ul class="post-list">
+            <li>
+              <a href="/blog/freedom-to-forge-a-unique-educational-path">
+                <em class="post-date">June 17, 2014</em> Freedom to Forge a Unique Educational Path
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

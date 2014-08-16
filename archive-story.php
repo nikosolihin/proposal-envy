@@ -30,6 +30,7 @@ $settings_args = array(
 $success_args = array(
   'post_type' => 'story',
   'orderby' => 'most_recent',
+  'number' => 3,
   'meta_query' => array(
     'relation' => 'AND',
     array(

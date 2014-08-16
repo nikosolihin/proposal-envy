@@ -482,9 +482,10 @@ footer {
 	}
 	.excerpt {
 		@extend %excerpt;
-		margin: 0 0 rem-calc(40) 0;
+		margin: 0 0 rem-calc(30) 0;
 	}
 	.story-wrap {
+		@include grid-debug(250px);
 		padding: rem-calc(110) rem-calc(10) rem-calc(0);
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
 		@media #{$large-up} { padding: rem-calc(120) rem-calc(160) rem-calc(0); }
@@ -564,6 +565,17 @@ footer {
 		padding-left: rem-calc(60);
 		@media #{$large-only} { padding: rem-calc(50) rem-calc(200) rem-calc(50) rem-calc(120); }
 		@media #{$xlarge-only} { padding: rem-calc(50) rem-calc(400) rem-calc(50) rem-calc(350); }
+	}
+	.story-carousel {
+		height: 500px;
+		clear: both;
+		.slick-track {
+			height: 500px;
+		}
+	}
+	.story-carousel-content {
+		background-size: cover;
+		background-position: center center;
 	}
 	.story-social {
 		.social li {
