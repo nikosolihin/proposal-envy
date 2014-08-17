@@ -10,6 +10,9 @@ p a, p a:hover, p a:focus {
 .excerpt, .full-blockquote p {
   color: {{post.get_field('story_color')}};
 }
+.story-carousel, .slick-track {
+  height: {% if post.get_field('story_gallery_height') %} {{post.get_field('story_gallery_height')}}px; {% else %} 400px; {% endif %};
+}
 .full-blockquote {
   background-color: rgba({{post.get_field('story_color')|toRGB}},0.05);
 }

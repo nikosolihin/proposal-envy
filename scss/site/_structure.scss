@@ -535,13 +535,6 @@ footer {
 			font-family: $medium-font-family;
 		}
 	}
-	.full-image {
-		width: 100%;
-		background-size: cover;
-		background-position: center center;
-		clear: both;
-		margin-bottom: rem-calc(50);
-	}
 	figure {
 		margin: rem-calc(40 -50);
 		@media #{$small-only} { margin: rem-calc(0); }
@@ -567,10 +560,13 @@ footer {
 		@media #{$xlarge-only} { padding: rem-calc(50) rem-calc(400) rem-calc(50) rem-calc(350); }
 	}
 	.story-carousel {
-		height: 500px;
 		clear: both;
-		.slick-track {
-			height: 500px;
+
+		.slick-prev {
+			left: 40px;
+		}
+		.slick-next {
+			right: 20px;
 		}
 	}
 	.story-carousel-content {

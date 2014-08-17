@@ -1093,8 +1093,11 @@
 
   $('.story-carousel').slick({
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    arrows: true,
+    centerMode: true,
+    centerPadding: 2,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
     swipe: true,
     touchMove: true,
     infinite: true,
