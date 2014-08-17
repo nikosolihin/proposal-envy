@@ -1080,7 +1080,6 @@
     $("#hero-video").get(0).play();
   });
 
-
   var divClasses = $(".story-carousel").parent().attr('class');
   var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
   $(".story-carousel").empty();
@@ -1094,29 +1093,13 @@
   $('.story-carousel').slick({
     dots: true,
     arrows: false,
+    fade: true,
     autoplay: true,
     autoplaySpeed: 5000,
     swipe: true,
     touchMove: true,
     infinite: true,
-    speed: 500,
+    speed: 350,
     cssEase: 'linear'
   });
-
-
-  // $("blockquote").each(function(index) {
-  //   var blockquote;
-  //   blockquote = '<blockquote class="full-blockquote">';
-  //   blockquote = blockquote + '<i class="icon-quote-left"></i>';
-  //   blockquote = blockquote + '<p>' + $("blockquote").text() + '</p>';
-  //   blockquote = blockquote + '</blockquote>';
-
-  //   var divClasses = $("blockquote").parent().attr("class");
-  //   $("blockquote").addClass("removed"+index);
-  //   $("blockquote").empty();
-  //   var temp = $(".removed"+index).parent().parent().html().split('<blockquote class="removed"></blockquote>');
-  //   var fresh = temp[0]+'</div>'+blockquote+'<div class="'+divClasses+'">'+temp[1];
-  //   $(".entry-content").html(fresh);
-  // });
-
 });

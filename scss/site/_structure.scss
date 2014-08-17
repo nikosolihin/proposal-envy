@@ -541,22 +541,22 @@ footer {
 	figcaption {
 		font-family: $serif-font-family;
 		font-style: italic;
-		font-size: rem-calc(15);
+		font-size: rem-calc(14);
 		color: #A9A9A9;
 		text-align: center;
 		margin-top: rem-calc(20);
 	}
-	.full-blockquote {
+	blockquote {
 		p {
 			@extend %excerpt;
 			margin-bottom: 0;
+			font-style: italic;
+			font-size: rem-calc(16);
+			line-height: 1.9;
 		}
-		width: 100%;
-		clear: both;
-		padding: rem-calc(50);
-		padding-left: rem-calc(60);
-		@media #{$large-only} { padding: rem-calc(50) rem-calc(200) rem-calc(50) rem-calc(120); }
-		@media #{$xlarge-only} { padding: rem-calc(50) rem-calc(400) rem-calc(50) rem-calc(350); }
+		margin-left: 0;
+		@media #{$medium-up} { margin-left: rem-calc(-60); }
+		padding: rem-calc(30);
 	}
 	.story-carousel {
 		clear: both;
