@@ -1,17 +1,34 @@
 $(function() {
   // scroll to div ID
-  $('a[href*=#]:not([href=#])').click(function() {
+  $("a[href*=#]:not([href=#])").click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        $('html,body').animate({
+        $("html,body").animate({
           scrollTop: target.offset().top
         }, 400);
         return false;
       }
     }
   });
+
+  $(".fb-share").click(function(e){
+    e.preventDefault();
+    FB.ui({
+      method: 'share_open_graph',
+      action_type: 'og.likes',
+      action_properties: JSON.stringify({
+        object: $(location).attr('href')
+      })
+    }, function(response){});
+  });
+
+  $(".twitter-share").click(function(e){
+    e.preventDefault();
+    window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
+  });
+
 
   $(window).scroll(function() {
     // .css( 'opacity', -( $(this).scrollTop()/1000));

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="row">
-        {% for post in proposals %}
+        {% for post in success %}
           <article class="small-12 medium-4 columns end post-article">
             <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}">
               <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
@@ -18,9 +18,9 @@
       <div class="row stories-latest">
         <h2>Latest Stories</h2>
         <div class="row">
-          {% for post in proposals %}
+          {% for post in recent|slice(0, 8) %}
             <article class="small-12 medium-4 large-3 columns end post-article">
-              <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}">
+              <a href="{{post.permalink}}">
                 <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
                 </div>
                 <div class="post-info">
@@ -33,11 +33,13 @@
         </div>
         <div class="row">
           <ul class="post-list">
-            <li>
-              <a href="/blog/freedom-to-forge-a-unique-educational-path">
-                <em class="post-date">June 17, 2014</em> Freedom to Forge a Unique Educational Path
-              </a>
-            </li>
+            {% for post in recent|slice(8, length) %}
+              <li>
+                <a href="{{post.permalink}}">
+                  <em class="post-date">June 17, 2014</em> {{post.title}}
+                </a>
+              </li>
+            {% endfor %}
           </ul>
         </div>
       </div>

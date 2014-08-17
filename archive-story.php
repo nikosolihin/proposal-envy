@@ -30,7 +30,7 @@ $settings_args = array(
 $success_args = array(
   'post_type' => 'story',
   'orderby' => 'most_recent',
-  'number' => 3,
+  'posts_per_page' => 3,
   'meta_query' => array(
     'relation' => 'AND',
     array(
@@ -40,27 +40,22 @@ $success_args = array(
   )
 );
 
-$proposal_args = array(
-  'post_type' => 'story',
-  'orderby' => 'most_recent',
-  'meta_query' => array(
-    'relation' => 'AND',
-    array(
-      'key' => 'story_type',
-      'value' => 'proposal'
-    )
-  )
-);
-
 $context = Timber::get_context();
-
-
-// $post = new TimberPost();
-// $context['post'] = $post;
-
 $context['options'] = get_fields('options');
 $context['settings'] = Timber::get_post($settings_args);
-$context['successes'] = Timber::get_posts($success_args);
-$context['proposals'] = Timber::get_posts($proposal_args);
+$context['success'] = Timber::get_posts($success_args);
+
+// Dont get the 3 most recent success stories using their IDs
+$ids = array();
+foreach ($context['success'] as $value) {
+  array_unshift($ids, $value->ID);
+}
+
+$recent_args = array(
+  'post_type' => 'story',
+  'orderby' => 'most_recent',
+  'post__not_in' => $ids
+);
+$context['recent'] = Timber::get_posts($recent_args);
 
 Timber::render(array('page-stories.twig'), $context);
