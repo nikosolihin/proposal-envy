@@ -3,19 +3,19 @@
     <div class="medium-12 columns">
       <ul class="story-social inline-list">
         <li class="story-social-list">
-          <a href="" target="_blank" class="story-social-link">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{post.permalink|url_encode }}" target="_blank" class="story-social-link">
             <i class="icon-facebook"></i>
             Share on Facebook
           </a>
         </li>
         <li class="story-social-list">
-          <a href="" target="_blank" class="story-social-link">
+          <a href="http://www.twitter.com/share?via=proposalenvy&amp;url={{post.permalink|url_encode }}&amp;text=Proposal+Story%3A+{{post.title|url_encode }}" target="_blank" class="story-social-link">
             <i class="icon-twitter"></i>
             Share on Twitter
           </a>
         </li>
         <li class="story-social-list">
-          <a href="mailto:?subject=Check out this Proposal Envy success story!&amp;body={{site.url}}/{{post.post_type}}/{{post.post_name}}" target="_blank" class="story-social-link">
+          <a href="mailto:?subject=Check out this Proposal Envy success story!&amp;body={{post.permalink|url_encode }}" target="_blank" class="story-social-link">
             <i class="icon-email"></i>
             Email this story
           </a>
