@@ -20,11 +20,6 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
             'wrapper'  => true,
             'block'    => 'div',
             'classes'   => 'flex-video widescreen'
-          ),
-          array(
-            'title'     => __('Full Width Image','wpex'),
-            'selector'  => 'img',
-            'classes'   => 'full-image'
           )
         )
       )

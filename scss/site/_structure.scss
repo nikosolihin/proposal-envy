@@ -485,7 +485,6 @@ footer {
 		margin: 0 0 rem-calc(30) 0;
 	}
 	.story-wrap {
-		@include grid-debug(250px);
 		padding: rem-calc(110) rem-calc(10) rem-calc(0);
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
 		@media #{$large-up} { padding: rem-calc(120) rem-calc(160) rem-calc(0); }
@@ -563,10 +562,29 @@ footer {
 		clear: both;
 
 		.slick-prev {
-			left: 40px;
+			left: 20px;
 		}
 		.slick-next {
-			right: 20px;
+			right: 40px;
+		}
+		.slick-dots {
+			bottom: -20px;
+			li {
+				margin-right: 15px;
+			}
+			.slick-active button:before {
+				background-color: rgba(255, 255, 255, 1);
+				opacity: 1;
+			}
+			li button:before {
+				content: '';
+				width: 15px;
+				height: 15px;
+				border-radius: 10px;
+				background-color: rgba(204, 0, 102, 0);
+				border: 3px solid #fff;
+				opacity: 1;
+			}
 		}
 	}
 	.story-carousel-content {

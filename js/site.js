@@ -26,27 +26,24 @@ $(function() {
 
 
   var divClasses = $(".story-carousel").parent().attr('class');
-  var carousel = '<div class="story-carousel">' + $(".story-carousel").html() + '</div>';
+  var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
   $(".story-carousel").empty();
   var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
   var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
   $(".entry-content").html(fresh);
   // Set top margin here because css won't work
-  $('.story-carousel').prev().css('margin-bottom', 40);
-  $('.story-carousel').css('margin-bottom', 80);
+  $('.story-carousel').prev().css('margin-bottom', 20);
+  $('.story-carousel').css('margin-bottom', 60);
 
   $('.story-carousel').slick({
     dots: true,
-    arrows: true,
-    centerMode: true,
-    centerPadding: 2,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
     swipe: true,
     touchMove: true,
     infinite: true,
     speed: 500,
-    fade: true,
     cssEase: 'linear'
   });
 
