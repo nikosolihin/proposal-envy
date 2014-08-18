@@ -1085,10 +1085,7 @@
     window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
   });
 
-
   $(window).scroll(function() {
-    // .css( 'opacity', -( $(this).scrollTop()/1000));
-
     var offset = $(this).scrollTop()/$(this).height();
     var textSpeed = 265 * offset - 40;
     var textOpacity = 1 - ((.2 * offset) + offset);
@@ -1099,6 +1096,11 @@
       opacity: textOpacity
     });
     // $("#hero-mask").css({opacity:scrollOpacity});
+  });
+
+  // Redirect to different category pages
+  $(".category-select").change(function(){
+    window.location.href = $(this).val();
   });
 
   // Pause background video when hero-video is clicked

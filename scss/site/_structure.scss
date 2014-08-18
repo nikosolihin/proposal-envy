@@ -229,6 +229,43 @@ footer {
 	 */
 
 
+
+	/* Journal
+	* -------------------------------------
+	*/
+
+	.journal-wrap {
+		padding-top: rem-calc(95);
+		@media #{$medium-up} {
+			padding-top: rem-calc(140);
+		}
+		height: rem-calc(280);
+		background-size: cover;
+		background-position: center center;
+		@include grid-debug(250px);
+		h2, h4 {
+			color: #ffffff;
+		}
+		h4 {
+			font-family: $regular-font-family;
+			letter-spacing: rem-calc(3);
+			margin-bottom: 0;
+			font-size: rem-calc(14);
+		}
+		h2 {
+			font-weight: 400;
+			font-size: rem-calc(30);
+			margin: rem-calc(15 0);
+			line-height: 1.5;
+		}
+	}
+	.journal-select h4 {
+		font-size: rem-calc(13);
+		text-transform: none;
+		color: #222;
+	}
+
+
 	/* Stories
 	* -------------------------------------
 	*/
@@ -241,7 +278,7 @@ footer {
 		height: rem-calc(350);
 		background-size: cover;
 		background-position: center center;
-		// @include grid-debug(250px);
+		@include grid-debug(250px);
 		h2, h4 {
 			color: #ffffff;
 		}
@@ -644,10 +681,18 @@ footer {
 			}
 		}
 	}
+	.story-adjacent {
+		background-color: #fff;
+	}
 	.story-prev, .story-next {
 		height: rem-calc(200);
 		background-size: cover;
 		background-position: center center;
+		transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		transform-origin: center center;
+		&:hover {
+			transform: scale(0.975);
+		}
 		a {
 			width: 100%;
 			height: 100%;
