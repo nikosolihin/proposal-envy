@@ -45,7 +45,7 @@ $context['options'] = get_fields('options');
 $context['settings'] = Timber::get_post($settings_args);
 $context['success'] = Timber::get_posts($success_args);
 
-// Dont get the 3 most recent success stories using their IDs
+// Exclude the 3 most recent success stories using their IDs
 $ids = array();
 foreach ($context['success'] as $value) {
   array_unshift($ids, $value->ID);

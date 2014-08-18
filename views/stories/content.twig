@@ -34,9 +34,10 @@
         <div class="row">
           <ul class="post-list">
             {% for post in recent|slice(8, length) %}
-              <li>
-                <a href="{{post.permalink}}">
-                  <em class="post-date">June 17, 2014</em> {{post.title}}
+              <li class="small-12 columns">
+                <a href="{{post.permalink}}" class="row">
+                  <span class="post-date small-12 medium-3 large-2 columns">{{post.post_date|date('F j, Y')}}</span>
+                  <span class="post-title small-12 medium-9 large-10 columns">{{post.title}}</span>
                 </a>
               </li>
             {% endfor %}
