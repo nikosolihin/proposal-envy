@@ -1,0 +1,28 @@
+<section class="journal-content">
+  <div class="row show-for-small-only journal-select">
+    <div class="small-12 columns">
+      <h4>Filter By Categories:</h4>
+      <select class="category-select">
+        <option value="{{site.url}}/journal">All</option>
+        {% for category in categories %}
+        <option {% if chosen == category.slug %}selected{% endif %} value="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    {% for post in posts %}
+    <article class="small-12 columns post-article">
+      <a href="{{post.permalink}}">
+        <div class="row">
+          <div class="post-image small-3 columns" style="background-image: url({{post.thumbnail.src}})"></div>
+          <div class="post-info small-9 columns">
+            <h4>{{post.title}}</h4>
+            <p>{{post.get_field('journal_excerpt')|excerpt(10)}}</p>
+          </div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>

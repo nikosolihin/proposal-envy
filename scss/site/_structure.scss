@@ -262,7 +262,28 @@ footer {
 	.journal-select h4 {
 		font-size: rem-calc(13);
 		text-transform: none;
-		color: #222;
+		color: #555;
+	}
+	.journal-content {
+		padding: rem-calc(30 0);
+		.post-article {
+			padding: 0;
+			margin-bottom: rem-calc(20);
+		}
+		.post-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			padding: 0;
+			border-top-right-radius: rem-calc(0);
+		}
+		.post-info {
+
+		}
+		.post-article {
+			overflow: hidden;
+		}
 	}
 
 
