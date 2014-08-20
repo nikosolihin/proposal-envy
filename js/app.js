@@ -1069,6 +1069,7 @@
     }
   });
 
+  // for FB Share
   $(".fb-share").click(function(e){
     e.preventDefault();
     FB.ui({
@@ -1080,11 +1081,13 @@
     }, function(response){});
   });
 
+  // for twitter share
   $(".twitter-share").click(function(e){
     e.preventDefault();
     window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
   });
 
+  // for homepage parallax on video thing
   $(window).scroll(function() {
     var offset = $(this).scrollTop()/$(this).height();
     var textSpeed = 265 * offset - 40;
@@ -1113,6 +1116,7 @@
     $("#hero-video").get(0).play();
   });
 
+  // sets up default wordpress gallery to use slick carousel
   var divClasses = $(".story-carousel").parent().attr('class');
   var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
   $(".story-carousel").empty();
@@ -1123,7 +1127,7 @@
   $('.story-carousel').prev().css('margin-bottom', 20);
   $('.story-carousel').css('margin-bottom', 60);
 
-  $('.story-carousel').slick({
+  $(".story-carousel").slick({
     dots: true,
     arrows: false,
     fade: true,
@@ -1135,4 +1139,7 @@
     speed: 350,
     cssEase: 'linear'
   });
+
+  // sets up image to use fluidbox
+  $("figure a").fluidbox();
 });

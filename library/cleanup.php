@@ -152,8 +152,8 @@ function fixed_img_caption_shortcode($attr, $content = null) {
     if ( 1 > (int) $width || empty($caption) )
         return $content;
     if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-    return '<figure>'
-    . do_shortcode( $content ) . '<figcaption>' . $caption . '</figcaption></figure>';
+    return '<figure><a href="#" data-fluidbox>'
+    . do_shortcode( $content ) . '</a><figcaption>' . $caption . '</figcaption></figure>';
 }
 
 
@@ -181,7 +181,7 @@ function image_editor($html, $id, $alt, $title) {
 
 // Wrap images with figure tag
 function img_unautop($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $pee);
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure><a href="">$1</a></figure>', $pee);
     return $pee;
 }
 
@@ -246,5 +246,6 @@ function my_post_gallery($output, $attr) {
 
     return $output;
 }
+
 
 ?>

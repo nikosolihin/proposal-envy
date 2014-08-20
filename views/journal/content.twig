@@ -3,9 +3,9 @@
     <div class="small-12 columns">
       <h4>Filter By Categories:</h4>
       <select class="category-select">
-        <option value="{{site.url}}/journal">All</option>
+        <option selected value="{{site.url}}/journal">All</option>
         {% for category in categories %}
-        <option {% if chosen_slug == category.slug %}selected{% endif %} value="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</option>
+        <option value="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</option>
         {% endfor %}
       </select>
     </div>
@@ -14,11 +14,11 @@
     <div class="large-2 hide-for-medium-down columns">
       <ul class="side-nav journal-category-nav">
         <h4>Filter By Categories:</h4>
-        <li class="journal-category-list">
+        <li class="journal-category-list journal-selected">
           <a class="journal-category-link" href="{{site.url}}/journal/">All</a>
         </li>
         {% for category in categories %}
-        <li class="journal-category-list{% if chosen_slug == category.slug %} journal-selected{% endif %}">
+        <li class="journal-category-list">
           <a class="journal-category-link" href="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</a>
         </li>
         {% endfor %}
