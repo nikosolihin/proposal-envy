@@ -2,11 +2,7 @@
   <div class="row max-width story-wrap">
     <div class="medium-12 columns">
       <h4>{{post.post_date|date('F j, Y')}}</h4>
-      {% if post_type == 'Stories' %}
-        <h2>{{ (post.get_field('story_type') == "success") ? 'Success Story:&nbsp;' : 'Proposal Story:&nbsp;'}} {{post.title}}</h2>
-      {% else %}
-        <h2>{{post.title}}</h2>
-      {% endif %}
+      <h2>{{ (post.get_field('story_type') == "success") ? 'Success Story:&nbsp;' : 'Proposal Story:&nbsp;'}} {{post.title}}</h2>
       <a href="#story-jump" class="button wire">
         <i class="icon-share"></i>
         Share this

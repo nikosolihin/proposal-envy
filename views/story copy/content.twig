@@ -2,9 +2,9 @@
   {% if post.get_field('story_excerpt') is not empty %}
     <div class="row max-width">
       <div class="little-nav small-12 medium-2 large-3 xlarge-4 text-right hide-for-small-only columns">
-        <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
+        <a href="{{site.url}}/stories/" class="all-posts">
           <i class="icon-left-dir"></i>
-          All {{post_type}}
+          All Stories
         </a>
       </div>
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">
@@ -19,9 +19,9 @@
   {% else %}
     <div class="row max-width entry-content">
       <div class="little-nav small-12 medium-2 large-3 xlarge-4 text-right hide-for-small-only columns">
-        <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
+        <a href="{{site.url}}/stories/" class="all-posts">
           <i class="icon-left-dir"></i>
-          All {{post_type}}
+          All Stories
         </a>
       </div>
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">

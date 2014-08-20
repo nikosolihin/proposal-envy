@@ -6,6 +6,7 @@ $settings_args = array(
   'name' => 'journal-settings'
 );
 
+// get all
 $journal_args = array(
   'post_type' => 'journal',
   'orderby' => 'most_recent'
@@ -14,7 +15,7 @@ $journal_args = array(
 $context = Timber::get_context();
 $context['settings'] = Timber::get_post($settings_args);
 $context['journal'] = Timber::get_posts($journal_args);
-// get all non-empty categories except uncategorized for dropdown
-$context['categories'] = Timber::get_terms('category', 'orderby=name&hide_empty=1');
+// for dropdown
+$context['categories'] = Timber::get_terms('category', 'orderby=name');
 
 Timber::render(array('page-journal.twig'), $context);

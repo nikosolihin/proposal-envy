@@ -1,75 +1,54 @@
 <section class="journal-content">
-  <div class="row show-for-small-only journal-select">
+  <div class="row show-for-medium-down journal-select">
     <div class="small-12 columns">
       <h4>Filter By Categories:</h4>
       <select class="category-select">
         <option value="{{site.url}}/journal">All</option>
         {% for category in categories %}
-        <option value="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</option>
+        <option {% if chosen_slug == category.slug %}selected{% endif %} value="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</option>
         {% endfor %}
       </select>
     </div>
   </div>
-
-{#   <div class="row">
-    {% for post in journal %}
-    <article class="small-12 medium-4 columns end journal-article">
-      <a href="{{post.permalink}}">
-        <div class="row">
-          <div class="journal-image small-1 columns" style="background-image: url({{post.thumbnail.src}})"></div>
-          <div class="journal-info small-11 columns">
-            <h4>{{post.title}}</h4>
-            <p>{{post.get_field('story_excerpt')|excerpt(15)}}</p>
-          </div>
-        </div>
-      </a>
-    </article>
-    {% endfor %} #}
-
-{#     <div class="small-12 columns">
-      <div class="row">
-        {% for post in success %}
-          <article class="small-12 medium-4 columns end post-article">
-            <a href="{{site.url}}/{{post.post_type}}/{{post.post_name}}">
-              <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
-              </div>
-              <div class="post-info">
-                <h4>{{post.title}}</h4>
-                <p>{{post.get_field('story_excerpt')|excerpt(15)}}</p>
-              </div>
-            </a>
-          </article>
+  <div class="row journal-latest">
+    <div class="large-2 hide-for-medium-down columns">
+      <ul class="side-nav journal-category-nav">
+        <h4>Filter By Categories:</h4>
+        <li class="journal-category-list">
+          <a class="journal-category-link" href="{{site.url}}/journal/">All</a>
+        </li>
+        {% for category in categories %}
+        <li class="journal-category-list{% if chosen_slug == category.slug %} journal-selected{% endif %}">
+          <a class="journal-category-link" href="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</a>
+        </li>
         {% endfor %}
-      </div>
-      <div class="row stories-latest">
-        <h2>Latest Stories</h2>
-        <div class="row">
-          {% for post in recent|slice(0, 8) %}
-            <article class="small-12 medium-4 large-3 columns end post-article">
-              <a href="{{post.permalink}}">
-                <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
-                </div>
-                <div class="post-info">
-                  <h4>{{post.title}}</h4>
-                  <p>{{post.get_field('story_excerpt')|excerpt(10)}}</p>
-                </div>
-              </a>
-            </article>
-          {% endfor %}
-        </div>
-        <div class="row">
-          <ul class="post-list">
-            {% for post in recent|slice(8, length) %}
-              <li class="small-12 columns">
-                <a href="{{post.permalink}}" class="row">
-                  <span class="post-date small-12 medium-3 large-2 columns">{{post.post_date|date('F j, Y')}}</span>
-                  <span class="post-title small-12 medium-9 large-10 columns">{{post.title}}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div> #}
+      </ul>
+    </div>
+    <div class="small-12 large-10 columns journal-list">
+      <h2>{{chosen_name}}</h2>
+      {% for post in posts|slice(0, 6) %}
+      <article class="small-12 large-6 xlarge-4 columns post-article">
+        <a href="{{post.permalink}}">
+          <div class="row">
+            <div class="post-image small-3 medium-4 columns" style="background-image: url({{post.thumbnail.src}})"></div>
+            <div class="post-info small-9 medium-8 columns">
+              <h4>{{post.title}}</h4>
+              <p>{{post.get_field('journal_excerpt')|excerpt(10)}}</p>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+      <ul class="post-list">
+        {% for post in posts|slice(5, length) %}
+          <li class="small-12 columns">
+            <a href="{{post.permalink}}" class="row">
+              <span class="post-date small-12 medium-3 large-2 columns">{{post.post_date|date('F j, Y')}}</span>
+              <span class="post-title small-12 medium-9 large-10 columns">{{post.title}}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </section>

@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block style %}
+  {% include 'story/style.twig' %}
+{% endblock %}
+
+{% block header %}
+  {% include 'story/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  {% include 'story/content.twig' %}
+  {% include 'story/social.twig' %}
+  {% include 'story/adjacent-posts.twig' %}
+{% endblock %}
