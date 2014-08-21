@@ -13,13 +13,19 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
     // Create array of new styles
     $new_styles = array(
       array(
-        'title' => __( 'Styling', 'wpex' ),
+        'title' => __( 'Embed', 'wpex' ),
         'items' => array(
           array(
-            'title'     => __('Video','wpex'),
+            'title'     => __('Youtube/Vimeo','wpex'),
             'wrapper'  => true,
             'block'    => 'div',
             'classes'   => 'flex-video widescreen'
+          ),
+          array(
+            'title'     => __('Instagram/Twitter/Vine','wpex'),
+            'wrapper'  => true,
+            'block'    => 'div',
+            'classes'   => 'text-center'
           )
         )
       )
