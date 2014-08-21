@@ -10,6 +10,16 @@
 
     <title>{% if post.post_type == 'page' %}This is a page | {{wp_title}}{% else %}This is a post{% endif %}</title>
 
+    {# Facebook OG Stuff #}
+    <meta property="og:title" content="{{post.title}}" />
+    <meta property="og:site_name" content="{{site.name}}"/>
+    <meta property="og:url" content="{{site.url}}" />
+    <meta property="og:description" content="{{post.get_field('story_excerpt')}}" />
+    <meta property="fb:app_id" content="1518724951675226" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:author" content="https://www.facebook.com/proposalenvy" />
+
     <link rel="stylesheet" href="{{site.theme.link}}/css/app.css" />
     <link rel="pingback" href="{{site.pingback_url}}" />
     <link rel="icon" href="{{site.theme.link}}/assets/img/icons/favicon.ico" type="image/x-icon">
