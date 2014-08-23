@@ -25,4 +25,5 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['options'] = get_fields('options');
+$context['wp_title'] = 'Proposal Envy - ' . $post->title();
 Timber::render(array('page-' . $post->post_name . '.twig'), $context);

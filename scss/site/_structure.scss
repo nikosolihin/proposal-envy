@@ -228,6 +228,20 @@ footer {
 	 * ------------------------------------
 	 */
 
+	/* Packages
+	* -------------------------------------
+	*/
+	.packages-faq {
+		// @include grid-debug(250px);
+		h4 {
+			color: #666;
+		}
+		p {
+			color: #777;
+			line-height: 1.8;
+		}
+	}
+
 
 
 	/* Journal
@@ -242,7 +256,6 @@ footer {
 		height: rem-calc(280);
 		background-size: cover;
 		background-position: center center;
-		// @include grid-debug(250px);
 		h2, h4 {
 			color: #ffffff;
 		}

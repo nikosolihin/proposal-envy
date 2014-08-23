@@ -62,6 +62,7 @@ module.exports = function(grunt) {
       dist: {
         src: [
           '/js/fastclick/lib/fastclick.js',
+          '/js/firehose.js',
           'js/foundation/js/foundation/foundation.js',
           'js/foundation/js/foundation/foundation.reveal.js',
           'js/init-foundation.js',

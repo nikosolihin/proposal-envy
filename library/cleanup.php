@@ -5,7 +5,6 @@
  * ----------------------------------------------------------------------------
  */
 
-
 add_action('after_setup_theme','start_cleanup');
 
 function start_cleanup() {

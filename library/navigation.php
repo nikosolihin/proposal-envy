@@ -34,12 +34,11 @@ add_filter('acf/options_page/settings', 'my_acf_options_page_settings');
  * Remove Confusing Wordpress Default Menus for client
  */
 function remove_menus(){
-  // remove_menu_page( 'index.php' );                   //Dashboard
-  // remove_menu_page( 'edit.php' );                    //Posts
+  remove_menu_page( 'index.php' );                   //Dashboard
+  remove_menu_page( 'edit.php' );                    //Posts
   // remove_menu_page( 'upload.php' );                  //Media
   // remove_menu_page( 'edit.php?post_type=page' );     //Pages
-  remove_menu_page( 'edit.php?post_type=vecb_editor_buttons' );
-  remove_menu_page( 'admin.php?page=cpt_main_menu' );
+  remove_menu_page( 'edit.php?post_type=vecb_editor_buttons' ); // Visual editor custom buttons
   remove_menu_page( 'edit-comments.php' );           //Comments
   // remove_menu_page( 'themes.php' );                  //Appearance
   // remove_menu_page( 'plugins.php' );                 //Plugins
@@ -47,6 +46,8 @@ function remove_menus(){
   remove_menu_page( 'tools.php' );                      //Tools
   // remove_menu_page( 'options-general.php' );         //Settings
   remove_submenu_page( 'themes.php', 'widgets.php' );
+  remove_submenu_page( 'themes.php', 'customize.php' );
+  remove_submenu_page( 'themes.php', 'themes.php' );
   remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
 }
 add_action( 'admin_menu', 'remove_menus' );
@@ -58,7 +59,7 @@ add_action( 'admin_menu', 'remove_menus' );
 function replace_admin_menu_icons_css() {
     ?>
     <style>
-        #adminmenu #toplevel_page_acf-options-footer div.wp-menu-image:before {
+        #adminmenu #toplevel_page_acf-options-header div.wp-menu-image:before {
             content: "\f319";
         }
 /*        #adminmenu #toplevel_page_cpt_main_menu,
