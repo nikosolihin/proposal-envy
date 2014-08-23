@@ -6,8 +6,8 @@
 if( function_exists('acf_add_options_sub_page') )
 {
     acf_add_options_sub_page(array(
-        'title' => 'Header',
-        'menu' => 'Header Options'
+        'title' => 'Menu',
+        'menu' => 'Menu Options'
     ));
     acf_add_options_sub_page(array(
         'title' => 'Footer',

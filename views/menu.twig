@@ -4,12 +4,12 @@
       <li class="logo">
         <h1>
           <a href="proposalenvy.dev">
-            <img src="{{site.theme.link}}/assets/svg/svgs/menu.svg" alt="Proposal Envy">
+            <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
           </a>
         </h1>
       </li>
     </ul>
-    <section class="top-bar-section">
+    <section class="top-bar-section menu-group">
       <ul class="right">
         {% for item in menu.get_items %}
           <li class="{{item.classes | join(' ')}}">

@@ -50,13 +50,11 @@ $(function() {
     window.location.href = $(this).val();
   });
 
-  // Pause background video when hero-video is clicked
-  $("#play-button").click(function(e){
+  // Pause hero video
+  $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
     $("#hero-video").get(0).pause();
-    $("#video-iframe")[0].src += "?autoplay=1";
-    e.preventDefault();
   });
-  $(".close-reveal-modal").click(function(){
+  $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
     $("#hero-video").get(0).play();
   });
 
@@ -86,4 +84,22 @@ $(function() {
 
   // sets up image to use fluidbox
   $("figure a").fluidbox();
+
+  // Mailchimp submission via AJAX
+  // $('#subscribe').ajaxChimp({
+  //   url: '//proposalenvy.us9.list-manage.com/subscribe/post?u=ca8ce0af86bcc57be42d033e5&amp;id=569d343fb2',
+  //   callback: subCallbackFunction
+  // });
+
+  // function subCallbackFunction (resp) {
+  //   console.log(resp);
+  //   $('#subscribe button').addClass('disabled');
+  //   if (resp.result === 'success') {
+  //     $('#subscribe-email').val('Check email for verification...');
+  //   } else {
+  //     // $('#subscribe-email').parent('div').addClass('has-error');
+  //     // $('#subscribe-email').parent('div').append("<p class='val-msg'>" + resp.msg.substring(4) + "</p>");
+  //     $('#subscribe button').removeClass('disabled');
+  //   }
+  // }
 });

@@ -1,11 +1,11 @@
 <header class="hero">
-  <div class="row hero-action">
+  <div class="row hero-action small-only-text-center">
     <div class="small-12 columns">
       <h3 class="hero-subtitle">{{post.get_field('hero_subtitle')}}</h3>
       <h1 class="hero-title">{{post.get_field('hero_title')}}</h1>
       <h5 class="hero-tagline">{{post.get_field('hero_tagline')}}</h5>
-      <a href="{{post.get_field('hero_page_url')}}" class="button coral">
-        {{post.get_field('hero_page_url') | slice(24,length-1)}}
+      <a href="http://{{post.get_field('hero_link_url')}}" class="button coral">
+        {{post.get_field('hero_link_text')}}
       </a>
       <a href="#" data-reveal-id="videoModal" class="button wire" id="play-button">
         <i class="icon-play"></i>
@@ -13,7 +13,7 @@
       </a>
       <div id="videoModal" class="reveal-modal large" data-reveal>
         <div class="flex-video">
-          <iframe id="video-iframe" src="http://www.youtube.com/embed/{{post.get_field('hero_video_url')}}" frameborder="0" allowfullscreen></iframe>
+          <iframe id="hero-iframe" width="1280" height="720" src="http://www.youtube-nocookie.com/embed/{{post.get_field('hero_video_url')}}" frameborder="0" allowfullscreen=""></iframe>
         </div>
         <a class="close-reveal-modal">&#215;</a>
       </div>

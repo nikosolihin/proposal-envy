@@ -6,20 +6,41 @@
       Error loading custom fields stylesheet.
     {% endblock %}
   </style>
-  <main>
-    {% include 'menu.twig' %}
 
-    {% block header %}
-      Error loading header unit.
-    {% endblock %}
+  {# Off-canvas menu #}
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
 
-    {% block content %}
-      Error loading content unit.
-    {% endblock %}
+      <a class="right-off-canvas-toggle" href="#" >Menu</a>
 
-    {% include 'footer.twig' %}
-    {{ function('wp_footer') }}
-  </main>
+      <!-- Off Canvas Menu -->
+      <aside class="right-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul>
+          <li><a href="#">Item 1</a></li>
+        </ul>
+      </aside>
+
+      <main>
+        {% include 'menu.twig' %}
+
+{#         {% block header %}
+          Error loading header unit.
+        {% endblock %}
+
+        {% block content %}
+          Error loading content unit.
+        {% endblock %} #}
+
+        {% include 'footer.twig' %}
+        {{ function('wp_footer') }}
+      </main>
+
+      <!-- close the off-canvas menu -->
+      <a class="exit-off-canvas"></a>
+    </div>
+  </div>
+
   <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

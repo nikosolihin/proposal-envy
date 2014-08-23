@@ -199,7 +199,6 @@ function my_post_gallery($output, $attr) {
         if (!$attr['orderby'])
             unset($attr['orderby']);
     }
-
     extract(shortcode_atts(array(
         'order' => 'ASC',
         'orderby' => 'menu_order ID',
@@ -212,7 +211,6 @@ function my_post_gallery($output, $attr) {
         'include' => '',
         'exclude' => ''
     ), $attr));
-
     $id = intval($id);
     if ('RAND' == $order) $orderby = 'none';
 
@@ -225,26 +223,27 @@ function my_post_gallery($output, $attr) {
             $attachments[$val->ID] = $_attachments[$key];
         }
     }
-
     if (empty($attachments)) return '';
-
-    // Here's your actual output, you may customize it to your need
     $output = "<div class=\"story-carousel\">\n";
-    // Now you loop through each attachment
     foreach ($attachments as $id => $attachment) {
-        // Fetch the thumbnail (or full image, it's up to you)
-//      $img = wp_get_attachment_image_src($id, 'medium');
-//      $img = wp_get_attachment_image_src($id, 'my-custom-image-size');
         $img = wp_get_attachment_image_src($id, 'full');
-
         $output .= "<div class=\"story-carousel-content\" style=\"background-image: url('{$img[0]}');\">\n";
-        // $output .= "<img src=\"{$img[0]}\" width=\"{$img[1]}\" height=\"{$img[2]}\" alt=\"\" />\n";
         $output .= "</div>\n";
     }
     $output .= "</div>\n";
-
     return $output;
 }
 
 
+/**
+ * Allow SVG upload
+ * ----------------------------------------------------------------------------
+ */
+
+// http://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
+function cc_mime_types( $mimes ){
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
 ?>

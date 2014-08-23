@@ -1,0 +1,12 @@
+.hero-bg {
+  background-image: url({{TimberImage(post.get_field('mobile_bg')).src}});
+}
+.success-story {
+  background-image: linear-gradient(rgba({{success.get_field('story_color')|toRGB}},0.70),rgba({{success.get_field('story_color')|toRGB}},0.70)),url({{success.thumbnail.src}});
+}
+.proposal-story {
+  background-image: linear-gradient(rgba({{proposal.get_field('story_color')|toRGB}},0.70), rgba({{proposal.get_field('story_color')|toRGB}},0.70)),url({{proposal.thumbnail.src}});
+}
+.hint {
+  background-image: url({{TimberImage(options.hint_bg).src}});
+}

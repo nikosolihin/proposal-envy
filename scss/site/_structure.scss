@@ -152,8 +152,11 @@ h2 {
 	position: fixed;
 	z-index: 10;
 }
+.menu-group {
+	margin-top: rem-calc(25);
+}
 .logo {
-	padding-top: rem-calc(5);
+	margin-top: rem-calc(10);
 }
 .current-menu-item .nav-item, .current_page_item .nav-item {
 	color: $primary-color;
@@ -172,29 +175,29 @@ footer .current-menu-item .nav-item:hover,footer .current_page_item .nav-item:ho
 
 footer {
 	background-color: $footer-bg;
-	padding: rem-calc(70) 0 rem-calc(10) 0;
+	padding: rem-calc(50) 0 rem-calc(10) 0;
 	color: #ABABAB;
 	a { color: #ABABAB; }
 	ul {
 		list-style-type: none;
 		margin: 0;
 	}
-	p, li {
-		margin-bottom: rem-calc(10);
-	}
 	h5, ul, a, p {
 		font-size: rem-calc(14);
 	}
+	h5 {
+		margin-bottom: rem-calc(8);
+	}
 	.button {
 		margin: 0;
+	}
+	.quicklinks, .contact {
+		margin-bottom: rem-calc(30);
 	}
 }
 .social {
 	margin-top: rem-calc(20);
 	li a>i {
-		-webkit-border-radius: $footer-icon-radius;
-		-khtml-border-radius: $footer-icon-radius;
-		-moz-border-radius: $footer-icon-radius;
 		border-radius: $footer-icon-radius;
 		background-color: #bbbbbb;
 		cursor: pointer;
@@ -202,10 +205,11 @@ footer {
 		width: $footer-icon-radius*2;
 		display: table;
 		text-align: center;
-		transition: all 0.5s ease;
-		-moz-transition: all 0.5s ease;
-		-webkit-transition: all 0.5s ease;
-		position: relative;
+		transition: all 400ms ease;
+		padding-top: rem-calc(5);
+	}
+	li a:hover>i {
+		background-color: $primary-color;
 	}
 }
 .footer-info {
@@ -216,7 +220,11 @@ footer {
 		font-size: rem-calc(12);
 	}
 }
-
+.contact i:before {
+	color: #888;
+	font-size: 110%;
+	margin-right: 10px;
+}
 
 /**
  * 4.0 Content
@@ -232,7 +240,6 @@ footer {
 	* -------------------------------------
 	*/
 	.packages-faq {
-		// @include grid-debug(250px);
 		h4 {
 			color: #666;
 		}
@@ -356,7 +363,6 @@ footer {
 		height: rem-calc(350);
 		background-size: cover;
 		background-position: center center;
-		// @include grid-debug(250px);
 		h2, h4 {
 			color: #ffffff;
 		}
@@ -472,9 +478,8 @@ footer {
 		@extend %vertical-align-parent;
 	}
 	.hero-bg {
-		background-image: url('../assets/img/hero-bg.jpg');
 		background-size: cover;
-		background-position: 76% center;
+		background-position: center center;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -495,6 +500,7 @@ footer {
 		background-size: cover;
 	}
 	.hero-action {
+		// @include grid-debug(250px);
 		@extend %vertical-align;
 	}
 	#hero-mask {
@@ -504,7 +510,10 @@ footer {
 		height: 100%;
 	}
 	.hero-subtitle {
-		font-size: rem-calc(21);
+		font-size: rem-calc(20);
+		@media #{$medium-up} {
+			font-size: rem-calc(22);
+		}
 		font-family: $serif-font-family;
 		font-style: italic;
 		color: #fff;
@@ -512,7 +521,10 @@ footer {
 		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 	}
 	.hero-title {
-		font-size: rem-calc(88);
+		font-size: rem-calc(46);
+		@media #{$medium-up} {
+			font-size: rem-calc(80);
+		}
 		letter-spacing: rem-calc(10);
 		font-family: $demi-font-family;
 		text-transform: uppercase;
@@ -521,10 +533,15 @@ footer {
 		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 	}
 	.hero-tagline {
+		@media #{$medium-up} {
+			font-size: rem-calc(16);
+		}
 		color: #ffffff;
 		margin-bottom: rem-calc(40);
 		font-family: $body-font-family;
 		letter-spacing: rem-calc(1.82);
+		font-size: rem-calc(14);
+		line-height: 1.7;
 	}
 
 	// About Section //////////////////////
@@ -550,19 +567,7 @@ footer {
 		height: rem-calc(23);
 		padding-top: rem-calc(5);
 	}
-	.about-blurb {
-		background: rgba(255,255,255, 0.1) url("../assets/img/icons/watermark.svg") no-repeat center center;
-		margin-top: rem-calc(10);
-	}
 	.gradient-text {
-		height: rem-calc(250);
-		padding-top: rem-calc(78);
-		@media #{$large-up} {
-			padding-top: rem-calc(90);
-		}
-		@media #{$xlarge-up} {
-			padding-top: rem-calc(103);
-		}
 		font-family: $h2-header-font-family;
 		font-weight: 400;
 		font-size: rem-calc(20);
@@ -601,17 +606,25 @@ footer {
 		}
 	}
 	.success-story, .proposal-story {
-		padding: rem-calc(75) rem-calc(100);
+		padding: rem-calc(65) rem-calc(50);
+		@media #{$medium-up} {
+			padding: rem-calc(75) rem-calc(100);
+		}
+		@media #{$large-up} {
+			padding: rem-calc(60) rem-calc(80);
+		}
 		@media #{$xlarge-up} {
 			padding: rem-calc(75) rem-calc(170);
 		}
+		height: rem-calc(500);
 	}
 	// Hint Section ///////////
 	.hint {
 		h5, p {
 			color: #fff;
 		}
-		padding: rem-calc(55) 0 rem-calc(30);
+		p { margin-bottom: 0; }
+		padding: rem-calc(40) 0;
 	}
 
 

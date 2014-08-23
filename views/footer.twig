@@ -1,9 +1,8 @@
 <footer>
   <div class="row">
-    <div class="medium-3 columns">
+    <div class="medium-3 columns quicklinks">
       <h5>Quick Links</h5>
-      <div class="row">
-        <div class="medium-4 columns">
+
           <ul>
             {% for item in menu.get_items %}
               <li class="{{item.classes | join(' ')}}">
@@ -11,29 +10,16 @@
               </li>
             {% endfor %}
           </ul>
-        </div>
-      </div>
+
     </div>
     <div class="medium-4 columns contact">
       <h5>Keep in touch</h5>
-      <div class="row">
-        <div class="medium-1 columns">
-          <ul>
-            <li>icon</li>
-            <li>icon</li>
-            <li>icon</li>
-            <li>icon</li>
-          </ul>
-        </div>
-        <div class="medium-9 end columns">
-          <ul>
-            <li>{{options.contact_email}}</li>
-            <li>{{options.contact_phone}}</li>
-            <li>{{options.contact_bbm}}</li>
-            <li>{{options.contact_address}}</li>
-          </ul>
-        </div>
-      </div>
+      <ul>
+        <li><i class="icon-email"></i>{{options.contact_email}}</li>
+        <li><i class="icon-phone-squared"></i>{{options.contact_phone}}</li>
+        <li><i class="icon-bbm"></i>{{options.contact_bbm}}</li>
+        {% if options.contact_address is not empty %}<li><i class="icon-location"></i>{{options.contact_address}}</li>{% endif %}
+      </ul>
     </div>
     <div class="medium-5 columns newsletter">
       <div class="row">
@@ -42,52 +28,60 @@
           <p>Sign up for updates &amp; exciting offers from us.</p>
         </div>
       </div>
-      <div class="row collapse">
-        <div class="small-6 columns">
-          <input type="text" placeholder="Your Email Address" class="radius">
+      <form id="subscribe" class="row collapse" target="_blank">
+        <div class="small-8 medium-7 large-9 columns">
+          <input id="subscribe-email" type="email" placeholder="Your Email Address" class="radius" required>
         </div>
-        <div class="small-3 end columns">
+        <div class="small-4 medium-5 large-3 end columns">
           <button type="submit" class="button postfix radius">Subscribe</button>
         </div>
-      </div>
+      </form>
       <div class="row">
         <div class="medium-12 columns">
           <ul class="inline-list social text-center">
-            <li>
-              <a href="" target="_blank">
-                <i class="icon-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank">
-                <i class="icon-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank">
-                <i class="icon-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank">
-                <i class="icon-pinterest"></i>
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank">
-                <i class="icon-youtube-play"></i>
-              </a>
-            </li>
+            {% for item in options.social_links %}
+              {% if item == 'facebook' %}
+                <li>
+                  <a href="http://www.{{options.facebook_url}}" target="_blank">
+                    <i class="icon-{{item}}"></i>
+                  </a>
+                </li>
+              {% elseif item == 'instagram' %}
+                <li>
+                  <a href="http://www.{{options.instagram_url}}" target="_blank">
+                    <i class="icon-{{item}}"></i>
+                  </a>
+                </li>
+              {% elseif item == 'twitter' %}
+                <li>
+                  <a href="http://www.{{options.twitter_url}}" target="_blank">
+                    <i class="icon-{{item}}"></i>
+                  </a>
+                </li>
+              {% elseif item == 'pinterest' %}
+                <li>
+                  <a href="http://www.{{options.pinterest_url}}" target="_blank">
+                    <i class="icon-{{item}}"></i>
+                  </a>
+                </li>
+              {% elseif item == 'youtube-play' %}
+                <li>
+                  <a href="http://www.{{options.youtube_url}}" target="_blank">
+                    <i class="icon-{{item}}"></i>
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       </div>
     </div>
   </div>
   <div class="row footer-info">
-    <div class="large-2 columns text-left">
-      <img src="{{site.theme.link}}/assets/svg/svgs/logo-light.svg" alt="Copyright - Proposal Envy">
+    <div class="hide-for-small-only medium-4 columns text-left">
+      <img src="{{site.theme.link}}/assets/svg/logo-light.svg" alt="Copyright - Proposal Envy">
     </div>
-    <div class="large-10 columns text-right">
+    <div class="medium-8 columns text-right">
       <p> &copy; {{now|date('Y')}} Proposal Envy. All rights reserved</p>
     </div>
   </div>

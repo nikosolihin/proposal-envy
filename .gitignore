@@ -1,5 +1,6 @@
 .DS_Store
 node_modules/
+bower_components/
 .htaccess
 wp-content/uploads/
 wp-content/blogs.dir/
@@ -13,3 +14,4 @@ wp-content/cache/
 wp-content/backups/
 sitemap.xml.gz
 wp-config.php
+assets/
