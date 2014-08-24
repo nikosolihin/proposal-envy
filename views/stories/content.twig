@@ -6,42 +6,27 @@
           <article class="small-12 medium-4 columns end post-article">
             <a href="{{post.permalink}}">
               <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
-              </div>
-              <div class="post-info">
-                <h4>{{post.title}}</h4>
-                <p>{{post.get_field('story_excerpt')|excerpt(15)}}</p>
+                <h2>{{post.title}}</h2>
+                <h5>{{post.get_field('story_place_name')}}</h5>
               </div>
             </a>
           </article>
         {% endfor %}
       </div>
       <div class="row stories-latest">
-        <h2>Latest Stories</h2>
         <div class="row">
-          {% for post in recent|slice(0, 8) %}
+          {% for post in recent %}
             <article class="small-12 medium-4 large-3 columns end post-article">
               <a href="{{post.permalink}}">
                 <div class="post-image" style="background-image: url({{post.thumbnail.src}})">
                 </div>
                 <div class="post-info">
-                  <h4>{{post.title}}</h4>
-                  <p>{{post.get_field('story_excerpt')|excerpt(10)}}</p>
+                  <h2>{{post.title}}</h2>
+                  <h5>{{post.get_field('story_place_name')}}</h5>
                 </div>
               </a>
             </article>
           {% endfor %}
-        </div>
-        <div class="row">
-          <ul class="post-list">
-            {% for post in recent|slice(8, length) %}
-              <li class="small-12 columns">
-                <a href="{{post.permalink}}" class="row">
-                  <span class="post-date small-12 medium-3 large-2 columns">{{post.post_date|date('F j, Y')}}</span>
-                  <span class="post-title small-12 medium-9 large-10 columns">{{post.title}}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
         </div>
       </div>
     </div>

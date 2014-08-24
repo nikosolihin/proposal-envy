@@ -7,40 +7,20 @@
     {% endblock %}
   </style>
 
-  {# Off-canvas menu #}
-  <div class="off-canvas-wrap" data-offcanvas>
-    <div class="inner-wrap">
+  <main>
+    {% include 'menu.twig' %}
 
-      <a class="right-off-canvas-toggle" href="#" >Menu</a>
+    {% block header %}
+      Error loading header unit.
+    {% endblock %}
 
-      <!-- Off Canvas Menu -->
-      <aside class="right-off-canvas-menu">
-        <!-- whatever you want goes here -->
-        <ul>
-          <li><a href="#">Item 1</a></li>
-        </ul>
-      </aside>
+    {% block content %}
+      Error loading content unit.
+    {% endblock %}
 
-      <main>
-        {% include 'menu.twig' %}
-
-{#         {% block header %}
-          Error loading header unit.
-        {% endblock %}
-
-        {% block content %}
-          Error loading content unit.
-        {% endblock %} #}
-
-        {% include 'footer.twig' %}
-        {{ function('wp_footer') }}
-      </main>
-
-      <!-- close the off-canvas menu -->
-      <a class="exit-off-canvas"></a>
-    </div>
-  </div>
-
+    {% include 'footer.twig' %}
+    {{ function('wp_footer') }}
+  </main>
   <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

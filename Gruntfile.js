@@ -64,6 +64,7 @@ module.exports = function(grunt) {
           'js/fastclick/lib/fastclick.js',
           'js/firehose.js',
           // 'js/ajaxchimp/jquery.ajaxchimp.min.js',
+          'js/jquery.scrollupmenu.js',
           'js/foundation/js/foundation/foundation.js',
           'js/foundation/js/foundation/foundation.reveal.js',
           'js/foundation/js/foundation/foundation.offcanvas.js',

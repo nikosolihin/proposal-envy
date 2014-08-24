@@ -69,7 +69,7 @@ h5, h6 {
   color: $primary-color;
   text-transform: uppercase;
   letter-spacing: $h5-header-letter-spacing;
-  margin-bottom: rem-calc(15);
+  margin-bottom: rem-calc(10);
 }
 h6 {
   text-transform: none;
@@ -148,25 +148,162 @@ h2 {
  * ----------------------------------------------------------------------------
  */
 
-.menu-wrap {
-	position: fixed;
-	z-index: 10;
+/* Hamburger & Menu Text Animation */
+#nav-toggle {
+  position: fixed;
+  right: rem-calc(20);
+	@media #{$medium-up} {
+  	right: rem-calc(45);
+	}
+  top: rem-calc(5);
+  border: none;
+  outline: none;
+  z-index: 9999;
 }
-.menu-group {
-	margin-top: rem-calc(25);
+#nav-text {
+  color: #fff;
+  position: relative;
+  right: rem-calc(55);
+  top: rem-calc(12);
+  font-style: normal;
+  font-size: rem-calc(14);
+  letter-spacing: rem-calc(1);
 }
-.logo {
-	margin-top: rem-calc(10);
+
+/* Effects */
+#nav-text {
+  visibility: visible;
+  transition: visibility 0.15s ease-in-out .3s;
 }
-.current-menu-item .nav-item, .current_page_item .nav-item {
-	color: $primary-color;
+#nav-text.off {
+  visibility: hidden;
+  transition: visibility 0.05s ease-in-out;
 }
-footer .current-menu-item .nav-item,footer .current_page_item .nav-item {
-	color: inherit;
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  height: rem-calc(4);
+  width: rem-calc(24);
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
 }
-footer .current-menu-item .nav-item:hover,footer .current_page_item .nav-item:hover {
-	color: $primary-color;
+#nav-toggle span:before {
+  top: rem-calc(-8);
 }
+#nav-toggle span:after {
+  bottom: rem-calc(-8);
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 100ms ease-in-out;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: translateY(-10px) rotate(-45deg);
+  top: rem-calc(10);
+}
+
+/* Menu bar style */
+#nav-bar {
+  background: rgba(255, 105, 86, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  height: rem-calc(60);
+  left: 0;
+  padding: 0;
+}
+#nav-bar.nav-close {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.2s ease-in-out;
+}
+#nav-bar.nav-open {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Overlay style */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  background: rgba(255, 105, 86, 0.9);
+}
+
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  transform: translateY(-50%);
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.overlay ul li {
+  display: block;
+  height: calc(100% / 4);
+  min-height: rem-calc(54);
+  backface-visibility: hidden;
+}
+
+.overlay ul li a {
+  font-size: rem-calc(54);
+  font-weight: 300;
+  display: block;
+  /*border-bottom: 1px solid #FF9990;*/
+  transition: color 0.2s;
+}
+
+.overlay ul li a h5, .overlay ul li a h2 {
+  color: #fff;
+}
+
+/* Effects */
+.overlay-slidedown {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.overlay-slidedown.open {
+  visibility: visible;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-height: 30.5em) {
+  .overlay nav {
+    height: 70%;
+    font-size: rem-calc(34);
+  }
+  .overlay ul li {
+    min-height: rem-calc(34);
+  }
+}
+
 
 /**
  * 3.0 Footer
@@ -356,6 +493,7 @@ footer {
 	*/
 
 	.stories-wrap {
+		@include grid-debug(250px);
 		padding-top: rem-calc(95);
 		@media #{$medium-up} {
 			padding-top: rem-calc(140);
@@ -500,7 +638,6 @@ footer {
 		background-size: cover;
 	}
 	.hero-action {
-		// @include grid-debug(250px);
 		@extend %vertical-align;
 	}
 	#hero-mask {
@@ -521,7 +658,7 @@ footer {
 		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 	}
 	.hero-title {
-		font-size: rem-calc(46);
+		font-size: rem-calc(42);
 		@media #{$medium-up} {
 			font-size: rem-calc(80);
 		}
@@ -539,9 +676,10 @@ footer {
 		color: #ffffff;
 		margin-bottom: rem-calc(40);
 		font-family: $body-font-family;
-		letter-spacing: rem-calc(1.82);
+		letter-spacing: rem-calc(1.2);
 		font-size: rem-calc(14);
 		line-height: 1.7;
+		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 	}
 
 	// About Section //////////////////////
@@ -616,7 +754,7 @@ footer {
 		@media #{$xlarge-up} {
 			padding: rem-calc(75) rem-calc(170);
 		}
-		height: rem-calc(500);
+		height: rem-calc(540);
 	}
 	// Hint Section ///////////
 	.hint {
@@ -661,7 +799,7 @@ footer {
 		@media #{$medium-up} { padding: rem-calc(120) rem-calc(90) rem-calc(0); }
 		@media #{$large-up} { padding: rem-calc(120) rem-calc(160) rem-calc(0); }
 		@media #{$xlarge-up} { padding: rem-calc(140) rem-calc(140) rem-calc(0); }
-		height: rem-calc(400);
+		min-height: rem-calc(500);
 		background-size: cover;
 		background-position: center center;
 		h2, h4 {

@@ -789,7 +789,73 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 	window.FastClick = FastClick;
 }
 ;var FHChat = {product_id: "bb48d3c266bc"};
-FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!function(){var a,b;return b=document.createElement("script"),a=document.getElementsByTagName("script")[0],b.src="https://chat-client-js.firehoseapp.com/chat-min.js",b.async=!0,a.parentNode.insertBefore(b,a)}();;/*
+FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!function(){var a,b;return b=document.createElement("script"),a=document.getElementsByTagName("script")[0],b.src="https://chat-client-js.firehoseapp.com/chat-min.js",b.async=!0,a.parentNode.insertBefore(b,a)}();;;(function ( $, window, document, undefined ) {
+
+	var pluginName = "scrollUpMenu";
+	var defaults = {
+			waitTime: 200,
+			transitionTime: 150,
+			menuCss: {}
+	};
+
+	var lastScrollTop = 0;
+	var $header;
+	var timer;
+	var pixelsFromTheTop;
+
+	// The actual plugin constructor
+	function Plugin ( element, options ) {
+		this.element = element;
+		this.settings = $.extend( {}, defaults, options );
+		this._defaults = defaults;
+		this._name = pluginName;
+		this.init();
+	}
+
+	Plugin.prototype = {
+		init: function () {
+
+			var self = this;
+			$header = $(this.element);
+			// $header.css(self.settings.menuCss);
+			pixelsFromTheTop = $header.height();
+
+			$header.next().css({ 'margin-top': pixelsFromTheTop });
+
+			$(window).bind('scroll',function () {
+				clearTimeout(timer);
+				timer = setTimeout(function() {
+					self.refresh(self.settings)
+				}, self.settings.waitTime );
+			});
+		},
+		refresh: function (settings) {
+			// Stopped scrolling, do stuff...
+			var scrollTop = $(window).scrollTop();
+			// ensure that the header doesnt disappear too early downscroll
+			if (scrollTop > lastScrollTop && scrollTop > pixelsFromTheTop){
+				// $header.slideUp(settings.transitionTime);
+				$header.removeClass('nav-open');
+				$header.addClass('nav-close');
+			} else {
+				// upscroll
+				// $header.slideDown(settings.transitionTime);
+				$header.removeClass('nav-close');
+				$header.addClass('nav-open');
+			}
+			lastScrollTop = scrollTop;
+		}
+	};
+
+	$.fn[ pluginName ] = function ( options ) {
+		return this.each(function() {
+				if ( !$.data( this, "plugin_" + pluginName ) ) {
+						$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
+				}
+		});
+	};
+
+})( jQuery, window, document );;/*
  * Foundation Responsive Library
  * http://foundation.zurb.com
  * Copyright 2014, ZURB
@@ -1986,9 +2052,12 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
   });
 
+
+
   // for homepage parallax on video thing
   $(window).scroll(function() {
-    var offset = $(this).scrollTop()/$(this).height();
+    var ST = $(this).scrollTop();
+    var offset = ST/$(this).height();
     var textSpeed = 265 * offset - 40;
     var textOpacity = 1 - ((.2 * offset) + offset);
     var scrollOpacity = offset + .05;
@@ -1999,6 +2068,10 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     });
     // $("#hero-mask").css({opacity:scrollOpacity});
   });
+
+
+
+
 
   // Redirect to different category pages
   $(".category-select").change(function(){
@@ -2013,32 +2086,51 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     $("#hero-video").get(0).play();
   });
 
-  // sets up default wordpress gallery to use slick carousel
-  var divClasses = $(".story-carousel").parent().attr('class');
-  var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
-  $(".story-carousel").empty();
-  var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
-  var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-  $(".entry-content").html(fresh);
-  // Set top margin here because css won't work
-  $('.story-carousel').prev().css('margin-bottom', 20);
-  $('.story-carousel').css('margin-bottom', 60);
-
-  $(".story-carousel").slick({
-    dots: true,
-    arrows: false,
-    fade: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    swipe: true,
-    touchMove: true,
-    infinite: true,
-    speed: 350,
-    cssEase: 'linear'
+  // Mobile menu
+  $("#nav-toggle").click(function(e){
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $(".overlay").toggleClass('open');
+    $("#nav-text").toggleClass('off');
   });
 
   // sets up image to use fluidbox
   $("figure a").fluidbox();
+
+  // Get outta the way menu!
+  $('#nav-bar').scrollUpMenu();
+
+
+
+
+
+
+
+
+  // sets up default wordpress gallery to use slick carousel
+  // var divClasses = $(".story-carousel").parent().attr('class');
+  // var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
+  // $(".story-carousel").empty();
+  // var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
+  // var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+  // $(".entry-content").html(fresh);
+  // // Set top margin here because css won't work
+  // $('.story-carousel').prev().css('margin-bottom', 20);
+  // $('.story-carousel').css('margin-bottom', 60);
+
+  // $(".story-carousel").slick({
+  //   dots: true,
+  //   arrows: false,
+  //   fade: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 5000,
+  //   swipe: true,
+  //   touchMove: true,
+  //   infinite: true,
+  //   speed: 350,
+  //   cssEase: 'linear'
+  // });
+
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({
@@ -2057,4 +2149,5 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
   //     $('#subscribe button').removeClass('disabled');
   //   }
   // }
+
 });

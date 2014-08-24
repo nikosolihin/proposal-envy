@@ -1,22 +1,23 @@
-<div class="contain-to-grid menu-wrap">
-  <nav class="top-bar" role="navigation" data-topbar>
-    <ul class="title-area">
-      <li class="logo">
-        <h1>
-          <a href="proposalenvy.dev">
-            <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
-          </a>
-        </h1>
-      </li>
+<section id="nav-bar">
+  <a class="nav-identity" href="{{site.url}}">
+    <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
+  </a>
+  <a id="nav-toggle" href="#">
+    <i id="nav-text">MENU</i>
+    <span></span>
+  </a>
+</section>
+<div class="overlay overlay-slidedown">
+  <nav>
+    <ul>
+      {% for item in menu.get_items %}
+        <li>
+          <a href="{{item.get_link}}"><h5>{{item.attr_title}}</h5><h2>{{item.title}}</h2></a>
+        </li>
+      {% endfor %}
     </ul>
-    <section class="top-bar-section menu-group">
-      <ul class="right">
-        {% for item in menu.get_items %}
-          <li class="{{item.classes | join(' ')}}">
-            <a href="{{item.get_link}}" class="nav-item {{item.attr_title | join(' ')}}">{{item.title}}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </section>
   </nav>
+
+  {# Insert social media links here #}
+
 </div>
