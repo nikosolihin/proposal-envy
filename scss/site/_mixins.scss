@@ -1,3 +1,42 @@
+/**
+ * Placeholders
+ * ------------------------------------
+ */
+
+// Vertical align
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Vertical align parent
+%vertical-align-parent {
+  transform-style: preserve-3d;
+}
+
+// Excerpt style
+%excerpt {
+  font-family: $serif-font-family;
+  font-weight: 400;
+  font-size: rem-calc(20);
+  line-height: 1.8;
+  text-align: left;
+}
+
+// Standard stuff for backgrond
+%bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/**
+ * Mixins
+ * ------------------------------------
+ */
+
 // Divider Line
 @mixin divider($color: #EBEAE5) {
   border: 0;
@@ -6,26 +45,6 @@
   width: rem-calc(50);
   text-align:center;
   margin: 0 auto rem-calc(40);
-}
-
-// Vertical align
-// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css
-%vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-// Vertical align parent
-%vertical-align-parent {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 @mixin grid-debug($top) {

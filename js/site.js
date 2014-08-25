@@ -79,37 +79,32 @@ $(function() {
   // Get outta the way menu!
   $('#nav-bar').scrollUpMenu();
 
+  // If .story-carousel exists then set it up
+  if( $(".story-carousel").length ) {
+    // sets up default wordpress gallery to use slick carousel
+    var divClasses = $(".story-carousel").parent().attr('class');
+    var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
+    $(".story-carousel").empty();
+    var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
+    var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+    $(".entry-content").html(fresh);
+    // Set top margin here because css won't work
+    $('.story-carousel').prev().css('margin-bottom', 20);
+    $('.story-carousel').css('margin-bottom', 60);
 
-
-
-
-
-
-
-  // sets up default wordpress gallery to use slick carousel
-  // var divClasses = $(".story-carousel").parent().attr('class');
-  // var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
-  // $(".story-carousel").empty();
-  // var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
-  // var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-  // $(".entry-content").html(fresh);
-  // // Set top margin here because css won't work
-  // $('.story-carousel').prev().css('margin-bottom', 20);
-  // $('.story-carousel').css('margin-bottom', 60);
-
-  // $(".story-carousel").slick({
-  //   dots: true,
-  //   arrows: false,
-  //   fade: true,
-  //   autoplay: true,
-  //   autoplaySpeed: 5000,
-  //   swipe: true,
-  //   touchMove: true,
-  //   infinite: true,
-  //   speed: 350,
-  //   cssEase: 'linear'
-  // });
-
+    $(".story-carousel").slick({
+      dots: true,
+      arrows: false,
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      swipe: true,
+      touchMove: true,
+      infinite: true,
+      speed: 350,
+      cssEase: 'linear'
+    });
+  }
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({
