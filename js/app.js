@@ -789,7 +789,20 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 	window.FastClick = FastClick;
 }
 ;var FHChat = {product_id: "bb48d3c266bc"};
-FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!function(){var a,b;return b=document.createElement("script"),a=document.getElementsByTagName("script")[0],b.src="https://chat-client-js.firehoseapp.com/chat-min.js",b.async=!0,a.parentNode.insertBefore(b,a)}();;;(function ( $, window, document, undefined ) {
+FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!function(){var a,b;return b=document.createElement("script"),a=document.getElementsByTagName("script")[0],b.src="https://chat-client-js.firehoseapp.com/chat-min.js",b.async=!0,a.parentNode.insertBefore(b,a)}();;window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1518724951675226',
+    xfbml      : true,
+    version    : 'v2.0'
+  });
+};
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));;;(function ( $, window, document, undefined ) {
 
 	var pluginName = "scrollUpMenu";
 	var defaults = {
@@ -1911,114 +1924,6 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     };
   }
 }(jQuery, window, window.document));
-;;(function ($, window, document, undefined) {
-  'use strict';
-
-  Foundation.libs.offcanvas = {
-    name : 'offcanvas',
-
-    version : '5.3.1',
-
-    settings : {
-      open_method: 'move',
-      close_on_click: true
-    },
-
-    init : function (scope, method, options) {
-      this.bindings(method, options);
-    },
-
-    events : function () {
-      var self = this,
-          S = self.S,
-          move_class = '',
-          right_postfix = '',
-          left_postfix = '';
-
-      if (this.settings.open_method === 'move') {
-        move_class = 'move-';
-        right_postfix = 'right';
-        left_postfix = 'left';
-      } else if (this.settings.open_method === 'overlap') {
-        move_class = 'offcanvas-overlap';
-      }
-
-      S(this.scope).off('.offcanvas')
-        .on('click.fndtn.offcanvas', '.left-off-canvas-toggle', function (e) {
-          self.click_toggle_class(e, move_class + right_postfix);
-        })
-        .on('click.fndtn.offcanvas', '.left-off-canvas-menu a', function (e) {
-          var settings = self.get_settings(e);
-          if (settings.close_on_click) {
-            self.hide.call(self, move_class + right_postfix, self.get_wrapper(e));
-          }
-        })
-        .on('click.fndtn.offcanvas', '.right-off-canvas-toggle', function (e) {
-          self.click_toggle_class(e, move_class + left_postfix);
-        })
-        .on('click.fndtn.offcanvas', '.right-off-canvas-menu a', function (e) {
-          var settings = self.get_settings(e);
-          if (settings.close_on_click) {
-            self.hide.call(self, move_class + left_postfix, self.get_wrapper(e));
-          }
-        })
-        .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
-          self.click_remove_class(e, move_class + left_postfix);
-          if (right_postfix) self.click_remove_class(e, move_class + right_postfix);
-        });
-
-    },
-
-    toggle: function(class_name, $off_canvas) {
-      $off_canvas = $off_canvas || this.get_wrapper();
-      if ($off_canvas.is('.' + class_name)) {
-        this.hide(class_name, $off_canvas);
-      } else {
-        this.show(class_name, $off_canvas);
-      }
-    },
-
-    show: function(class_name, $off_canvas) {
-      $off_canvas = $off_canvas || this.get_wrapper();
-      $off_canvas.trigger('open').trigger('open.fndtn.offcanvas');
-      $off_canvas.addClass(class_name);
-    },
-
-    hide: function(class_name, $off_canvas) {
-      $off_canvas = $off_canvas || this.get_wrapper();
-      $off_canvas.trigger('close').trigger('close.fndtn.offcanvas');
-      $off_canvas.removeClass(class_name);
-    },
-
-    click_toggle_class: function(e, class_name) {
-      e.preventDefault();
-      var $off_canvas = this.get_wrapper(e);
-      this.toggle(class_name, $off_canvas);
-    },
-
-    click_remove_class: function(e, class_name) {
-      e.preventDefault();
-      var $off_canvas = this.get_wrapper(e);
-      this.hide(class_name, $off_canvas);
-    },
-
-    get_settings: function(e) {
-      var offcanvas  = this.S(e.target).closest('[' + this.attr_name() + ']');
-      return offcanvas.data(this.attr_name(true) + '-init') || this.settings;
-    },
-
-    get_wrapper: function(e) {
-      var $off_canvas = this.S(e ? e.target : this.scope).closest('.off-canvas-wrap');
-
-      if ($off_canvas.length === 0) {
-        $off_canvas = this.S('.off-canvas-wrap');
-      }
-      return $off_canvas;
-    },
-
-    reflow : function () {}
-  };
-}(jQuery, window, window.document));
 ;jQuery(document).foundation();;$(function() {
   // scroll to div ID
   $("a[href*=#]:not([href=#])").click(function() {
@@ -2037,6 +1942,7 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
   // for FB Share
   $(".fb-share").click(function(e){
     e.preventDefault();
+    console.log("working");
     FB.ui({
       method: 'share_open_graph',
       action_type: 'og.likes',
@@ -2052,8 +1958,6 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
   });
 
-
-
   // for homepage parallax on video thing
   $(window).scroll(function() {
     var ST = $(this).scrollTop();
@@ -2068,10 +1972,6 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     });
     // $("#hero-mask").css({opacity:scrollOpacity});
   });
-
-
-
-
 
   // Redirect to different category pages
   $(".category-select").change(function(){
@@ -2093,9 +1993,6 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
     $(".overlay").toggleClass('open');
     $("#nav-text").toggleClass('off');
   });
-
-  // sets up image to use fluidbox
-  $("figure a").fluidbox();
 
   // Get outta the way menu!
   $('#nav-bar').scrollUpMenu();
@@ -2126,6 +2023,9 @@ FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!f
       cssEase: 'linear'
     });
   }
+
+  // sets up image to use fluidbox
+  $("figure a").fluidbox();
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

@@ -216,7 +216,7 @@ h2 {
 
 /* Menu bar style */
 #nav-bar {
-  background: rgba(255, 105, 86, 0.9);
+  // background: rgba(255, 105, 86, 0.9);
   position: fixed;
   top: 0;
   z-index: 2000;
@@ -392,34 +392,11 @@ footer {
 	* -------------------------------------
 	*/
 
-	.journal-wrap {
-		padding-top: rem-calc(95);
-		@media #{$medium-up} {
-			padding-top: rem-calc(140);
-		}
-		height: rem-calc(280);
-		background-size: cover;
-		background-position: center center;
-		h2, h4 {
-			color: #ffffff;
-		}
-		h4 {
-			font-family: $regular-font-family;
-			letter-spacing: rem-calc(3);
-			margin-bottom: 0;
-			font-size: rem-calc(14);
-		}
-		h2 {
-			font-weight: 400;
-			font-size: rem-calc(30);
-			margin: rem-calc(15 0);
-			line-height: 1.5;
-		}
-	}
+	// Category dropdown
 	.journal-select h4, .journal-category-nav h4 {
 		font-size: rem-calc(13);
 		text-transform: none;
-		color: #555;
+		color: #444;
 	}
 	.journal-category-nav {
 		margin-top: rem-calc(20);
@@ -433,88 +410,117 @@ footer {
 	}
 	.journal-selected {
 		font-family: $demi-font-family;
-		.journal-category-link { color: $primary-color!important; }
+		.journal-category-link {
+			color: $primary-color!important;
+			font-size: rem-calc(13);
+		}
 		&:hover {
 			background-color: #f5f8fc;
 		}
 	}
+
+	// Journal Content
 	.journal-content {
 		padding: rem-calc(30 0);
-		.post-article {
-			padding: 0;
-			margin-bottom: rem-calc(20);
-		}
-		.post-image {
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			padding: 0;
-			border-top-right-radius: rem-calc(0);
-			border-bottom-left-radius: rem-calc(2);
-		}
-		.post-article, .post-info {
-			border-top-right-radius: rem-calc(2);
-			border-bottom-right-radius: rem-calc(2);
-			border-bottom-left-radius: rem-calc(0);
-		}
-		.post-article {
-			padding-right: rem-calc(35);
-			margin-bottom: rem-calc(25);
-		}
 	}
-	.journal-list {
-		padding-left: rem-calc(35);
-		.post-list {
-			padding: 0;
+	.journal-article {
+		@extend %bg;
+		border-bottom: rem-calc(1) solid #f1f1f1;
+		&:last-child {
+			border-bottom: none;
 		}
-	}
-	.journal-latest {
-		h2 {
-			margin-top: rem-calc(10);
-			padding: rem-calc(20 0 0 0);
-			border-top: 1px solid #efefef;
-			@media #{$large-up} {
-				border-top: none;
-				padding-top: 0;
+		&:hover {
+			background-color: lighten($primary-color, 2%);
+			h2, h4, p, .coral-meta {
+				color: #fff;
 			}
-			color: #777;
-			font-size: rem-calc(25);
+			.journal-overlay {
+				transition: background 0.2s ease-in;
+				background: rgba(0, 0, 0, 0.35);
+			}
+		}
+		padding-top: rem-calc(30);
+		@media #{$large-up} { margin-bottom: rem-calc(50); }
+	}
+	.journal-overlay {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: background 0.2s ease-out;
+		background: white;
+	}
+	.journal-meta {
+		@extend %post-meta;
+		font-size: rem-calc(12);
+		margin-bottom: rem-calc(6);
+		.coral-meta {
+			color: $primary-color;
 		}
 	}
-	.journal-adjacent {
-		.story-prev h2, .story-next h2 {
-			font-size: rem-calc(26);
-		}
+	.journal-title {
+		@extend %post-title-bold;
+		font-size: rem-calc(24);
+		margin-bottom: rem-calc(15);
 	}
+	.journal-excerpt {
+		color: #888;
+		font-size: rem-calc(15);
+		line-height: 1.6;
+		margin-bottom: rem-calc(25);
+	}
+	.journal-meta, .journal-title, .journal-excerpt {
+		position: relative;
+		z-index: 2;
+	}
+
+
+
+
+
+	// .journal-latest {
+	// 	h2 {
+	// 		margin-top: rem-calc(10);
+	// 		padding: rem-calc(20 0 0 0);
+	// 		border-top: 1px solid #efefef;
+	// 		@media #{$large-up} {
+	// 			border-top: none;
+	// 			padding-top: 0;
+	// 		}
+	// 		color: #777;
+	// 		font-size: rem-calc(25);
+	// 	}
+	// }
+	// .journal-adjacent {
+	// 	.story-prev h2, .story-next h2 {
+	// 		font-size: rem-calc(26);
+	// 	}
+	// }
+
 
 	/* Stories
 	* -------------------------------------
 	*/
-
-	.stories-wrap {
-		@include grid-debug(250px);
+	.stories-wrap, .journal-wrap {
+		// @include grid-debug(250px);
+		@extend %bg;
 		padding-top: rem-calc(180);
 		@media #{$medium-up} {
 			padding-top: rem-calc(200);
 		}
 		height: rem-calc(450);
-		background-size: cover;
-		background-position: center center;
 		h2, h4 {
 			color: #ffffff;
 		}
 		h4 {
-			font-family: $regular-font-family;
-			letter-spacing: rem-calc(3);
-			margin-bottom: 0;
-			font-size: rem-calc(14);
+			@extend %post-place;
+			font-size: rem-calc(15);
 		}
 		h2 {
-			font-weight: 400;
+			@extend %post-title;
 			font-size: rem-calc(30);
-			margin: rem-calc(15 0);
-			line-height: 1.5;
 		}
 	}
 	.stories-content {
@@ -545,35 +551,20 @@ footer {
 	.post-info {
 		padding: rem-calc(0 10);
 	}
-	%post-title {
-		color: #444;
-	  font-family: $serif-font-family;
-	  font-weight: 400;
-	  font-size: rem-calc(20);
-	  margin: rem-calc(0 0 5 0);
-	}
-	%post-place {
-		color: #999;
-		font-family: $regular-font-family;
-	  font-size: rem-calc(13);
-	  letter-spacing: rem-calc(2);
-	}
 	.post-title {
 		@extend %post-title;
 	}
 	.post-title-success {
-		@extend %post-title;
+		@extend %post-title-bold;
 		@extend %vertical-align;
 		color: #fff;
-		font-weight: 700;
 		font-size: rem-calc(26);
-		margin: rem-calc(0 0 0 0);
 	}
 	.post-place {
-		@extend %post-place;
+		@extend %post-meta;
 	}
 	.post-place-success {
-		@extend %post-place;
+		@extend %post-meta;
 		@extend %vertical-align;
 		color: #fff;
 		font-size: rem-calc(14);
@@ -792,7 +783,7 @@ footer {
 	}
 	.story-content {
 		padding-top: rem-calc(50);
-		color: #666666;
+		color: #555;
 		p {
 			strong {
 				font-family: $demi-font-family;

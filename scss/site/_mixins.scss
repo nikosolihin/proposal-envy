@@ -32,6 +32,25 @@
   background-position: center center;
 }
 
+%post-title {
+  color: #444;
+  font-family: $serif-font-family;
+  font-weight: 400;
+  font-size: rem-calc(20);
+  margin: rem-calc(0 0 5 0);
+}
+%post-title-bold {
+  @extend %post-title;
+  font-weight: 700;
+  margin: rem-calc(0 0 0 0);
+}
+%post-meta {
+  color: #999;
+  font-family: $regular-font-family;
+  font-size: rem-calc(13);
+  letter-spacing: rem-calc(2);
+}
+
 /**
  * Mixins
  * ------------------------------------

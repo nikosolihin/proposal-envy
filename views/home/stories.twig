@@ -15,7 +15,7 @@
         <h6>{{proposal.get_field('story_place_name')}}, {{proposal.get_field('story_time')|slice(0,4)}}</h6>
         <hr>
         <p>{{proposal.get_field('story_excerpt')|excerpt(20)}}</p>
-        <a href="{{success.permalink}}" class="button wire">Read Story</a>
+        <a href="{{proposal.permalink}}" class="button wire">Read Story</a>
       </div>
     </div>
   </div>

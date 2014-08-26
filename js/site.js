@@ -16,6 +16,7 @@ $(function() {
   // for FB Share
   $(".fb-share").click(function(e){
     e.preventDefault();
+    console.log("working");
     FB.ui({
       method: 'share_open_graph',
       action_type: 'og.likes',
@@ -31,8 +32,6 @@ $(function() {
     window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
   });
 
-
-
   // for homepage parallax on video thing
   $(window).scroll(function() {
     var ST = $(this).scrollTop();
@@ -47,10 +46,6 @@ $(function() {
     });
     // $("#hero-mask").css({opacity:scrollOpacity});
   });
-
-
-
-
 
   // Redirect to different category pages
   $(".category-select").change(function(){
@@ -72,9 +67,6 @@ $(function() {
     $(".overlay").toggleClass('open');
     $("#nav-text").toggleClass('off');
   });
-
-  // sets up image to use fluidbox
-  $("figure a").fluidbox();
 
   // Get outta the way menu!
   $('#nav-bar').scrollUpMenu();
@@ -105,6 +97,9 @@ $(function() {
       cssEase: 'linear'
     });
   }
+
+  // sets up image to use fluidbox
+  $("figure a").fluidbox();
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

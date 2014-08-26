@@ -13,6 +13,7 @@ $journal_args = array(
 );
 
 $context = Timber::get_context();
+$context['options'] = get_fields('options');
 $context['settings'] = Timber::get_post($settings_args);
 $context['journal'] = Timber::get_posts($journal_args);
 // for dropdown

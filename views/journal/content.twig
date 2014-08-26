@@ -10,8 +10,8 @@
       </select>
     </div>
   </div>
-  <div class="row journal-latest">
-    <div class="large-2 hide-for-medium-down columns">
+  <div class="row max-width journal-latest">
+    <div class="large-2 xlarge-2 xlarge-offset-2 hide-for-medium-down columns">
       <ul class="side-nav journal-category-nav">
         <h4>Filter By Categories:</h4>
         <li class="journal-category-list journal-selected">
@@ -24,18 +24,19 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="small-12 large-10 columns journal-list">
+    <div class="small-12 large-10 xlarge-5 end columns journal-list">
       <h2>{{chosen_name}}</h2>
-      {% for post in posts|slice(0, 6) %}
-      <article class="small-12 columns text-center post-article"{#  style="background-image: url({{post.thumbnail.src}})" #}>
+      {% for post in posts|slice(0, 15) %}
+      <article class="small-12 columns text-center journal-article" style="background-image: url({{post.thumbnail.src}});">
         <a href="{{post.permalink}}">
-          <h4>{{post.post_date|date('F j, Y')}} | {{post.category}}</h4>
-          <h2>{{post.title}}</h2>
-          <p>{{post.get_field('journal_excerpt')}}</p>
+          <span class="journal-overlay"></span>
+          <h4 class="journal-meta">{{post.post_date|date('j M, Y')}} - <span class="coral-meta">{{post.category}}</span></h4>
+          <h2 class="journal-title">{{post.title}}</h2>
+          <p class="journal-excerpt">{{post.get_field('journal_excerpt')}}</p>
         </a>
       </article>
       {% endfor %}
-      <ul class="post-list">
+{#       <ul class="post-list">
         {% for post in posts|slice(5, length) %}
           <li class="small-12 columns">
             <a href="{{post.permalink}}" class="row">
@@ -44,7 +45,10 @@
             </a>
           </li>
         {% endfor %}
-      </ul>
+      </ul> #}
+
+{# background-image: linear-gradient(rgba({{post.get_field('story_color')|toRGB}},0.50),rgba({{post.get_field('story_color')|toRGB}},0.40)),url({{post.thumbnail.src}}); #}
+
     </div>
   </div>
 </section>
