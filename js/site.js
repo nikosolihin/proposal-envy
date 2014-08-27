@@ -14,23 +14,23 @@ $(function() {
   });
 
   // for FB Share
-  $(".fb-share").click(function(e){
-    e.preventDefault();
-    console.log("working");
-    FB.ui({
-      method: 'share_open_graph',
-      action_type: 'og.likes',
-      action_properties: JSON.stringify({
-        object: $(location).attr('href')
-      })
-    }, function(response){});
-  });
+  // $(".fb-share").click(function(e){
+  //   e.preventDefault();
+  //   console.log("working");
+  //   FB.ui({
+  //     method: 'share_open_graph',
+  //     action_type: 'og.likes',
+  //     action_properties: JSON.stringify({
+  //       object: $(location).attr('href')
+  //     })
+  //   }, function(response){});
+  // });
 
-  // for twitter share
-  $(".twitter-share").click(function(e){
-    e.preventDefault();
-    window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
-  });
+  // // for twitter share
+  // $(".twitter-share").click(function(e){
+  //   e.preventDefault();
+  //   window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
+  // });
 
   // for homepage parallax on video thing
   $(window).scroll(function() {
@@ -69,37 +69,48 @@ $(function() {
   });
 
   // Get outta the way menu!
-  $('#nav-bar').scrollUpMenu();
+  // $('#nav-bar').scrollUpMenu();
+
+
+var $container = $('#tiles');
+// initialize Masonry after all images have loaded
+$container.imagesLoaded( function() {
+  $container.masonry({
+    gutter: 10,
+    itemSelector: '.item'
+  });
+});
+
 
   // If .story-carousel exists then set it up
-  if( $(".story-carousel").length ) {
-    // sets up default wordpress gallery to use slick carousel
-    var divClasses = $(".story-carousel").parent().attr('class');
-    var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
-    $(".story-carousel").empty();
-    var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
-    var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-    $(".entry-content").html(fresh);
-    // Set top margin here because css won't work
-    $('.story-carousel').prev().css('margin-bottom', 20);
-    $('.story-carousel').css('margin-bottom', 60);
+  // if( $(".story-carousel").length ) {
+  //   // sets up default wordpress gallery to use slick carousel
+  //   var divClasses = $(".story-carousel").parent().attr('class');
+  //   var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
+  //   $(".story-carousel").empty();
+  //   var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
+  //   var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+  //   $(".entry-content").html(fresh);
+  //   // Set top margin here because css won't work
+  //   $('.story-carousel').prev().css('margin-bottom', 20);
+  //   $('.story-carousel').css('margin-bottom', 60);
 
-    $(".story-carousel").slick({
-      dots: true,
-      arrows: false,
-      fade: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      swipe: true,
-      touchMove: true,
-      infinite: true,
-      speed: 350,
-      cssEase: 'linear'
-    });
-  }
+  //   $(".story-carousel").slick({
+  //     dots: true,
+  //     arrows: false,
+  //     fade: true,
+  //     autoplay: true,
+  //     autoplaySpeed: 5000,
+  //     swipe: true,
+  //     touchMove: true,
+  //     infinite: true,
+  //     speed: 350,
+  //     cssEase: 'linear'
+  //   });
+  // }
 
-  // sets up image to use fluidbox
-  $("figure a").fluidbox();
+  // Setup lightbox
+  // $(".gallery").lightGallery();
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

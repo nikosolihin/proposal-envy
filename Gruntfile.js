@@ -61,12 +61,13 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'js/fastclick/lib/fastclick.js',
+          // 'js/fastclick/lib/fastclick.js',
           // 'js/analytics.js',
-          'js/firehose.js',
+          // 'js/firehose.js',
+          'js/jquery.lightGallery.min.js',
           // 'js/ajaxchimp/jquery.ajaxchimp.min.js',
-          'js/facebook.js',
-          'js/jquery.scrollupmenu.js',
+          // 'js/facebook.js',
+          // 'js/jquery.scrollupmenu.js',
           'js/foundation/js/foundation/foundation.js',
           'js/foundation/js/foundation/foundation.reveal.js',
           'js/init-foundation.js',

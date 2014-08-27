@@ -14,6 +14,13 @@
     <div class="row max-width entry-content">
       <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
         {{post.content}}
+        <ul id="tiles">
+          {% for gallery_img in gallery_imgs %}
+            <li class="item" data-src="{{gallery_img | last}}">
+              <img src="{{gallery_img | first}}" alt="">
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   {% else %}
@@ -26,6 +33,17 @@
       </div>
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">
         {{post.content}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <ul id="tiles">
+          {% for gallery_img in gallery_imgs %}
+            <li data-src="{{gallery_img | last}}">
+              <img src="{{gallery_img | first}}" alt="">
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   {% endif %}

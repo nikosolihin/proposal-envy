@@ -29,8 +29,6 @@ function start_cleanup() {
     add_filter('get_image_tag', 'image_editor', 0, 4);
     add_filter( 'the_content', 'img_unautop', 30 );
 
-    // clean up default gallery output
-    add_filter('post_gallery', 'my_post_gallery', 10, 2);
 }
 
 /**
@@ -191,49 +189,50 @@ function img_unautop($pee) {
  */
 
 //http://stackoverflow.com/questions/19802157/change-wordpress-default-gallery-output
-function my_post_gallery($output, $attr) {
-    global $post;
+// function my_post_gallery($output, $attr) {
+//     global $post;
 
-    if (isset($attr['orderby'])) {
-        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-        if (!$attr['orderby'])
-            unset($attr['orderby']);
-    }
-    extract(shortcode_atts(array(
-        'order' => 'ASC',
-        'orderby' => 'menu_order ID',
-        'id' => $post->ID,
-        'itemtag' => 'dl',
-        'icontag' => 'dt',
-        'captiontag' => 'dd',
-        'columns' => 3,
-        'size' => 'thumbnail',
-        'include' => '',
-        'exclude' => ''
-    ), $attr));
-    $id = intval($id);
-    if ('RAND' == $order) $orderby = 'none';
+//     if (isset($attr['orderby'])) {
+//         $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+//         if (!$attr['orderby'])
+//             unset($attr['orderby']);
+//     }
+//     extract(shortcode_atts(array(
+//         'order' => 'ASC',
+//         'orderby' => 'menu_order ID',
+//         'id' => $post->ID,
+//         'itemtag' => 'dl',
+//         'icontag' => 'dt',
+//         'captiontag' => 'dd',
+//         'columns' => 3,
+//         'size' => 'thumbnail',
+//         'include' => '',
+//         'exclude' => ''
+//     ), $attr));
+//     $id = intval($id);
+//     if ('RAND' == $order) $orderby = 'none';
 
-    if (!empty($include)) {
-        $include = preg_replace('/[^0-9,]+/', '', $include);
-        $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
+//     if (!empty($include)) {
+//         $include = preg_replace('/[^0-9,]+/', '', $include);
+//         $_attachments = get_posts(array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby));
 
-        $attachments = array();
-        foreach ($_attachments as $key => $val) {
-            $attachments[$val->ID] = $_attachments[$key];
-        }
-    }
-    if (empty($attachments)) return '';
-    $output = "<div class=\"story-carousel\">\n";
-    foreach ($attachments as $id => $attachment) {
-        $img = wp_get_attachment_image_src($id, 'full');
-        $output .= "<div class=\"story-carousel-content\" style=\"background-image: url('{$img[0]}');\">\n";
-        $output .= "</div>\n";
-    }
-    $output .= "</div>\n";
-    return $output;
-}
-
+//         $attachments = array();
+//         foreach ($_attachments as $key => $val) {
+//             $attachments[$val->ID] = $_attachments[$key];
+//         }
+//     }
+//     if (empty($attachments)) return '';
+//     $output = "<div class=\"story-carousel\">\n";
+//     foreach ($attachments as $id => $attachment) {
+//         $img = wp_get_attachment_image_src($id, 'full');
+//         $output .= "<div class=\"story-carousel-content\" style=\"background-image: url('{$img[0]}');\">\n";
+//         $output .= "</div>\n";
+//     }
+//     $output .= "</div>\n";
+//     return $output;
+// }
+// clean up default gallery output
+    // add_filter('post_gallery', 'my_post_gallery', 10, 2);
 
 /**
  * Allow SVG upload
@@ -246,4 +245,32 @@ function cc_mime_types( $mimes ){
     return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
+
+
+/**
+ * Bypass stupid gallery
+ * http://wordpress.stackexchange.com/questions/76360/how-to-get-gallery-images
+ * ----------------------------------------------------------------------------
+ */
+
+function grab_ids_from_gallery() {
+    global $post;
+    $attachment_ids = array();
+    $pattern = get_shortcode_regex();
+    $ids = array();
+
+    if (preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) ) {   //finds the     "gallery" shortcode and puts the image ids in an associative array at $matches[3]
+    $count=count($matches[3]);      //in case there is more than one gallery in the post.
+    for ($i = 0; $i < $count; $i++){
+        $atts = shortcode_parse_atts( $matches[3][$i] );
+        if ( isset( $atts['ids'] ) ){
+        $attachment_ids = explode( ',', $atts['ids'] );
+        $ids = array_merge($ids, $attachment_ids);
+        }
+        }
+    }
+      return $ids;
+
+ }
+add_action( 'wp', 'grab_ids_from_gallery' );
 ?>

@@ -570,6 +570,12 @@ footer {
 		font-size: rem-calc(14);
 		margin: 0;
 	}
+	#tiles {
+		list-style-type: none;
+	}
+	.item {
+		margin-bottom: rem-calc(10);
+	}
 
 
 	/* Home
@@ -830,7 +836,7 @@ footer {
 	}
 	.story-carousel {
 		clear: both;
-
+		overflow: hidden;
 		.slick-prev {
 			left: 20px;
 		}
