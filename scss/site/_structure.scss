@@ -574,7 +574,7 @@ footer {
 		list-style-type: none;
 	}
 	.item {
-		margin-bottom: rem-calc(10);
+		margin-bottom: rem-calc(12);
 	}
 
 
@@ -834,7 +834,7 @@ footer {
 		@media #{$medium-up} { margin-left: rem-calc(-60); }
 		padding: rem-calc(30);
 	}
-	.story-carousel {
+	#slideshow {
 		clear: both;
 		overflow: hidden;
 		.slick-prev {
@@ -863,9 +863,11 @@ footer {
 			}
 		}
 	}
-	.story-carousel-content {
-		background-size: cover;
-		background-position: center center;
+	.carousel-content {
+		@extend %bg;
+	}
+	#tiles {
+		margin-top: rem-calc(50);
 	}
 	.story-social {
 		.social li {

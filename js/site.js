@@ -71,46 +71,44 @@ $(function() {
   // Get outta the way menu!
   // $('#nav-bar').scrollUpMenu();
 
-
-var $container = $('#tiles');
-// initialize Masonry after all images have loaded
-$container.imagesLoaded( function() {
-  $container.masonry({
-    gutter: 10,
-    itemSelector: '.item'
-  });
-});
-
-
   // If .story-carousel exists then set it up
   // if( $(".story-carousel").length ) {
-  //   // sets up default wordpress gallery to use slick carousel
-  //   var divClasses = $(".story-carousel").parent().attr('class');
-  //   var carousel = '<div class="story-carousel hide-for-small-only">' + $(".story-carousel").html() + '</div>';
-  //   $(".story-carousel").empty();
-  //   var temp = $(".story-carousel").parent().parent().html().split('<div class="story-carousel"></div>');
-  //   var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-  //   $(".entry-content").html(fresh);
-  //   // Set top margin here because css won't work
-  //   $('.story-carousel').prev().css('margin-bottom', 20);
-  //   $('.story-carousel').css('margin-bottom', 60);
+    // sets up default wordpress gallery to use slick carousel
+    var divClasses = $(".slideshow").parent().attr('class');
+    var carousel = '<div id="slideshow" class="hide-for-small-only">' + $("#slideshow").html() + '</div>';
+    var temp = $(".slideshow").parent().parent().html().split('<div class="slideshow"></div>');
+    var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+    $("#slideshow").remove();
+    $(".entry-content").html(fresh);
+    // Set top margin here because css won't work
+    $("#slideshow").prev().css('margin-bottom', 20);
+    $("#slideshow").css('margin-bottom', 60);
 
-  //   $(".story-carousel").slick({
-  //     dots: true,
-  //     arrows: false,
-  //     fade: true,
-  //     autoplay: true,
-  //     autoplaySpeed: 5000,
-  //     swipe: true,
-  //     touchMove: true,
-  //     infinite: true,
-  //     speed: 350,
-  //     cssEase: 'linear'
-  //   });
+    $("#slideshow").slick({
+      dots: true,
+      arrows: false,
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      swipe: true,
+      touchMove: true,
+      infinite: true,
+      speed: 350,
+      cssEase: 'linear'
+    });
+
+    var $container = $("#tiles");
+    // initialize Masonry after all images have loaded
+    $container.imagesLoaded( function() {
+      $container.masonry({
+        gutter: 12,
+        itemSelector: '.item'
+      });
+      $container.lightGallery();
+      // remove WP Gallery from the DOM
+      $("[id^=gallery-]").remove();
+    });
   // }
-
-  // Setup lightbox
-  // $(".gallery").lightGallery();
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

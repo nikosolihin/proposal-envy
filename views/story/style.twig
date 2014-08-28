@@ -17,8 +17,8 @@ blockquote {
 blockquote p {
   color: rgba({{post.get_field('story_color')|toRGB}},0.75);
 }
-.story-carousel, .slick-track {
-  height: {% if post.get_field('story_gallery_height') %} {{post.get_field('story_gallery_height')}}px; {% else %} 400px; {% endif %};
+#slideshow, .slick-track {
+  height: {% if post.get_field('story_gallery_height') %} {{post.get_field('story_gallery_height')}}px; {% else %} 450px; {% endif %};
 }
 .story-next {
     background-image: linear-gradient(rgba({{post.next.get_field('story_color')|toRGB}},0.50),rgba({{post.next.get_field('story_color')|toRGB}},0.50)),url({{post.next.thumbnail.src}});
