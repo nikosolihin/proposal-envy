@@ -47,9 +47,11 @@
   {% endif %}
 </section>
 
-<div id="slideshow" class="hide-for-small-only">
-  {% for item in post.get_field('story_slideshow') %}
-    <div class="carousel-content" style="background-image: url({{TimberImage(item.slideshow_img).src}});">
+{% if post.get_field('story_slideshow') is not empty %}
+  <div id="slideshow" class="hide-for-small-only">
+    {% for item in post.get_field('story_slideshow') %}
+      <div class="carousel-content" style="background-image: url({{TimberImage(item.slideshow_img).src}});">
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+{% endif %}

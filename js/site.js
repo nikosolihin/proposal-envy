@@ -71,8 +71,8 @@ $(function() {
   // Get outta the way menu!
   // $('#nav-bar').scrollUpMenu();
 
-  // If .story-carousel exists then set it up
-  // if( $(".story-carousel").length ) {
+  // If #slideshow exists then set it up
+  if( $("#slideshow").length ) {
     // sets up default wordpress gallery to use slick carousel
     var divClasses = $(".slideshow").parent().attr('class');
     var carousel = '<div id="slideshow" class="hide-for-small-only">' + $("#slideshow").html() + '</div>';
@@ -96,19 +96,22 @@ $(function() {
       speed: 350,
       cssEase: 'linear'
     });
+  }
 
-    var $container = $("#tiles");
-    // initialize Masonry after all images have loaded
-    $container.imagesLoaded( function() {
-      $container.masonry({
-        gutter: 12,
-        itemSelector: '.item'
-      });
-      $container.lightGallery();
-      // remove WP Gallery from the DOM
-      $("[id^=gallery-]").remove();
+  var $container = $("#tiles");
+  // initialize Masonry after all images have loaded
+  $container.imagesLoaded( function() {
+    $container.masonry({
+      gutter: 12,
+      itemSelector: '.item'
     });
-  // }
+    $container.lightGallery({
+      loop : true
+    });
+    // remove WP Gallery from the DOM
+    $("[id^=gallery-]").remove();
+  });
+
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

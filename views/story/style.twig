@@ -1,5 +1,5 @@
 .story-wrap {
-  background-image: linear-gradient(rgba({{post.get_field('story_color')|toRGB}},0.50),rgba({{post.get_field('story_color')|toRGB}},0.40)),url({{post.thumbnail.src}});
+  background-image: linear-gradient(rgba({{post.get_field('story_overlay')|toRGB}},0.50),rgba({{post.get_field('story_overlay')|toRGB}},0.40)),url({{post.thumbnail.src}});
 }
 .story-content, .story-share {
   background-color: {{ (post.get_field('story_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
