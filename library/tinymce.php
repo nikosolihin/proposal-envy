@@ -20,12 +20,6 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
             'wrapper'  => true,
             'block'    => 'div',
             'classes'   => 'flex-video widescreen'
-          ),
-          array(
-            'title'     => __('Instagram/Twitter/Vine','wpex'),
-            'wrapper'  => true,
-            'block'    => 'div',
-            'classes'   => 'text-center'
           )
         )
       )
