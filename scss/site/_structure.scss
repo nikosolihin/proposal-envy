@@ -343,7 +343,7 @@ footer {
 		display: table;
 		text-align: center;
 		transition: all 400ms ease;
-		padding-top: rem-calc(5);
+		padding-top: rem-calc(7);
 	}
 	li a:hover>i {
 		background-color: $primary-color;
@@ -359,8 +359,11 @@ footer {
 }
 .contact i:before {
 	color: #888;
-	font-size: 110%;
-	margin-right: 10px;
+	font-size: 115%;
+	margin-right: rem-calc(10);
+}
+.whatsapp {
+	margin-left: rem-calc(27);
 }
 
 /**
@@ -944,7 +947,6 @@ footer {
 	 */
 
 	// Insert styles here
-
 
 	/**
 	 * 4.4 Comments
