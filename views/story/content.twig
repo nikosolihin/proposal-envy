@@ -15,11 +15,13 @@
       <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
         {{post.content}}
         <ul id="tiles">
-          {% for gallery_img in gallery_imgs %}
-            <li class="item" data-src="{{gallery_img | last}}">
-              <a href=""><img src="{{gallery_img | first}}" alt=""></a>
-            </li>
-          {% endfor %}
+          {% if gallery_imgs is not empty %}
+            {% for gallery_img in gallery_imgs %}
+              <li class="item" data-src="{{gallery_img | last}}">
+                <a href=""><img src="{{gallery_img | first}}" alt=""></a>
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
         <h3 class="text-center">{{post.cta_message}}</h3>
       </div>
@@ -35,11 +37,13 @@
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">
         {{post.content}}
         <ul id="tiles">
-          {% for gallery_img in gallery_imgs %}
-            <li class="item" data-src="{{gallery_img | last}}">
-              <a href=""><img src="{{gallery_img | first}}" alt=""></a>
-            </li>
-          {% endfor %}
+          {% if gallery_imgs is not empty %}
+            {% for gallery_img in gallery_imgs %}
+              <li class="item" data-src="{{gallery_img | last}}">
+                <a href=""><img src="{{gallery_img | first}}" alt=""></a>
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
         <h3 class="text-center">{{post.cta_message}}</h3>
       </div>

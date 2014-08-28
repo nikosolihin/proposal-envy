@@ -14,23 +14,23 @@ $(function() {
   });
 
   // for FB Share
-  // $(".fb-share").click(function(e){
-  //   e.preventDefault();
-  //   console.log("working");
-  //   FB.ui({
-  //     method: 'share_open_graph',
-  //     action_type: 'og.likes',
-  //     action_properties: JSON.stringify({
-  //       object: $(location).attr('href')
-  //     })
-  //   }, function(response){});
-  // });
+  $(".fb-share").click(function(e){
+    e.preventDefault();
+    console.log("working");
+    FB.ui({
+      method: 'share_open_graph',
+      action_type: 'og.likes',
+      action_properties: JSON.stringify({
+        object: $(location).attr('href')
+      })
+    }, function(response){});
+  });
 
-  // // for twitter share
-  // $(".twitter-share").click(function(e){
-  //   e.preventDefault();
-  //   window.open('https://twitter.com/share?text=Proposal+Story%3A+'+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
-  // });
+  // for twitter share
+  $(".twitter-share").click(function(e){
+    e.preventDefault();
+    window.open('https://twitter.com/share?text='+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
+  });
 
   // for homepage parallax on video thing
   $(window).scroll(function() {
