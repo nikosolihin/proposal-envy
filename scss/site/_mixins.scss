@@ -32,23 +32,44 @@
   background-position: center center;
 }
 
-%post-title {
-  color: #444;
+// Typography
+%white {
+  color: $white!important;
+}
+%shadow {
+  text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+}
+%serif {
+  color: $tuatara;
   font-family: $serif-font-family;
   font-weight: 400;
-  font-size: rem-calc(20);
-  margin: rem-calc(0 0 5 0);
-}
-%post-title-bold {
-  @extend %post-title;
-  font-weight: 700;
+  color: $white;
   margin: rem-calc(0 0 0 0);
 }
-%post-meta {
-  color: #999;
+%serif-bold {
+  @extend %serif;
+  font-weight: 700;
+}
+%serif-italic {
+  @extend %serif;
+  font-style: italic;
+}
+%serif-bold-italic {
+  @extend %serif-bold;
+  font-style: italic;
+}
+%sans {
+  color: $aluminum;
   font-family: $regular-font-family;
-  font-size: rem-calc(13);
-  letter-spacing: rem-calc(2);
+  letter-spacing: rem-calc($global-letter-spacing);
+  text-transform: uppercase;
+  color: $white;
+  margin: rem-calc(0 0 0 0);
+}
+%sans-bold {
+  @extend %sans;
+  font-family: $demi-font-family;
+  font-size: rem-calc(15);
 }
 
 /**
@@ -63,7 +84,7 @@
   background: $color;
   width: rem-calc(50);
   text-align:center;
-  margin: 0 auto rem-calc(40);
+  margin: rem-calc(40) auto rem-calc(40);
 }
 
 @mixin grid-debug($top) {

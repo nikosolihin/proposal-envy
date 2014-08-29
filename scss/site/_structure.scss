@@ -49,11 +49,19 @@ figcaption {
 	max-width: 100% !important;
 }
 
-.packages, .hint, .success-story, .proposal-story {
-	background-size: cover;
-	background-position: center center;
+section {
+	@extend %bg;
+	padding: rem-calc(70) 0;
 }
-
+.no-padding {
+	padding: 0;
+}
+.no-margin {
+	margin: 0;
+}
+.white {
+	@extend %white;
+}
 html, body, main {
 	height: 100%;
 }
@@ -75,32 +83,30 @@ html, body, main {
  * ----------------------------------------------------------------------------
  */
 
-h5, h6 {
-  font-family: $demi-font-family;
-  color: $primary-color;
-  text-transform: uppercase;
-  letter-spacing: $h5-header-letter-spacing;
-  margin-bottom: rem-calc(10);
-}
-h6 {
-  text-transform: none;
-  color: white;
-}
-h4, .link {
-	font-family: $demi-font-family;
-	font-size: rem-calc(15); // Only for .link
-  color: #777777;
-  text-transform: uppercase;
-  letter-spacing: $h4-header-letter-spacing;
-  margin-bottom: rem-calc(15);
-  &.active {
-		color: $primary-color;
-  }
-}
 h2 {
-  font-family: $serif-font-family;
-  color: $h2-header-color;
-  margin-bottom: rem-calc(28);
+	@extend %serif;
+	color: $charcoal;
+	margin: rem-calc(10 0);
+}
+h3 {
+	@extend %serif;
+}
+h4 {
+	@extend %sans;
+}
+.title {
+	@extend %sans-bold;
+	color: $primary-color;
+}
+.title-white {
+	@extend %sans-bold;
+	@extend %white;
+	color: $white;
+}
+.title-lower {
+	@extend %sans-bold;
+	@extend %white;
+	text-transform: capitalize;
 }
 
 
@@ -120,7 +126,7 @@ h2 {
 		text-align: center;
 		font-variant: normal;
 		text-transform: none;
-		color: $footer-bg;
+		color: $silver;
 		// /* font-size: 120%; */
 	}
 
@@ -322,7 +328,7 @@ h2 {
  */
 
 footer {
-	background-color: $footer-bg;
+	background-color: $silver;
 	padding: rem-calc(50) 0 rem-calc(10) 0;
 	color: #ABABAB;
 	a { color: #ABABAB; }
@@ -346,11 +352,11 @@ footer {
 .social {
 	margin-top: rem-calc(20);
 	li a>i {
-		border-radius: $footer-icon-radius;
+		border-radius: rem-calc(20);
 		background-color: #bbbbbb;
 		cursor: pointer;
-		height: $footer-icon-radius*2;
-		width: $footer-icon-radius*2;
+		height: rem-calc(40);
+		width: rem-calc(40);
 		display: table;
 		text-align: center;
 		transition: all 400ms ease;
@@ -517,7 +523,7 @@ footer {
 			color: #ffffff;
 		}
 		h4 {
-			@extend %post-place;
+			@extend %post-meta;
 			font-size: rem-calc(15);
 		}
 		h2 {
@@ -586,13 +592,12 @@ footer {
 
 	// Hero Section ///////////////////////
 	.hero, #hero-mask {
+		@extend %vertical-align-parent;
 		height: 100vh;
 		height: 100%;
-		@extend %vertical-align-parent;
 	}
 	.hero-bg {
-		background-size: cover;
-		background-position: center center;
+		@extend %bg;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -601,6 +606,7 @@ footer {
 		z-index: -1000;
 	}
 	#hero-video {
+		@extend %bg;
 		position: fixed;
 		z-index: -100;
 		right: 0;
@@ -609,8 +615,6 @@ footer {
 		min-height: 100%;
 		width: auto;
 		height: auto;
-		background-position: center center;
-		background-size: cover;
 	}
 	.hero-action {
 		@extend %vertical-align;
@@ -622,49 +626,40 @@ footer {
 		height: 100%;
 	}
 	.hero-subtitle {
+		@extend %serif-italic;
+		@extend %shadow;
 		font-size: rem-calc(20);
 		@media #{$medium-up} {
 			font-size: rem-calc(22);
 		}
-		font-family: $serif-font-family;
-		font-style: italic;
-		color: #fff;
-		line-height: 2.2;
-		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 	}
 	.hero-title {
+		@extend %sans-bold;
+		@extend %shadow;
 		font-size: rem-calc(42);
 		@media #{$medium-up} {
 			font-size: rem-calc(80);
 		}
-		letter-spacing: rem-calc(10);
-		font-family: $demi-font-family;
-		text-transform: uppercase;
-		color: #fff;
 		line-height: 1;
-		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+		letter-spacing: rem-calc(10);
+		margin: rem-calc(20 0 3);
 	}
 	.hero-tagline {
+		@extend %sans;
+		@extend %shadow;
+		font-size: rem-calc(14);
 		@media #{$medium-up} {
 			font-size: rem-calc(16);
 		}
-		color: #ffffff;
-		margin-bottom: rem-calc(40);
-		font-family: $body-font-family;
-		letter-spacing: rem-calc(1.2);
-		font-size: rem-calc(14);
-		line-height: 1.7;
-		text-shadow: 1px 1px 0 rgba(0,0,0,.4);
+		letter-spacing: rem-calc(2);
+	}
+	#play-button {
+		margin-left: rem-calc(20);
 	}
 
 	// About Section //////////////////////
-	.about, .packages {
-		color: #909090;
-		position: relative;
-	}
 	.about {
 		background-color: #ffffff;
-		padding: rem-calc(80) 0 rem-calc(60) 0;
 		hr {
 			@include divider(#EBEAE5);
 		}
@@ -681,8 +676,7 @@ footer {
 		padding-top: rem-calc(5);
 	}
 	.gradient-text {
-		font-family: $h2-header-font-family;
-		font-weight: 400;
+		@extend %serif;
 		font-size: rem-calc(20);
 		background: transparent;
 		background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #FF7968), color-stop(80%, #80C896));
@@ -691,34 +685,29 @@ footer {
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		text-fill-color: transparent;
-		strong {
-			font-style: italic;
-			font-weight: 900;
+		em {
+			font-weight: 700;
 		}
 	}
 	// Packages Section ///////////////////
 	.packages {
-		padding: rem-calc(80) 0;
 		hr {
 			@include divider(#777);
 		}
+	}
+	.white-panel {
+		background-color: rgba(255, 255, 255, .92);
+		padding: rem-calc(60 70);
 	}
 	// Featured Stories Section ///////////
 	.stories {
 		hr {
 			@include divider(#fff);
 		}
-		h2, h5, p {
-			color: #fff;
-		}
-		h2 {
-			margin-bottom: rem-calc(13);
-		}
-		h6 {
-			margin-bottom: rem-calc(35);
-		}
 	}
 	.success-story, .proposal-story {
+		@extend %bg;
+		// padding: rem-calc(70 15);
 		padding: rem-calc(65) rem-calc(50);
 		@media #{$medium-up} {
 			padding: rem-calc(75) rem-calc(100);
@@ -729,15 +718,11 @@ footer {
 		@media #{$xlarge-up} {
 			padding: rem-calc(75) rem-calc(170);
 		}
-		height: rem-calc(540);
+		min-height: rem-calc(500);
+
 	}
 	// Hint Section ///////////
 	.hint {
-		h5, p {
-			color: #fff;
-		}
-		p { margin-bottom: 0; }
-		padding: rem-calc(40) 0;
 	}
 
 
@@ -752,7 +737,7 @@ footer {
 		i { margin-right: rem-calc(5); }
 		.all-posts {
 			margin: 0;
-			font-family: $medium-font-family;
+			font-family: $demi-font-family;
 			font-size: rem-calc(15);
 			letter-spacing: rem-calc(1);
 			color: #888;
@@ -763,7 +748,7 @@ footer {
 		margin: 0 0 rem-calc(30) 0;
 	}
 	.story-wrap {
-		@include grid-debug(350px);
+		@include grid-debug(450px);
 		padding: 25% 0%;
 		@media #{$medium-up} { padding: 20% 6%; }
 		@media #{$large-up} { padding: 15% 8%; }
@@ -798,19 +783,11 @@ footer {
 			}
 		}
 	}
-	.entry-content {
-		h1,h2,h3,h4,h5,h6 {
-			font-family: $serif-font-family;
-			font-weight: 700;
-			color: #444444;
-			margin: rem-calc(60 0 25);
-			line-height: 1.8;
-		}
-		h2:first-child, h3:first-child, h4:first-child { margin-top: 0; }
-		table { margin-top: rem-calc(35); width: 100%;}
-		thead {
-			font-family: $medium-font-family;
-		}
+
+	h2:first-child, h3:first-child, h4:first-child { margin-top: 0; }
+	table { margin-top: rem-calc(35); width: 100%;}
+	thead {
+		font-family: $demi-font-family;
 	}
 	figure {
 		margin: rem-calc(40 -50);
@@ -929,16 +906,45 @@ footer {
 		i {
 			margin-right: rem-calc(8);
 			&:before {
-				border-radius: $footer-icon-radius;
+				border-radius: rem-calc(20);
 				background-color: #666;
 				cursor: pointer;
-				height: $footer-icon-radius*2;
-				width: $footer-icon-radius*2;
+				height: rem-calc(40);
+				width: rem-calc(40);
 				padding-top: rem-calc(7);
 			}
 		}
 	}
-
+	.author-box {
+		overflow: hidden;
+		margin-left: rem-calc(20);
+	}
+	.author-title {
+		@extend %post-title-bold;
+		color: #757575;
+		margin-bottom: rem-calc(10);
+	}
+	.author-photo {
+		@extend %bg;
+		background-image: url('https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/10494646_893856813963777_8075758235822311771_n.jpg');
+		padding: 45%;
+	}
+	.author-meta {
+		background-color: #fef9f9;
+		padding: rem-calc(35);
+	}
+	.author-name {
+		@extend %post-meta;
+		// margin: 0;
+		color: #ef3b3b;
+		// margin-bottom: rem-calc(10);
+		// letter-spacing: rem-calc(2);
+	}
+	.author-bio {
+		font-size: rem-calc(14);
+		line-height: 1.75;
+		color: #757575;
+	}
 
 	/**
 	 * 4.3 Widgets

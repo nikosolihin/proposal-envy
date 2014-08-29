@@ -1,9 +1,9 @@
 <header class="hero">
   <div class="row hero-action small-only-text-center">
     <div class="small-12 columns">
-      <h3 class="hero-subtitle">{{post.get_field('hero_subtitle')}}</h3>
+      <div class="hero-subtitle">{{post.get_field('hero_subtitle')}}</div>
       <h1 class="hero-title">{{post.get_field('hero_title')}}</h1>
-      <h5 class="hero-tagline">{{post.get_field('hero_tagline')}}</h5>
+      <div class="hero-tagline">{{post.get_field('hero_tagline')}}</div>
       <a href="http://{{post.get_field('hero_link_url')}}" class="button coral">
         {{post.get_field('hero_link_text')}}
       </a>
@@ -19,7 +19,6 @@
       </div>
     </div>
   </div>
-{#   <div id="hero-mask"></div> #}
   <video autoplay loop class="show-for-large-up" poster="{{site.theme.link}}/assets/video/poster.jpg" id="hero-video">
     <source src="{{site.theme.link}}/assets/video/header.webm" type="video/webm">
     <source src="{{site.theme.link}}/assets/video/header.mp4" type="video/mp4">

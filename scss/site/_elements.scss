@@ -5,56 +5,19 @@ select:focus {
   margin: inherit rem-calc(-35);
   margin-top: rem-calc(35);
 }
-.top-bar-section ul li a {
-  text-transform: uppercase;
-  letter-spacing: rem-calc(1);
-}
-.panel { // Override Foundation's panel
-  opacity: .95;
-}
 .button {
   text-transform: uppercase;
-  font-size: rem-calc(13);
+  font-size: rem-calc(14);
   letter-spacing: rem-calc(1);
-}
-.coral {
-  @include button(
-    $padding: $button-height,
-    $radius: $button-radius
-  );
-  margin: rem-calc(7);
-  text-transform: $button-text-transform;
-  letter-spacing: $button-letter-spacing;
-}
-.wire {
-  @include button(
-    $padding: rem-calc(10),
-    $radius: $button-radius
-  );
-  font-size: rem-calc(13);
-  margin: rem-calc(7);
-
-  text-transform: $button-text-transform;
-  letter-spacing: $button-letter-spacing;
-  background-color: transparent;
-  border: rem-calc(2) solid $secondary-button-bg;
-  &:hover {
-    border-color: darken(white, 5);
-    background-color: transparent;
+  border-radius: $global-radius;
+  padding: rem-calc(15);
+  margin: rem-calc(40 0 0);
+  &.coral {
+    background-color: $primary-color;
   }
-}
-.white {
-  @include button(
-    $padding: $button-height,
-    $bg: $tertiary-button-bg,
-    $radius: $button-radius
-  );
-  margin: rem-calc(7);
-  text-transform: $button-text-transform;
-  letter-spacing: $button-letter-spacing;
-  color:  $primary-color;
-  &:hover {
-    color: $primary-color;
-    background-color: $tertiary-button-hover-bg;
+  &.wire {
+    background-color: transparent;
+    border: rem-calc(2) solid $white;
+    padding: rem-calc(13 15);
   }
 }

@@ -1,16 +1,31 @@
 <section class="story-content">
-  {% if post.get_field('story_excerpt') is not empty %}
-    <div class="row max-width">
-      <div class="little-nav small-12 medium-2 large-3 xlarge-2 xlarge-offset-1 text-right hide-for-small-only columns">
+    <div class="row max-width entry-content">
+      <div class="little-nav small-12 medium-2 large-3 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
         <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
           <i class="icon-left-dir"></i>
           All {{post_type}}
         </a>
       </div>
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">
-        <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
+        {% if post.get_field('story_excerpt') is not empty %}
+          <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
+        {% endif %}
+        {{post.content}}
+        <h3 class="text-center">{{post.cta_message}}</h3>
       </div>
-      <div class="xlarge-4 end columns">
+      <div class="xlarge-3 end columns">
+        <div class="row">
+          <div class="xlarge-9 columns author-box">
+            <h2 class="author-title">Author</h2>
+            <div class="author-photo"></div>
+            <div class="author-meta">
+                <h5 class="author-name">Clara Lee</h5>
+                <p class="author-bio">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatem voluptatum beatae recusandae maiores aspernatur tempore dicta ullam vel. Dolores nihil cumque minima quisquam alias obcaecati, maiores quos aliquid dolorem.
+                </p>
+            </div>
+          </div>
+        </div>
         <ul id="tiles">
           {% if gallery_imgs is not empty %}
             {% for gallery_img in gallery_imgs %}
@@ -22,43 +37,13 @@
         </ul>
       </div>
     </div>
-    <div class="row max-width entry-content">
-      <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
-        {{post.content}}
-
-        <h3 class="text-center">{{post.cta_message}}</h3>
-      </div>
-    </div>
-  {% else %}
-    <div class="row max-width entry-content">
-      <div class="little-nav small-12 medium-2 large-3 xlarge-4 text-right hide-for-small-only columns">
-        <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
-          <i class="icon-left-dir"></i>
-          All {{post_type}}
-        </a>
-      </div>
-      <div class="small-12 medium-8 large-6 xlarge-4 end columns">
-        {{post.content}}
-        <ul id="tiles">
-          {% if gallery_imgs is not empty %}
-            {% for gallery_img in gallery_imgs %}
-              <li class="item" data-src="{{gallery_img | last}}">
-                <a href=""><img src="{{gallery_img | first}}" alt=""></a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-        <h3 class="text-center">{{post.cta_message}}</h3>
-      </div>
-    </div>
-  {% endif %}
 </section>
 
-{% if post.get_field('story_slideshow') is not empty %}
+{# {% if post.get_field('story_slideshow') is not empty %}
   <div id="slideshow" class="hide-for-small-only">
     {% for item in post.get_field('story_slideshow') %}
       <div class="carousel-content" style="background-image: url({{TimberImage(item.slideshow_img).src}});">
     </div>
     {% endfor %}
   </div>
-{% endif %}
+{% endif %} #}

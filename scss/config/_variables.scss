@@ -3,43 +3,7 @@
  * ----------------------------------------------------------------------------
  */
 
-//Colors &  Tints @ Home
-$featured-success-story-tint: #FF6A5D;
-$featured-proposal-story-tint: #86CED3;
-$featured-stories-tint-alpha: 0.85;
-
-$tint-alpha: 0.85;
-
-$footer-bg: #F2F2F2;
-$footer-icon-radius: rem-calc(21);
-$footer-icon-font-size: rem-calc(14);
-
-$instagram-tint: #F3F0E7;
-$instagram-tint-alpha: 0.85;
-
-$primary-button-bg: $primary-color;
-$secondary-button-bg: $secondary-color;
-$tertiary-button-bg: $secondary-color;
-$tertiary-button-hover-bg: #eeede9;
-$button-text-transform: uppercase;
-$button-letter-spacing: rem-calc(1);
-$button-height: rem-calc(11);
-$button-radius: rem-calc(3);
-
 $regular-font-family: "AvenirNextLTPro-Regular", AvenirNextLTPro-Regular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $demi-font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$medium-font-family: "AvenirNextLTPro-Medium", AvenirNextLTPro-Medium, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-
-$h5-header-color: $primary-color;
-$h6-header-color: $primary-color;
-$h4-header-letter-spacing: rem-calc(1);
-$h5-header-letter-spacing: rem-calc(3);
-
-$h2-header-font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
-$h2-header-color: #4e4e4e;
-
-
-// $h3-header-font-family: $h1-header-font-family;
-// $small-header-font-family: $body-font-family;
-
-// $header-font-color: #515151;
+$serif-font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
+$global-letter-spacing: 2;
