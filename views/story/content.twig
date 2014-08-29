@@ -1,7 +1,7 @@
 <section class="story-content">
   {% if post.get_field('story_excerpt') is not empty %}
     <div class="row max-width">
-      <div class="little-nav small-12 medium-2 large-3 xlarge-4 text-right hide-for-small-only columns">
+      <div class="little-nav small-12 medium-2 large-3 xlarge-2 xlarge-offset-1 text-right hide-for-small-only columns">
         <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
           <i class="icon-left-dir"></i>
           All {{post_type}}
@@ -10,10 +10,7 @@
       <div class="small-12 medium-8 large-6 xlarge-4 end columns">
         <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
       </div>
-    </div>
-    <div class="row max-width entry-content">
-      <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
-        {{post.content}}
+      <div class="xlarge-4 end columns">
         <ul id="tiles">
           {% if gallery_imgs is not empty %}
             {% for gallery_img in gallery_imgs %}
@@ -23,6 +20,12 @@
             {% endfor %}
           {% endif %}
         </ul>
+      </div>
+    </div>
+    <div class="row max-width entry-content">
+      <div class="small-12 medium-8 medium-offset-2 large-6 large-offset-3 xlarge-4 xlarge-offset-4 columns">
+        {{post.content}}
+
         <h3 class="text-center">{{post.cta_message}}</h3>
       </div>
     </div>

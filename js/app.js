@@ -1943,7 +1943,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   // for FB Share
   $(".fb-share").click(function(e){
     e.preventDefault();
-    console.log("working");
     FB.ui({
       method: 'share_open_graph',
       action_type: 'og.likes',
@@ -1962,6 +1961,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   // for homepage parallax on video thing
   $(window).scroll(function() {
     var ST = $(this).scrollTop();
+
     var offset = ST/$(this).height();
     var textSpeed = 265 * offset - 40;
     var textOpacity = 1 - ((.2 * offset) + offset);
@@ -1997,6 +1997,21 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
   // Get outta the way menu!
   // $('#nav-bar').scrollUpMenu();
+
+  // Stick category list
+  $('.journal-category-nav').waypoint('sticky', {
+    offset: 50
+  });
+
+  // And unstick it when footer is in view
+  $("#footer").waypoint( function(direction){
+    if (direction == 'down') {
+      $('.journal-category-nav').removeClass('stuck');
+      $('.journal-category-nav').addClass('unstuck');
+      var top = $(window).scrollTop()-400;
+      $('.journal-category-nav').css('top', top);
+    }
+  }, { offset: '100%' });
 
   // If #slideshow exists then set it up
   if( $("#slideshow").length ) {
