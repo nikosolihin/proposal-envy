@@ -3022,29 +3022,11 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-/* My Custom Elements */
-select:focus {
-  outline: none; }
-
-.flex-video {
-  margin: inherit -2.1875rem;
-  margin-top: 2.1875rem; }
-
-.button {
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.0625rem;
-  border-radius: 3px;
-  padding: 0.9375rem;
-  margin: 2.5rem 0 0; }
-  .button.coral {
-    background-color: #FF6A5D; }
-  .button.wire {
-    background-color: transparent;
-    border: 0.125rem solid #FFFFFF;
-    padding: 0.8125rem 0.9375rem; }
-
 /* My Custom Mixins */
+/**
+ * Mixins
+ * ------------------------------------
+ */
 /**
  * Placeholders
  * ------------------------------------
@@ -3101,50 +3083,33 @@ h3 {
   margin: 0 0 0 0; }
 
 .title, .title-white, .title-lower, .hero-title {
-  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.9375rem; }
+  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-/**
- * Mixins
- * ------------------------------------
- */
-/*
-_______
+/* My Custom Elements */
+select:focus {
+  outline: none; }
 
-These simple SCSS/SASS mixins for Foundation 4 are made by me to deal with media-queries and have a clean code at the same time! ;)
+.flex-video {
+  margin: inherit -2.1875rem;
+  margin-top: 2.1875rem; }
 
-****IMPORTANT****
+.button {
+  font-size: 0.765625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  border-radius: 3px;
+  padding: 0.9375rem;
+  margin: 2.5rem 0 0; }
+  @media only screen and (min-width:64.063em) {
+    .button {
+      font-size: 0.875rem; } }
+  .button.coral {
+    background-color: #FF6A5D; }
+  .button.wire {
+    background-color: transparent;
+    border: 0.125rem solid #FFFFFF;
+    padding: 0.8125rem 0.9375rem; }
 
-Due to Foundation 4 uses mobile-first methodology, every $phone-"X" variable in these mixins defines the value for every screen size.
-$desktop-"X" values overrides $phone-"X" values when the width of the window is 768px and above.
-
-So, to simplify this, we can think that way: ($phone-"X" < 768px => $desktop-"X")
-
-________
-*/
-/*
-
-** MIXIN 1: RGRID - Responsive Grid **
-
-This mixin provides an easy way to use the Foundation 4 grid classes and media-queries.
-$phone-grid: number of grid columns.
-$desktop-grid: number of grid columns that overrides $phone-grid for window width 768px and above.
-Only one parameter could be declared to define a value for every window width.
-
-i.e.:
-@include rgrid(3,6); => 3 columns for phone, 6 columns for desktop.
-@inculde rgrid(6); => 6 columns.
-
-*/
-/*
-
-** MIXIN 2: RFONT - Responsive Font Size **
-Define a font-size for both desktop and phone.
-If only one parameter is declared, the phone font-size will be automatically defined 30% smaller than the desktop font-size)
-*/
-/*
-** MIXIN 3: RPROP - Responsive CSS Property **
-*/
 /* Site structure */
 /**
  * Table of Contents for FoundationPress:
@@ -3220,19 +3185,30 @@ h3 {
   color: #444444; }
 
 p {
-  font-size: 0.9rem; }
+  font-size: 0.875rem; }
   @media only screen and (min-width:64.063em) {
     p {
       font-size: 1rem; } }
 
-.title {
-  color: #FF6A5D; }
+.title, .title-white, .title-lower {
+  color: #FF6A5D;
+  font-size: 0.8203125rem; }
+  @media only screen and (min-width:64.063em) {
+    .title {
+      font-size: 0.9375rem; } }
 
-.title-white {
-  color: #FFFFFF; }
+.title-white, .title-lower {
+  font-size: 0.8203125rem; }
+  @media only screen and (min-width:64.063em) {
+    .title-white {
+      font-size: 0.9375rem; } }
 
 .title-lower {
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  font-size: 0.8203125rem; }
+  @media only screen and (min-width:64.063em) {
+    .title-lower {
+      font-size: 0.9375rem; } }
 
 /**
 	 * 2.1 Icons
@@ -4581,7 +4557,7 @@ input {
 #lightGallery-slider .info span:last-child {
   margin-top: 6px; }
 
-#lightGallery-slider .info .title {
+#lightGallery-slider .info .title, #lightGallery-slider .info .title-white, #lightGallery-slider .info .title-lower {
   font-size: 16px;
   font-weight: bold; }
 

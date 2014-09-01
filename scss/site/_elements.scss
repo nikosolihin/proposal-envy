@@ -6,8 +6,8 @@ select:focus {
   margin-top: rem-calc(35);
 }
 .button {
+  @include rfont(14);
   text-transform: uppercase;
-  font-size: rem-calc(14);
   letter-spacing: rem-calc(1);
   border-radius: $global-radius;
   padding: rem-calc(15);

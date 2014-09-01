@@ -101,16 +101,17 @@ p {
 .title {
 	@extend %sans-bold;
 	color: $primary-color;
+	@include rfont(15);
 }
 .title-white {
-	@extend %sans-bold;
+	@extend .title;
 	@extend %white;
-	color: $white;
+	@include rfont(15);
 }
 .title-lower {
-	@extend %sans-bold;
-	@extend %white;
+	@extend .title-white;
 	text-transform: capitalize;
+	@include rfont(15);
 }
 
 
