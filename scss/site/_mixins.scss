@@ -185,6 +185,10 @@ i.e.:
   @if $medium-value {
     @media #{$medium-up} { #{$prop}: $medium-value; }
   }
-  // @media #{$large-up}{ #{$prop}: $large-value; }
-  // @media #{$xlarge-up}{ #{$prop}: $xlarge-value; }
+  @if $large-value {
+    @media #{$large-up} { #{$prop}: $large-value; }
+  }
+  @if $xlarge-value {
+    @media #{$xlarge-up} { #{$prop}: $xlarge-value; }
+  }
 }

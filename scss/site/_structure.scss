@@ -708,6 +708,7 @@ footer {
 	.success-story, .proposal-story {
 		@extend %bg;
 		// padding: rem-calc(70 15);
+		min-height: rem-calc(500);
 		padding: rem-calc(65) rem-calc(50);
 		@media #{$medium-up} {
 			padding: rem-calc(75) rem-calc(100);
@@ -718,7 +719,6 @@ footer {
 		@media #{$xlarge-up} {
 			padding: rem-calc(75) rem-calc(170);
 		}
-		min-height: rem-calc(500);
 	}
 	// Hint Section ///////////
 	.hint {

@@ -3810,8 +3810,8 @@ footer {
   margin: 2.5rem auto 2.5rem; }
 
 .success-story, .proposal-story {
-  padding: 4.0625rem 3.125rem;
-  min-height: 31.25rem; }
+  min-height: 31.25rem;
+  padding: 4.0625rem 3.125rem; }
   @media only screen and (min-width:40.063em) {
     .success-story, .proposal-story {
       padding: 4.6875rem 6.25rem; } }
