@@ -3079,12 +3079,15 @@ section, .journal-article, .stories-wrap, .journal-wrap, .post-image, .post-imag
 .hero-subtitle, .hero-title, .hero-tagline {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
-.hero-subtitle, h2, h3, .gradient-text {
+h3, .hero-subtitle, h2, .gradient-text {
   color: #444444;
   font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
   font-weight: 400;
   color: #FFFFFF;
   margin: 0 0 0 0; }
+
+h3 {
+  font-weight: 700; }
 
 .hero-subtitle {
   font-style: italic; }
@@ -3136,17 +3139,11 @@ i.e.:
 /*
 
 ** MIXIN 2: RFONT - Responsive Font Size **
-
 Define a font-size for both desktop and phone.
 If only one parameter is declared, the phone font-size will be automatically defined 30% smaller than the desktop font-size)
-
-i.e.:
-@include rfont(24,12); => "font-size:24px" for desktop screens & "font-size:12px" for mobile.
-@include rfont(20); => "font-size:20px" for desktop screens & "font-size:14px" for mobile.
-
 */
 /*
-** MIXIN 3: PROP - Responsive CSS Property **
+** MIXIN 3: RPROP - Responsive CSS Property **
 */
 /* Site structure */
 /**
@@ -3218,6 +3215,15 @@ html, body, main {
 h2 {
   color: #555555;
   margin: 0.625rem 0; }
+
+h3 {
+  color: #444444; }
+
+p {
+  font-size: 0.9rem; }
+  @media only screen and (min-width:64.063em) {
+    p {
+      font-size: 1rem; } }
 
 .title {
   color: #FF6A5D; }
@@ -3810,8 +3816,8 @@ footer {
   margin: 2.5rem auto 2.5rem; }
 
 .success-story, .proposal-story {
-  min-height: 31.25rem;
-  padding: 4.0625rem 3.125rem; }
+  padding: 4.0625rem 3.125rem;
+  min-height: 31.25rem; }
   @media only screen and (min-width:40.063em) {
     .success-story, .proposal-story {
       padding: 4.6875rem 6.25rem; } }
@@ -3823,10 +3829,13 @@ footer {
       padding: 4.6875rem 10.625rem; } }
 
 .hint {
-  font-size: 1.25rem; }
+  padding: 0.875rem; }
   @media only screen and (min-width:40.063em) {
     .hint {
-      font-size: 1.875rem; } }
+      padding: 1.875rem; } }
+  @media only screen and (min-width:64.063em) {
+    .hint {
+      padding: 5.625rem; } }
 
 /**
 	 * 4.2 Posts

@@ -89,10 +89,14 @@ h2 {
 	margin: rem-calc(10 0);
 }
 h3 {
-	@extend %serif;
+	@extend %serif-bold;
+	color: $tuatara;
 }
 h4 {
 	@extend %sans;
+}
+p {
+	@include rfont(16);
 }
 .title {
 	@extend %sans-bold;
@@ -708,7 +712,6 @@ footer {
 	.success-story, .proposal-story {
 		@extend %bg;
 		// padding: rem-calc(70 15);
-		min-height: rem-calc(500);
 		padding: rem-calc(65) rem-calc(50);
 		@media #{$medium-up} {
 			padding: rem-calc(75) rem-calc(100);
@@ -719,10 +722,11 @@ footer {
 		@media #{$xlarge-up} {
 			padding: rem-calc(75) rem-calc(170);
 		}
+		min-height: rem-calc(500);
 	}
 	// Hint Section ///////////
 	.hint {
-		@include prop( font-size, rem-calc(20), rem-calc(30) );
+		@include rprop( padding, 14, 30, 90 );
 	}
 
 

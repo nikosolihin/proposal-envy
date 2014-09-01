@@ -162,33 +162,27 @@ i.e.:
 /*
 
 ** MIXIN 2: RFONT - Responsive Font Size **
-
 Define a font-size for both desktop and phone.
 If only one parameter is declared, the phone font-size will be automatically defined 30% smaller than the desktop font-size)
-
-i.e.:
-@include rfont(24,12); => "font-size:24px" for desktop screens & "font-size:12px" for mobile.
-@include rfont(20); => "font-size:20px" for desktop screens & "font-size:14px" for mobile.
-
 */
 
-@mixin rfont($desktop-font:"", $phone-font:$desktop-font*0.7){
-  font-size: #{$phone-font}px;
-  @media #{$small}{font-size: #{$desktop-font}px;}
+@mixin rfont($desktop-value, $phone-value:$desktop-value*0.9){
+  font-size: rem-calc($phone-value);
+  @media #{$large-up} { font-size: rem-calc($desktop-value); }
 }
 
 /*
-** MIXIN 3: PROP - Responsive CSS Property **
+** MIXIN 3: RPROP - Responsive CSS Property **
 */
-@mixin prop($prop, $small-value, $medium-value:false, $large-value:false, $xlarge-value:false){
-  #{$prop}: $small-value;
+@mixin rprop($prop, $small-value, $medium-value:false, $large-value:false, $xlarge-value:false){
+  #{$prop}: rem-calc($small-value);
   @if $medium-value {
-    @media #{$medium-up} { #{$prop}: $medium-value; }
+    @media #{$medium-up} { #{$prop}: rem-calc($medium-value); }
   }
   @if $large-value {
-    @media #{$large-up} { #{$prop}: $large-value; }
+    @media #{$large-up} { #{$prop}: rem-calc($large-value); }
   }
   @if $xlarge-value {
-    @media #{$xlarge-up} { #{$prop}: $xlarge-value; }
+    @media #{$xlarge-up} { #{$prop}: rem-calc($xlarge-value); }
   }
 }
