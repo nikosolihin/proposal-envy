@@ -719,10 +719,10 @@ footer {
 			padding: rem-calc(75) rem-calc(170);
 		}
 		min-height: rem-calc(500);
-
 	}
 	// Hint Section ///////////
 	.hint {
+		@include prop( font-size, rem-calc(20), rem-calc(30) );
 	}
 
 

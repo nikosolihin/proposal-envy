@@ -177,18 +177,14 @@ i.e.:
   @media #{$small}{font-size: #{$desktop-font}px;}
 }
 
-
 /*
-
-** MIXIN 3: RPROP - Responsive CSS Property **
-
-Define any CSS property and their values for both desktop and phone.
-
-i.e.:
-@include rprop(margin-top,10px,20px); => "margin-top: 10px;" for mobile screens & "margin-top: 20px;" for desktop.
-
+** MIXIN 3: PROP - Responsive CSS Property **
 */
-@mixin rprop($prop,$phone-value, $desktop-value){
-  #{$prop}: $phone-value;
-  @media #{$small}{#{$prop}: $desktop-value;}
+@mixin prop($prop, $small-value, $medium-value:false, $large-value:false, $xlarge-value:false){
+  #{$prop}: $small-value;
+  @if $medium-value {
+    @media #{$medium-up} { #{$prop}: $medium-value; }
+  }
+  // @media #{$large-up}{ #{$prop}: $large-value; }
+  // @media #{$xlarge-up}{ #{$prop}: $xlarge-value; }
 }
