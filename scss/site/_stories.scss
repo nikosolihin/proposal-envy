@@ -1,45 +1,31 @@
-.stories-wrap, .journal-wrap {
-  @extend %bg;
-  padding: 25% 0%;
-  @media #{$medium-up} { padding: 20% 6%; }
-  @media #{$large-up} { padding: 15% 8%; }
-  @media #{$xlarge-up} { padding: 12% 10% }
-}
-.stories-success {
-  padding-bottom: rem-calc(20);
-}
 .stories-latest {
   padding-top: rem-calc(50);
   border-top: rem-calc(1) solid #f1f1f1;
 }
 .post-article {
-  @extend %vertical-align-parent;
   margin-bottom: rem-calc(30);
   @media #{$large-up} { margin-bottom: rem-calc(50); }
+}
+.post-image-success {
+  @extend %bg;
+  @extend %vartical-align-parent;
+  height: rem-calc(270);
+}
+.post-title-success {
+  @extend %serif-bold;
+  @extend %vertical-align;
+}
+.post-place-success {
+  @extend %vertical-align;
 }
 .post-image {
   @extend %bg;
   padding: 20%;
   margin-bottom: rem-calc(15);
 }
-.post-image-success {
-  @extend %bg;
-  @extend %vertical-align;
-  padding: rem-calc(10);
-  height: rem-calc(270);
-}
 .post-info {
   padding: rem-calc(0 10);
 }
-.post-title-success {
-  @extend %serif-bold;
-}
-.post-place-success {
-  margin: 0;
-}
-#tiles {
-  list-style-type: none;
-}
-.item {
-  margin-bottom: rem-calc(12);
+.post-title {
+  @include rfont(20);
 }

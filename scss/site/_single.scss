@@ -3,6 +3,13 @@
  * ------------------------------------
  */
 
+ #tiles {
+  list-style-type: none;
+}
+.item {
+  margin-bottom: rem-calc(12);
+}
+
 // Story Posts
 .little-nav {
   padding-top: rem-calc(10);

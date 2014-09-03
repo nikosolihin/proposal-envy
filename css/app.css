@@ -3031,7 +3031,7 @@ th.hide-for-touch {
  * Placeholders
  * ------------------------------------
  */
-.hero-action {
+.hero-action, .post-title-success, .post-place-success {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -3049,7 +3049,7 @@ th.hide-for-touch {
   line-height: 1.8;
   text-align: left; }
 
-section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .journal-article, .story-wrap, .carousel-content, .author-photo {
+section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .story-wrap, .carousel-content, .author-photo {
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -3061,10 +3061,13 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal
 .hero-subtitle, .hero-title, .hero-tagline {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
-.hero-subtitle, h2, h3, .gradient-text {
+.post-title-success, .hero-subtitle, h2, h3, .gradient-text {
   font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
   font-weight: 400;
   margin: 0 0 0 0; }
+
+.post-title-success {
+  font-weight: 700; }
 
 .hero-subtitle {
   font-style: italic; }
@@ -3185,7 +3188,7 @@ h2 {
   margin: 0.625rem 0; }
 
 h3 {
-  color: #999999; }
+  color: #444444; }
 
 p {
   font-size: 0.875rem; }
@@ -3769,85 +3772,31 @@ footer {
 /* Stories Collection
 	* -------------------------------------
 	*/
-.journal-select h4, .journal-category-nav h4 {
-  font-size: 0.8125rem;
-  text-transform: none;
-  color: #444; }
+.stories-latest {
+  padding-top: 3.125rem;
+  border-top: 0.0625rem solid #f1f1f1; }
 
-.journal-category-nav {
-  margin-top: 1.25rem; }
-
-.journal-category-list {
-  border-radius: 0.125rem;
-  background-color: #f5f8fc; }
-  .journal-category-list:hover {
-    background-color: #ff766c; }
-
-.journal-selected {
-  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
-  .journal-selected .journal-category-link {
-    color: #FF6A5D !important;
-    font-size: 0.8125rem; }
-  .journal-selected:hover {
-    background-color: #f5f8fc; }
-
-.journal-category-link {
-  font-size: 0.75rem !important; }
-
-.journal-content {
-  padding: 1.875rem 0; }
-
-.journal-list {
-  padding: 0; }
-
-.journal-article {
-  border-top: 0.0625rem solid #f1f1f1;
-  padding: 3.125rem 1.25rem; }
-  .journal-article:hover {
-    background-color: #ff7167; }
-    .journal-article:hover h2, .journal-article:hover h4, .journal-article:hover p, .journal-article:hover .coral-meta {
-      color: #fff; }
-    .journal-article:hover .journal-overlay {
-      -webkit-transition: background 0.2s ease-in;
-              transition: background 0.2s ease-in;
-      background: rgba(251, 88, 79, 0.6); }
-  @media only screen and (min-width:40.063em) {
-    .journal-article {
-      padding: 3.125rem 4.375rem; } }
+.post-article {
+  margin-bottom: 1.875rem; }
   @media only screen and (min-width:64.063em) {
-    .journal-article {
-      padding: 3.125rem 5.625rem; } }
+    .post-article {
+      margin-bottom: 3.125rem; } }
 
-.journal-overlay {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: background 0.2s ease-out;
-          transition: background 0.2s ease-out;
-  background: white; }
+.post-image-success {
+  height: 16.875rem; }
 
-.journal-meta {
-  font-size: 0.75rem;
-  margin-bottom: 0.625rem; }
-  .journal-meta .coral-meta {
-    color: #FF6A5D; }
-
-.journal-title {
-  font-size: 1.5rem;
+.post-image {
+  padding: 20%;
   margin-bottom: 0.9375rem; }
 
-.journal-excerpt {
-  color: #888;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin-bottom: 0; }
+.post-info {
+  padding: 0 0.625rem; }
 
-.journal-meta, .journal-title, .journal-excerpt {
-  position: relative;
-  z-index: 2; }
+.post-title {
+  font-size: 1.09375rem; }
+  @media only screen and (min-width:64.063em) {
+    .post-title {
+      font-size: 1.25rem; } }
 
 /* Single Post
 	* -------------------------------------
@@ -3856,6 +3805,12 @@ footer {
  * 4.2 Posts
  * ------------------------------------
  */
+#tiles {
+  list-style-type: none; }
+
+.item {
+  margin-bottom: 0.75rem; }
+
 .little-nav {
   padding-top: 0.625rem; }
   .little-nav i {
