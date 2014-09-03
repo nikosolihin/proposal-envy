@@ -6,8 +6,8 @@
           <article class="small-12 medium-4 columns end text-center post-article">
             <a href="{{post.permalink}}">
               <div class="post-image-success" style="background-image: linear-gradient(rgba(0,0,0,0.20),rgba(0,0,0,0.20)), url({{post.thumbnail.src}})">
-                <h2 class="post-title-success">{{post.title}}</h2>
-                <h5 class="post-place-success">{{post.get_field('story_place_name')}}</h5>
+                <h3 class="white post-title-success">{{post.title}}</h3>
+                <div class="white title post-place-success">{{post.get_field('story_place_name')}}</h5>
               </div>
             </a>
           </article>
@@ -19,8 +19,8 @@
             <a href="{{post.permalink}}">
               <div class="post-image" style="background-image: url({{post.thumbnail.src}})"></div>
               <div class="post-info">
-                <h2 class="post-title">{{post.title}}</h2>
-                <h5 class="post-place">{{post.get_field('story_place_name')}}</h5>
+                <h3>{{post.title}}</h3>
+                <div class="title-light">{{post.get_field('story_place_name')}}</h5>
               </div>
             </a>
           </article>

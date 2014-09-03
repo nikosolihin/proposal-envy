@@ -1,0 +1,55 @@
+footer {
+  background-color: $silver;
+  padding: rem-calc(50) 0 rem-calc(10) 0;
+  color: #ABABAB;
+  a { color: #ABABAB; }
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+  h5, ul, a, p {
+    font-size: rem-calc(14);
+  }
+  h5 {
+    margin-bottom: rem-calc(8);
+  }
+  .button {
+    margin: 0;
+  }
+  .quicklinks, .contact {
+    margin-bottom: rem-calc(30);
+  }
+}
+.social {
+  margin-top: rem-calc(20);
+  li a>i {
+    border-radius: rem-calc(20);
+    background-color: #bbbbbb;
+    cursor: pointer;
+    height: rem-calc(40);
+    width: rem-calc(40);
+    display: table;
+    text-align: center;
+    transition: all 400ms ease;
+    padding-top: rem-calc(7);
+  }
+  li a:hover>i {
+    background-color: $primary-color;
+  }
+}
+.footer-info {
+  border-top: 1px solid #e8e8e8;
+  margin-top: rem-calc(50);
+  padding-top: rem-calc(10);
+  p {
+    font-size: rem-calc(12);
+  }
+}
+.contact i:before {
+  color: #888;
+  font-size: 115%;
+  margin-right: rem-calc(10);
+}
+.whatsapp {
+  margin-left: rem-calc(27);
+}

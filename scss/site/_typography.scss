@@ -1,0 +1,83 @@
+/**
+ * 2.1 Typography
+ * ------------------------------------
+ */
+
+h2 {
+  @extend %serif;
+  color: $tuatara;
+  margin: rem-calc(10 0);
+}
+h3 {
+  @extend %serif;
+  color: $aluminum;
+}
+p {
+  @include rfont(16);
+}
+.title {
+  @extend %sans;
+  @include rfont(14);
+  color: $aluminum;
+}
+.title-bold {
+  @extend %sans-bold;
+  color: $primary-color;
+  @include rfont(15);
+}
+.title-lower {
+  @extend %sans-bold-lower;
+  @include rfont(15);
+}
+.white {
+  @extend %white;
+}
+
+
+/**
+ * 2.2 Font Icons
+ * ------------------------------------
+ */
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  margin-top: rem-calc(1);
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  color: $silver;
+}
+
+.icon-pinterest:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+.icon-instagram:before { content: '\e803'; } /* '' */
+.icon-quote-left:before {
+  content: '\e804';
+  color: #ddd;
+  font-size: rem-calc(35);
+  position: absolute;
+  left: rem-calc(12);
+  @media #{$large-only} { left: rem-calc(55); }
+  @media #{$xlarge-only} { left: rem-calc(270); font-size: rem-calc(45); }
+}
+.icon-quote-right:before { content: '\e805'; } /* '' */
+.icon-left-dir:before { content: '\e806';  color: $primary-color;} /* '' */
+.icon-share:before { content: '\e807'; } /* '' */
+.icon-phone-squared:before { content: '\e808'; } /* '' */
+.icon-email:before { content: '\e809'; } /* '' */
+.icon-location:before { content: '\e80a'; } /* '' */
+.icon-bbm:before { content: '\e80b'; } /* '' */
+.icon-whatsapp:before { content: '\e80c'; } /* '' */
+.icon-play:before { content: '\e80d'; font-size: 15px; } /* '' */
+.icon-youtube-play:before { content: '\e80e'; } /* '' */
+
+// Margin for buttons with icons above
+.button i {
+  margin-right: rem-calc(7);
+}

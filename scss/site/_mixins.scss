@@ -105,10 +105,8 @@
   text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 }
 %serif {
-  color: $tuatara;
   font-family: $serif-font-family;
   font-weight: 400;
-  color: $white;
   margin: rem-calc(0 0 0 0);
 }
 %serif-bold {
@@ -124,14 +122,16 @@
   font-style: italic;
 }
 %sans {
-  color: $aluminum;
   font-family: $regular-font-family;
   letter-spacing: rem-calc($global-letter-spacing);
   text-transform: uppercase;
-  color: $white;
   margin: rem-calc(0 0 0 0);
 }
 %sans-bold {
   @extend %sans;
   font-family: $demi-font-family;
+}
+%sans-bold-lower {
+  @extend %sans-bold;
+  text-transform: capitalize;
 }
