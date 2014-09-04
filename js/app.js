@@ -1947,17 +1947,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
   // If #slideshow exists then set it up
   if( $("#slideshow").length ) {
-    // sets up default wordpress gallery to use slick carousel
-    var divClasses = $(".slideshow").parent().attr('class');
-    var carousel = '<div id="slideshow" class="hide-for-small-only">' + $("#slideshow").html() + '</div>';
-    var temp = $(".slideshow").parent().parent().html().split('<div class="slideshow"></div>');
-    var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-    $("#slideshow").remove();
-    $(".entry-content").html(fresh);
-    // Set top margin here because css won't work
-    $("#slideshow").prev().css('margin-bottom', 20);
-    $("#slideshow").css('margin-bottom', 60);
-
     $("#slideshow").slick({
       dots: true,
       arrows: false,
@@ -1970,6 +1959,16 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       speed: 350,
       cssEase: 'linear'
     });
+    // // sets up default wordpress gallery to use slick carousel
+    // var divClasses = $(".slideshow").parent().attr('class');
+    // var carousel = '<div id="slideshow" class="hide-for-small-only">' + $("#slideshow").html() + '</div>';
+    // var temp = $(".slideshow").parent().parent().html().split('<div class="slideshow"></div>');
+    // var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
+    // $("#slideshow").remove();
+    // $(".entry-content").html(fresh);
+    // // Set top margin here because css won't work
+    // $("#slideshow").prev().css('margin-bottom', 20);
+    // $("#slideshow").css('margin-bottom', 60);
   }
 
   if( $("#tiles").length ) {

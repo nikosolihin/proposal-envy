@@ -3054,12 +3054,12 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal
 .hero-subtitle, .hero-title, .hero-tagline {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
-h3, .post-title-success, .hero-subtitle, .excerpt, blockquote p, h2, .gradient-text {
+h3, .post-header, .post-title-success, .hero-subtitle, .excerpt, blockquote p, h2, .gradient-text {
   font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
   font-weight: 400;
   margin: 0 0 0 0; }
 
-h3, .post-title-success {
+h3, .post-header, .post-title-success {
   font-weight: 700; }
 
 .hero-subtitle {
@@ -3190,6 +3190,12 @@ h2 {
 
 h3 {
   color: #222222; }
+
+.post-header {
+  font-size: 2.734375rem; }
+  @media only screen and (min-width:64.063em) {
+    .post-header {
+      font-size: 3.125rem; } }
 
 p {
   font-size: 0.875rem; }

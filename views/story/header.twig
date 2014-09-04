@@ -1,20 +1,26 @@
 <header class="wrap">
   <div class="row max-width">
-    <div class="small-12 columns">
-      <h4>{{post.post_date|date('F j, Y')}}</h4>
+    <div class="small-12 medium-10 medium-offset-1 columns">
+      <div class="title white">{{post.post_date|date('F j, Y')}}</div>
       {% if post_type == 'Stories' %}
-        <h2>{{ (post.get_field('story_type') == "success") ? 'Success Story:&nbsp;' : 'Proposal Story:&nbsp;'}} {{post.title}}</h2>
+        <h2 class="post-header white">{{ (post.get_field('story_type') == "success") ? 'Success Story:&nbsp;' : 'Proposal Story:&nbsp;'}} {{post.title}}</h2>
       {% else %}
-        <h2>{{post.title}}</h2>
+        <h2 class="white">{{post.title}}</h2>
       {% endif %}
       <a href="#story-jump" class="button wire">
         <i class="icon-share"></i>
         Share this
       </a>
-      <a href="#story-jump" class="button wire">
-        <i class="icon-play"></i>
-        Play Video
-      </a>
     </div>
   </div>
 </header>
+
+
+{# <header class="wrap">
+  <div class="row max-width">
+    <div class="small-12 medium-7 medium-offset-1 large-6 large-offset-1 xlarge-5 xlarge-offset-1 columns">
+      <div class="title-bold white">{{settings.get_field('stories_header_text')}}</div>
+      <h2 class="white">{{settings.get_field('stories_header_paragraph')}}</h2>
+    </div>
+  </div>
+</header> #}

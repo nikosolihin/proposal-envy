@@ -12,6 +12,10 @@ h3 {
   @extend %serif-bold;
   color: $jet;
 }
+.post-header {
+  @extend %serif-bold;
+  @include rfont(50);
+}
 p {
   @include rfont(16);
 }
