@@ -9,8 +9,8 @@ h2 {
   margin: rem-calc(10 0);
 }
 h3 {
-  @extend %serif;
-  color: $tuatara;
+  @extend %serif-bold;
+  color: $jet;
 }
 p {
   @include rfont(16);
@@ -31,6 +31,9 @@ p {
 }
 .white {
   @extend %white;
+}
+.excerpt {
+  @extend %excerpt;
 }
 
 

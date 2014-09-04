@@ -18,4 +18,6 @@ foreach ($context['gallery_img_ids'] as &$image) {
     array_push($context['gallery_imgs'], array($thumb[0],$img[0]));
 }
 
+$context['layouts'] = get_field('layouts');
+
 Timber::render(array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig'), $context);

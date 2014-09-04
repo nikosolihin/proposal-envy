@@ -1,17 +1,17 @@
 footer {
   background-color: $silver;
   padding: rem-calc(50) 0 rem-calc(10) 0;
-  color: #ABABAB;
-  a { color: #ABABAB; }
+  color: $base;
+  a { color: $base; }
   ul {
     list-style-type: none;
     margin: 0;
   }
-  h5, ul, a, p {
-    font-size: rem-calc(14);
+  .title-bold {
+    font-size: rem-calc(13);
   }
-  h5 {
-    margin-bottom: rem-calc(8);
+  ul, a, p {
+    font-size: rem-calc(14);
   }
   .button {
     margin: 0;
@@ -20,6 +20,7 @@ footer {
     margin-bottom: rem-calc(30);
   }
 }
+
 .social {
   margin-top: rem-calc(20);
   li a>i {
@@ -37,6 +38,7 @@ footer {
     background-color: $primary-color;
   }
 }
+
 .footer-info {
   border-top: 1px solid #e8e8e8;
   margin-top: rem-calc(50);
@@ -45,11 +47,13 @@ footer {
     font-size: rem-calc(12);
   }
 }
+
 .contact i:before {
   color: #888;
   font-size: 115%;
   margin-right: rem-calc(10);
 }
+
 .whatsapp {
   margin-left: rem-calc(27);
 }

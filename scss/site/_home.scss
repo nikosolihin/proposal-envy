@@ -1,7 +1,7 @@
 /* Hero
 * -------------------------------------
 */
-.hero, #hero-mask {
+.hero {
   @extend %vertical-align-parent;
   height: 100vh;
   height: 100%;
@@ -29,39 +29,24 @@
 .hero-action {
   @extend %vertical-align;
 }
-#hero-mask {
-  background-color: #000000;
-  opacity: 0;
-  transform: translate3d(0, 0, 0);
-  height: 100%;
-}
 .hero-subtitle {
   @extend %serif-italic;
   @extend %shadow;
-  font-size: rem-calc(20);
-  @media #{$medium-up} {
-    font-size: rem-calc(22);
-  }
+  @include rfont(22);
 }
 .hero-title {
   @extend %sans-bold;
   @extend %shadow;
-  font-size: rem-calc(42);
-  @media #{$medium-up} {
-    font-size: rem-calc(80);
-  }
+  @include rprop(font-size, 42, 80);
   line-height: 1;
-  letter-spacing: rem-calc(10);
+  letter-spacing: rem-calc($global-letter-spacing*5);
   margin: rem-calc(20 0 3);
 }
 .hero-tagline {
   @extend %sans;
   @extend %shadow;
-  font-size: rem-calc(14);
-  @media #{$medium-up} {
-    font-size: rem-calc(16);
-  }
-  letter-spacing: rem-calc(2);
+  @include rfont(16);
+  letter-spacing: rem-calc($global-letter-spacing);
 }
 #play-button {
   margin-left: rem-calc(20);
@@ -76,20 +61,9 @@
     @include divider(#EBEAE5);
   }
 }
-.reasons p {
-  padding: 0 rem-calc(40);
-}
-.icon {
-  margin: rem-calc(70) 0 rem-calc(30) 0;
-}
-.divider {
-  border-right: rem-calc(1) solid #dfdfdf;
-  height: rem-calc(23);
-  padding-top: rem-calc(5);
-}
 .gradient-text {
   @extend %serif;
-  font-size: rem-calc(20);
+  @include rfont(20);
   background: transparent;
   background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #FF7968), color-stop(80%, #80C896));
   background: -webkit-linear-gradient(-45deg, #FF7968 15%, #80C896 80%);
@@ -125,22 +99,12 @@
 }
 .success-story, .proposal-story {
   @extend %bg;
+  @include rprop(padding, 65 50, 75 100, 60 80, 75 170);
   height: rem-calc(500);
-  padding: rem-calc(65) rem-calc(50);
-  @media #{$medium-up} {
-    padding: rem-calc(75) rem-calc(100);
-  }
-  @media #{$large-up} {
-    padding: rem-calc(60) rem-calc(80);
-  }
-  @media #{$xlarge-up} {
-    padding: rem-calc(75) rem-calc(170);
-  }
 }
 
 /* Hint
 * -------------------------------------
 */
 .hint {
-  @include rprop( padding, 14, 30, 90 );
 }

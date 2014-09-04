@@ -12,10 +12,10 @@
   text-align:center;
   margin: rem-calc(40) auto rem-calc(40);
 }
-@mixin grid-debug($top) {
+@mixin grid-debug($top, $color) {
   @media #{$small-only} {
     &:before {
-      color: white;
+      color: $color;
      content: 'This is small';
      position: absolute;
      top: $top;
@@ -23,7 +23,7 @@
   }
   @media #{$medium-only} {
     &:before {
-      color: white;
+      color: $color;
      content: 'This is medium';
      position: absolute;
      top: $top;
@@ -31,7 +31,7 @@
   }
   @media #{$large-only} {
     &:before {
-      color: white;
+      color: $color;
      content: 'This is large';
      position: absolute;
      top: $top;
@@ -39,7 +39,7 @@
   }
   @media #{$xlarge-only} {
     &:before {
-      color: white;
+      color: $color;
      content: 'This is xlarge';
      position: absolute;
      top: $top;
@@ -80,23 +80,11 @@
 %vertical-align-parent {
   transform-style: preserve-3d;
 }
-
-// Excerpt style
-%excerpt {
-  font-family: $serif-font-family;
-  font-weight: 400;
-  font-size: rem-calc(20);
-  line-height: 1.8;
-  text-align: left;
-}
-
-// Standard stuff for backgrond
 %bg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
-
 // Typography
 %white {
   color: $white!important;
@@ -134,4 +122,10 @@
 %sans-bold-lower {
   @extend %sans-bold;
   text-transform: capitalize;
+}
+%excerpt {
+  @extend %serif;
+  @include rfont(20);
+  line-height: 1.8;
+  margin-bottom: rem-calc(30);
 }

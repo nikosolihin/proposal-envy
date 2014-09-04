@@ -10,6 +10,7 @@
   @extend %bg;
   @extend %vartical-align-parent;
   height: rem-calc(270);
+  padding: rem-calc(10);
 }
 .post-title-success {
   @extend %serif-bold;

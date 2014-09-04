@@ -14,22 +14,22 @@ $(function() {
   });
 
   // for FB Share
-  $(".fb-share").click(function(e){
-    e.preventDefault();
-    FB.ui({
-      method: 'share_open_graph',
-      action_type: 'og.likes',
-      action_properties: JSON.stringify({
-        object: $(location).attr('href')
-      })
-    }, function(response){});
-  });
+  // $(".fb-share").click(function(e){
+  //   e.preventDefault();
+  //   FB.ui({
+  //     method: 'share_open_graph',
+  //     action_type: 'og.likes',
+  //     action_properties: JSON.stringify({
+  //       object: $(location).attr('href')
+  //     })
+  //   }, function(response){});
+  // });
 
   // for twitter share
-  $(".twitter-share").click(function(e){
-    e.preventDefault();
-    window.open('https://twitter.com/share?text='+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
-  });
+  // $(".twitter-share").click(function(e){
+  //   e.preventDefault();
+  //   window.open('https://twitter.com/share?text='+$(document).find("title").text()+'&url='+$(this).attr('href'), "popupWindow", "width=575,height=245,scrollbars=yes");
+  // });
 
   // for homepage parallax on video thing
   $(window).scroll(function() {
@@ -72,19 +72,19 @@ $(function() {
   // $('#nav-bar').scrollUpMenu();
 
   // Stick category list
-  $('.journal-category-nav').waypoint('sticky', {
-    offset: 50
-  });
+  // $('.journal-category-nav').waypoint('sticky', {
+  //   offset: 50
+  // });
 
   // And unstick it when footer is in view
-  $("#footer").waypoint( function(direction){
-    if (direction == 'down') {
-      $('.journal-category-nav').removeClass('stuck');
-      $('.journal-category-nav').addClass('unstuck');
-      var top = $(window).scrollTop()-400;
-      $('.journal-category-nav').css('top', top);
-    }
-  }, { offset: '100%' });
+  // $("#footer").waypoint( function(direction){
+  //   if (direction == 'down') {
+  //     $('.journal-category-nav').removeClass('stuck');
+  //     $('.journal-category-nav').addClass('unstuck');
+  //     var top = $(window).scrollTop()-400;
+  //     $('.journal-category-nav').css('top', top);
+  //   }
+  // }, { offset: '100%' });
 
   // If #slideshow exists then set it up
   if( $("#slideshow").length ) {
@@ -113,20 +113,21 @@ $(function() {
     });
   }
 
-  var $container = $("#tiles");
-  // initialize Masonry after all images have loaded
-  $container.imagesLoaded( function() {
-    $container.masonry({
-      gutter: 12,
-      itemSelector: '.item'
+  if( $("#tiles").length ) {
+    var $container = $("#tiles");
+    // initialize Masonry after all images have loaded
+    $container.imagesLoaded( function() {
+      $container.masonry({
+        gutter: 12,
+        itemSelector: '.item'
+      });
+      $container.lightGallery({
+        loop : true
+      });
+      // remove WP Gallery from the DOM
+      $("[id^=gallery-]").remove();
     });
-    $container.lightGallery({
-      loop : true
-    });
-    // remove WP Gallery from the DOM
-    $("[id^=gallery-]").remove();
-  });
-
+  }
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

@@ -390,7 +390,7 @@ html, body {
 
 body {
   background: #fff;
-  color: #666666;
+  color: #555555;
   padding: 0;
   margin: 0;
   font-family: "AvenirNextLTPro-Regular", AvenirNextLTPro-Regular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -2529,7 +2529,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125rem; }
+  font-size: 2rem; }
 
 h2 {
   font-size: 1.625rem; }
@@ -2636,7 +2636,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #666666;
+  color: #555555;
   border-bottom: 1px dotted #DDDDDD;
   cursor: help; }
 
@@ -2687,7 +2687,7 @@ blockquote, blockquote p {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4; }
   h1 {
-    font-size: 2.75rem; }
+    font-size: 2.625rem; }
   h2 {
     font-size: 2.25rem; }
   h3 {
@@ -3038,18 +3038,11 @@ th.hide-for-touch {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.hero, #hero-mask {
+.hero {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d; }
 
-.excerpt, blockquote p {
-  font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.8;
-  text-align: left; }
-
-section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .story-wrap, .carousel-content, .author-photo {
+section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .carousel-content, .author-photo {
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -3061,12 +3054,12 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal
 .hero-subtitle, .hero-title, .hero-tagline {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
-.post-title-success, .hero-subtitle, h2, h3, .gradient-text {
+h3, .post-title-success, .hero-subtitle, .excerpt, blockquote p, h2, .gradient-text {
   font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
   font-weight: 400;
   margin: 0 0 0 0; }
 
-.post-title-success {
+h3, .post-title-success {
   font-weight: 700; }
 
 .hero-subtitle {
@@ -3083,6 +3076,14 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal
 
 .title-lower {
   text-transform: capitalize; }
+
+.excerpt, blockquote p {
+  font-size: 1.09375rem;
+  line-height: 1.8;
+  margin-bottom: 1.875rem; }
+  @media only screen and (min-width:64.063em) {
+    %excerpt {
+      font-size: 1.25rem; } }
 
 /* My Custom Elements */
 select:focus {
@@ -3188,7 +3189,7 @@ h2 {
   margin: 0.625rem 0; }
 
 h3 {
-  color: #444444; }
+  color: #222222; }
 
 p {
   font-size: 0.875rem; }
@@ -3482,16 +3483,16 @@ p {
 footer {
   background-color: #EFEFEF;
   padding: 3.125rem 0 0.625rem 0;
-  color: #ABABAB; }
+  color: #AAAAAA; }
   footer a {
-    color: #ABABAB; }
+    color: #AAAAAA; }
   footer ul {
     list-style-type: none;
     margin: 0; }
-  footer h5, footer ul, footer a, footer p {
+  footer .title-bold {
+    font-size: 0.8125rem; }
+  footer ul, footer a, footer p {
     font-size: 0.875rem; }
-  footer h5 {
-    margin-bottom: 0.5rem; }
   footer .button {
     margin: 0; }
   footer .quicklinks, footer .contact {
@@ -3538,7 +3539,7 @@ footer {
 /* Hero
 * -------------------------------------
 */
-.hero, #hero-mask {
+.hero {
   height: 100vh;
   height: 100%; }
 
@@ -3560,16 +3561,9 @@ footer {
   width: auto;
   height: auto; }
 
-#hero-mask {
-  background-color: #000000;
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  height: 100%; }
-
 .hero-subtitle {
-  font-size: 1.25rem; }
-  @media only screen and (min-width:40.063em) {
+  font-size: 1.203125rem; }
+  @media only screen and (min-width:64.063em) {
     .hero-subtitle {
       font-size: 1.375rem; } }
 
@@ -3585,7 +3579,7 @@ footer {
 .hero-tagline {
   font-size: 0.875rem;
   letter-spacing: 0.125rem; }
-  @media only screen and (min-width:40.063em) {
+  @media only screen and (min-width:64.063em) {
     .hero-tagline {
       font-size: 1rem; } }
 
@@ -3605,19 +3599,8 @@ footer {
     text-align: center;
     margin: 2.5rem auto 2.5rem; }
 
-.reasons p {
-  padding: 0 2.5rem; }
-
-.icon {
-  margin: 4.375rem 0 1.875rem 0; }
-
-.divider {
-  border-right: 0.0625rem solid #dfdfdf;
-  height: 1.4375rem;
-  padding-top: 0.3125rem; }
-
 .gradient-text {
-  font-size: 1.25rem;
+  font-size: 1.09375rem;
   background: transparent;
   background: -webkit-gradient(linear, left top, right bottom, color-stop(15%, #FF7968), color-stop(80%, #80C896));
   background: -webkit-linear-gradient(-45deg, #FF7968 15%, #80C896 80%);
@@ -3626,6 +3609,9 @@ footer {
   -webkit-background-clip: text;
           background-clip: text;
   text-fill-color: transparent; }
+  @media only screen and (min-width:64.063em) {
+    .gradient-text {
+      font-size: 1.25rem; } }
   .gradient-text em {
     font-weight: 700; }
 
@@ -3656,8 +3642,8 @@ footer {
   margin: 2.5rem auto 2.5rem; }
 
 .success-story, .proposal-story {
-  height: 31.25rem;
-  padding: 4.0625rem 3.125rem; }
+  padding: 4.0625rem 3.125rem;
+  height: 31.25rem; }
   @media only screen and (min-width:40.063em) {
     .success-story, .proposal-story {
       padding: 4.6875rem 6.25rem; } }
@@ -3671,15 +3657,6 @@ footer {
 /* Hint
 * -------------------------------------
 */
-.hint {
-  padding: 0.875rem; }
-  @media only screen and (min-width:40.063em) {
-    .hint {
-      padding: 1.875rem; } }
-  @media only screen and (min-width:64.063em) {
-    .hint {
-      padding: 5.625rem; } }
-
 /* About
 	* -------------------------------------
 	*/
@@ -3783,7 +3760,8 @@ footer {
       margin-bottom: 3.125rem; } }
 
 .post-image-success {
-  height: 16.875rem; }
+  height: 16.875rem;
+  padding: 0.625rem; }
 
 .post-image {
   padding: 20%;
@@ -3805,14 +3783,44 @@ footer {
  * 4.2 Posts
  * ------------------------------------
  */
+/* Masonry Gallery
+* -------------------------------------
+*/
 #tiles {
   list-style-type: none; }
 
 .item {
   margin-bottom: 0.75rem; }
 
+/* Back Button
+* -------------------------------------
+*/
 .little-nav {
   padding-top: 0.625rem; }
+  @media only screen and (max-width: 40em) {
+    .little-nav:before {
+      color: black;
+      content: 'This is small';
+      position: absolute;
+      top: 50px; } }
+  @media only screen and (min-width:40.063em) and (max-width:64em) {
+    .little-nav:before {
+      color: black;
+      content: 'This is medium';
+      position: absolute;
+      top: 50px; } }
+  @media only screen and (min-width:64.063em) and (max-width:90em) {
+    .little-nav:before {
+      color: black;
+      content: 'This is large';
+      position: absolute;
+      top: 50px; } }
+  @media only screen and (min-width:90.063em) and (max-width:120em) {
+    .little-nav:before {
+      color: black;
+      content: 'This is xlarge';
+      position: absolute;
+      top: 50px; } }
   .little-nav i {
     margin-right: 0.3125rem; }
   .little-nav .all-posts {
@@ -3822,54 +3830,14 @@ footer {
     letter-spacing: 0.0625rem;
     color: #888; }
 
-.excerpt {
-  margin: 0 0 1.875rem 0; }
-
-.story-wrap {
-  padding: 25% 0%; }
-  @media only screen and (max-width: 40em) {
-    .story-wrap:before {
-      color: white;
-      content: 'This is small';
-      position: absolute;
-      top: 450px; } }
-  @media only screen and (min-width:40.063em) and (max-width:64em) {
-    .story-wrap:before {
-      color: white;
-      content: 'This is medium';
-      position: absolute;
-      top: 450px; } }
-  @media only screen and (min-width:64.063em) and (max-width:90em) {
-    .story-wrap:before {
-      color: white;
-      content: 'This is large';
-      position: absolute;
-      top: 450px; } }
-  @media only screen and (min-width:90.063em) and (max-width:120em) {
-    .story-wrap:before {
-      color: white;
-      content: 'This is xlarge';
-      position: absolute;
-      top: 450px; } }
-  @media only screen and (min-width:40.063em) {
-    .story-wrap {
-      padding: 20% 6%; } }
-  @media only screen and (min-width:64.063em) {
-    .story-wrap {
-      padding: 15% 8%; } }
-  @media only screen and (min-width:90.063em) {
-    .story-wrap {
-      padding: 12% 10%; } }
-
 .story-content {
-  padding-top: 3.125rem;
-  color: #555; }
+  padding-top: 3.125rem; }
   .story-content p strong {
     font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-h2:first-child, h3:first-child, h4:first-child {
-  margin-top: 0; }
-
+/* Table
+* -------------------------------------
+*/
 table {
   margin-top: 2.1875rem;
   width: 100%; }
@@ -3877,6 +3845,9 @@ table {
 thead {
   font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
+/* Figure Tag
+* -------------------------------------
+*/
 figure {
   margin: 2.5rem -3.125rem; }
   @media only screen and (max-width: 40em) {
@@ -3891,6 +3862,9 @@ figcaption {
   text-align: center;
   margin-top: 1.25rem; }
 
+/* Blockquote
+* -------------------------------------
+*/
 blockquote {
   margin-left: 0;
   padding: 1.875rem; }
@@ -3903,6 +3877,9 @@ blockquote {
     blockquote {
       margin-left: -3.75rem; } }
 
+/* Slideshow
+* -------------------------------------
+*/
 #slideshow {
   clear: both;
   overflow: hidden; }
@@ -3929,12 +3906,9 @@ blockquote {
 #tiles {
   margin-top: 3.125rem; }
 
-.story-social .social li {
-  font-size: 0.875rem;
-  color: #777; }
-  .story-social .social li a {
-    background-color: #444444; }
-
+/* Adjacent Posts
+* -------------------------------------
+*/
 .story-adjacent {
   background-color: #fff; }
 
@@ -3968,6 +3942,15 @@ blockquote {
     font-weight: 700;
     font-size: 2rem; }
 
+/* Share Post
+* -------------------------------------
+*/
+.story-social .social li {
+  font-size: 0.875rem;
+  color: #777; }
+  .story-social .social li a {
+    background-color: #444444; }
+
 .story-social {
   display: table;
   margin: 0.625rem auto 5.625rem;
@@ -3991,16 +3974,19 @@ blockquote {
       width: 2.5rem;
       padding-top: 0.4375rem; }
 
+/* Spotlight
+* -------------------------------------
+*/
 .author-box {
   overflow: hidden;
-  margin-left: 1.25rem; }
+  margin-left: 2.1875rem; }
 
 .author-title {
   color: #757575;
   margin-bottom: 0.625rem; }
 
 .author-photo {
-  background-image: url('https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/10494646_893856813963777_8075758235822311771_n.jpg');
+  background-image: url('https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/537372_10151193881121039_86854660_n.jpg?oh=e4823747d1674c3e59c2433e1591b027&oe=546B83EB&__gda__=1417512296_d269ff45e17617cf4a0467c641bcfae2');
   padding: 45%; }
 
 .author-meta {

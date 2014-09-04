@@ -1,19 +1,17 @@
 <footer id="footer">
   <div class="row">
     <div class="medium-3 columns quicklinks">
-      <h5>Quick Links</h5>
-
-          <ul>
-            {% for item in menu.get_items %}
-              <li class="{{item.classes | join(' ')}}">
-                <a href="{{item.get_link}}" class="nav-item {{item.attr_title | join(' ')}}">{{item.title}}</a>
-              </li>
-            {% endfor %}
-          </ul>
-
+      <div  class="title-bold">Quick Links</div>
+        <ul>
+          {% for item in menu.get_items %}
+            <li class="{{item.classes | join(' ')}}">
+              <a href="{{item.get_link}}" class="nav-item {{item.attr_title | join(' ')}}">{{item.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
     </div>
     <div class="medium-4 columns contact">
-      <h5>Keep in touch</h5>
+      <div  class="title-bold">Keep in touch</div>
       <ul>
         <li><i class="icon-email"></i>{{options.contact_email}}</li>
         <li><i class="icon-phone-squared"></i>{{options.contact_phone}}</li>
@@ -21,10 +19,11 @@
         {% if options.contact_address is not empty %}<li><i class="icon-location"></i>{{options.contact_address}}</li>{% endif %}
       </ul>
     </div>
+
     <div class="medium-5 columns newsletter">
       <div class="row">
         <div class="medium-12 columns">
-          <h5>Don't Be A Stranger</h5>
+          <div  class="title-bold">Don't Be A Stranger</div>
           <p>Sign up for updates &amp; exciting offers from us.</p>
         </div>
       </div>

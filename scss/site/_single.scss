@@ -3,6 +3,10 @@
  * ------------------------------------
  */
 
+
+/* Masonry Gallery
+* -------------------------------------
+*/
  #tiles {
   list-style-type: none;
 }
@@ -10,8 +14,12 @@
   margin-bottom: rem-calc(12);
 }
 
-// Story Posts
+
+/* Back Button
+* -------------------------------------
+*/
 .little-nav {
+  @include grid-debug(50px, black);
   padding-top: rem-calc(10);
   i { margin-right: rem-calc(5); }
   .all-posts {
@@ -22,21 +30,9 @@
     color: #888;
   }
 }
-.excerpt {
-  @extend %excerpt;
-  margin: 0 0 rem-calc(30) 0;
-}
-.story-wrap {
-  @include grid-debug(450px);
-  @extend %bg;
-  padding: 25% 0%;
-  @media #{$medium-up} { padding: 20% 6%; }
-  @media #{$large-up} { padding: 15% 8%; }
-  @media #{$xlarge-up} { padding: 12% 10% }
-}
 .story-content {
   padding-top: rem-calc(50);
-  color: #555;
+  // color: #555;
   p {
     strong {
       font-family: $demi-font-family;
@@ -44,11 +40,17 @@
   }
 }
 
-h2:first-child, h3:first-child, h4:first-child { margin-top: 0; }
+/* Table
+* -------------------------------------
+*/
 table { margin-top: rem-calc(35); width: 100%;}
 thead {
   font-family: $demi-font-family;
 }
+
+/* Figure Tag
+* -------------------------------------
+*/
 figure {
   margin: rem-calc(40 -50);
   @media #{$small-only} { margin: rem-calc(0); }
@@ -61,6 +63,10 @@ figcaption {
   text-align: center;
   margin-top: rem-calc(20);
 }
+
+/* Blockquote
+* -------------------------------------
+*/
 blockquote {
   p {
     @extend %excerpt;
@@ -73,6 +79,10 @@ blockquote {
   @media #{$medium-up} { margin-left: rem-calc(-60); }
   padding: rem-calc(30);
 }
+
+/* Slideshow
+* -------------------------------------
+*/
 #slideshow {
   clear: both;
   overflow: hidden;
@@ -108,15 +118,10 @@ blockquote {
 #tiles {
   margin-top: rem-calc(50);
 }
-.story-social {
-  .social li {
-    font-size: rem-calc(14);
-    color: #777;
-    a {
-      background-color: #444444;
-    }
-  }
-}
+
+/* Adjacent Posts
+* -------------------------------------
+*/
 .story-adjacent {
   background-color: #fff;
 }
@@ -149,8 +154,20 @@ blockquote {
     font-size: rem-calc(32);
   }
 }
+
+/* Share Post
+* -------------------------------------
+*/
 .story-social {
-  // Center inline list
+  .social li {
+    font-size: rem-calc(14);
+    color: #777;
+    a {
+      background-color: #444444;
+    }
+  }
+}
+.story-social {
   display: table;
   margin: rem-calc(10) auto rem-calc(90);
   padding-top: rem-calc(40);
@@ -175,9 +192,13 @@ blockquote {
     }
   }
 }
+
+/* Spotlight
+* -------------------------------------
+*/
 .author-box {
   overflow: hidden;
-  margin-left: rem-calc(20);
+  margin-left: rem-calc(35);
 }
 .author-title {
   @extend %post-title-bold;
@@ -186,7 +207,7 @@ blockquote {
 }
 .author-photo {
   @extend %bg;
-  background-image: url('https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/10494646_893856813963777_8075758235822311771_n.jpg');
+  background-image: url('https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/537372_10151193881121039_86854660_n.jpg?oh=e4823747d1674c3e59c2433e1591b027&oe=546B83EB&__gda__=1417512296_d269ff45e17617cf4a0467c641bcfae2');
   padding: 45%;
 }
 .author-meta {
