@@ -48,7 +48,7 @@
 }
 @mixin rfont($desktop-value, $phone-value:$desktop-value*0.875){
   font-size: rem-calc($phone-value);
-  @media #{$large-up} { font-size: rem-calc($desktop-value); }
+  @media #{$medium-up} { font-size: rem-calc($desktop-value); }
 }
 @mixin rprop($prop, $small-value, $medium-value:false, $large-value:false, $xlarge-value:false){
   #{$prop}: rem-calc($small-value);

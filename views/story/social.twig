@@ -1,27 +1,29 @@
-<section class="story-share" id="story-jump">
+<section id="story-jump">
   <div class="row">
-    <div class="small-12 large-8 xlarge-6 large-centered columns">
-      <h3 class="text-center">{{post.cta_message}}</h3>
-      <ul class="story-social inline-list">
-        <li class="story-social-list">
-          <a href="" class="story-social-link fb-share">
-            <i class="icon-facebook"></i>
-            Share on Facebook
-          </a>
-        </li>
-        <li class="story-social-list">
-          <a href="" class="story-social-link twitter-share">
-            <i class="icon-twitter"></i>
-            Share on Twitter
-          </a>
-        </li>
-        <li class="story-social-list">
-          <a href="mailto:?subject=Check out this Proposal Envy story!&amp;body={{post.permalink|url_encode }}" target="_blank" class="story-social-link">
-            <i class="icon-email"></i>
-            Email this {{post_type}}
-          </a>
-        </li>
-      </ul>
+    <div class="small-12 medium-10 large-8 xlarge-6 medium-centered columns">
+      <h4 class="text-center">{{post.cta_message}}</h4>
+      <div class="table">
+        <ul class="story-social inline-list">
+          <li class="story-social-list">
+            <a href="" class="story-social-link fb-share title-lower">
+              <i class="icon-facebook"></i>
+              Share on Facebook
+            </a>
+          </li>
+          <li class="story-social-list">
+            <a href="" class="story-social-link twitter-share title-lower">
+              <i class="icon-twitter"></i>
+              Share on Twitter
+            </a>
+          </li>
+          <li class="story-social-list">
+            <a href="mailto:?subject=Check out this Proposal Envy story!&amp;body={{post.permalink|url_encode }}" target="_blank" class="story-social-link title-lower">
+              <i class="icon-email"></i>
+              Email this {{post_type}}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

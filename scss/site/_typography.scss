@@ -9,15 +9,33 @@ h2 {
   margin: rem-calc(10 0);
 }
 h3 {
+  @extend %serif;
+  color: $tuatara;
+}
+h4 {
   @extend %serif-bold;
   color: $jet;
 }
 .post-header {
   @extend %serif-bold;
-  @include rfont(50);
+  @include rfont(46);
 }
 p {
   @include rfont(16);
+}
+strong {
+  @extend %sans-bold-lower;
+  letter-spacing: normal;
+}
+figcaption {
+  @extend %serif-italic;
+  @include rfont(14);
+  color: $base;
+  text-align: center;
+}
+blockquote {
+  @extend %excerpt;
+  font-style: italic;
 }
 .title {
   @extend %sans;

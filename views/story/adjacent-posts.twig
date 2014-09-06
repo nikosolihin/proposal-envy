@@ -1,30 +1,38 @@
-<section class="story-adjacent{% if post_type == 'Journal' %} journal-adjacent{% endif %}">
+<section class="no-padding story-adjacent{% if post_type == 'Journal' %} journal-adjacent{% endif %}">
   <div class="row max-width text-center">
     {% if post.next is empty %}
       <div class="story-prev medium-12 columns">
         <a href="{{post.prev.link}}">
-          <h4>Previous {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</h4>
-          <h2>{{post.prev.title}}</h2>
+          <div class="center-me">
+            <div class="title white">Previous {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</div>
+            <h2 class="post-header white">{{post.prev.title}}</h2>
+          </div>
         </a>
       </div>
     {% elseif post.prev is empty %}
       <div class="story-next medium-12 columns">
         <a href="{{post.next.link}}">
-          <h4>Next {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</h4>
-          <h2>{{post.next.title}}</h2>
+          <div class="center-me">
+            <div class="title white">Next {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</div>
+            <h2 class="post-header white">{{post.next.title}}</h2>
+          </div>
         </a>
       </div>
     {% else %}
       <div class="story-prev medium-6 columns">
         <a href="{{post.prev.link}}">
-          <h4>Previous {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</h4>
-          <h2>{{post.prev.title}}</h2>
+          <div class="center-me">
+            <div class="title white">Previous {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</div>
+            <h2 class="post-header white">{{post.prev.title}}</h2>
+          </div>
         </a>
       </div>
       <div class="story-next medium-6 columns">
         <a href="{{post.next.link}}">
-          <h4>Next {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</h4>
-          <h2>{{post.next.title}}</h2>
+          <div class="center-me">
+            <div class="title white">Next {% if post_type == 'Journal' %}Journal{% else %}Story{% endif %}</div>
+            <h2 class="post-header white">{{post.next.title}}</h2>
+          </div>
         </a>
       </div>
     {% endif %}

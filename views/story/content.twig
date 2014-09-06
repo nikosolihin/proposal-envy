@@ -1,88 +1,107 @@
 <section class="story-content">
-    <div class="row max-width entry-content">
-      <div class="little-nav small-12 medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
-        <a href="{{site.url}}/{{post_type|lower}}/" class="all-posts">
-          <i class="icon-left-dir"></i>
-          All {{post_type}}
-        </a>
-      </div>
-      <div class="small-12 medium-8 large-6 xlarge-4 end columns">
-        {% if post.get_field('story_excerpt') is not empty %}
-          <p class="excerpt">{{post.get_field('story_excerpt')}}</p>
-        {% endif %}
+  <div class="row entry-content">
+    <div class="medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
+      <a href="{{site.url}}/{{post_type|lower}}/" class="title-lower all-posts">
+        <i class="icon-left-dir"></i>
+        All {{post_type}}
+      </a>
+    </div>
+    <div class="small-12 medium-8 large-6 xlarge-4 end columns">
+      {% if post.get_field('post_excerpt') is not empty %}
+        <p class="excerpt">{{post.get_field('post_excerpt')}}</p>
+      {% endif %}
 
-        {% for layout in layouts %}
+      {% for layout in layouts %}
 
-          {% if layout.acf_fc_layout == "text_content" %}
-            <div class="row">
-            {% if layout.column_number == "2" %}
-              {# Sets up 2 columns #}
-              <div class="small-12 medium-6 columns">
-                {% if layout.the_content[0].content_type == "image" %}
-                  <figure class="no-margin">
-                     <img src="{{TimberImage(layout.the_content[0].image).src}}" alt="{{TimberImage(layout.the_content[0].image).alt}}">
-                    <figcaption>{{TimberImage(layout.the_content[0].image).caption}}</figcaption>
-                  </figure>
-                {% else %}
-                  {{layout.the_content[0].text|trim}}
-                {% endif %}
-              </div>
-              <div class="small-12 medium-6 columns">
-                {% if layout.another_content[0].content_type == "image" %}
-                  <figure class="no-margin">
-                     <img src="{{TimberImage(layout.another_content[0].image).src}}" alt="{{TimberImage(layout.another_content[0].image).alt}}">
-                    <figcaption>{{TimberImage(layout.another_content[0].image).caption}}</figcaption>
-                  </figure>
-                {% else %}
-                  {{layout.another_content[0].text|trim}}
-                {% endif %}
-              </div>
-            {% else %}
-              {# Sets up 1 columns #}
-              <div class="small-12 columns">
-                {% if layout.the_content[0].content_type == "image" %}
-                  <figure class="no-margin">
-                     <img src="{{TimberImage(layout.the_content[0].image).src}}" alt="{{TimberImage(layout.the_content[0].image).alt}}">
-                    <figcaption>{{TimberImage(layout.the_content[0].image).caption}}</figcaption>
-                  </figure>
-                {% else %}
-                  {{layout.the_content[0].text|trim}}
-                {% endif %}
-              </div>
-            {% endif %}
-            </div>
-
-          {% elseif layout.acf_fc_layout == "gallery" %}
+        {% if layout.acf_fc_layout == "text_content" %}
           <div class="row">
-            <ul id="tiles">
-              {% for gallery in layout.gallery_gallery %}
-                <li class="item"
-                  data-src="{{gallery.url}}"
-                  data-title="{{gallery.caption}}">
-                  <a href="">
-                    <img src="{{gallery.sizes.thumbnail}}" alt="">
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
+          {% if layout.column_number == "2" %}
+            {# Sets up 2 columns #}
+            <div class="small-12 medium-6 columns">
+              {% if layout.the_content[0].content_type == "image" %}
+                <figure class="no-margin">
+                   <img src="{{TimberImage(layout.the_content[0].image).src}}" alt="{{TimberImage(layout.the_content[0].image).alt}}">
+                  <figcaption>{{TimberImage(layout.the_content[0].image).caption}}</figcaption>
+                </figure>
+              {% else %}
+                {{layout.the_content[0].text|trim}}
+              {% endif %}
+            </div>
+            <div class="small-12 medium-6 columns">
+              {% if layout.another_content[0].content_type == "image" %}
+                <figure class="no-margin">
+                   <img src="{{TimberImage(layout.another_content[0].image).src}}" alt="{{TimberImage(layout.another_content[0].image).alt}}">
+                  <figcaption>{{TimberImage(layout.another_content[0].image).caption}}</figcaption>
+                </figure>
+              {% else %}
+                {{layout.another_content[0].text|trim}}
+              {% endif %}
+            </div>
+          {% else %}
+            {# Sets up 1 columns #}
+            <div class="small-12 columns">
+              {% if layout.the_content[0].content_type == "image" %}
+                <figure>
+                   <img src="{{TimberImage(layout.the_content[0].image).src}}" alt="{{TimberImage(layout.the_content[0].image).alt}}">
+                  <figcaption>{{TimberImage(layout.the_content[0].image).caption}}</figcaption>
+                </figure>
+              {% else %}
+                {{layout.the_content[0].text|trim}}
+              {% endif %}
+            </div>
           {% endif %}
-        {% endfor %}
-      </div>
-      <div class="large-3 end columns">
+          </div>
+
+        {% elseif layout.acf_fc_layout == "gallery" %}
         <div class="row">
-          <div class="xlarge-9 columns author-box">
-            <div class="author-photo"></div>
-            <div class="author-meta">
-                <h5 class="author-name">Lixin is such a Hottie</h5>
-                <p class="author-bio">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatem voluptatum beatae recusandae maiores aspernatur tempore dicta ullam vel. Dolores nihil cumque minima quisquam alias obcaecati, maiores quos aliquid dolorem.
-                </p>
+          <ul id="tiles">
+            {% for gallery in layout.gallery_gallery %}
+              <li class="item"
+                data-src="{{gallery.url}}"
+                data-title="{{gallery.caption}}">
+                <a href="">
+                  <img src="{{gallery.sizes.thumbnail}}" alt="">
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      {% endfor %}
+
+      {# Horizontal author box #}
+      <div class="row">
+        <div class="small-12 columns show-for-medium-down">
+          <div class="row">
+            <div class="small-4 columns">
+              <img src="http://www.festivaladvisor.com/wp-content/uploads/2014/04/Hakkasan-Las-Vegas_Crowd.jpg" alt="">
+            </div>
+            <div class="small-8 columns">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolore reprehenderit in illo, officia maiores voluptas eum minus itaque, magnam blanditiis autem labore commodi consectetur placeat vero quas at sequi!</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    {# Vertical author box #}
+    <div class="large-3 xlarge-2 end columns show-for-large-up">
+      <div class="author-photo"></div>
+      <div class="author-meta">
+          <h5 class="author-name">Arista TW</h5>
+          <p class="author-bio">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatem voluptatum beatae recusandae maiores aspernatur tempore dicta ullam vel. Dolores nihil cumque minima quisquam alias obcaecati, maiores quos aliquid dolorem.
+          </p>
+          <ul class="vcard">
+            <li class="fn">Gaius Baltar</li>
+            <li class="street-address">123 Colonial Ave.</li>
+            <li class="locality">Caprica City</li>
+            <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
+            <li class="email"><a href="#">g.baltar@example.com</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 

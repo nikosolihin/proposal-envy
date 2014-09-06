@@ -2493,7 +2493,7 @@ a {
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #ff3a2c; }
+    color: #ff473a; }
   a img {
     border: none; }
 
@@ -2502,8 +2502,8 @@ p {
   font-family: inherit;
   font-weight: normal;
   font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5625rem;
   text-rendering: optimizeLegibility; }
   p.lead {
     font-size: 1.21875rem;
@@ -2538,7 +2538,7 @@ h3 {
   font-size: 1.3125rem; }
 
 h4 {
-  font-size: 1.125rem; }
+  font-size: 1rem; }
 
 h5 {
   font-size: 1.125rem; }
@@ -2586,8 +2586,8 @@ code {
 /* Lists */
 ul, ol, dl {
   font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5625rem;
   list-style-position: outside;
   font-family: inherit; }
 
@@ -2645,7 +2645,7 @@ abbr {
 
 /* Blockquotes */
 blockquote {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5625rem;
   padding: 0.5625rem 1.25rem 0 1.1875rem;
   border-left: 1px solid #DDDDDD; }
   blockquote cite {
@@ -2658,7 +2658,7 @@ blockquote {
       color: #555555; }
 
 blockquote, blockquote p {
-  line-height: 1.7;
+  line-height: 1.8;
   color: #6f6f6f; }
 
 /* Microformats */
@@ -2693,7 +2693,7 @@ blockquote, blockquote p {
   h3 {
     font-size: 1.625rem; }
   h4 {
-    font-size: 1.4375rem; }
+    font-size: 1.3125rem; }
   h5 {
     font-size: 1.125rem; }
   h6 {
@@ -3031,18 +3031,18 @@ th.hide-for-touch {
  * Placeholders
  * ------------------------------------
  */
-.hero-action, .post-title-success, .post-place-success {
+.center-me, .hero-action, .post-title-success, .post-place-success {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.hero {
+.hero, .story-prev, .story-next {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d; }
 
-section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .carousel-content, .author-photo {
+section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .story-prev, .story-next, .author-photo {
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -3054,34 +3054,34 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal
 .hero-subtitle, .hero-title, .hero-tagline {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
-h3, .post-header, .post-title-success, .hero-subtitle, .excerpt, blockquote p, h2, .gradient-text {
+h4, .post-header, .post-title-success, figcaption, .hero-subtitle, blockquote, .excerpt, h2, h3, .gradient-text {
   font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
   font-weight: 400;
   margin: 0 0 0 0; }
 
-h3, .post-header, .post-title-success {
+h4, .post-header, .post-title-success {
   font-weight: 700; }
 
-.hero-subtitle {
+figcaption, .hero-subtitle {
   font-style: italic; }
 
-.title-lower, .title-bold, .hero-title, .title, .hero-tagline {
+strong, .title-lower, .title-bold, .hero-title, .title, .hero-tagline {
   font-family: "AvenirNextLTPro-Regular", AvenirNextLTPro-Regular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
   margin: 0 0 0 0; }
 
-.title-lower, .title-bold, .hero-title {
+strong, .title-lower, .title-bold, .hero-title {
   font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-.title-lower {
+strong, .title-lower {
   text-transform: capitalize; }
 
-.excerpt, blockquote p {
+blockquote, .excerpt {
   font-size: 1.09375rem;
   line-height: 1.8;
   margin-bottom: 1.875rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     %excerpt {
       font-size: 1.25rem; } }
 
@@ -3100,7 +3100,7 @@ select:focus {
   border-radius: 3px;
   padding: 0.9375rem;
   margin: 2.5rem 0 0; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .button {
       font-size: 0.875rem; } }
   .button.coral {
@@ -3119,10 +3119,6 @@ select:focus {
  * 1.1 Global Elements
  * ------------------------------------
  */
-figure {
-  margin: 0;
-  padding: 0; }
-
 figcaption {
   margin-bottom: 1.25rem;
   margin-top: 0.625rem;
@@ -3130,6 +3126,29 @@ figcaption {
 
 section {
   padding: 4.375rem 0; }
+
+/* Figure Tag
+* -------------------------------------
+*/
+figure {
+  padding: 0;
+  margin: 0.625rem -3.125rem 2.1875rem -3.125rem; }
+  @media only screen and (max-width: 40em) {
+    figure {
+      margin: 0; } }
+
+/* Blockquote
+* -------------------------------------
+*/
+blockquote {
+  margin-left: 0;
+  margin-top: 1.875rem;
+  padding: 1.875rem; }
+  @media only screen and (min-width:40.063em) {
+    blockquote {
+      margin-left: -3.75rem; } }
+  blockquote p {
+    margin: 0; }
 
 /**
  * 1.2 Global Classes
@@ -3154,27 +3173,22 @@ html, body, main {
   height: 100%; }
 
 .stuck {
-  position: fixed;
-  top: 2.5rem;
-  width: 14%; }
-  @media only screen and (min-width:90.063em) and (max-width:120em) {
-    .stuck {
-      width: 15%; } }
+  position: fixed; }
 
 .unstuck {
   position: relative; }
 
 .wrap {
-  padding: 25% 0%; }
+  padding: 22% 0; }
   @media only screen and (min-width:40.063em) {
     .wrap {
-      padding: 20% 6%; } }
+      padding: 20% 0; } }
   @media only screen and (min-width:64.063em) {
     .wrap {
-      padding: 15% 8%; } }
+      padding: 15% 0; } }
   @media only screen and (min-width:90.063em) {
     .wrap {
-      padding: 12% 10%; } }
+      padding: 12% 0; } }
 
 /**
  * 2.0 Typography
@@ -3189,37 +3203,54 @@ h2 {
   margin: 0.625rem 0; }
 
 h3 {
+  color: #444444; }
+
+h4 {
   color: #222222; }
 
 .post-header {
-  font-size: 2.734375rem; }
-  @media only screen and (min-width:64.063em) {
+  font-size: 2.515625rem; }
+  @media only screen and (min-width:40.063em) {
     .post-header {
-      font-size: 3.125rem; } }
+      font-size: 2.875rem; } }
 
 p {
   font-size: 0.875rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     p {
       font-size: 1rem; } }
+
+strong {
+  letter-spacing: normal; }
+
+figcaption {
+  font-size: 0.765625rem;
+  color: #AAAAAA;
+  text-align: center; }
+  @media only screen and (min-width:40.063em) {
+    figcaption {
+      font-size: 0.875rem; } }
+
+blockquote {
+  font-style: italic; }
 
 .title {
   font-size: 0.765625rem;
   color: #999999; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .title {
       font-size: 0.875rem; } }
 
 .title-bold {
   color: #FF6A5D;
   font-size: 0.8203125rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .title-bold {
       font-size: 0.9375rem; } }
 
 .title-lower {
   font-size: 0.8203125rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .title-lower {
       font-size: 0.9375rem; } }
 
@@ -3569,7 +3600,7 @@ footer {
 
 .hero-subtitle {
   font-size: 1.203125rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .hero-subtitle {
       font-size: 1.375rem; } }
 
@@ -3585,7 +3616,7 @@ footer {
 .hero-tagline {
   font-size: 0.875rem;
   letter-spacing: 0.125rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .hero-tagline {
       font-size: 1rem; } }
 
@@ -3615,7 +3646,7 @@ footer {
   -webkit-background-clip: text;
           background-clip: text;
   text-fill-color: transparent; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .gradient-text {
       font-size: 1.25rem; } }
   .gradient-text em {
@@ -3778,7 +3809,7 @@ footer {
 
 .post-title {
   font-size: 1.09375rem; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width:40.063em) {
     .post-title {
       font-size: 1.25rem; } }
 
@@ -3789,215 +3820,118 @@ footer {
  * 4.2 Posts
  * ------------------------------------
  */
-/* Masonry Gallery
+/* Header
 * -------------------------------------
 */
-#tiles {
-  list-style-type: none; }
+.post-header {
+  margin-top: 0.4375rem; }
 
-.item {
-  margin-bottom: 0.75rem; }
+/* Post Content
+* -------------------------------------
+*/
+.story-content h3 {
+  font-weight: 700; }
+.story-content h3, .story-content h4 {
+  color: #222222;
+  margin: 2.5rem 0 0.8125rem 0; }
 
 /* Back Button
 * -------------------------------------
 */
-.little-nav {
-  padding-top: 0.625rem; }
-  @media only screen and (max-width: 40em) {
-    .little-nav:before {
-      color: black;
-      content: 'This is small';
-      position: absolute;
-      top: 50px; } }
-  @media only screen and (min-width:40.063em) and (max-width:64em) {
-    .little-nav:before {
-      color: black;
-      content: 'This is medium';
-      position: absolute;
-      top: 50px; } }
-  @media only screen and (min-width:64.063em) and (max-width:90em) {
-    .little-nav:before {
-      color: black;
-      content: 'This is large';
-      position: absolute;
-      top: 50px; } }
-  @media only screen and (min-width:90.063em) and (max-width:120em) {
-    .little-nav:before {
-      color: black;
-      content: 'This is xlarge';
-      position: absolute;
-      top: 50px; } }
-  .little-nav i {
+.all-posts {
+  color: #888888;
+  letter-spacing: 0.0625rem; }
+  .all-posts i {
     margin-right: 0.3125rem; }
-  .little-nav .all-posts {
-    margin: 0;
-    font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 0.9375rem;
-    letter-spacing: 0.0625rem;
-    color: #888; }
-
-.story-content {
-  padding-top: 3.125rem; }
-  .story-content p strong {
-    font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
-
-/* Table
-* -------------------------------------
-*/
-table {
-  margin-top: 2.1875rem;
-  width: 100%; }
-
-thead {
-  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
-
-/* Figure Tag
-* -------------------------------------
-*/
-figure {
-  margin: 2.5rem -3.125rem; }
-  @media only screen and (max-width: 40em) {
-    figure {
-      margin: 0; } }
-
-figcaption {
-  font-family: "Merriweather", Merriweather, Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 0.875rem;
-  color: #A9A9A9;
-  text-align: center;
-  margin-top: 1.25rem; }
-
-/* Blockquote
-* -------------------------------------
-*/
-blockquote {
-  margin-left: 0;
-  padding: 1.875rem; }
-  blockquote p {
-    margin-bottom: 0;
-    font-style: italic;
-    font-size: 1rem;
-    line-height: 1.9; }
-  @media only screen and (min-width:40.063em) {
-    blockquote {
-      margin-left: -3.75rem; } }
-
-/* Slideshow
-* -------------------------------------
-*/
-#slideshow {
-  clear: both;
-  overflow: hidden; }
-  #slideshow .slick-prev {
-    left: 20px; }
-  #slideshow .slick-next {
-    right: 40px; }
-  #slideshow .slick-dots {
-    bottom: -20px; }
-    #slideshow .slick-dots li {
-      margin-right: 15px; }
-    #slideshow .slick-dots .slick-active button:before {
-      background-color: white;
-      opacity: 1; }
-    #slideshow .slick-dots li button:before {
-      content: '';
-      width: 15px;
-      height: 15px;
-      border-radius: 10px;
-      background-color: rgba(204, 0, 102, 0);
-      border: 3px solid #fff;
-      opacity: 1; }
-
-#tiles {
-  margin-top: 3.125rem; }
 
 /* Adjacent Posts
 * -------------------------------------
 */
-.story-adjacent {
-  background-color: #fff; }
-
 .story-prev, .story-next {
-  height: 12.5rem;
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-position: center center;
+  height: 14.375rem;
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-transform-origin: center center;
       -ms-transform-origin: center center;
           transform-origin: center center; }
+  .story-prev a, .story-next a {
+    width: 100%;
+    height: 100%;
+    display: inline-block; }
+  .story-prev h2, .story-next h2 {
+    font-size: 1.75rem; }
+    @media only screen and (min-width:40.063em) {
+      .story-prev h2, .story-next h2 {
+        font-size: 2rem; } }
   .story-prev:hover, .story-next:hover {
     -webkit-transform: scale(0.975);
         -ms-transform: scale(0.975);
             transform: scale(0.975); }
-  .story-prev a, .story-next a {
-    width: 100%;
-    height: 100%;
-    display: block;
-    padding: 3.125rem 4.6875rem; }
-  .story-prev h2, .story-prev h4, .story-next h2, .story-next h4 {
-    color: #ffffff; }
-  .story-prev h4, .story-next h4 {
-    font-family: "AvenirNextLTPro-Regular", AvenirNextLTPro-Regular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    letter-spacing: 0.25rem;
-    margin-bottom: 0.9375rem;
-    font-size: 0.75rem; }
-  .story-prev h2, .story-next h2 {
-    font-weight: 700;
-    font-size: 2rem; }
 
 /* Share Post
 * -------------------------------------
 */
-.story-social .social li {
-  font-size: 0.875rem;
-  color: #777; }
-  .story-social .social li a {
-    background-color: #444444; }
+#story-jump {
+  padding-top: 0; }
 
 .story-social {
+  margin-top: 2.1875rem;
+  padding-top: 2.1875rem;
+  border-top: 2px solid #F5F5F5; }
+
+.table {
   display: table;
-  margin: 0.625rem auto 5.625rem;
-  padding-top: 2.5rem;
-  border-top: 2px solid #f3f3f3; }
+  margin: 0 auto; }
 
 .story-social-list {
-  margin: 0 1.25rem 0.8125rem 0; }
+  margin: 0 1.25rem 0.9375rem 0; }
 
 .story-social-link {
   color: #888888;
-  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.875rem; }
+  letter-spacing: normal; }
   .story-social-link i {
     margin-right: 0.5rem; }
     .story-social-link i:before {
       border-radius: 1.25rem;
-      background-color: #666;
+      background-color: #777777;
       cursor: pointer;
       height: 2.5rem;
       width: 2.5rem;
       padding-top: 0.4375rem; }
 
+/* Disqus
+* -------------------------------------
+*/
+.story-comments {
+  background-color: #fafafa; }
+
+/* Masonry Gallery
+* -------------------------------------
+*/
+#tiles {
+  list-style-type: none;
+  margin: 1.5625rem 0 2.8125rem 0; }
+
+.item {
+  margin-bottom: 0.75rem; }
+
 /* Spotlight
 * -------------------------------------
 */
 .author-box {
-  overflow: hidden;
-  margin-left: 2.1875rem; }
+  overflow: hidden; }
 
 .author-title {
   color: #757575;
   margin-bottom: 0.625rem; }
 
 .author-photo {
-  background-image: url('https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/537372_10151193881121039_86854660_n.jpg?oh=e4823747d1674c3e59c2433e1591b027&oe=546B83EB&__gda__=1417512296_d269ff45e17617cf4a0467c641bcfae2');
+  background-image: url('http://www.festivaladvisor.com/wp-content/uploads/2014/04/Hakkasan-Las-Vegas_Crowd.jpg');
   padding: 45%; }
 
 .author-meta {
   background-color: #fef9f9;
-  padding: 2.1875rem; }
+  padding: 1.5625rem; }
 
 .author-name {
   color: #ef3b3b; }

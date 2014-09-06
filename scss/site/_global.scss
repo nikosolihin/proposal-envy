@@ -3,11 +3,6 @@
  * ------------------------------------
  */
 
-// Reset margin and padding on figure element
-figure {
-  margin: 0;
-  padding: 0;
-}
 // Add some basic styling for figcaption element
 figcaption {
   margin-bottom: rem-calc(20);
@@ -17,6 +12,26 @@ figcaption {
 section {
   @extend %bg;
   padding: rem-calc(70) 0;
+}
+
+/* Figure Tag
+* -------------------------------------
+*/
+figure {
+  padding: 0;
+  margin: rem-calc(10 -50 35 -50);
+  @media #{$small-only} { margin: rem-calc(0); }
+}
+
+/* Blockquote
+* -------------------------------------
+*/
+blockquote {
+  margin-left: 0;
+  margin-top: rem-calc(30);
+  @media #{$medium-up} { margin-left: rem-calc(-60); }
+  padding: rem-calc(30);
+  p { margin: 0; }
 }
 
 
@@ -48,19 +63,22 @@ html, body, main {
 }
 .stuck {
   position: fixed;
-  top: rem-calc(40);
-  width: 14%;
-  @media #{$xlarge-only} {
-    width: 15%;
-  }
+  // top: rem-calc(40);
+  // width: 14%;
+  // @media #{$xlarge-only} {
+  //   width: 15%;
+  // }
 }
 .unstuck {
   position: relative;
 }
 .wrap {
   @extend %bg;
-  padding: 25% 0%;
-  @media #{$medium-up} { padding: 20% 6%; }
-  @media #{$large-up} { padding: 15% 8%; }
-  @media #{$xlarge-up} { padding: 12% 10% }
+  padding: 22% 0;
+  @media #{$medium-up} { padding: 20% 0; }
+  @media #{$large-up} { padding: 15% 0; }
+  @media #{$xlarge-up} { padding: 12% 0; }
+}
+.center-me {
+  @extend %vertical-align;
 }

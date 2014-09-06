@@ -1,7 +1,7 @@
 <?php
 // Disable unused headings and pre formatting
 function wpa_45815($arr){
-    $arr['block_formats'] = 'Huge=h2;Heading=h3;Paragraph=p';
+    $arr['block_formats'] = 'Huge=h2;Normal=h3;Smaller=h4;Paragraph=p';
     return $arr;
   }
 add_filter('tiny_mce_before_init', 'wpa_45815');

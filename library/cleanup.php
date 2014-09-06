@@ -245,4 +245,16 @@ function cc_mime_types( $mimes ){
     return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
+
+/**
+ * Disable update notifications for client. Uncomment at launch.
+ * ----------------------------------------------------------------------------
+ */
+function remove_core_updates(){
+    global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+// add_filter('pre_site_transient_update_core','remove_core_updates');
+// add_filter('pre_site_transient_update_plugins','remove_core_updates');
+// add_filter('pre_site_transient_update_themes','remove_core_updates');
+
 ?>
