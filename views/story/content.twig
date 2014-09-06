@@ -1,6 +1,12 @@
 <section class="story-content">
   <div class="row entry-content">
-    <div class="medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
+
+    {# if we have an author then set the grid differently #}
+    {% if spotlight is not empty %}
+      <div class="medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
+    {% else %}
+      <div class="medium-2 large-2 xlarge-1 xlarge-offset-3 text-right hide-for-small-only columns">
+    {% endif %}
       <a href="{{site.url}}/{{post_type|lower}}/" class="title-lower all-posts">
         <i class="icon-left-dir"></i>
         All {{post_type}}
@@ -84,23 +90,18 @@
       </div>
     </div>
 
-    {# Vertical author box #}
-    <div class="large-3 xlarge-2 end columns show-for-large-up">
-      <div class="author-photo"></div>
-      <div class="author-meta">
-          <h5 class="author-name">Arista TW</h5>
+    {% if spotlight is not empty %}
+      {# Vertical author box #}
+      <div class="large-3 xlarge-2 end columns show-for-large-up">
+        <div class="author-photo"></div>
+        <div class="author-meta">
+          <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
           <p class="author-bio">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores voluptatem voluptatum beatae recusandae maiores aspernatur tempore dicta ullam vel. Dolores nihil cumque minima quisquam alias obcaecati, maiores quos aliquid dolorem.
+            {{spotlight.get_field('description')}}
           </p>
-          <ul class="vcard">
-            <li class="fn">Gaius Baltar</li>
-            <li class="street-address">123 Colonial Ave.</li>
-            <li class="locality">Caprica City</li>
-            <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
-            <li class="email"><a href="#">g.baltar@example.com</a></li>
-          </ul>
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 

@@ -6,16 +6,14 @@ $post_type = explode('/', $_SERVER['REQUEST_URI'])[1];
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+
 $context['options'] = get_fields('options');
 $context['wp_title'] = 'Proposal Envy - ' . $post->title();
 $context['post_type'] = ucwords($post_type);
-$context['gallery_img_ids'] = grab_ids_from_gallery();
 
-$context['gallery_imgs'] = array();
-foreach ($context['gallery_img_ids'] as &$image) {
-    $img = wp_get_attachment_image_src( $image, 'full');
-    $thumb = wp_get_attachment_image_src( $image, 'thumbnail');
-    array_push($context['gallery_imgs'], array($thumb[0],$img[0]));
+if (get_field('has_spotlight', $post->ID) == 'yes' ) {
+  $args = "post_type=people-n-things&p=".array_shift(get_field('people-n-things', $post->ID));
+  $context['spotlight'] = Timber::get_post($args);
 }
 
 $context['layouts'] = get_field('layouts');

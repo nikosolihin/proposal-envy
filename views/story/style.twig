@@ -7,15 +7,17 @@ header {
 p a, p a:hover, p a:focus {
   color: {{post.get_field('post_color')}};
 }
-.excerpt {
+.excerpt, .author-name {
   color: {{post.get_field('post_color')}};
 }
 blockquote {
   border-left: 8px solid rgba({{post.get_field('post_color')|toRGB}},0.2);
-  background-color: rgba({{post.get_field('post_color')|toRGB}},0.02);
 }
 blockquote p {
-  color: rgba({{post.get_field('post_color')|toRGB}},0.75);
+  color: rgba({{post.get_field('post_color')|toRGB}},0.9);
+}
+blockquote, .author-meta {
+  background-color: rgba({{post.get_field('post_color')|toRGB}},0.02);
 }
 {# #slideshow, .slick-track {
   height: {% if post.get_field('story_gallery_height') %} {{post.get_field('story_gallery_height')}}px; {% else %} 450px; {% endif %};
@@ -28,3 +30,6 @@ blockquote p {
 }
 table tr:nth-child(even) {background: rgba({{post.get_field('post_color')|toRGB}},0.04);}
 table thead {background: rgba({{post.get_field('post_color')|toRGB}},0.07);}
+.author-photo {
+  background-image: url({{TimberImage(spotlight.get_field('photo')).src}});
+}
