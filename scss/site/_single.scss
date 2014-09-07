@@ -164,6 +164,13 @@
     height: rem-calc(150);
     border-radius: rem-calc(150);
   }
+  @media #{$medium-only} {
+    padding: 0;
+    margin: rem-calc(5) auto rem-calc(25);
+    width: rem-calc(200);
+    height: rem-calc(200);
+    border-radius: rem-calc(200);
+  }
 }
 .author-meta {
   padding: rem-calc(25 22);
@@ -182,15 +189,5 @@
 }
 .horz-spotlight {
   margin-top: rem-calc(25);
-}
-
-// This shit below is so hackish. I dont like it so change later
-.horz-spotlight {
-  @media #{$medium-only} {
-    height: rem-calc(260);
-    .remove-me, .author-photo, .author-meta {
-      height: 100%;
-      overflow: hidden;
-    }
-  }
+  padding: rem-calc(25 0);
 }
