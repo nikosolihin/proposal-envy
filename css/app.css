@@ -3179,26 +3179,21 @@ html, body, main {
   position: relative; }
 
 .wrap {
-  padding: 25% 0;
   padding: 25% 0; }
   @media only screen and (min-width:40.063em) {
     .wrap {
       padding: 20% 0; } }
   @media only screen and (min-width:64.063em) {
     .wrap {
-      padding: 15% 0; } }
-  @media only screen and (min-width:90.063em) {
-    .wrap {
-      padding: 10% 0; } }
-  @media only screen and (min-width:40.063em) {
-    .wrap {
       padding: 20% 0; } }
-  @media only screen and (min-width:64.063em) {
-    .wrap {
-      padding: 15% 0; } }
   @media only screen and (min-width:90.063em) {
     .wrap {
-      padding: 10% 0; } }
+      padding: 15% 0; } }
+
+.hide-me {
+  position: relative;
+  top: -9999px;
+  left: -9999px; }
 
 /**
  * 2.0 Typography
@@ -3913,8 +3908,8 @@ footer {
 * -------------------------------------
 */
 .story-comments {
-  background-color: #f5f5f5;
-  border-top: 0.0625rem solid #DDDDDD; }
+  border-top: 0.0625rem solid #DDDDDD;
+  padding-bottom: 1.5625rem; }
 
 /* Masonry Gallery
 * -------------------------------------
@@ -3960,6 +3955,16 @@ footer {
   @media only screen and (min-width:90.063em) {
     .author-bio {
       font-size: 0.875rem; } }
+
+.horz-spotlight {
+  margin-top: 1.5625rem; }
+
+@media only screen and (min-width:40.063em) and (max-width:64em) {
+  .horz-spotlight {
+    height: 16.25rem; }
+    .horz-spotlight .remove-me, .horz-spotlight .author-photo, .horz-spotlight .author-meta {
+      height: 100%;
+      overflow: hidden; } }
 
 /* Light Gallery */
 /*clearfix*/

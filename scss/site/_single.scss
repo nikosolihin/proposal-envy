@@ -132,8 +132,8 @@
 * -------------------------------------
 */
 .story-comments {
-  background-color: #f5f5f5;
   border-top: rem-calc(1) solid $gainsboro;
+  padding-bottom: rem-calc(25);
 }
 
 /* Masonry Gallery
@@ -173,4 +173,18 @@
   line-height: 1.65;
   color: $monsoon;
   margin-top: rem-calc(5);
+}
+.horz-spotlight {
+  margin-top: rem-calc(25);
+}
+
+// This shit below is so hackish. I dont like it so change later
+.horz-spotlight {
+  @media #{$medium-only} {
+    height: rem-calc(260);
+    .remove-me, .author-photo, .author-meta {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
 }

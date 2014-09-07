@@ -1,13 +1,13 @@
 header {
-  background-image: linear-gradient(rgba({{post.get_field('post_overlay')|toRGB}},0.50),rgba({{post.get_field('post_overlay')|toRGB}},0.40)),url({{post.thumbnail.src}});
+  background-image: linear-gradient(rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.50{% endif %}),rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.40{% endif %})),url({{post.thumbnail.src}});
 }
 .story-content, #story-jump {
   background-color: {{ (post.get_field('post_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
 }
-p a, p a:hover, p a:focus {
-  color: {{post.get_field('post_color')}};
+.story-comments {
+  background-color: {{ (post.get_field('post_bg_color') == "ivory") ? '#ffffff' : '#fffefb'}};
 }
-.excerpt, .author-name {
+p a, p a:hover, p a:focus, .excerpt, .author-name, .cta a {
   color: {{post.get_field('post_color')}};
 }
 blockquote {
