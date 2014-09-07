@@ -27,30 +27,15 @@ $success_args = array(
   'meta_query' => array(
     'relation' => 'AND',
     array(
-      'key' => 'feature_on_homepage',
-      'value' => 'yes'
-    ),
-    array(
       'key' => 'story_type',
       'value' => 'success'
     )
   )
 );
 
-$proposal_args = array(
-  'post_type' => 'story',
-  'orderby' => 'most_recent',
-  'meta_query' => array(
-    'relation' => 'AND',
-    array(
-      'key' => 'feature_on_homepage',
-      'value' => 'yes'
-    ),
-    array(
-      'key' => 'story_type',
-      'value' => 'proposal'
-    )
-  )
+$journal_args = array(
+  'post_type' => 'journal',
+  'orderby' => 'most_recent'
 );
 
 $context = Timber::get_context();
@@ -58,5 +43,5 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['options'] = get_fields('options');
 $context['success'] = Timber::get_post($success_args);
-$context['proposal'] = Timber::get_post($proposal_args);
+$context['journal'] = Timber::get_post($journal_args);
 Timber::render(array('page-home.twig'), $context);

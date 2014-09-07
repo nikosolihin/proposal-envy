@@ -93,6 +93,7 @@
 * -------------------------------------
 */
 .stories {
+  overflow: hidden;
   hr {
     @include divider(#fff);
   }
@@ -101,6 +102,9 @@
   @extend %bg;
   @include rprop(padding, 65 50, 75 100, 60 80, 75 170);
   height: rem-calc(500);
+  .button {
+    margin-top: 0;
+  }
 }
 
 /* Hint

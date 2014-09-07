@@ -169,8 +169,14 @@
   padding: rem-calc(25 22);
 }
 .author-bio {
-  @include rprop(font-size, 14,14,14,14);
-  line-height: 1.65;
+  p {
+    @include rprop(font-size, 14,14,14,14);
+    line-height: 1.65;
+    margin-bottom: rem-calc(10);
+  }
+  .post-set {
+    margin: rem-calc(5) 0;
+  }
   color: $monsoon;
   margin-top: rem-calc(5);
 }

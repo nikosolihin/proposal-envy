@@ -3675,13 +3675,15 @@ footer {
 /* Featured Stories
 * -------------------------------------
 */
-.stories hr {
-  border: 0;
-  height: 0.125rem;
-  background: #fff;
-  width: 3.125rem;
-  text-align: center;
-  margin: 2.5rem auto 2.5rem; }
+.stories {
+  overflow: hidden; }
+  .stories hr {
+    border: 0;
+    height: 0.125rem;
+    background: #fff;
+    width: 3.125rem;
+    text-align: center;
+    margin: 2.5rem auto 2.5rem; }
 
 .success-story, .proposal-story {
   padding: 4.0625rem 3.125rem;
@@ -3695,6 +3697,8 @@ footer {
   @media only screen and (min-width:90.063em) {
     .success-story, .proposal-story {
       padding: 4.6875rem 10.625rem; } }
+  .success-story .button, .proposal-story .button {
+    margin-top: 0; }
 
 /* Hint
 * -------------------------------------
@@ -3942,19 +3946,23 @@ footer {
   padding: 1.5625rem 1.375rem; }
 
 .author-bio {
-  font-size: 0.875rem;
-  line-height: 1.65;
   color: #777777;
   margin-top: 0.3125rem; }
-  @media only screen and (min-width:40.063em) {
-    .author-bio {
-      font-size: 0.875rem; } }
-  @media only screen and (min-width:64.063em) {
-    .author-bio {
-      font-size: 0.875rem; } }
-  @media only screen and (min-width:90.063em) {
-    .author-bio {
-      font-size: 0.875rem; } }
+  .author-bio p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 0.625rem; }
+    @media only screen and (min-width:40.063em) {
+      .author-bio p {
+        font-size: 0.875rem; } }
+    @media only screen and (min-width:64.063em) {
+      .author-bio p {
+        font-size: 0.875rem; } }
+    @media only screen and (min-width:90.063em) {
+      .author-bio p {
+        font-size: 0.875rem; } }
+  .author-bio .post-set {
+    margin: 0.3125rem 0; }
 
 .horz-spotlight {
   margin-top: 1.5625rem; }

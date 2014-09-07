@@ -33,3 +33,6 @@ table thead {background: rgba({{post.get_field('post_color')|toRGB}},0.07);}
 .author-photo {
   background-image: url({{TimberImage(spotlight.get_field('photo')).src}});
 }
+.post-set {
+  background-color: rgba({{post.get_field('post_color')|toRGB}},0.9);
+}

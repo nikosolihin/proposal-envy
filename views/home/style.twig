@@ -2,10 +2,10 @@
   background-image: url({{TimberImage(post.get_field('mobile_bg')).src}});
 }
 .success-story {
-  background-image: linear-gradient(rgba({{success.get_field('story_color')|toRGB}},0.70),rgba({{success.get_field('story_color')|toRGB}},0.70)),url({{success.thumbnail.src}});
+  background-image: linear-gradient(rgba({{success.get_field('post_overlay')|toRGB}},{% if success.hide_header_text == "yes" %}.8{% else %}0.7{% endif %}), rgba({{success.get_field('post_overlay')|toRGB}},{% if success.hide_header_text == "yes" %}.8{% else %}0.7{% endif %})),url({{success.thumbnail.src}});
 }
 .proposal-story {
-  background-image: linear-gradient(rgba({{proposal.get_field('story_color')|toRGB}},0.70), rgba({{proposal.get_field('story_color')|toRGB}},0.70)),url({{proposal.thumbnail.src}});
+  background-image: linear-gradient(rgba({{journal.get_field('post_overlay')|toRGB}},{% if journal.hide_header_text == "yes" %}.8{% else %}0.7{% endif %}), rgba({{journal.get_field('post_overlay')|toRGB}},{% if journal.hide_header_text == "yes" %}.8{% else %}0.7{% endif %})),url({{journal.thumbnail.src}});
 }
 .hint {
   background-image: url({{TimberImage(options.hint_bg).src}});

@@ -81,9 +81,9 @@
       <div class="author-photo"></div>
       <div class="author-meta">
         <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
-        <p class="author-bio">
+        <div class="author-bio">
           {{spotlight.get_field('description')}}
-        </p>
+        </div>
       </div>
     </div>
     {% endif %}
@@ -97,9 +97,10 @@
     <div class="small-12 medium-8 columns author-meta small-only-text-center">
       <div class="author-photo show-for-small-only"></div>
       <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
-        <p class="author-bio">
-          {{spotlight.get_field('description')}}
-        </p>
+      <div class="author-bio">
+        {{spotlight.get_field('description')}}
+      </div>
+      {{spotlight.get_field('test').lat|print_r}}
     </div>
   </div>
 
