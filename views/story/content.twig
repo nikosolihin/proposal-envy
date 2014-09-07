@@ -1,24 +1,24 @@
 <section class="story-content">
   <div class="row entry-content">
 
-    {# if we have an author then set the grid differently #}
+    {# The little nav section. If we have an author then set the grid differently #}
     {% if spotlight is not empty %}
-      <div class="medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
+    <div class="medium-2 large-2 xlarge-1 xlarge-offset-2 text-right hide-for-small-only columns">
     {% else %}
-      <div class="medium-2 large-2 xlarge-1 xlarge-offset-3 text-right hide-for-small-only columns">
+    <div class="medium-2 large-2 xlarge-1 xlarge-offset-3 text-right hide-for-small-only columns">
     {% endif %}
       <a href="{{site.url}}/{{post_type|lower}}/" class="title-lower all-posts">
         <i class="icon-left-dir"></i>
         All {{post_type}}
       </a>
     </div>
+
+    {# The main content section #}
     <div class="small-12 medium-8 large-6 xlarge-4 end columns">
       {% if post.get_field('post_excerpt') is not empty %}
         <p class="excerpt">{{post.get_field('post_excerpt')}}</p>
       {% endif %}
-
       {% for layout in layouts %}
-
         {% if layout.acf_fc_layout == "text_content" %}
           <div class="row">
           {% if layout.column_number == "2" %}
@@ -57,7 +57,6 @@
             </div>
           {% endif %}
           </div>
-
         {% elseif layout.acf_fc_layout == "gallery" %}
         <div class="row">
           <ul id="tiles">
@@ -74,37 +73,37 @@
         </div>
         {% endif %}
       {% endfor %}
-
-      {# Horizontal author box #}
-      <div class="row">
-        <div class="small-12 columns show-for-medium-down">
-          <div class="row">
-            <div class="small-4 columns">
-              <img src="http://www.festivaladvisor.com/wp-content/uploads/2014/04/Hakkasan-Las-Vegas_Crowd.jpg" alt="">
-            </div>
-            <div class="small-8 columns">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolore reprehenderit in illo, officia maiores voluptas eum minus itaque, magnam blanditiis autem labore commodi consectetur placeat vero quas at sequi!</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
+    {# The Spotlight Section - Vertical mode for L and above #}
     {% if spotlight is not empty %}
-      {# Vertical author box #}
-      <div class="large-3 xlarge-2 end columns show-for-large-up">
-        <div class="author-photo"></div>
-        <div class="author-meta">
-          <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
-          <p class="author-bio">
-            {{spotlight.get_field('description')}}
-          </p>
-        </div>
+    <div class="author-box large-3 xlarge-2 end columns show-for-large-up">
+      <div class="author-photo"></div>
+      <div class="author-meta">
+        <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
+        <p class="author-bio">
+          {{spotlight.get_field('description')}}
+        </p>
       </div>
+    </div>
     {% endif %}
   </div>
-</section>
 
+{# The Spotlight Section - Horizontal mode for M and below #}
+  <div class="row max-width horz-spotlight show-for-medium-down">
+    <div class="small-12 medium-4 columns no-padding">
+      <div class="author-photo show-for-medium-only"></div>
+    </div>
+    <div class="small-12 medium-8 columns author-meta small-only-text-center">
+      <div class="author-photo show-for-small-only"></div>
+      <div class="title-bold author-name">{{spotlight.get_field('name')}}</div>
+        <p class="author-bio">
+          {{spotlight.get_field('description')}}
+        </p>
+    </div>
+  </div>
+
+</section>
 
 {#           {% if layout.acf_fc_layout == "slideshow" %}
             </div>

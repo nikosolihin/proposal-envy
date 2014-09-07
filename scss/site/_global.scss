@@ -74,10 +74,11 @@ html, body, main {
 }
 .wrap {
   @extend %bg;
-  padding: 22% 0;
+  padding: 25% 0;
   @media #{$medium-up} { padding: 20% 0; }
   @media #{$large-up} { padding: 15% 0; }
-  @media #{$xlarge-up} { padding: 12% 0; }
+  @media #{$xlarge-up} { padding: 10% 0; }
+  @include rprop-plain(padding, 25% 0, 20% 0, 15% 0, 10% 0);
 }
 .center-me {
   @extend %vertical-align;

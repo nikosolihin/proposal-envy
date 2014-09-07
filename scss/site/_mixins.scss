@@ -62,6 +62,18 @@
     @media #{$xlarge-up} { #{$prop}: rem-calc($xlarge-value); }
   }
 }
+@mixin rprop-plain($prop, $small-value, $medium-value:false, $large-value:false, $xlarge-value:false){
+  #{$prop}: $small-value;
+  @if $medium-value {
+    @media #{$medium-up} { #{$prop}: $medium-value; }
+  }
+  @if $large-value {
+    @media #{$large-up} { #{$prop}: $large-value; }
+  }
+  @if $xlarge-value {
+    @media #{$xlarge-up} { #{$prop}: $xlarge-value; }
+  }
+}
 
 /**
  * Placeholders

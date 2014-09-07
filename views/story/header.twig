@@ -1,6 +1,6 @@
 <header class="wrap">
   <div class="row max-width">
-    <div class="small-12 medium-10 medium-offset-1 columns">
+    <div class="small-12 medium-10 medium-offset-1 xlarge-8 xlarge-offset-2 columns">
       <div class="title white">{{post.post_date|date('F j, Y')}}</div>
       {% if post_type == 'Stories' %}
         <h2 class="post-header white">{{ (post.get_field('story_type') == "success") ? 'Success Story:&nbsp;' : 'Proposal Story:&nbsp;'}} {{post.title}}</h2>

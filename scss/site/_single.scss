@@ -133,6 +133,7 @@
 */
 .story-comments {
   background-color: #f5f5f5;
+  border-top: rem-calc(1) solid $gainsboro;
 }
 
 /* Masonry Gallery
@@ -151,17 +152,24 @@
 */
 .author-box {
   overflow: hidden;
-  margin-left: rem-calc(45);
+  margin-left: rem-calc(50);
 }
 .author-photo {
   @extend %bg;
   padding: 45%;
+  @media #{$small-only} {
+    padding: 0;
+    margin: rem-calc(10) auto rem-calc(25);
+    width: rem-calc(150);
+    height: rem-calc(150);
+    border-radius: rem-calc(150);
+  }
 }
 .author-meta {
   padding: rem-calc(25 22);
 }
 .author-bio {
-  @include rfont(14);
+  @include rprop(font-size, 14,14,14,14);
   line-height: 1.65;
   color: $monsoon;
   margin-top: rem-calc(5);
