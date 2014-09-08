@@ -3031,18 +3031,18 @@ th.hide-for-touch {
  * Placeholders
  * ------------------------------------
  */
-.center-me, .hero-action, .post-title-success, .post-place-success {
+.center-me, .overlay-list li a, .hero-action, .post-title-success, .post-place-success {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.hero, .story-prev, .story-next {
+.overlay-list li, .hero, .story-prev, .story-next {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d; }
 
-#nav-toggle.active span:after, .overlay nav, .overlay ul li, .overlay-slidedown, .overlay-slidedown.open {
+#nav-toggle.active span:after, .overlay nav, .overlay-list li, .overlay-slidedown, .overlay-slidedown.open {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-perspective: 1000;
@@ -3381,15 +3381,42 @@ blockquote {
   -webkit-transition: visibility 0.05s ease-in-out;
           transition: visibility 0.05s ease-in-out; }
 
+/* Logo area */
+.nav-identity {
+  position: fixed;
+  z-index: 9999;
+  top: 1.5625rem;
+  left: 0.625rem; }
+  .nav-identity img {
+    height: 1.6875rem; }
+    @media only screen and (min-width:40.063em) {
+      .nav-identity img {
+        height: 2.1875rem; } }
+    @media only screen and (min-width:64.063em) {
+      .nav-identity img {
+        height: 2.1875rem; } }
+    @media only screen and (min-width:90.063em) {
+      .nav-identity img {
+        height: 2.1875rem; } }
+
 /* Click area */
 #nav-toggle-click-area {
   display: inline-block;
   position: fixed;
   z-index: 9999;
   top: 0.3125rem;
-  right: 1.875rem;
+  right: 0;
   width: 5.625rem;
   height: 3.75rem; }
+  @media only screen and (min-width:40.063em) {
+    #nav-toggle-click-area {
+      right: 0; } }
+  @media only screen and (min-width:64.063em) {
+    #nav-toggle-click-area {
+      right: 1.875rem; } }
+  @media only screen and (min-width:90.063em) {
+    #nav-toggle-click-area {
+      right: 1.875rem; } }
 
 /* Burger Bar */
 #nav-toggle {
@@ -3462,38 +3489,40 @@ blockquote {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 105, 86, 0.95); }
+  background: rgba(255, 105, 86, 0.96); }
 
 .overlay nav {
-  text-align: center;
   position: relative;
   top: 50%;
-  height: 60%;
+  height: 70%;
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
 
-.overlay ul {
+.overlay-list {
   list-style: none;
-  padding: 0;
   margin: 0 auto;
   display: inline-block;
   height: 100%;
   position: relative; }
 
-.overlay ul li {
+.overlay-list li {
   display: block;
-  height: calc(100% / 4);
-  min-height: 3.375rem; }
+  height: calc(100% / 5); }
 
-.overlay ul li a {
-  font-size: 3.375rem;
-  font-weight: 300;
+.overlay-list li a {
   display: block;
   -webkit-transition: color 0.2s;
           transition: color 0.2s; }
-
-.overlay ul li a h5, .overlay ul li a h2 {
-  color: #fff; }
+  .overlay-list li a h2 {
+    font-size: 1.53125rem; }
+    @media only screen and (min-width:40.063em) {
+      .overlay-list li a h2 {
+        font-size: 1.75rem; } }
+  .overlay-list li a div {
+    font-size: 0.765625rem; }
+    @media only screen and (min-width:40.063em) {
+      .overlay-list li a div {
+        font-size: 0.875rem; } }
 
 /* Effects */
 .overlay-slidedown {
@@ -3510,12 +3539,27 @@ blockquote {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out; }
 
-@media screen and (max-height: 30.5em) {
+@media screen and (max-height: 550px) {
   .overlay nav {
-    height: 70%;
-    font-size: 2.125rem; }
-  .overlay ul li {
-    min-height: 2.125rem; } }
+    height: 85%; }
+  .overlay-list li a h2 {
+    font-size: 1.3671875rem; }
+    @media only screen and (min-width:40.063em) {
+      .overlay-list li a h2 {
+        font-size: 1.5625rem; } }
+  .overlay-list li a div {
+    font-size: 0.65625rem; }
+    @media only screen and (min-width:40.063em) {
+      .overlay-list li a div {
+        font-size: 0.75rem; } } }
+
+@media screen and (max-height: 700px) {
+  .overlay nav {
+    height: 77%; } }
+
+@media screen and (min-height: 900px) {
+  .overlay nav {
+    height: 60%; } }
 
 /**
  * 4.0 Footer

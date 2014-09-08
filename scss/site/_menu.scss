@@ -16,13 +16,23 @@
   visibility: hidden;
   transition: visibility 0.05s ease-in-out;
 }
+/* Logo area */
+.nav-identity {
+  position: fixed;
+  z-index: 9999;
+  top: rem-calc(25);
+  left: rem-calc(10);
+  img {
+    @include rprop(height, 27, 35, 35, 35);
+  }
+}
 /* Click area */
 #nav-toggle-click-area {
   display: inline-block;
   position: fixed;
   z-index: 9999;
   top: rem-calc(5);
-  right: rem-calc(30);
+  @include rprop(right, 0,0,30,30);
   width: rem-calc(90);
   height: rem-calc(60);
 }
@@ -77,38 +87,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 105, 86, 0.95);
+  background: rgba(255, 105, 86, 0.96);
 }
 .overlay nav {
   @extend %flicker-fix;
-  text-align: center;
   position: relative;
   top: 50%;
-  height: 60%;
+  height: 70%;
   transform: translate3d(0, -50%, 0);
 }
-.overlay ul {
+.overlay-list {
   list-style: none;
-  padding: 0;
   margin: 0 auto;
   display: inline-block;
   height: 100%;
   position: relative;
 }
-.overlay ul li {
+.overlay-list li {
   @extend %flicker-fix;
+  @extend %vertical-align-parent;
   display: block;
-  height: calc(100% / 4);
-  min-height: rem-calc(54);
+  height: calc(100% / 5);
 }
-.overlay ul li a {
-  font-size: rem-calc(54);
-  font-weight: 300;
+.overlay-list li a {
+  @extend %vertical-align;
   display: block;
   transition: color 0.2s;
-}
-.overlay ul li a h5, .overlay ul li a h2 {
-  color: #fff;
+  h2 { @include rfont(28); }
+  div { @include rfont(14); }
 }
 /* Effects */
 .overlay-slidedown {
@@ -123,12 +129,22 @@
   transform: translate3d(0, 0%, 0);
   transition: transform 0.3s ease-in-out;
 }
-@media screen and (max-height: 30.5em) {
+@media screen and (max-height: 550px) {
   .overlay nav {
-    height: 70%;
-    font-size: rem-calc(34);
+    height: 85%;
   }
-  .overlay ul li {
-    min-height: rem-calc(34);
+  .overlay-list li a {
+    h2 { @include rfont(25); }
+    div { @include rfont(12); }
+  }
+}
+@media screen and (max-height: 700px) {
+  .overlay nav {
+    height: 77%;
+  }
+}
+@media screen and (min-height: 900px) {
+  .overlay nav {
+    height: 60%;
   }
 }

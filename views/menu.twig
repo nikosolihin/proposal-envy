@@ -1,17 +1,16 @@
+<a class="nav-identity" href="{{site.url}}">
+  <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
+</a>
+{# The click area overlay#}
+<a id="nav-toggle-click-area" href="#"></a>
+<div id="nav-toggle">
+  <i id="nav-text" class="title white hide-for-medium-down">MENU</i>
+  <span></span>
+</div>
 
-{#   <a class="nav-identity" href="{{site.url}}">
-    <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
-  </a> #}
-  {# The click area overlay#}
-  <a id="nav-toggle-click-area" href="#"></a>
-  <div id="nav-toggle">
-    <i id="nav-text" class="title white hide-for-medium-down">MENU</i>
-    <span></span>
-  </div>
-
-<div class="overlay overlay-slidedown">
+<div class="overlay overlay-slidedown text-center">
   <nav>
-    <ul>
+    <ul class="overlay-list no-padding">
       {% for item in menu.get_items %}
         <li>
           <a href="{{item.get_link}}">
@@ -22,4 +21,39 @@
       {% endfor %}
     </ul>
   </nav>
+  <ul class="inline-list overlay-social text-center">
+    {% for item in options.social_links %}
+      {% if item == 'facebook' %}
+        <li>
+          <a href="http://www.{{options.facebook_url}}" target="_blank">
+            <i class="icon-{{item}}"></i>
+          </a>
+        </li>
+      {% elseif item == 'instagram' %}
+        <li>
+          <a href="http://www.{{options.instagram_url}}" target="_blank">
+            <i class="icon-{{item}}"></i>
+          </a>
+        </li>
+      {% elseif item == 'twitter' %}
+        <li>
+          <a href="http://www.{{options.twitter_url}}" target="_blank">
+            <i class="icon-{{item}}"></i>
+          </a>
+        </li>
+      {% elseif item == 'pinterest' %}
+        <li>
+          <a href="http://www.{{options.pinterest_url}}" target="_blank">
+            <i class="icon-{{item}}"></i>
+          </a>
+        </li>
+      {% elseif item == 'youtube-play' %}
+        <li>
+          <a href="http://www.{{options.youtube_url}}" target="_blank">
+            <i class="icon-{{item}}"></i>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
