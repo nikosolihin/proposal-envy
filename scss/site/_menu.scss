@@ -1,15 +1,8 @@
-/* Hamburger & Menu Text Animation */
-#nav-toggle {
-  position: fixed;
-  @include rprop(top, 30, 30, 25, 25);
-  @include rprop(right, 15, 15, 35, 35);
-  border: none;
-  outline: none;
-}
+/* Menu Text */
 #nav-text {
   position: absolute;
-  top: rem-calc(2);
-  right: rem-calc(45);
+  top: rem-calc(-9);
+  right: rem-calc(10);
   font-style: normal;
   letter-spacing: rem-calc(1);
 }
@@ -22,12 +15,16 @@
   visibility: hidden;
   transition: visibility 0.05s ease-in-out;
 }
+
+/* Burger Bar */
 #nav-toggle {
+  position: fixed;
+  @include rprop(top, 40, 40, 35, 35);
+  @include rprop(right, 45, 45, 70, 70);
   cursor: pointer;
-  padding: 10px 35px 16px 0px;
-  display: block;
-  height: 50px;
-  width: 25px;
+  border: none;
+  outline: none;
+  // display: inline-block;
 }
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;

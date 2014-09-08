@@ -3361,36 +3361,11 @@ blockquote {
  * 3.0 Menu
  * ----------------------------------------------------------------------------
  */
-/* Hamburger & Menu Text Animation */
-#nav-toggle {
-  position: fixed;
-  top: 1.875rem;
-  right: 0.9375rem;
-  border: none;
-  outline: none; }
-  @media only screen and (min-width:40.063em) {
-    #nav-toggle {
-      top: 1.875rem; } }
-  @media only screen and (min-width:64.063em) {
-    #nav-toggle {
-      top: 1.5625rem; } }
-  @media only screen and (min-width:90.063em) {
-    #nav-toggle {
-      top: 1.5625rem; } }
-  @media only screen and (min-width:40.063em) {
-    #nav-toggle {
-      right: 0.9375rem; } }
-  @media only screen and (min-width:64.063em) {
-    #nav-toggle {
-      right: 2.1875rem; } }
-  @media only screen and (min-width:90.063em) {
-    #nav-toggle {
-      right: 2.1875rem; } }
-
+/* Menu Text */
 #nav-text {
   position: absolute;
-  top: 0.125rem;
-  right: 2.8125rem;
+  top: -0.5625rem;
+  right: 0.625rem;
   font-style: normal;
   letter-spacing: 0.0625rem; }
 
@@ -3405,12 +3380,32 @@ blockquote {
   -webkit-transition: visibility 0.05s ease-in-out;
           transition: visibility 0.05s ease-in-out; }
 
+/* Burger Bar */
 #nav-toggle {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.8125rem;
   cursor: pointer;
-  padding: 10px 35px 16px 0px;
-  display: block;
-  height: 50px;
-  width: 25px; }
+  border: none;
+  outline: none; }
+  @media only screen and (min-width:40.063em) {
+    #nav-toggle {
+      top: 2.5rem; } }
+  @media only screen and (min-width:64.063em) {
+    #nav-toggle {
+      top: 2.1875rem; } }
+  @media only screen and (min-width:90.063em) {
+    #nav-toggle {
+      top: 2.1875rem; } }
+  @media only screen and (min-width:40.063em) {
+    #nav-toggle {
+      right: 2.8125rem; } }
+  @media only screen and (min-width:64.063em) {
+    #nav-toggle {
+      right: 4.375rem; } }
+  @media only screen and (min-width:90.063em) {
+    #nav-toggle {
+      right: 4.375rem; } }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
