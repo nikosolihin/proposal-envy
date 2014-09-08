@@ -102,12 +102,28 @@
   display: inline-block;
   height: 100%;
   position: relative;
+  .inline-list {
+    @extend %vertical-align;
+    display: table;
+    margin: 0 auto;
+    padding-top: rem-calc(15);
+    border-top: 1px solid white;
+    top: 100%;
+    transform: translateY(-100%);
+    li {
+      height: rem-calc(50);
+      width: rem-calc(50);
+    }
+    li a i:before {
+      font-size: 180%;
+    }
+  }
 }
 .overlay-list li {
   @extend %flicker-fix;
   @extend %vertical-align-parent;
   display: block;
-  height: calc(100% / 5);
+  height: calc(100% / 6);
 }
 .overlay-list li a {
   @extend %vertical-align;
@@ -115,6 +131,13 @@
   transition: color 0.2s;
   h2 { @include rfont(28); }
   div { @include rfont(14); }
+}
+.copy {
+  height: rem-calc(20)!important;
+  margin-top: rem-calc(5);
+  p {
+    @include rfont(12);
+  }
 }
 /* Effects */
 .overlay-slidedown {
@@ -129,22 +152,40 @@
   transform: translate3d(0, 0%, 0);
   transition: transform 0.3s ease-in-out;
 }
-@media screen and (max-height: 550px) {
+@media screen and (max-height: 615px) {
   .overlay nav {
-    height: 85%;
+    height: 90%;
   }
   .overlay-list li a {
     h2 { @include rfont(25); }
     div { @include rfont(12); }
   }
+  .overlay-list .inline-list {
+    padding-top: rem-calc(7);
+    li {
+      height: rem-calc(35);
+      width: rem-calc(35);
+    }
+    li a i:before {
+      font-size: 125%;
+    }
+  }
 }
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 900px) {
   .overlay nav {
-    height: 77%;
+    height: 90%;
+  }
+  .overlay-list .inline-list {
+    padding-top: rem-calc(12);
+    li {
+      height: rem-calc(43);
+      width: rem-calc(43);
+    }
   }
 }
 @media screen and (min-height: 900px) {
   .overlay nav {
-    height: 60%;
+    height: 75%;
   }
+  .copy { margin-top: rem-calc(20); }
 }

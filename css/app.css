@@ -3031,7 +3031,7 @@ th.hide-for-touch {
  * Placeholders
  * ------------------------------------
  */
-.center-me, .overlay-list li a, .hero-action, .post-title-success, .post-place-success {
+.center-me, .overlay-list .inline-list, .overlay-list li a, .hero-action, .post-title-success, .post-place-success {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -3115,6 +3115,9 @@ select:focus {
     background-color: transparent;
     border: 0.125rem solid #FFFFFF;
     padding: 0.8125rem 0.9375rem; }
+
+.inline-list > li:first-child {
+  margin-left: 0; }
 
 /* Site structure */
 /**
@@ -3504,10 +3507,24 @@ blockquote {
   display: inline-block;
   height: 100%;
   position: relative; }
+  .overlay-list .inline-list {
+    display: table;
+    margin: 0 auto;
+    padding-top: 0.9375rem;
+    border-top: 1px solid white;
+    top: 100%;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%); }
+    .overlay-list .inline-list li {
+      height: 3.125rem;
+      width: 3.125rem; }
+    .overlay-list .inline-list li a i:before {
+      font-size: 180%; }
 
 .overlay-list li {
   display: block;
-  height: calc(100% / 5); }
+  height: calc(100% / 6); }
 
 .overlay-list li a {
   display: block;
@@ -3524,6 +3541,15 @@ blockquote {
       .overlay-list li a div {
         font-size: 0.875rem; } }
 
+.copy {
+  height: 1.25rem !important;
+  margin-top: 0.3125rem; }
+  .copy p {
+    font-size: 0.65625rem; }
+    @media only screen and (min-width:40.063em) {
+      .copy p {
+        font-size: 0.75rem; } }
+
 /* Effects */
 .overlay-slidedown {
   visibility: hidden;
@@ -3539,9 +3565,9 @@ blockquote {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out; }
 
-@media screen and (max-height: 550px) {
+@media screen and (max-height: 615px) {
   .overlay nav {
-    height: 85%; }
+    height: 90%; }
   .overlay-list li a h2 {
     font-size: 1.3671875rem; }
     @media only screen and (min-width:40.063em) {
@@ -3551,15 +3577,29 @@ blockquote {
     font-size: 0.65625rem; }
     @media only screen and (min-width:40.063em) {
       .overlay-list li a div {
-        font-size: 0.75rem; } } }
+        font-size: 0.75rem; } }
+  .overlay-list .inline-list {
+    padding-top: 0.4375rem; }
+    .overlay-list .inline-list li {
+      height: 2.1875rem;
+      width: 2.1875rem; }
+    .overlay-list .inline-list li a i:before {
+      font-size: 125%; } }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 900px) {
   .overlay nav {
-    height: 77%; } }
+    height: 90%; }
+  .overlay-list .inline-list {
+    padding-top: 0.75rem; }
+    .overlay-list .inline-list li {
+      height: 2.6875rem;
+      width: 2.6875rem; } }
 
 @media screen and (min-height: 900px) {
   .overlay nav {
-    height: 60%; } }
+    height: 75%; }
+  .copy {
+    margin-top: 1.25rem; } }
 
 /**
  * 4.0 Footer

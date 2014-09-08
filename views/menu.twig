@@ -19,41 +19,46 @@
           </a>
         </li>
       {% endfor %}
+      <li>
+        <ul class="inline-list">
+          {% for item in options.social_links %}
+            {% if item == 'facebook' %}
+              <li>
+                <a href="http://www.{{options.facebook_url}}" target="_blank">
+                  <i class="icon-{{item}}"></i>
+                </a>
+              </li>
+            {% elseif item == 'instagram' %}
+              <li>
+                <a href="http://www.{{options.instagram_url}}" target="_blank">
+                  <i class="icon-{{item}}"></i>
+                </a>
+              </li>
+            {% elseif item == 'twitter' %}
+              <li>
+                <a href="http://www.{{options.twitter_url}}" target="_blank">
+                  <i class="icon-{{item}}"></i>
+                </a>
+              </li>
+            {% elseif item == 'pinterest' %}
+              <li>
+                <a href="http://www.{{options.pinterest_url}}" target="_blank">
+                  <i class="icon-{{item}}"></i>
+                </a>
+              </li>
+            {% elseif item == 'youtube-play' %}
+              <li>
+                <a href="http://www.{{options.youtube_url}}" target="_blank">
+                  <i class="icon-{{item}}"></i>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li class="copy">
+        <p class="white no-margin"> &copy; {{now|date('Y')}} Proposal Envy. All rights reserved</p>
+      </li>
     </ul>
   </nav>
-  <ul class="inline-list overlay-social text-center">
-    {% for item in options.social_links %}
-      {% if item == 'facebook' %}
-        <li>
-          <a href="http://www.{{options.facebook_url}}" target="_blank">
-            <i class="icon-{{item}}"></i>
-          </a>
-        </li>
-      {% elseif item == 'instagram' %}
-        <li>
-          <a href="http://www.{{options.instagram_url}}" target="_blank">
-            <i class="icon-{{item}}"></i>
-          </a>
-        </li>
-      {% elseif item == 'twitter' %}
-        <li>
-          <a href="http://www.{{options.twitter_url}}" target="_blank">
-            <i class="icon-{{item}}"></i>
-          </a>
-        </li>
-      {% elseif item == 'pinterest' %}
-        <li>
-          <a href="http://www.{{options.pinterest_url}}" target="_blank">
-            <i class="icon-{{item}}"></i>
-          </a>
-        </li>
-      {% elseif item == 'youtube-play' %}
-        <li>
-          <a href="http://www.{{options.youtube_url}}" target="_blank">
-            <i class="icon-{{item}}"></i>
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
 </div>
