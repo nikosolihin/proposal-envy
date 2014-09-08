@@ -1,18 +1,16 @@
 /* Hamburger & Menu Text Animation */
 #nav-toggle {
   position: fixed;
-  top: rem-calc(5);
-  @include rprop(right, 20, 45, 45, 45);
+  @include rprop(top, 30, 30, 25, 25);
+  @include rprop(right, 15, 15, 35, 35);
   border: none;
   outline: none;
 }
 #nav-text {
-  color: #fff;
-  position: relative;
-  right: rem-calc(55);
-  top: rem-calc(12);
+  position: absolute;
+  top: rem-calc(2);
+  right: rem-calc(45);
   font-style: normal;
-  font-size: rem-calc(14);
   letter-spacing: rem-calc(1);
 }
 /* Effects */
@@ -24,7 +22,13 @@
   visibility: hidden;
   transition: visibility 0.05s ease-in-out;
 }
-#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle {
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  display: block;
+  height: 50px;
+  width: 25px;
+}
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
   height: rem-calc(4);
@@ -60,12 +64,11 @@
 
 /* Menu bar style */
 #nav-bar {
-  // background: rgba(255, 105, 86, 0.9);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  height: rem-calc(50);
+  // @include rprop(padding, 20 20, 20 20, 20 50, 20 50);
 }
 /* Overlay style */
 .overlay {
@@ -75,7 +78,7 @@
   top: 0;
   left: 0;
   z-index: 5000;
-  background: rgba(255, 105, 86, 0.99);
+  background: rgba(255, 105, 86, 0.95);
 }
 .overlay nav {
   @extend %flicker-fix;

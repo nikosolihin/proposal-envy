@@ -3364,27 +3364,34 @@ blockquote {
 /* Hamburger & Menu Text Animation */
 #nav-toggle {
   position: fixed;
-  top: 0.3125rem;
-  right: 1.25rem;
+  top: 1.875rem;
+  right: 0.9375rem;
   border: none;
   outline: none; }
   @media only screen and (min-width:40.063em) {
     #nav-toggle {
-      right: 2.8125rem; } }
+      top: 1.875rem; } }
   @media only screen and (min-width:64.063em) {
     #nav-toggle {
-      right: 2.8125rem; } }
+      top: 1.5625rem; } }
   @media only screen and (min-width:90.063em) {
     #nav-toggle {
-      right: 2.8125rem; } }
+      top: 1.5625rem; } }
+  @media only screen and (min-width:40.063em) {
+    #nav-toggle {
+      right: 0.9375rem; } }
+  @media only screen and (min-width:64.063em) {
+    #nav-toggle {
+      right: 2.1875rem; } }
+  @media only screen and (min-width:90.063em) {
+    #nav-toggle {
+      right: 2.1875rem; } }
 
 #nav-text {
-  color: #fff;
-  position: relative;
-  right: 3.4375rem;
-  top: 0.75rem;
+  position: absolute;
+  top: 0.125rem;
+  right: 2.8125rem;
   font-style: normal;
-  font-size: 0.875rem;
   letter-spacing: 0.0625rem; }
 
 /* Effects */
@@ -3400,7 +3407,10 @@ blockquote {
 
 #nav-toggle {
   cursor: pointer;
-  padding: 10px 35px 16px 0px; }
+  padding: 10px 35px 16px 0px;
+  display: block;
+  height: 50px;
+  width: 25px; }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
@@ -3442,8 +3452,7 @@ blockquote {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
-  height: 3.125rem; }
+  z-index: 9999; }
 
 /* Overlay style */
 .overlay {
@@ -3453,7 +3462,7 @@ blockquote {
   top: 0;
   left: 0;
   z-index: 5000;
-  background: rgba(255, 105, 86, 0.99); }
+  background: rgba(255, 105, 86, 0.95); }
 
 .overlay nav {
   text-align: center;
