@@ -1903,7 +1903,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       transform: "translate3d(0,"+ textSpeed +"%,0)",
       opacity: textOpacity
     });
-    // $("#hero-mask").css({opacity:scrollOpacity});
   });
 
   // Redirect to different category pages

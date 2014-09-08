@@ -1,14 +1,10 @@
 /* Hamburger & Menu Text Animation */
 #nav-toggle {
   position: fixed;
-  right: rem-calc(20);
-  @media #{$medium-up} {
-    right: rem-calc(45);
-  }
   top: rem-calc(5);
+  @include rprop(right, 20, 45, 45, 45);
   border: none;
   outline: none;
-  z-index: 9999;
 }
 #nav-text {
   color: #fff;
@@ -57,27 +53,19 @@
   transform: rotate(45deg);
 }
 #nav-toggle.active span:after {
-  transform: translateY(-10px) rotate(-45deg);
+  @extend %flicker-fix;
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
   top: rem-calc(10);
 }
+
 /* Menu bar style */
 #nav-bar {
   // background: rgba(255, 105, 86, 0.9);
   position: fixed;
   top: 0;
-  z-index: 2000;
-  width: 100%;
-  height: rem-calc(50);
   left: 0;
-  padding: 0;
-}
-#nav-bar.nav-close {
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.2s ease-in-out;
-}
-#nav-bar.nav-open {
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.2s ease-in-out;
+  z-index: 9999;
+  height: rem-calc(50);
 }
 /* Overlay style */
 .overlay {
@@ -87,14 +75,15 @@
   top: 0;
   left: 0;
   z-index: 5000;
-  background: rgba(255, 105, 86, 0.9);
+  background: rgba(255, 105, 86, 0.99);
 }
 .overlay nav {
+  @extend %flicker-fix;
   text-align: center;
   position: relative;
   top: 50%;
   height: 60%;
-  transform: translateY(-50%);
+  transform: translate3d(0, -50%, 0);
 }
 .overlay ul {
   list-style: none;
@@ -105,16 +94,15 @@
   position: relative;
 }
 .overlay ul li {
+  @extend %flicker-fix;
   display: block;
   height: calc(100% / 4);
   min-height: rem-calc(54);
-  backface-visibility: hidden;
 }
 .overlay ul li a {
   font-size: rem-calc(54);
   font-weight: 300;
   display: block;
-  /*border-bottom: 1px solid #FF9990;*/
   transition: color 0.2s;
 }
 .overlay ul li a h5, .overlay ul li a h2 {
@@ -122,13 +110,15 @@
 }
 /* Effects */
 .overlay-slidedown {
+  @extend %flicker-fix;
   visibility: hidden;
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
   transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
 }
 .overlay-slidedown.open {
+  @extend %flicker-fix;
   visibility: visible;
-  transform: translateY(0%);
+  transform: translate3d(0, 0%, 0);
   transition: transform 0.3s ease-in-out;
 }
 @media screen and (max-height: 30.5em) {

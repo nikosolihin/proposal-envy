@@ -44,7 +44,6 @@ $(function() {
       transform: "translate3d(0,"+ textSpeed +"%,0)",
       opacity: textOpacity
     });
-    // $("#hero-mask").css({opacity:scrollOpacity});
   });
 
   // Redirect to different category pages

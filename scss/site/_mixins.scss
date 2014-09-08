@@ -87,10 +87,14 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
 // Vertical align parent
 %vertical-align-parent {
   transform-style: preserve-3d;
+}
+// Flicker Fix!
+%flicker-fix {
+  backface-visibility: hidden;
+  perspective: 1000;
 }
 %bg {
   background-size: cover;

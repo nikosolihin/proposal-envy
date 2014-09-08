@@ -1,7 +1,7 @@
-<section id="nav-bar">
-  <a class="nav-identity" href="{{site.url}}">
+<section id="nav-bar" class="no-padding no-margin">
+{#   <a class="nav-identity" href="{{site.url}}">
     <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
-  </a>
+  </a> #}
   <a id="nav-toggle" href="#">
     <i id="nav-text">MENU</i>
     <span></span>
@@ -12,7 +12,10 @@
     <ul>
       {% for item in menu.get_items %}
         <li>
-          <a href="{{item.get_link}}"><h5>{{item.attr_title}}</h5><h2>{{item.title}}</h2></a>
+          <a href="{{item.get_link}}">
+            <div class="title-bold white">{{item.attr_title}}</div>
+            <h2 class="white no-margin">{{item.title}}</h2>
+          </a>
         </li>
       {% endfor %}
     </ul>
