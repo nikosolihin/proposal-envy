@@ -60,9 +60,9 @@ $(function() {
   });
 
   // Mobile menu
-  $("#nav-toggle").click(function(e){
+  $("#nav-toggle-click-area").click(function(e){
     e.preventDefault();
-    $(this).toggleClass('active');
+    $("#nav-toggle").toggleClass('active');
     $(".overlay").toggleClass('open');
     $("#nav-text").toggleClass('off');
   });

@@ -1919,9 +1919,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   });
 
   // Mobile menu
-  $("#nav-toggle").click(function(e){
+  $("#nav-toggle-click-area").click(function(e){
     e.preventDefault();
-    $(this).toggleClass('active');
+    $("#nav-toggle").toggleClass('active');
     $(".overlay").toggleClass('open');
     $("#nav-text").toggleClass('off');
   });

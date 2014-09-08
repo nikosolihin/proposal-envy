@@ -2,9 +2,10 @@
 #nav-text {
   position: absolute;
   top: rem-calc(-9);
-  right: rem-calc(10);
+  right: rem-calc(0);
   font-style: normal;
   letter-spacing: rem-calc(1);
+  padding-right: rem-calc(8);
 }
 /* Effects */
 #nav-text {
@@ -15,16 +16,25 @@
   visibility: hidden;
   transition: visibility 0.05s ease-in-out;
 }
-
+/* Click area */
+#nav-toggle-click-area {
+  display: inline-block;
+  position: fixed;
+  z-index: 9999;
+  top: rem-calc(5);
+  right: rem-calc(30);
+  width: rem-calc(90);
+  height: rem-calc(60);
+}
 /* Burger Bar */
 #nav-toggle {
   position: fixed;
+  z-index: 8888;
   @include rprop(top, 40, 40, 35, 35);
   @include rprop(right, 45, 45, 70, 70);
   cursor: pointer;
   border: none;
   outline: none;
-  // display: inline-block;
 }
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
@@ -59,22 +69,14 @@
   top: rem-calc(10);
 }
 
-/* Menu bar style */
-#nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  // @include rprop(padding, 20 20, 20 20, 20 50, 20 50);
-}
 /* Overlay style */
 .overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 7777;
   top: 0;
   left: 0;
-  z-index: 5000;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 105, 86, 0.95);
 }
 .overlay nav {

@@ -3365,9 +3365,10 @@ blockquote {
 #nav-text {
   position: absolute;
   top: -0.5625rem;
-  right: 0.625rem;
+  right: 0;
   font-style: normal;
-  letter-spacing: 0.0625rem; }
+  letter-spacing: 0.0625rem;
+  padding-right: 0.5rem; }
 
 /* Effects */
 #nav-text {
@@ -3380,9 +3381,20 @@ blockquote {
   -webkit-transition: visibility 0.05s ease-in-out;
           transition: visibility 0.05s ease-in-out; }
 
+/* Click area */
+#nav-toggle-click-area {
+  display: inline-block;
+  position: fixed;
+  z-index: 9999;
+  top: 0.3125rem;
+  right: 1.875rem;
+  width: 5.625rem;
+  height: 3.75rem; }
+
 /* Burger Bar */
 #nav-toggle {
   position: fixed;
+  z-index: 8888;
   top: 2.5rem;
   right: 2.8125rem;
   cursor: pointer;
@@ -3442,21 +3454,14 @@ blockquote {
           transform: translate3d(0, -10px, 0) rotate(-45deg);
   top: 0.625rem; }
 
-/* Menu bar style */
-#nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999; }
-
 /* Overlay style */
 .overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 7777;
   top: 0;
   left: 0;
-  z-index: 5000;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 105, 86, 0.95); }
 
 .overlay nav {
