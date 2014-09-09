@@ -1561,13 +1561,13 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #FF6A5D;
-  border-color: #ff2717;
+  background-color: #FF5F51;
+  border-color: #ff1e0e;
   color: #FFFFFF;
   -webkit-transition: background-color 300ms ease-out;
           transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #ff2717; }
+    background-color: #ff1e0e; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
@@ -1627,19 +1627,19 @@ button, .button {
   button.round, .button.round {
     border-radius: 1000px; }
   button.disabled, button[disabled], .button.disabled, .button[disabled] {
-    background-color: #FF6A5D;
-    border-color: #ff2717;
+    background-color: #FF5F51;
+    border-color: #ff1e0e;
     color: #FFFFFF;
     cursor: default;
     opacity: 0.7;
     -webkit-box-shadow: none;
             box-shadow: none; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #ff2717; }
+      background-color: #ff1e0e; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
       color: #FFFFFF; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #FF6A5D; }
+      background-color: #FF5F51; }
     button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
       background-color: #e7e7e7;
       border-color: #b9b9b9;
@@ -1859,7 +1859,7 @@ button::-moz-focus-inner {
   padding-top: 1.5625rem;
   padding-bottom: 67.5%;
   height: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
   overflow: hidden; }
   .flex-video.widescreen {
     padding-bottom: 56.34%; }
@@ -2312,14 +2312,14 @@ dialog::backdrop {
     font-size: 0.875rem; }
     .side-nav li a:not(.button) {
       display: block;
-      color: #FF6A5D;
+      color: #FF5F51;
       margin: 0;
       padding: 0.4375rem 0.875rem; }
       .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
         background: rgba(0, 0, 0, 0.025);
-        color: #ff958e; }
+        color: #ff8d85; }
     .side-nav li.active > a:first-child:not(.button) {
-      color: #ff958e;
+      color: #ff8d85;
       font-weight: normal;
       font-family: "AvenirNextLTPro-Regular", AvenirNextLTPro-Regular, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
     .side-nav li.divider {
@@ -2329,7 +2329,7 @@ dialog::backdrop {
       list-style: none;
       border-top-color: white; }
     .side-nav li.heading {
-      color: #FF6A5D;
+      color: #FF5F51;
       font-size: 0.875rem;
       font-weight: bold;
       text-transform: uppercase; }
@@ -2489,11 +2489,11 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* Default Link Styles */
 a {
-  color: #FF6A5D;
+  color: #FF5F51;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #ff473a; }
+    color: #ff3d2f; }
   a img {
     border: none; }
 
@@ -3099,6 +3099,10 @@ select:focus {
   margin: inherit -2.1875rem;
   margin-top: 2.1875rem; }
 
+@media only screen and (max-width: 40em) {
+  .reveal-modal > :first-child, .reveal-modal > dialog, .close-reveal-modal {
+    margin-top: 6.25rem; } }
+
 .button {
   font-size: 0.765625rem;
   text-transform: uppercase;
@@ -3110,7 +3114,7 @@ select:focus {
     .button {
       font-size: 0.875rem; } }
   .button.coral {
-    background-color: #FF6A5D; }
+    background-color: #FF5F51; }
   .button.wire {
     background-color: transparent;
     border: 0.125rem solid #FFFFFF;
@@ -3203,13 +3207,13 @@ html, body, main {
  * ------------------------------------
  */
 #fchat-header {
-  background: #FF6A5D !important; }
+  background: #FF5F51 !important; }
 
 #fchat-footer {
   background: #555555 !important; }
 
 #fchat-not-premium a {
-  color: #FF6A5D !important; }
+  color: #FF5F51 !important; }
 
 #fchat-feed {
   background: #f4f4f4 !important; }
@@ -3269,7 +3273,7 @@ blockquote {
       font-size: 0.875rem; } }
 
 .title-bold {
-  color: #FF6A5D;
+  color: #FF5F51;
   font-size: 0.8203125rem; }
   @media only screen and (min-width:40.063em) {
     .title-bold {
@@ -3334,7 +3338,7 @@ blockquote {
 /* '' */
 .icon-left-dir:before {
   content: '\e806';
-  color: #FF6A5D; }
+  color: #FF5F51; }
 
 /* '' */
 .icon-share:before {
@@ -3638,7 +3642,7 @@ footer {
             transition: all 400ms ease;
     padding-top: 0.4375rem; }
   .social li a:hover > i {
-    background-color: #FF6A5D; }
+    background-color: #FF5F51; }
 
 .footer-info {
   border-top: 1px solid #e8e8e8;
@@ -3716,6 +3720,7 @@ footer {
 * -------------------------------------
 */
 .about {
+  position: relative;
   background-color: #ffffff; }
   .about hr {
     border: 0;
@@ -3808,12 +3813,12 @@ footer {
   border-radius: 0.125rem;
   background-color: #f5f8fc; }
   .journal-category-list:hover {
-    background-color: #ff766c; }
+    background-color: #ff6b60; }
 
 .journal-selected {
   font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
   .journal-selected .journal-category-link {
-    color: #FF6A5D !important;
+    color: #FF5F51 !important;
     font-size: 0.8125rem; }
   .journal-selected:hover {
     background-color: #f5f8fc; }
@@ -3831,7 +3836,7 @@ footer {
   border-top: 0.0625rem solid #f1f1f1;
   padding: 3.125rem 1.25rem; }
   .journal-article:hover {
-    background-color: #ff7167; }
+    background-color: #ff665b; }
     .journal-article:hover h2, .journal-article:hover h4, .journal-article:hover p, .journal-article:hover .coral-meta {
       color: #fff; }
     .journal-article:hover .journal-overlay {
@@ -3860,7 +3865,7 @@ footer {
   font-size: 0.75rem;
   margin-bottom: 0.625rem; }
   .journal-meta .coral-meta {
-    color: #FF6A5D; }
+    color: #FF5F51; }
 
 .journal-title {
   font-size: 1.5rem;

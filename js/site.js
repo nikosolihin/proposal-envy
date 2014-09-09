@@ -32,7 +32,7 @@ $(function() {
   });
 
   var notInHeader = false;
-  $(".story-content").waypoint( function(direction){
+  $(".story-content, .about").waypoint( function(direction){
     if ( direction == "up" ) {
       // scrolling down out of header
       $('.menu-wrapper').removeClass('shaded');

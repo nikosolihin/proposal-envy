@@ -5,6 +5,11 @@ select:focus {
   margin: inherit rem-calc(-35);
   margin-top: rem-calc(35);
 }
+.reveal-modal > :first-child, .reveal-modal > dialog, .close-reveal-modal {
+  @media #{$small-only} {
+    margin-top: rem-calc(100);
+  }
+}
 .button {
   @include rfont(14);
   text-transform: uppercase;

@@ -1905,7 +1905,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   });
 
   var notInHeader = false;
-  $(".story-content").waypoint( function(direction){
+  $(".story-content, .about").waypoint( function(direction){
     if ( direction == "up" ) {
       // scrolling down out of header
       $('.menu-wrapper').removeClass('shaded');
