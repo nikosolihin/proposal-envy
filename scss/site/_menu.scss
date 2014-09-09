@@ -1,52 +1,53 @@
-/* Menu Text */
-#nav-text {
-  position: absolute;
-  top: rem-calc(-9);
-  right: rem-calc(0);
-  font-style: normal;
-  letter-spacing: rem-calc(1);
-  padding-right: rem-calc(8);
+.menu-wrapper {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  @include rprop(padding, 20 20, 20 20, 20 50, 20 50);
+  transition: transform 0.25s ease-in-out 0.20s,
+              background-color 0.15s ease-in-out;
 }
-/* Effects */
-#nav-text {
-  visibility: visible;
-  transition: visibility 0.15s ease-in-out .3s;
+.menu-wrapper.shaded {
+  background-color: rgba(0, 0, 0, .65);
 }
-#nav-text.off {
-  visibility: hidden;
-  transition: visibility 0.05s ease-in-out;
+.menu-wrapper.closed {
+  transform: translate3d(0,-70px,0);
 }
+
+/* Click area */
+.nav-toggle-click-area {
+  float: right;
+  display: inline-block;
+  width: rem-calc(85);
+  height: rem-calc(30);
+  padding-top: rem-calc(4);
+}
+
 /* Logo area */
 .nav-identity {
-  position: fixed;
-  z-index: 9999;
-  top: rem-calc(25);
-  left: rem-calc(10);
+  float: left;
   img {
-    @include rprop(height, 27, 35, 35, 35);
+    @include rprop(height, 25, 30, 30, 30);
   }
 }
-/* Click area */
-#nav-toggle-click-area {
-  display: inline-block;
-  position: fixed;
-  z-index: 9999;
-  top: rem-calc(5);
-  @include rprop(right, 0,0,30,30);
-  width: rem-calc(90);
-  height: rem-calc(60);
+
+/* Menu Text */
+.nav-text {
+  float: left;
+  font-style: normal;
+  letter-spacing: rem-calc(1);
 }
+
 /* Burger Bar */
-#nav-toggle {
-  position: fixed;
-  z-index: 8888;
-  @include rprop(top, 40, 40, 35, 35);
-  @include rprop(right, 45, 45, 70, 70);
-  cursor: pointer;
-  border: none;
-  outline: none;
+.nav-toggle {
+  float: right;
+  padding-top: 9px;
+  height: 30px;
+  width: 30px;
 }
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
   cursor: pointer;
   height: rem-calc(4);
   width: rem-calc(24);
@@ -55,25 +56,25 @@
   display: block;
   content: '';
 }
-#nav-toggle span:before {
+.nav-toggle span:before {
   top: rem-calc(-8);
 }
-#nav-toggle span:after {
+.nav-toggle span:after {
   bottom: rem-calc(-8);
 }
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
   transition: all 100ms ease-in-out;
 }
-#nav-toggle.active span {
+.nav-toggle.active span {
   background-color: transparent;
 }
-#nav-toggle.active span:before, #nav-toggle.active span:after {
+.nav-toggle.active span:before, .nav-toggle.active span:after {
   top: 0;
 }
-#nav-toggle.active span:before {
+.nav-toggle.active span:before {
   transform: rotate(45deg);
 }
-#nav-toggle.active span:after {
+.nav-toggle.active span:after {
   @extend %flicker-fix;
   transform: translate3d(0, -10px, 0) rotate(-45deg);
   top: rem-calc(10);
@@ -87,7 +88,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 105, 86, 0.96);
 }
 .overlay nav {
   @extend %flicker-fix;
@@ -136,7 +136,7 @@
   height: rem-calc(20)!important;
   margin-top: rem-calc(5);
   p {
-    @include rfont(12);
+    @include rfont(11);
   }
 }
 /* Effects */
@@ -151,6 +151,15 @@
   visibility: visible;
   transform: translate3d(0, 0%, 0);
   transition: transform 0.3s ease-in-out;
+}
+/* Effects */
+.nav-text {
+  visibility: visible;
+  transition: visibility 0.15s ease-in-out .3s;
+}
+.nav-text.off {
+  visibility: hidden;
+  transition: visibility 0.05s ease-in-out;
 }
 @media screen and (max-height: 615px) {
   .overlay nav {
@@ -187,5 +196,5 @@
   .overlay nav {
     height: 75%;
   }
-  .copy { margin-top: rem-calc(20); }
+  .copy { margin-top: rem-calc(30); }
 }

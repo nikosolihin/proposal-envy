@@ -61,17 +61,6 @@ blockquote {
 html, body, main {
   height: 100%;
 }
-.stuck {
-  position: fixed;
-  // top: rem-calc(40);
-  // width: 14%;
-  // @media #{$xlarge-only} {
-  //   width: 15%;
-  // }
-}
-.unstuck {
-  position: relative;
-}
 .wrap {
   @extend %bg;
   @include rprop-plain(padding, 25% 0, 20% 0, 20% 0, 15% 0);
@@ -83,4 +72,25 @@ html, body, main {
   position: relative;
   top: -9999px;
   left: -9999px;
+}
+
+/**
+ * 1.3 Chat Styling
+ * ------------------------------------
+ */
+
+#fchat-header {
+  background: $primary-color!important;
+}
+#fchat-footer {
+  background: #555555!important;
+}
+#fchat-not-premium a {
+  color: $primary-color!important;
+}
+#fchat-feed {
+  background: #f4f4f4!important;
+}
+.fchat-response, .fchat-question {
+  color: #666666!important;
 }

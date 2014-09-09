@@ -1,14 +1,17 @@
-<a class="nav-identity" href="{{site.url}}">
-  <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
-</a>
-{# The click area overlay#}
-<a id="nav-toggle-click-area" href="#"></a>
-<div id="nav-toggle">
-  <i id="nav-text" class="title white hide-for-medium-down">MENU</i>
-  <span></span>
+<div class="menu-wrapper">
+  <a class="nav-identity" href="{{site.url}}">
+    <img src="{{TimberImage(options.site_logo).src}}" alt="Proposal Envy">
+  </a>
+  {# The click area overlay#}
+  <a class="nav-toggle-click-area" href="#">
+    <i class="nav-text title white hide-for-medium-down">MENU</i>
+    <div class="nav-toggle">
+      <span></span>
+    </div>
+  </a>
 </div>
 
-<div class="overlay overlay-slidedown text-center">
+<div class="overlay overlay-slidedown text-center" style="background: rgba({{options.menu_overlay_color|toRGB}}, 0.96);">
   <nav>
     <ul class="overlay-list no-padding">
       {% for item in menu.get_items %}
@@ -57,7 +60,7 @@
         </ul>
       </li>
       <li class="copy">
-        <p class="white no-margin"> &copy; {{now|date('Y')}} Proposal Envy. All rights reserved</p>
+        <p class="white no-margin">Copyright &copy; {{now|date('Y')}} Proposal Envy. All rights reserved.</p>
       </li>
     </ul>
   </nav>
