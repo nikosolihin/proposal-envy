@@ -16,6 +16,11 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
         'title' => 'Make Button',
         'selector' => 'a',
         'classes' => 'button post-set'
+      ),
+      array(
+        'title' => 'Make Excerpt',
+        'selector' => 'p',
+        'classes' => 'excerpt'
       )
     );
     // Merge old & new styles

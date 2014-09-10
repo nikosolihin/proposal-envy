@@ -23,7 +23,7 @@
           <div class="row">
           {% if layout.column_number == "2" %}
             {# Sets up 2 columns #}
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 left columns">
               {% if layout.the_content[0].content_type == "image" %}
                 <figure class="no-margin">
                    <img src="{{TimberImage(layout.the_content[0].image).src}}" alt="{{TimberImage(layout.the_content[0].image).alt}}">
@@ -33,7 +33,7 @@
                 {{layout.the_content[0].text|trim}}
               {% endif %}
             </div>
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 right columns">
               {% if layout.another_content[0].content_type == "image" %}
                 <figure class="no-margin">
                    <img src="{{TimberImage(layout.another_content[0].image).src}}" alt="{{TimberImage(layout.another_content[0].image).alt}}">

@@ -3933,6 +3933,12 @@ footer {
   color: #222222;
   margin: 2.5rem 0 0.8125rem 0; }
 
+.left, .right {
+  margin-bottom: 0.625rem; }
+
+.post-set {
+  margin: 0.3125rem 0; }
+
 /* Back Button
 * -------------------------------------
 */
@@ -4057,8 +4063,6 @@ footer {
     @media only screen and (min-width:90.063em) {
       .author-bio p {
         font-size: 0.875rem; } }
-  .author-bio .post-set {
-    margin: 0.3125rem 0; }
 
 .horz-spotlight {
   margin-top: 1.5625rem;
