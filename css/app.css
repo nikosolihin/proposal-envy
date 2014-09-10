@@ -3048,7 +3048,7 @@ th.hide-for-touch {
   -webkit-perspective: 1000;
           perspective: 1000; }
 
-section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .journal-article, .post-image-success, .post-image, .story-prev, .story-next, .author-photo {
+section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .carousel-content, .journal-article, .post-image-success, .post-image, .story-prev, .story-next, .author-photo {
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -3801,6 +3801,35 @@ footer {
 /* Journal Collection
 	* -------------------------------------
 	*/
+/* Slideshow
+* -------------------------------------
+*/
+#slideshow {
+  clear: both;
+  overflow: hidden; }
+  #slideshow .slick-prev {
+    left: 20px; }
+  #slideshow .slick-next {
+    right: 40px; }
+  #slideshow .slick-dots {
+    bottom: -20px; }
+    #slideshow .slick-dots li {
+      margin-right: 15px; }
+    #slideshow .slick-dots .slick-active button:before {
+      background-color: white;
+      opacity: 1; }
+    #slideshow .slick-dots li button:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
+      background-color: rgba(204, 0, 102, 0);
+      border: 3px solid #fff;
+      opacity: 1; }
+
+#slideshow, .slick-track {
+  height: 31.25rem; }
+
 .journal-select h4, .journal-category-nav h4 {
   font-size: 0.8125rem;
   text-transform: none;

@@ -1,8 +1,28 @@
-<header class="wrap">
+<header>
   <div class="row max-width">
-    <div class="small-12 medium-7 medium-offset-1 large-6 large-offset-1 xlarge-5 xlarge-offset-1 columns">
-      <div class="title-bold white">{{settings.get_field('journal_header_text')}}</div>
-      <h2 class="white">{{settings.get_field('journal_header_paragraph')}}</h2>
+
+    <div id="slideshow">
+      {% for item in slideshow %}
+        <div class="carousel-content" style="background-image: url({{item.thumbnail.src}});">
+            <h2>{{item.post_title}}</h2>
+            <h2>{{item.post_date|date('j M, Y')}}</h2>
+{#           <a href="{{item.permalink}}">
+          </a> #}
+        </div>
+      {% endfor %}
     </div>
+
   </div>
 </header>
+
+{# Carousel the journal. Category filter below it. Category filter sticks to top.
+
+Design journal page like JSM page and the harvard page. Layout each article in a masonry grid
+and do one or two random one with backgorund tinted pic with white text. #}
+
+
+
+{#     <div class="small-12 medium-7 medium-offset-1 large-6 large-offset-1 xlarge-5 xlarge-offset-1 columns">
+      <div class="title-bold white">{{settings.get_field('journal_header_text')}}</div>
+      <h2 class="white">{{settings.get_field('journal_header_paragraph')}}</h2>
+    </div> #}

@@ -1,3 +1,46 @@
+/* Slideshow
+* -------------------------------------
+*/
+#slideshow {
+  clear: both;
+  overflow: hidden;
+  .slick-prev {
+    left: 20px;
+  }
+  .slick-next {
+    right: 40px;
+  }
+  .slick-dots {
+    bottom: -20px;
+    li {
+      margin-right: 15px;
+    }
+    .slick-active button:before {
+      background-color: rgba(255, 255, 255, 1);
+      opacity: 1;
+    }
+    li button:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
+      background-color: rgba(204, 0, 102, 0);
+      border: 3px solid #fff;
+      opacity: 1;
+    }
+  }
+}
+#slideshow, .slick-track {
+  height: rem-calc(500);
+}
+.carousel-content {
+  @extend %bg;
+}
+
+
+
+// THESE NEED SOME CLEANING UP
+
 // Category dropdown
 .journal-select h4, .journal-category-nav h4 {
   font-size: rem-calc(13);
