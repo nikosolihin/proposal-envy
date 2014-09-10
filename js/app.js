@@ -1937,15 +1937,15 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     // for menu hiding based on scroll direction
     if ( ST > lastST ) {
       // up up..suddenly downscroll
-      if ( ST > lastST && lastDirection == "up" && notInHeader ) {
-        $('.menu-wrapper').addClass('closed');
+      if ( ST > lastST && lastDirection == "up" && notInHeader && !$(".overlay").hasClass('open') ) {
+        $(".menu-wrapper").addClass('closed');
       }
       lastDirection = "down";
     } else {
       // down down..suddenly upscroll
-      if ( ST < lastST && lastDirection == "down" && notInHeader ) {
-        $('.menu-wrapper').addClass('shaded');
-        $('.menu-wrapper').removeClass('closed');
+      if ( ST < lastST && lastDirection == "down" && notInHeader && !$(".overlay").hasClass('open') ) {
+        $(".menu-wrapper").addClass('shaded');
+        $(".menu-wrapper").removeClass('closed');
       }
       lastDirection = "up";
     }
@@ -1964,6 +1964,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     $(".nav-toggle").toggleClass('active');
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
+    $(".menu-wrapper").toggleClass('shaded');
   });
 
   // Redirect to different category pages
