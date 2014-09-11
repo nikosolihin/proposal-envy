@@ -4,8 +4,8 @@
     <div id="slideshow">
       {% for item in slideshow %}
         <div class="carousel-content" style="background-image: url({{item.thumbnail.src}});">
-            <h2>{{item.post_title}}</h2>
-            <h2>{{item.post_date|date('j M, Y')}}</h2>
+{#             <h2>{{item.post_title}}</h2>
+            <h2>{{item.post_date|date('j M, Y')}}</h2> #}
 {#           <a href="{{item.permalink}}">
           </a> #}
         </div>

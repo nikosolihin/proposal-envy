@@ -32,14 +32,15 @@ $(function() {
   });
 
   var notInHeader = false;
-  $(".story-content, .about").waypoint( function(direction){
-    if ( direction == "up" ) {
+  var notOverlay = true;
+  $(".menu-waypoint").waypoint( function(direction){
+    if ( direction == "up" && notOverlay ) {
       // scrolling down out of header
       $('.menu-wrapper').removeClass('shaded');
       $('.menu-wrapper').removeClass('closed');
       notInHeader = false;
-    } else {
-      // scrolling up into header
+    } else if ( direction == "down" && notOverlay ) {
+      // scrolling up into header and overlay is not open
       $('.menu-wrapper').addClass('closed');
       notInHeader = true;
     }
@@ -54,29 +55,31 @@ $(function() {
     var textSpeed = 265 * offset - 40;
     var textOpacity = 1 - ((.2 * offset) + offset);
     var scrollOpacity = offset + .05;
-
-    // for homepage parallax on video thing
-    $(".hero-action").css({
-      transform: "translate3d(0,"+ textSpeed +"%,0)",
-      opacity: textOpacity
-    });
+    notOverlay = $(".overlay").hasClass('open') ? false : true;
 
     // for menu hiding based on scroll direction
     if ( ST > lastST ) {
       // up up..suddenly downscroll
-      if ( ST > lastST && lastDirection == "up" && notInHeader && !$(".overlay").hasClass('open') ) {
+      if ( ST > lastST && lastDirection == "up" && notInHeader && notOverlay ) {
         $(".menu-wrapper").addClass('closed');
       }
       lastDirection = "down";
     } else {
       // down down..suddenly upscroll
-      if ( ST < lastST && lastDirection == "down" && notInHeader && !$(".overlay").hasClass('open') ) {
+      if ( ST < lastST && lastDirection == "down" && notInHeader &&  notOverlay ) {
         $(".menu-wrapper").addClass('shaded');
         $(".menu-wrapper").removeClass('closed');
       }
       lastDirection = "up";
     }
     lastST = ST;
+
+
+    // for homepage parallax on video thing
+    $(".hero-action").css({
+      transform: "translate3d(0,"+ textSpeed +"%,0)",
+      opacity: textOpacity
+    });
 
     $(".hero-action").css({
       transform: "translate3d(0,"+ textSpeed +"%,0)",
@@ -91,7 +94,7 @@ $(function() {
     $(".nav-toggle").toggleClass('active');
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
-    $(".menu-wrapper").toggleClass('shaded');
+    $(".menu-wrapper").removeClass('shaded');
   });
 
   // Redirect to different category pages

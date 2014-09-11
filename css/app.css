@@ -3806,13 +3806,14 @@ footer {
 */
 #slideshow {
   clear: both;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0; }
   #slideshow .slick-prev {
     left: 20px; }
   #slideshow .slick-next {
     right: 40px; }
   #slideshow .slick-dots {
-    bottom: -20px; }
+    bottom: -10px; }
     #slideshow .slick-dots li {
       margin-right: 15px; }
     #slideshow .slick-dots .slick-active button:before {
@@ -3820,15 +3821,30 @@ footer {
       opacity: 1; }
     #slideshow .slick-dots li button:before {
       content: '';
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
       border-radius: 10px;
-      background-color: rgba(204, 0, 102, 0);
-      border: 3px solid #fff;
+      background-color: white;
+      border: 2px solid #fff;
       opacity: 1; }
+    #slideshow .slick-dots .slick-active button:before {
+      background-color: rgba(255, 255, 255, 0);
+      width: 12px;
+      height: 12px;
+      border-radius: 12px; }
 
 #slideshow, .slick-track {
-  height: 31.25rem; }
+  height: 31.25rem;
+  min-height: 37.5rem; }
+  @media only screen and (min-width:40.063em) {
+    #slideshow, .slick-track {
+      min-height: 37.5rem; } }
+  @media only screen and (min-width:64.063em) {
+    #slideshow, .slick-track {
+      min-height: 43.75rem; } }
+  @media only screen and (min-width:90.063em) {
+    #slideshow, .slick-track {
+      min-height: 43.75rem; } }
 
 .journal-select h4, .journal-category-nav h4 {
   font-size: 0.8125rem;

@@ -4,6 +4,7 @@
 #slideshow {
   clear: both;
   overflow: hidden;
+  margin-bottom: 0;
   .slick-prev {
     left: 20px;
   }
@@ -11,7 +12,7 @@
     right: 40px;
   }
   .slick-dots {
-    bottom: -20px;
+    bottom: -10px;
     li {
       margin-right: 15px;
     }
@@ -21,17 +22,24 @@
     }
     li button:before {
       content: '';
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
       border-radius: 10px;
-      background-color: rgba(204, 0, 102, 0);
-      border: 3px solid #fff;
+      background-color: rgba(255, 255, 255, 1);
+      border: 2px solid #fff;
       opacity: 1;
+    }
+    .slick-active button:before {
+      background-color: rgba(255, 255, 255, 0);
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
     }
   }
 }
 #slideshow, .slick-track {
   height: rem-calc(500);
+  @include rprop(min-height, 600, 600, 700, 700);
 }
 .carousel-content {
   @extend %bg;
