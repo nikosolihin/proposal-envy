@@ -1,7 +1,7 @@
-<section class="journal-content">
-  <div class="row show-for-medium-down journal-select">
+<section class="journal-section menu-waypoint">
+  <div class="row show-for-small-only journal-select">
     <div class="small-12 columns">
-      <h4>Filter By Categories:</h4>
+      <div class="title-lower no-spacing">Filter By Categories:</div>
       <select class="category-select">
         <option selected value="{{site.url}}/journal">All</option>
         {% for category in categories %}
@@ -10,42 +10,35 @@
       </select>
     </div>
   </div>
-  <div class="row max-width journal-latest">
-    <div class="large-2 large-offset-1 xlarge-2 xlarge-offset-2 hide-for-medium-down columns sticky-stuff">
-      <ul class="side-nav journal-category-nav">
-        <h4>Filter By Categories:</h4>
-        <li class="journal-category-list">
-          <a class="journal-category-link" href="{{site.url}}/journal/">All</a>
-        </li>
-        {% for category in categories %}
-        <li class="journal-category-list{% if chosen_slug == category.slug %} journal-selected{% endif %}">
-          <a class="journal-category-link" href="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="small-12 large-8 xlarge-6 end columns small-only-text-center text-left journal-list">
-      {% for post in posts|slice(0, 15) %}
-      <article class="small-12 columns journal-article" style="background-image: url({{post.thumbnail.src}});">
-        <a href="{{post.permalink}}">
-          <span class="journal-overlay"></span>
-          <h4 class="journal-meta">{{post.post_date|date('j M, Y')}} - <span class="coral-meta">{{post.category}}</span></h4>
-          <h2 class="journal-title">{{post.title}}</h2>
-          <p class="journal-excerpt">{{post.get_field('journal_excerpt')}}</p>
-        </a>
-      </article>
+
+<div class="row">
+  <div class="medium-12 large-10 large-offset-1 hide-for-small-only columns category-nav">
+    <ul class="inline-list category-list">
+      <li class="category-item">
+        <a class="category-link" href="{{site.url}}/journal">All</a>
+      </li>
+      {% for category in categories %}
+      <li class="category-item">
+        <a class="category-link{% if chosen_slug == category.slug %} category-active{% endif %}" href="{{site.url}}/journal/categories/{{category.slug}}">{{category.name}}</a>
+      </li>
       {% endfor %}
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="small-12 large-10 large-offset-1 xlarge-10 xlarge-offset-1 end columns journal-wrapper">
+      <div class="journal-content">
+        {% for post in posts %}
+        <article class="journal-article">
+          <a href="{{post.permalink}}" class="journal-link">
+          <div class="title journal-meta">{{post.post_date|date('j M, Y')}} - <span class="primary">{{post.category}}</span></div>
+          <h3 class="journal-title">{{post.title}}</h3>
+          <p class="journal-excerpt no-margin">{{post.get_field('post_excerpt')}}</p>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
-
-
-{% for category in settings.get_field('category_bg') %}
-  {{category.the_category.slug|print_r}}
-  {{TimberImage(category.the_image).src|print_r}}
-{% endfor %}
-
-
-{# {{settings.get_field('category_bg')|print_r}} #}
-{# {{TimberImage(settings.get_field('journal_header_bg')).src}} #}
-

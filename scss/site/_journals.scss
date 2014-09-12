@@ -55,44 +55,6 @@
   color: white;
   @include rprop-plain(font-size, 250%, 250%, 300%, 300%);
 }
-
-
-
-// THESE NEED SOME CLEANING UP
-
-// Category dropdown
-.journal-select h4, .journal-category-nav h4 {
-  font-size: rem-calc(13);
-  text-transform: none;
-  color: #444;
-}
-.journal-category-nav {
-  margin-top: rem-calc(20);
-}
-.journal-category-list {
-  border-radius: rem-calc(2);
-  background-color: #f5f8fc;
-  &:hover {
-    background-color: lighten($primary-color, 3%);
-  }
-}
-.journal-selected {
-  font-family: $demi-font-family;
-  .journal-category-link {
-    color: $primary-color!important;
-    font-size: rem-calc(13);
-  }
-  &:hover {
-    background-color: #f5f8fc;
-  }
-}
-.journal-category-link {
-  font-size: rem-calc(12)!important;
-}
-
-
-
-
 .category-nav {
   padding: rem-calc(30 0 20 0);
   margin-bottom: rem-calc(20);
@@ -128,8 +90,9 @@
     background-color: $primary-color;
   }
 }
-
-/////////////////////////////////////////////////////////
+.journal-select {
+  margin-top: rem-calc(15);
+}
 .journal-section {
   padding: rem-calc(0 0 70 0);
 }

@@ -3901,31 +3901,6 @@ footer {
     .slideshow-prev i:before, .slideshow-next i:before {
       font-size: 300%; } }
 
-.journal-select h4, .journal-category-nav h4 {
-  font-size: 0.8125rem;
-  text-transform: none;
-  color: #444; }
-
-.journal-category-nav {
-  margin-top: 1.25rem; }
-
-.journal-category-list {
-  border-radius: 0.125rem;
-  background-color: #f5f8fc; }
-  .journal-category-list:hover {
-    background-color: #ff6b60; }
-
-.journal-selected {
-  font-family: "AvenirNextLTPro-Demi", AvenirNextLTPro-Demi, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
-  .journal-selected .journal-category-link {
-    color: #FF5F51 !important;
-    font-size: 0.8125rem; }
-  .journal-selected:hover {
-    background-color: #f5f8fc; }
-
-.journal-category-link {
-  font-size: 0.75rem !important; }
-
 .category-nav {
   padding: 1.875rem 0 1.25rem 0;
   margin-bottom: 1.25rem;
@@ -3960,6 +3935,9 @@ footer {
     letter-spacing: 0.0625rem;
     color: #FFFFFF;
     background-color: #FF5F51; }
+
+.journal-select {
+  margin-top: 0.9375rem; }
 
 .journal-section {
   padding: 0 0 4.375rem 0; }
