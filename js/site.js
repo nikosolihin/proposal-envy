@@ -1,4 +1,21 @@
 $(function() {
+  var masonryColumns = function( fn ) {
+    // Detemine how many masonry columns to have based on Foundation's MQ
+    if ( !matchMedia(Foundation.media_queries['medium']).matches ) {
+      // Small
+      $(".journal-article").css("width", ($(".journal-wrapper").width()/1-15) );
+    } else if ( !matchMedia(Foundation.media_queries['large']).matches ) {
+      // Medium
+      $(".journal-article").css("width", ($(".journal-wrapper").width()/2-15) );
+    } else if ( !matchMedia(Foundation.media_queries['xlarge']).matches ) {
+      // Large
+      $(".journal-article").css("width", ($(".journal-wrapper").width()/3-15) );
+    } else {
+      // XLarge
+      $(".journal-article").css("width", ($(".journal-wrapper").width()/3-15) );
+    }
+  };
+
   // scroll to div ID
   $("a[href*=#]:not([href=#])").click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -44,7 +61,7 @@ $(function() {
       $('.menu-wrapper').addClass('closed');
       notInHeader = true;
     }
-  }, { offset: 250 });
+  }, { offset: 150 });
 
   // For anything that requires scrolltop value
   var lastST = 0;
@@ -128,7 +145,14 @@ $(function() {
       touchMove: true,
       infinite: true,
       speed: 350,
-      cssEase: 'linear'
+      cssEase: 'ease-in-out'
+    });
+    // Set up the prev and next arrows
+    $(".slideshow-prev").click(function() {
+      $("#slideshow").slickPrev();
+    });
+    $(".slideshow-next").click(function() {
+      $("#slideshow").slickNext();
     });
   }
 
@@ -147,6 +171,24 @@ $(function() {
       $("[id^=gallery-]").remove();
     });
   }
+
+  $( window ).resize(function() {
+    console.log("resizing now...");
+    masonryColumns();
+  });
+
+  if( $(".journal-content").length ) {
+    var $journalContainer = $(".journal-content");
+    $journalContainer.imagesLoaded( function() {
+      masonryColumns();
+      $journalContainer.masonry({
+        itemSelector: '.journal-article',
+        gutter: 20,
+        isFitWidth: true
+      });
+    });
+  }
+
 
   // Mailchimp submission via AJAX
   // $('#subscribe').ajaxChimp({

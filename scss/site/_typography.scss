@@ -54,6 +54,9 @@ blockquote {
 .white {
   @extend %white;
 }
+.primary {
+  color: $primary-color!important;
+}
 .excerpt {
   @extend %excerpt;
 }
@@ -101,6 +104,8 @@ blockquote {
 .icon-whatsapp:before { content: '\e80c'; } /* '' */
 .icon-play:before { content: '\e80d'; font-size: 15px; } /* '' */
 .icon-youtube-play:before { content: '\e80e'; } /* '' */
+.icon-right-open-big:before { content: '\e80f'; } /* '' */
+.icon-left-open-big:before { content: '\e810'; } /* '' */
 
 // Margin for buttons with icons above
 .button i {

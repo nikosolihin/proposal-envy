@@ -1,5 +1,5 @@
 header {
-  background-image: linear-gradient(rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.50{% endif %}),rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.40{% endif %})),url({{post.thumbnail.src}});
+  background-image: linear-gradient(rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.50{% endif %}),rgba({{post.get_field('post_overlay')|toRGB}},{% if post.hide_header_text == "yes" %}0{% else %}0.50{% endif %})),url({{post.thumbnail.src}});
 }
 .story-content, #story-jump {
   background-color: {{ (post.get_field('post_bg_color') == "ivory") ? '#fffefb' : '#ffffff'}};
@@ -17,7 +17,7 @@ blockquote p {
   color: rgba({{post.get_field('post_color')|toRGB}},0.9);
 }
 blockquote, .author-meta, .horz-spotlight {
-  background-color: rgba({{post.get_field('post_color')|toRGB}},0.02);
+  background-color: rgba({{post.get_field('post_color')|toRGB}},0.04);
 }
 {# #slideshow, .slick-track {
   height: {% if post.get_field('story_gallery_height') %} {{post.get_field('story_gallery_height')}}px; {% else %} 450px; {% endif %};

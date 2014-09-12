@@ -34,6 +34,12 @@ blockquote {
   p { margin: 0; }
 }
 
+/* HR
+* -------------------------------------
+*/
+hr {
+  @include divider();
+}
 
 /**
  * 1.2 Global Classes
@@ -58,6 +64,9 @@ blockquote {
 .no-margin {
   margin: 0;
 }
+.no-spacing {
+  letter-spacing: 0;
+}
 html, body, main {
   height: 100%;
 }
@@ -72,6 +81,12 @@ html, body, main {
   position: relative;
   top: -9999px;
   left: -9999px;
+}
+.vertical-align {
+  @extend %vertical-align;
+}
+.vertical-align-parent {
+  @extend %vertical-align-parent;
 }
 
 /**

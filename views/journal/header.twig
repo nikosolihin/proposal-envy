@@ -1,15 +1,19 @@
 <header>
-  <div class="row max-width">
-
+  <div class="row max-width text-center">
     <div id="slideshow">
       {% for item in slideshow %}
-        <div class="carousel-content" style="background-image: url({{item.thumbnail.src}});">
-{#             <h2>{{item.post_title}}</h2>
-            <h2>{{item.post_date|date('j M, Y')}}</h2> #}
-{#           <a href="{{item.permalink}}">
-          </a> #}
+        <div class="carousel-content vertical-align-parent" style="background-image: linear-gradient(rgba({{item.get_field('post_overlay')|toRGB}},0.50),rgba({{item.get_field('post_overlay')|toRGB}},0.50)),url({{item.thumbnail.src}});">
+          <div class="vertical-align small-10 small-offset-1 columns">
+            <div class="title white">{{item.post_date|date('F j, Y')}}</div>
+            <h2 class="post-header white">{{item.post_title}}</h2>
+            <hr>
+            <p class="white">{{item.post_excerpt}}</p>
+            <a href="{{item.permalink}}" class="button wire no-margin">Read More</a>
+          </div>
         </div>
       {% endfor %}
+      <a href="#" class="slideshow-prev"><i class="icon-left-open-big"></i></a>
+      <a href="#" class="slideshow-next"><i class="icon-right-open-big"></i></a>
     </div>
 
   </div>
