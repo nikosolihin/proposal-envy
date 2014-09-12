@@ -16,8 +16,8 @@
 
 @font-face {
   font-family: 'fontello';
-  src: url('../assets/font/fontello.eot?46123228');
-  src: url('../assets/font/fontello.eot?46123228#iefix') format('embedded-opentype'), url('../assets/font/fontello.woff?46123228') format('woff'), url('../assets/font/fontello.ttf?46123228') format('truetype'), url('../assets/font/fontello.svg?46123228#fontello') format('svg');
+  src: url('../assets/font/fontello.eot?42604855');
+  src: url('../assets/font/fontello.eot?42604855#iefix') format('embedded-opentype'), url('../assets/font/fontello.woff?42604855') format('woff'), url('../assets/font/fontello.ttf?42604855') format('truetype'), url('../assets/font/fontello.svg?42604855#fontello') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -3336,37 +3336,22 @@ blockquote {
 
 /* '' */
 .icon-quote-left:before {
-  content: '\e804';
-  color: #ddd;
-  font-size: 2.1875rem;
-  position: absolute;
-  left: 0.75rem; }
-  @media only screen and (min-width:64.063em) and (max-width:90em) {
-    .icon-quote-left:before {
-      left: 3.4375rem; } }
-  @media only screen and (min-width:90.063em) and (max-width:120em) {
-    .icon-quote-left:before {
-      left: 16.875rem;
-      font-size: 2.8125rem; } }
+  content: '\e804'; }
 
+/* '' */
 .icon-quote-right:before {
   content: '\e805'; }
 
 /* '' */
 .icon-left-dir:before {
-  content: '\e806';
-  color: #FF5F51; }
+  content: '\e806'; }
 
 /* '' */
 .icon-share:before {
   content: '\e807'; }
 
 /* '' */
-.icon-phone-squared:before {
-  content: '\e808'; }
-
-/* '' */
-.icon-email:before {
+.icon-mail:before {
   content: '\e809'; }
 
 /* '' */
@@ -3399,6 +3384,10 @@ blockquote {
   content: '\e810'; }
 
 /* '' */
+.icon-phone:before {
+  content: '\e811'; }
+
+/* '' */
 .button i {
   margin-right: 0.4375rem; }
 

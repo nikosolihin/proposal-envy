@@ -3,7 +3,7 @@
     <div id="slideshow">
       {% for item in slideshow %}
         <div class="carousel-content vertical-align-parent" style="background-image: linear-gradient(rgba({{item.get_field('post_overlay')|toRGB}},0.50),rgba({{item.get_field('post_overlay')|toRGB}},0.50)),url({{item.thumbnail.src}});">
-          <div class="vertical-align small-10 small-offset-1 columns">
+          <div class="vertical-align small-10 small-offset-1 large-8 large-offset-2 xlarge-6 xlarge-offset-3 columns">
             <div class="title white">{{item.post_date|date('F j, Y')}}</div>
             <h2 class="post-header white">{{item.post_title}}</h2>
             <hr>
@@ -18,15 +18,3 @@
 
   </div>
 </header>
-
-{# Carousel the journal. Category filter below it. Category filter sticks to top.
-
-Design journal page like JSM page and the harvard page. Layout each article in a masonry grid
-and do one or two random one with backgorund tinted pic with white text. #}
-
-
-
-{#     <div class="small-12 medium-7 medium-offset-1 large-6 large-offset-1 xlarge-5 xlarge-offset-1 columns">
-      <div class="title-bold white">{{settings.get_field('journal_header_text')}}</div>
-      <h2 class="white">{{settings.get_field('journal_header_paragraph')}}</h2>
-    </div> #}
