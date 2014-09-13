@@ -1,9 +1,9 @@
 <?php
 
-$settings_args = array(
+$slideshow_args = array(
   'post_type' => 'page',
   'number' => 1,
-  'name' => 'stories-settings'
+  'name' => 'story-collection'
 );
 
 $success_args = array(
@@ -21,7 +21,7 @@ $success_args = array(
 
 $context = Timber::get_context();
 $context['options'] = get_fields('options');
-$context['settings'] = Timber::get_post($settings_args);
+$context['testimonials'] = Timber::get_post($slideshow_args);
 $context['success'] = Timber::get_posts($success_args);
 
 // Exclude the 3 most recent success stories using their IDs

@@ -1,8 +1,23 @@
-<header class="wrap">
-  <div class="row max-width">
-    <div class="small-12 medium-7 medium-offset-1 large-6 large-offset-1 xlarge-5 xlarge-offset-1 columns">
-      <div class="title-bold white">{{settings.get_field('stories_header_text')}}</div>
-      <h2 class="white">{{settings.get_field('stories_header_paragraph')}}</h2>
+<header>
+  <div class="row max-width text-left">
+    <div id="slideshow">
+      {% for item in testimonials.get_field('slideshow') %}
+        {% if item.text_position == "left" %}
+        <div class="carousel-content vertical-align-parent" style="background-image: linear-gradient(to left, rgba(0,0,0,0.0) 0%, rgba({{item.gradient|toRGB}},0.4) 65%), url( {{TimberImage(item.background_image).src}} );">
+          <div class="vertical-align small-only-text-center small-10 small-offset-1 medium-5 large-5 columns">
+        {% else %}
+        <div class="carousel-content vertical-align-parent" style="background-image: linear-gradient(to right, rgba(0,0,0,0.0) 0%, rgba({{item.gradient|toRGB}},0.4) 65%), url( {{TimberImage(item.background_image).src}} );">
+          <div class="vertical-align small-only-text-center small-10 small-offset-1 medium-5 medium-offset-6 large-5 large-offset-6 columns">
+        {% endif %}
+          <div class="title-bold white testi-title">Kind words from our happy couples</div>
+          <p class="excerpt white shadow testi-excerpt"><em>{{item.testimony}}</em></p>
+          <div class="title-lower white shadow text-right testi-couple">&mdash;&nbsp;{{item.couple_name}}</div>
+          <a href="{{item.read_story_link}}" class="button wire no-margin">Read Story</a>
+        </div>
+      </div>
+      {% endfor %}
+      <a href="#" class="slideshow-prev"><i class="icon-left-open-big"></i></a>
+      <a href="#" class="slideshow-next"><i class="icon-right-open-big"></i></a>
     </div>
   </div>
 </header>

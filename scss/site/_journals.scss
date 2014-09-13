@@ -42,6 +42,7 @@
 // Arrows
 .slideshow-prev, .slideshow-next {
   position: absolute;
+  @extend %shadow;
 }
 .slideshow-prev {
   top: 47%;

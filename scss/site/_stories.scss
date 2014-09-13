@@ -30,3 +30,17 @@
 .post-title {
   @include rfont(20);
 }
+.testi-title {
+  @extend %shadow;
+  @include rprop(font-size, 13, 13, 15, 16);
+}
+.testi-excerpt {
+  @include rprop(font-size, 15, 16, 17, 19);
+  @include rprop-plain(line-height, 1.8, 1.9, 2, 2);
+  @include rprop(padding, 0 10, 0, 0, 0);
+  margin: rem-calc(20 0 13 0);
+}
+.testi-couple {
+  @include rprop(font-size, 15, 15, 16, 16);
+  margin-bottom: rem-calc(30);
+}

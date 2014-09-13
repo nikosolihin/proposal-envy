@@ -3057,7 +3057,7 @@ section, .wrap, .hero-bg, #hero-video, .success-story, .proposal-story, .carouse
 .white {
   color: #FFFFFF !important; }
 
-.hero-subtitle, .hero-title, .hero-tagline {
+.shadow, .hero-subtitle, .hero-title, .hero-tagline, .slideshow-prev, .slideshow-next, .testi-title {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); }
 
 h4, .post-header, .post-title-success, figcaption, .hero-subtitle, blockquote, .excerpt, h2, h3, .gradient-text {
@@ -3988,6 +3988,64 @@ footer {
   @media only screen and (min-width:40.063em) {
     .post-title {
       font-size: 1.25rem; } }
+
+.testi-title {
+  font-size: 0.8125rem; }
+  @media only screen and (min-width:40.063em) {
+    .testi-title {
+      font-size: 0.8125rem; } }
+  @media only screen and (min-width:64.063em) {
+    .testi-title {
+      font-size: 0.9375rem; } }
+  @media only screen and (min-width:90.063em) {
+    .testi-title {
+      font-size: 1rem; } }
+
+.testi-excerpt {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  padding: 0 0.625rem;
+  margin: 1.25rem 0 0.8125rem 0; }
+  @media only screen and (min-width:40.063em) {
+    .testi-excerpt {
+      font-size: 1rem; } }
+  @media only screen and (min-width:64.063em) {
+    .testi-excerpt {
+      font-size: 1.0625rem; } }
+  @media only screen and (min-width:90.063em) {
+    .testi-excerpt {
+      font-size: 1.1875rem; } }
+  @media only screen and (min-width:40.063em) {
+    .testi-excerpt {
+      line-height: 1.9; } }
+  @media only screen and (min-width:64.063em) {
+    .testi-excerpt {
+      line-height: 2; } }
+  @media only screen and (min-width:90.063em) {
+    .testi-excerpt {
+      line-height: 2; } }
+  @media only screen and (min-width:40.063em) {
+    .testi-excerpt {
+      padding: 0; } }
+  @media only screen and (min-width:64.063em) {
+    .testi-excerpt {
+      padding: 0; } }
+  @media only screen and (min-width:90.063em) {
+    .testi-excerpt {
+      padding: 0; } }
+
+.testi-couple {
+  font-size: 0.9375rem;
+  margin-bottom: 1.875rem; }
+  @media only screen and (min-width:40.063em) {
+    .testi-couple {
+      font-size: 0.9375rem; } }
+  @media only screen and (min-width:64.063em) {
+    .testi-couple {
+      font-size: 1rem; } }
+  @media only screen and (min-width:90.063em) {
+    .testi-couple {
+      font-size: 1rem; } }
 
 /* Single Post
 	* -------------------------------------
