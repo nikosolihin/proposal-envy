@@ -1991,7 +1991,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
     $(".menu-wrapper").removeClass('shaded');
-    $("#fchat-header").css('background-color', '#555555');
   });
 
   // Redirect to different category pages
