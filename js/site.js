@@ -112,6 +112,7 @@ $(function() {
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
     $(".menu-wrapper").removeClass('shaded');
+    $("#fchat-header").css('background-color', '#555555');
   });
 
   // Redirect to different category pages

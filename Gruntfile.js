@@ -23,8 +23,8 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          // outputStyle: 'compressed'
-          outputStyle: 'expanded'
+          outputStyle: 'compressed'
+          // outputStyle: 'expanded'
         },
         files: {
           'css/app.css': 'scss/app.scss'
@@ -63,10 +63,10 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'js/fastclick/lib/fastclick.js',
-          // 'js/analytics.js',
+          'js/analytics.js',
           'js/firehose.js',
           'js/jquery.lightGallery.min.js',
-          'js/ajaxchimp/jquery.ajaxchimp.min.js',
+          // 'js/ajaxchimp/jquery.ajaxchimp.min.js',
           'js/facebook.js',
           'js/foundation/js/foundation/foundation.js',
           'js/foundation/js/foundation/foundation.reveal.js',
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
       grunt: { files: ['Gruntfile.js'] },
 
       markup: {
-        files: ['home.php', 'views/*.twig', 'views/**/*.twig'],
+        files: ['views/*.twig', 'views/**/*.twig'],
         options: {
           livereload: true,
         }
