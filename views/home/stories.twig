@@ -11,6 +11,7 @@
     <div class="proposal-story large-6 columns">
       <div class="title-bold white">From our journal</div>
       <h2 class="white">{{journal.title}}</h2>
+      <div class="title-lower">{{journal.category}}</div>
       <hr>
       <p>{{journal.get_field('post_excerpt')|excerpt(17)}}</p>
       <a href="{{journal.permalink}}" class="button wire">Read Story</a>
