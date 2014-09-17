@@ -1,4 +1,20 @@
 $(function() {
+
+  var mq = "small";
+  if ( !matchMedia(Foundation.media_queries['medium']).matches ) {
+    // Small
+    mq = "small";
+  } else if ( !matchMedia(Foundation.media_queries['large']).matches ) {
+    // Medium
+    mq = "medium";
+  } else if ( !matchMedia(Foundation.media_queries['xlarge']).matches ) {
+    // Large
+    mq = "large";
+  } else {
+    // XLarge
+    mq = "xlarge";
+  }
+
   var masonryColumns = function( fn ) {
     // Detemine how many masonry columns to have based on Foundation's MQ
     if ( !matchMedia(Foundation.media_queries['medium']).matches ) {
@@ -61,7 +77,7 @@ $(function() {
       $('.menu-wrapper').addClass('closed');
       notInHeader = true;
     }
-  }, { offset: 150 });
+  }, { offset: 250 });
 
   // For anything that requires scrolltop value
   var lastST = 0;
@@ -91,17 +107,13 @@ $(function() {
     }
     lastST = ST;
 
-
-    // for homepage parallax on video thing
-    $(".hero-action").css({
-      transform: "translate3d(0,"+ textSpeed +"%,0)",
-      opacity: textOpacity
-    });
-
-    $(".hero-action").css({
-      transform: "translate3d(0,"+ textSpeed +"%,0)",
-      opacity: textOpacity
-    });
+    // for homepage parallax on video thing (Only on S & M)
+    if ( mq == "large" || mq == "xlarge" ) {
+      $(".hero-action").css({
+        transform: "translate3d(0,"+ textSpeed +"%,0)",
+        opacity: textOpacity
+      });
+    }
   });
 
 
@@ -111,7 +123,7 @@ $(function() {
     $(".nav-toggle").toggleClass('active');
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
-    $(".menu-wrapper").removeClass('shaded');
+    $(".menu-wrapper").toggleClass('shaded');
   });
 
   // Redirect to different category pages
@@ -126,12 +138,6 @@ $(function() {
   $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
     $("#hero-video").get(0).play();
   });
-
-  // Stick category list
-  // $('.journal-category-nav').waypoint('sticky', {
-  //   offset: 50
-  // });
-
 
   // If #slideshow exists then set it up
   if( $("#slideshow").length ) {
@@ -189,7 +195,6 @@ $(function() {
     });
   }
 
-
   // Mailchimp submission via AJAX
   $('#subscribe').ajaxChimp({
     url: '//proposalenvy.us9.list-manage.com/subscribe/post?u=ca8ce0af86bcc57be42d033e5&amp;id=569d343fb2',
@@ -206,15 +211,4 @@ $(function() {
       $('#subscribe button').removeClass('disabled');
     }
   }
-
-    // sets up default wordpress gallery to use slick carousel
-    // var divClasses = $(".slideshow").parent().attr('class');
-    // var carousel = '<div id="slideshow" class="hide-for-small-only">' + $("#slideshow").html() + '</div>';
-    // var temp = $(".slideshow").parent().parent().html().split('<div class="slideshow"></div>');
-    // var fresh = temp[0]+'</div>'+carousel+'<div class="'+divClasses+'">'+temp[1];
-    // $("#slideshow").remove();
-    // $(".entry-content").html(fresh);
-    // // Set top margin here because css won't work
-    // $("#slideshow").prev().css('margin-bottom', 20);
-    // $("#slideshow").css('margin-bottom', 60);
 });

@@ -6,11 +6,11 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
   @include rprop(padding, 20 20, 20 20, 20 50, 20 50);
-  transition: transform 0.25s ease-in-out 0.20s,
+  transition: transform 0.25s ease-in-out 0.1s,
               background-color 0.15s ease-in-out;
 }
 .menu-wrapper.shaded {
-  background-color: rgba(0, 0, 0, .65);
+  background-color: rgba(119, 218, 234, .9);
 }
 .menu-wrapper.closed {
   transform: translate3d(0,-70px,0);

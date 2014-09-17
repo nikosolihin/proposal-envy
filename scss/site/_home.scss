@@ -5,6 +5,9 @@
   @extend %vertical-align-parent;
   height: 100vh;
   height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 .hero-bg {
   @extend %bg;
@@ -32,24 +35,26 @@
 .hero-subtitle {
   @extend %serif-italic;
   @extend %shadow;
-  @include rfont(22);
+  @include rfont(18);
 }
 .hero-title {
   @extend %sans-bold;
   @extend %shadow;
-  @include rprop(font-size, 42, 80);
+  @include rprop(font-size, 32, 42, 80, 80);
   line-height: 1;
   letter-spacing: rem-calc($global-letter-spacing*5);
-  margin: rem-calc(20 0 3);
+  // margin: rem-calc(10 0 3);
+  @include rprop(margin, 10 0 3);
 }
 .hero-tagline {
   @extend %sans;
   @extend %shadow;
-  @include rfont(16);
-  letter-spacing: rem-calc($global-letter-spacing);
+  line-height: 1.7;
+  @include rprop(font-size, 12, 14, 16, 16);
+  @include rprop(letter-spacing, 1,1,$global-letter-spacing);
 }
 #play-button {
-  margin-left: rem-calc(20);
+  @include rprop(margin, 12, 20,20,20);
 }
 
 /* About
@@ -57,6 +62,7 @@
 */
 .about {
   position: relative;
+  margin-top: 100vh;
   background-color: #ffffff;
   hr {
     @include divider(#EBEAE5);
@@ -81,6 +87,7 @@
 * -------------------------------------
 */
 .packages {
+  position: relative;
   hr {
     @include divider(#777);
   }
@@ -106,10 +113,4 @@
   .button {
     margin-top: 0;
   }
-}
-
-/* Hint
-* -------------------------------------
-*/
-.hint {
 }

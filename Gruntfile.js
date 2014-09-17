@@ -63,7 +63,6 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'js/fastclick/lib/fastclick.js',
-          'js/analytics.js',
           'js/jquery.lightGallery.min.js',
           'js/ajaxchimp/jquery.ajaxchimp.min.js',
           'js/facebook.js',
