@@ -191,22 +191,21 @@ $(function() {
 
 
   // Mailchimp submission via AJAX
-  // $('#subscribe').ajaxChimp({
-  //   url: '//proposalenvy.us9.list-manage.com/subscribe/post?u=ca8ce0af86bcc57be42d033e5&amp;id=569d343fb2',
-  //   callback: subCallbackFunction
-  // });
-
-  // function subCallbackFunction (resp) {
-  //   console.log(resp);
-  //   $('#subscribe button').addClass('disabled');
-  //   if (resp.result === 'success') {
-  //     $('#subscribe-email').val('Check email for verification...');
-  //   } else {
-  //     // $('#subscribe-email').parent('div').addClass('has-error');
-  //     // $('#subscribe-email').parent('div').append("<p class='val-msg'>" + resp.msg.substring(4) + "</p>");
-  //     $('#subscribe button').removeClass('disabled');
-  //   }
-  // }
+  $('#subscribe').ajaxChimp({
+    url: '//proposalenvy.us9.list-manage.com/subscribe/post?u=ca8ce0af86bcc57be42d033e5&amp;id=569d343fb2',
+    callback: subCallbackFunction
+  });
+  function subCallbackFunction (resp) {
+    $('#subscribe button').addClass('disabled');
+    if (resp.result === 'success') {
+      $('#subscribe-email').css('color', '#aaaaaa');
+      $('#subscribe-email').val('Check your email for verification.');
+    } else {
+      $('#subscribe-email').css('color', '#fc4640');
+      $('#subscribe-email').val('Enter a valid email address.');
+      $('#subscribe button').removeClass('disabled');
+    }
+  }
 
     // sets up default wordpress gallery to use slick carousel
     // var divClasses = $(".slideshow").parent().attr('class');

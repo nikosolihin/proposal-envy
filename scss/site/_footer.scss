@@ -58,3 +58,15 @@ footer {
 .indent {
   margin-left: rem-calc(27);
 }
+
+#subscribe-email {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: $global-radius;
+  border-bottom-left-radius: $global-radius;
+  margin-bottom: 0;
+}
+#subscribe-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
