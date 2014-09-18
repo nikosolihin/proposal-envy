@@ -14,6 +14,7 @@ select:focus {
   @include rfont(14);
   text-transform: uppercase;
   letter-spacing: rem-calc(1);
+  line-height: 1.4;
   border-radius: $global-radius;
   padding: rem-calc(15);
   margin: rem-calc(40 0 0);
