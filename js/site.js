@@ -85,7 +85,7 @@ $(function() {
   $(window).scroll(function() {
     var ST = $(this).scrollTop();
     var offset = ST/$(this).height();
-    var textSpeed = 265 * offset - 40;
+    var textSpeed = 265 * offset - 50;
     var textOpacity = 1 - ((.2 * offset) + offset);
     var scrollOpacity = offset + .05;
     notOverlay = $(".overlay").hasClass('open') ? false : true;

@@ -46,7 +46,7 @@
   line-height: 1;
   letter-spacing: rem-calc($global-letter-spacing*5);
   // margin: rem-calc(10 0 3);
-  @include rprop(margin, 10 0 3);
+  @include rprop(margin, 10 0 3, 13 0 3);
 }
 .hero-tagline {
   @extend %sans;
