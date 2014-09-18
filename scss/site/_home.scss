@@ -58,6 +58,12 @@
 #play-button {
   @include rprop(margin, 12, 20,20,20);
 }
+#videoModal {
+  position: fixed;
+  top: rem-calc(100);
+  left: 0px;
+  z-index: 6666;
+}
 
 /* About
 * -------------------------------------
