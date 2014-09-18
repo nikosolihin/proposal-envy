@@ -24,7 +24,7 @@ select:focus {
   &.wire {
     background-color: transparent;
     border: rem-calc(2) solid $white;
-    padding: rem-calc(11 15);
+    padding: rem-calc(10 15);
   }
 }
 .inline-list > li:first-child {
