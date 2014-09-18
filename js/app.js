@@ -1996,6 +1996,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
     $(".menu-wrapper").toggleClass('shaded');
+    if (!notInHeader) {
+      $(".menu-wrapper").removeClass('shaded');
+    }
   });
 
   // Redirect to different category pages
@@ -2051,7 +2054,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   }
 
   $( window ).resize(function() {
-    console.log("resizing now...");
     masonryColumns();
   });
 

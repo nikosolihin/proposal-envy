@@ -124,6 +124,9 @@ $(function() {
     $(".overlay").toggleClass('open');
     $(".nav-text").toggleClass('off');
     $(".menu-wrapper").toggleClass('shaded');
+    if (!notInHeader) {
+      $(".menu-wrapper").removeClass('shaded');
+    }
   });
 
   // Redirect to different category pages
@@ -179,7 +182,6 @@ $(function() {
   }
 
   $( window ).resize(function() {
-    console.log("resizing now...");
     masonryColumns();
   });
 
