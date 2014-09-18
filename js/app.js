@@ -2021,7 +2021,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       arrows: false,
       fade: true,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 10000,
       swipe: false,
       draggable: false,
       touchMove: true,
