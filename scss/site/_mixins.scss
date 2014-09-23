@@ -10,7 +10,7 @@
   background: $color;
   width: rem-calc(50);
   text-align:center;
-  margin: rem-calc(40) auto rem-calc(40);
+  margin: rem-calc(40) auto;
 }
 @mixin grid-debug($top, $color) {
   @media #{$small-only} {

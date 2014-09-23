@@ -1,0 +1,32 @@
+.about-value {
+  background-color: ivory;
+}
+.about-role {
+  background-color: #27243A;
+}
+.about-why {
+  background-image: linear-gradient(rgba(99, 191, 190, 1),rgba(99, 191, 190, 1)),url('red.jpg');
+}
+.reason-img {
+  margin-bottom: rem-calc(15);
+}
+.reason {
+  margin-bottom: rem-calc(20);
+}
+.handy, .arista {
+  @extend %bg;
+  hr {
+    @include divider(#888);
+    margin: rem-calc(30) 0;
+  }
+  .white-panel {
+    min-height: rem-calc(500);
+  }
+  // padding: rem-calc(80 0);
+}
+.handy {
+  background-image: url("handy-large.jpg");
+}
+.arista {
+  background-image: url("arista-large.jpg");
+}

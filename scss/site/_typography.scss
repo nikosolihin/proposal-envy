@@ -18,7 +18,7 @@ h4 {
 }
 .post-header {
   @extend %serif-bold;
-  @include rfont(46);
+  @include rprop(font-size, 28, 46);
 }
 p {
   @include rfont(16);
@@ -56,6 +56,9 @@ blockquote {
 }
 .primary {
   color: $primary-color!important;
+}
+.gray {
+  color: #888;
 }
 .excerpt {
   @extend %excerpt;
