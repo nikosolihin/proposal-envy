@@ -2,16 +2,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  // min-height: 600px;
   padding: 33% 0;
 }
 .about-value {
-  background-color: ivory;
+  background-color: #ffffed;
   padding: rem-calc(20 0 35);
 }
 .about-role {
   @extend %bg;
-  background-image: linear-gradient(rgba(36, 32, 56, .90),rgba(36, 32, 56, .90)),url('role.jpg');
 }
 .about-why {
   background-color: rgb(99, 191, 190);
@@ -31,11 +29,4 @@
   .white-panel {
     min-height: rem-calc(500);
   }
-  // padding: rem-calc(80 0);
-}
-.handy {
-  background-image: url("handy-large.jpg");
-}
-.arista {
-  background-image: url("arista-large.jpg");
 }
