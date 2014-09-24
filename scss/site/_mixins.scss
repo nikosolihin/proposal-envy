@@ -137,7 +137,7 @@
 }
 %sans-bold-lower {
   @extend %sans-bold;
-  text-transform: capitalize;
+  text-transform: none;
 }
 %excerpt {
   @extend %serif;

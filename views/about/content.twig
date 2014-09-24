@@ -1,39 +1,14 @@
-<section class="about-value no-padding">
+<section class="about-value no-padding menu-waypoint">
   <div class="row">
-    <div class="title-bold text-center">Get to know us</div>
-    <h2 class="text-center">About Us</h2>
-    <hr>
-  </div>
-  <div class="row max-width">
-    <div class="large-6 large-offset-1 columns">
+    <div class="large-5 small-centered columns text-center">
+      <div class="title-bold text-center">About Us</div>
+      <h2 class="text-center">Who We Are</h2>
+      <hr>
       <div class="title-bold m-margin">Our Values</div>
       <p><strong>We believe every human being deserves a life of joy and happiness, yet as we all know from our own experience joyful occurrence is a rarity in our culture.</strong></p>
       <p class="gray">It is truly our desire to give you a piece of happiness you deserve by turning one of your dreams into reality. A dream every girl has been dreaming since a very young age, a dream of the perfect proposal.</p>
       <p class="gray l-margin">We understand the numerous challenges in creating an unforgettable experience for your love ones and that is the reason why we exist; we make your dream come to life. We will guide you in executing a perfectly genuine gesture that not only will put her on cloud nine but also provokes envy compassions from others. A dream proposal identified with joyous envy.</p>
 
-    </div>
-    <div class="large-4 large-offset-1 end columns edge-photo no-padding">
-    </div>
-  </div>
-</section>
-
-<section class="about-role">
-  <div class="row">
-    <div class="small-11 small-offset-1 columns text-left">
-      <div class="title-bold m-margin">Our Role</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-5 large-offset-1 columns">
-      <p class="white">A proposal needs to be carefully premeditated and planned; not only it is time consuming but also painstaking. Planning a proposal should be an enjoyable experience for everyone involved. Therefore our primary role is to assist and facilitate the whole planning process thus making your life less stressful than it already is.</p>
-    </div>
-    <div class="large-5 end columns">
-      <p class="white">You only have one chance to make this proposal thoughtful and memorable, it is one of the many ways to show how much she means to you, and if you execute it perfectly it will be one of the most memorable experiences in her life. We are here to smooth the process in order for you to pull off the proposal envy of her life.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns text-center">
-      <a href="" class="button coral lets-talk">Let's Talk!</a>
     </div>
   </div>
 </section>
@@ -59,67 +34,42 @@
   </div>
 </section>
 
-<section class="no-padding">
-  <div class="row max-width handy">
-
-  <div class="large-5 large-offset-2 white-panel columns">
-      <div class="title-bold s-margin">Founder</div>
-      <h3 class="m-margin">Handy Lu</h3>
-      <hr>
-      <p class="gray">Coming from experience at startups, agencies, and full-time freelance, Alexander’s process is limber and eclectic. Inspired by Sci-Fi movies, Eastern philosophy, and well-made espresso, he works for a beautiful, informed future. He sees each new project as an opportunity to grow in effectiveness and understanding, and is a true proponent of friendship as a means to better building.</p>
+<section class="about-role">
+  <div class="row">
+    <div class="small-11 small-offset-1 columns text-left">
+      <div class="title-bold m-margin">Our Role</div>
+    </div>
   </div>
+  <div class="row">
+    <div class="large-5 large-offset-1 columns">
+      <p class="white">{{post.get_field('left_paragraph')}}</p>
+    </div>
+    <div class="large-5 end columns">
+      <p class="white">{{post.get_field('right_paragraph')}}</p>
+    </div>
   </div>
-
-  <div class="row max-width arista">
-  <div class="large-5 large-offset-5 white-panel columns">
-      <div class="title-bold s-margin">Co-founder</div>
-      <h3 class="m-margin">Arista Tjandra Widjaja</h3>
-      <hr>
-      <p class="gray">Arista is driven by a constant desire to learn more and build better, while carrying a firm resolution to never act too grown-up. With years of interactive and illustration background, everything he does is meticulous yet imaginative. Known for keeping his cool in tough-goings, Mike remains a solid-pillar in the foundation of our studio’s positive attitude and steadfast approach.</p>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <a href="" class="button coral lets-talk">Let's Talk!</a>
+    </div>
   </div>
-  </div>
-
 </section>
 
-{# <section>
-  <div class="row">
-    <div class="large-3 columns">
-      <div class="title-bold m-margin">The Team</div>
-      <p><strong>We love what we do. Let's work together!</strong></p>
-      <p class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, voluptates consectetur eum assumenda enim. Nam facilis cupiditate ut nesciunt reiciendis natus est odio, ad voluptatem, necessitatibus, nostrum, optio dignissimos rerum.</p>
-    </div>
-    {% for member in post.get_field('members') %}
-      <div class="large-4 columns">
-        <img class="member-photo" src="{{TimberImage(member.photo).src}}" />
-      </div>
-      <div class="large-4 columns">
-        <div class="title-lower m-margin">{{member.name}}</div>
-        <p class="gray">{{member.bio}}</p>
-      </div>
-    {% endfor %}
-  </div>
-</section> #}
-
-{# <section class="about-team">
-  <div class="row">
-    <div class="large-4 large-offset-1 columns">
-      <div class="title-bold">Contact</div>
-      <p class="excerpt">We love what we do. <br> Let's Work Together!</p>
-      <p>We love making new friends. Get in touch with us to learn more about our approach or just to say hi.</p>
+<section class="no-padding">
+  <div class="row max-width handy">
+    <div class="large-5 large-offset-2 white-panel columns">
+      <div class="title-bold s-margin">{{post.get_field('handy_title')}}</div>
+      <h3 class="m-margin">{{post.get_field('handy_name')}}</h3>
       <hr>
-      <div class="title-lower">info@proposalenvy.com</div>
-      <div class="title-lower">+62 0818 858 805 </div>
-      <div class="title-lower">+62 0818 858 805 </div>
-      <div class="title-lower">2B1F188E</div>
-    </div>
-    <div class="large-6 end columns">
-      <div class="title-bold">The Team</div>
-        {% for member in post.get_field('members') %}
-            <img class="member-photo" src="{{TimberImage(member.photo).src}}" />
-          <div class="title-bold">{{member.name}}</div>
-          <p class="">{{member.bio}}</p>
-
-        {% endfor %}
+      <p class="gray">{{post.get_field('handy_bio')}}</p>
     </div>
   </div>
-</section> #}
+  <div class="row max-width arista">
+    <div class="large-5 large-offset-5 white-panel columns">
+      <div class="title-bold s-margin">{{post.get_field('arista_title')}}</div>
+      <h3 class="m-margin">{{post.get_field('arista_name')}}</h3>
+      <hr>
+      <p class="gray">{{post.get_field('arista_bio')}}</p>
+    </div>
+  </div>
+</section>
