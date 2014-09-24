@@ -1930,6 +1930,12 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     }, function(response){});
   });
 
+  // .lets-talk buttons
+  $(".lets-talk").click(function(e){
+    e.preventDefault();
+    olark('api.box.expand');
+  });
+
   // for twitter share
   $(".twitter-share").click(function(e){
     e.preventDefault();

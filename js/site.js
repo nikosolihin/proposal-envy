@@ -58,6 +58,12 @@ $(function() {
     }, function(response){});
   });
 
+  // .lets-talk buttons
+  $(".lets-talk").click(function(e){
+    e.preventDefault();
+    olark('api.box.expand');
+  });
+
   // for twitter share
   $(".twitter-share").click(function(e){
     e.preventDefault();

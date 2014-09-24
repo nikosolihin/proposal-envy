@@ -1,11 +1,21 @@
+.about-header {
+}
 .about-value {
   background-color: ivory;
+  .edge-photo {
+    @extend %bg;
+    background-image: linear-gradient(rgba(255, 136, 132, .3),rgba(255, 136, 132, .3)),url('hands.jpg');
+    min-height: rem-calc(500);
+    margin-top: rem-calc(70);
+  }
+  padding-top: rem-calc(20);
 }
 .about-role {
-  background-color: #27243A;
+  @extend %bg;
+  background-image: linear-gradient(rgba(36, 32, 56, .90),rgba(36, 32, 56, .90)),url('role.jpg');
 }
 .about-why {
-  background-image: linear-gradient(rgba(99, 191, 190, 1),rgba(99, 191, 190, 1)),url('red.jpg');
+  background-color: rgb(99, 191, 190);
 }
 .reason-img {
   margin-bottom: rem-calc(15);
