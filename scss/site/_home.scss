@@ -122,14 +122,9 @@
 /* Brands
 * -------------------------------------
 */
-.brand {
-  border-left: 1px solid #e5e5e5;
-}
-.brand-top {
-  border-left: 1px solid #e5e5e5;
-}
-.brand-bottom {
-  border-left: 1px solid #e5e5e5;
+
+.brand, .brand-top, .brand-bottom {
+  @include rprop-plain(border-left, none, 1px solid #e5e5e5);
 }
 .brand-bottom-row {
   border-top: 1px solid #e5e5e5;

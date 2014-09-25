@@ -1,13 +1,24 @@
 <section class="about-value no-padding menu-waypoint">
   <div class="row">
-    <div class="large-5 small-centered columns text-center">
       <div class="title-bold text-center">About Us</div>
       <h2 class="text-center">Who We Are</h2>
       <hr>
+    <div class="small-12 medium-7 large-6 large-offset-1 xlarge-5 xlarge-offset-2 columns">
       <div class="title-bold m-margin">Our Values</div>
       <p><strong>We believe every human being deserves a life of joy and happiness, yet as we all know from our own experience joyful occurrence is a rarity in our culture.</strong></p>
       <p class="gray">It is truly our desire to give you a piece of happiness you deserve by turning one of your dreams into reality. A dream every girl has been dreaming since a very young age, a dream of the perfect proposal.</p>
       <p class="gray l-margin">We understand the numerous challenges in creating an unforgettable experience for your love ones and that is the reason why we exist; we make your dream come to life. We will guide you in executing a perfectly genuine gesture that not only will put her on cloud nine but also provokes envy compassions from others. A dream proposal identified with joyous envy.</p>
+    </div>
+    <div class="small-12 medium-5 large-3 large-offset-1 xlarge-2 end columns">
+      <div class="title-bold m-margin">Our Services</div>
+      <p class="gray">Our services include, but not limited to:</p>
+      <p><strong>Personalized Proposal Ideas<br>Proposal Planning<br>Proposal Packages<br>Do-It-Yourself Proposal<br>Date &amp; Anniversary Planning</strong></p>
+      <p class="gray">Browse our packages or feel free to chat with us to see how we can help out.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <a href="http://proposalenvy.com/packages" class="button coral no-margin l-margin">Browse Packages</a>
     </div>
   </div>
 </section>
@@ -35,15 +46,15 @@
 
 <section class="about-role">
   <div class="row">
-    <div class="small-11 small-offset-1 columns text-left">
+    <div class="small-12 columns text-center">
       <div class="title-bold m-margin">Our Role</div>
     </div>
   </div>
   <div class="row">
-    <div class="large-5 large-offset-1 columns">
+    <div class="small-10 small-offset-1 medium-6 medium-offset-0 large-4 large-offset-2 columns">
       <p class="white">{{post.get_field('left_paragraph')}}</p>
     </div>
-    <div class="large-5 end columns">
+    <div class="small-10 small-offset-1 medium-6 medium-offset-0 large-4 end columns">
       <p class="white">{{post.get_field('right_paragraph')}}</p>
     </div>
   </div>
@@ -56,27 +67,35 @@
 
 <section class="about-brands">
   <div class="row">
-    <div class="large-8 xlarge-6 small-centered columns text-center">
+    <div class="small-8 medium-8 large-8 xlarge-6 small-centered columns text-center">
+      <div class="title-bold m-margin">As seen on</div>
+      <hr>
       {% if options.brand_mention|length > 3 %}
         <div class="row">
         {% for brand in options.brand_mention[0:3] %}
-          <div class="large-4 end columns brand-top">
-            <img src="{{TimberImage(brand.logo).src}}">
+          <div class="small-12 medium-6 large-4 end columns brand-top">
+            <a href="{{brand.link}}">
+              <img src="{{TimberImage(brand.logo).src}}">
+            </a>
           </div>
         {% endfor %}
         </div>
         <div class="row brand-bottom-row">
         {% for brand in options.brand_mention[3:3] %}
-          <div class="large-4 end columns brand-bottom">
-            <img src="{{TimberImage(brand.logo).src}}">
+          <div class="small-12 medium-6 large-4 end columns brand-bottom">
+            <a href="{{brand.link}}">
+              <img src="{{TimberImage(brand.logo).src}}">
+            </a>
           </div>
         {% endfor %}
         </div>
       {% else %}
         <div class="row">
         {% for brand in options.brand_mention %}
-          <div class="large-4 columns end brand">
-            <img src="{{TimberImage(brand.logo).src}}">
+          <div class="small-12 medium-6 large-4 columns end brand">
+            <a href="{{brand.link}}">
+              <img src="{{TimberImage(brand.logo).src}}">
+            </a>
           </div>
         {% endfor %}
         </div>
@@ -87,7 +106,8 @@
 
 <section class="no-padding">
   <div class="row max-width handy">
-    <div class="large-5 large-offset-2 white-panel columns">
+    <div class="small-12 columns show-for-small-only handy-small"></div>
+    <div class="medium-6 medium-offset-0 large-5 large-offset-2 white-panel columns">
       <div class="title-bold s-margin">{{post.get_field('handy_title')}}</div>
       <h3 class="m-margin">{{post.get_field('handy_name')}}</h3>
       <hr>
@@ -95,7 +115,8 @@
     </div>
   </div>
   <div class="row max-width arista">
-    <div class="large-5 large-offset-5 white-panel columns">
+    <div class="small-12 columns show-for-small-only arista-small"></div>
+    <div class="medium-6 medium-offset-6 large-5 large-offset-5 white-panel columns">
       <div class="title-bold s-margin">{{post.get_field('arista_title')}}</div>
       <h3 class="m-margin">{{post.get_field('arista_name')}}</h3>
       <hr>

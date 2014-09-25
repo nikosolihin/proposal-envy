@@ -34,3 +34,13 @@
     min-height: rem-calc(500);
   }
 }
+.handy-small, .arista-small {
+  @extend %bg;
+  min-height: rem-calc(500);
+}
+.handy-small {
+  background-position: bottom right;
+}
+.arista-small {
+  background-position: bottom left;
+}
