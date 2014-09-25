@@ -118,3 +118,22 @@
     margin-top: 0;
   }
 }
+
+/* Brands
+* -------------------------------------
+*/
+.brand {
+  border-left: 1px solid #e5e5e5;
+}
+.brand-top {
+  border-left: 1px solid #e5e5e5;
+}
+.brand-bottom {
+  border-left: 1px solid #e5e5e5;
+}
+.brand-bottom-row {
+  border-top: 1px solid #e5e5e5;
+}
+.brand-bottom:first-child, .brand-top:first-child, .brand:first-child {
+  border: none;
+}

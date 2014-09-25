@@ -13,6 +13,10 @@ if( function_exists('acf_add_options_sub_page') )
         'title' => 'Footer',
         'menu' => 'Footer Options'
     ));
+    acf_add_options_sub_page(array(
+        'title' => 'Mentions',
+        'menu' => 'Mentions Options'
+    ));
 }
 function my_acf_options_page_settings( $settings )
 {
