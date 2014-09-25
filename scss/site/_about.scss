@@ -31,7 +31,7 @@
     margin: rem-calc(30) 0;
   }
   .white-panel {
-    min-height: rem-calc(500);
+    @include rprop(min-height,500,500,500,600);
   }
 }
 .handy-small, .arista-small {
