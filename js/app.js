@@ -2076,6 +2076,47 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     });
   }
 
+  $(".inception").click(function(e){
+    e.preventDefault();
+    $(".packages-expand td").children().hide();
+    $(".packages-expand, .inception-details").fadeIn(300);
+  });
+  $(".execution").click(function(e){
+    e.preventDefault();
+    $(".packages-expand td").children().hide();
+    $(".packages-expand, .execution-details").fadeIn(300);
+  });
+  $(".custom").click(function(e){
+    e.preventDefault();
+    $(".packages-expand td").children().hide();
+    $(".packages-expand, .custom-details").fadeIn(300);
+  });
+  $(".destination").click(function(e){
+    e.preventDefault();
+    $(".packages-expand td").children().hide();
+    $(".packages-expand, .destination-details").fadeIn(300);
+  });
+
+  // Show Inception tab by default
+  $(".packages-inception").show();
+  $(".packages-select-link").click(function(e){
+    e.preventDefault();
+    $(".packages-select-active").removeClass("packages-select-active");
+    $(this).parent().addClass("packages-select-active");
+    $(".packages-tab, .packages-frame").hide();
+    $(".packages-" + $(this).text().toLowerCase()).fadeIn(300);
+  });
+
+  // Each tab has expand button
+  $(".packages-open").click(function(e){
+    e.preventDefault();
+    $(".packages-" + $(".packages-select-active a").text().toLowerCase() + " .packages-frame").fadeIn(300);
+  });
+
+  $(".question").click(function(){
+    $(this).next('.answer').fadeToggle(100);
+  });
+
   // Mailchimp submission via AJAX
   $('#subscribe').ajaxChimp({
     url: '//proposalenvy.us9.list-manage.com/subscribe/post?u=ca8ce0af86bcc57be42d033e5&amp;id=569d343fb2',

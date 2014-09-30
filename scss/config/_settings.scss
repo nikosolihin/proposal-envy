@@ -134,7 +134,7 @@ $body-font-family: $regular-font-family;
 // $last-child-float: $opposite-direction;
 
 // We use these as default colors throughout
-$primary-color: #FF5F51;
+$primary-color: #FF5A45;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -452,7 +452,7 @@ $button-font-family: $demi-font-family;
 // $button-border-width: 0px;
 // $button-border-style: solid;
 // $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-hover: $primary-color;
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -1271,18 +1271,18 @@ $reveal-border-width: 0;
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: $white;
-// $table-even-row-bg: $snow;
+$table-bg: rgba(0,0,0,.3);
+$table-even-row-bg: rgba(0,0,0,.35);
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
-$table-border-color: $white;
+$table-border-size: 0;
+$table-border-color: #495166;
 
 // These control the table head styles
-// $table-head-bg: $white-smoke  ;
+$table-head-bg: rgba(0,0,0,.3);
 // $table-head-font-size: rem-calc(14);
-$table-head-font-color: $charcoal;
+$table-head-font-color: $white;
 // $table-head-font-weight: $font-weight-bold;
 $table-head-padding: rem-calc(15);
 
