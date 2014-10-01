@@ -1,19 +1,15 @@
 .packages-summary {
   @extend %bg;
+  background-position: top center;
   padding-top: rem-calc(100);
   ul li {
     @include rfont(16);
   }
-}
-.packages-select {
-  display: table;
-  margin: 0 auto;
-  li {
-    margin-left: rem-calc(15);
-  }
+}.packages-tab-top {
+  margin-bottom: rem-calc(20)!important;
 }
 .packages-select-item {
-  font-size: rem-calc(11);
+  font-size: rem-calc(13);
   a {
     color: white!important;
   }
@@ -24,6 +20,10 @@
   a {
     color: $primary-color!important;
   }
+}
+.packages-select-link {
+  display: inline-block;
+  width: 100%;
 }
 .packages-frame {
   border: 2px solid white;

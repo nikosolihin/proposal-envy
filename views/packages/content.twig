@@ -1,23 +1,35 @@
 <section class="packages-summary show-for-small-only">
+
   <div class="row max-width m-margin">
     <div class="small-12 columns">
-      <p class="white text-center l-margin">Whatever your engagement needs are, we’ve got just the right package. It’s your big day and we’re here to help.</p>
-      <ul class="inline-list packages-select">
-        <li><div class="title-bold white packages-select-item packages-select-active">
-          <a href="#" class="packages-select-link">Inception</a></div>
-        </li>
-        <li><div class="title-bold white packages-select-item">
-          <a href="#" class="packages-select-link">Execution</a></div>
-        </li>
-        <li><div class="title-bold white packages-select-item">
-          <a href="#" class="packages-select-link">Custom</a></div>
-        </li>
-        <li><div class="title-bold white packages-select-item">
-          <a href="#" class="packages-select-link">Destination</a></div>
-        </li>
-      </ul>
+      <p class="white text-center">Whatever your engagement needs are, we’ve got just the right package. Browse each of the four packages we offer below. </p>
+      <div class="row text-center packages-tab-top">
+        <div class="small-5 small-offset-1 columns">
+          <div class="title-bold white packages-select-item packages-select-active">
+            <a href="#" class="packages-select-link">Inception</a>
+          </div>
+        </div>
+        <div class="small-5 end columns">
+          <div class="title-bold white packages-select-item">
+            <a href="#" class="packages-select-link">Execution</a>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center packages-tab-bottom">
+        <div class="small-5 small-offset-1 columns">
+          <div class="title-bold white packages-select-item">
+            <a href="#" class="packages-select-link">Custom Proposals</a>
+          </div>
+        </div>
+        <div class="small-5 end columns">
+          <div class="title-bold white packages-select-item">
+            <a href="#" class="packages-select-link">Destination Proposals</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="row packages-inception packages-tab">
     <div class="small-10 small-centered columns text-center">
       <h2 class="white">Inception</h2>
@@ -270,26 +282,22 @@ perfect proposal within 7 business days after submission.</li>
       <div class="row">
         <div class="small-12 large-6 columns">
           <ul>
-            <li class="qna">
-              <p class="question"><strong>Is my girlfriend going to care if I used a proposal planner?</strong></p>
-              <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eos voluptatum ea nemo vero natus dolore ipsam recusandae commodi.</p>
-            </li>
-            <li class="qna">
-              <p class="question"><strong>How much should I plan to spend on my proposal?</strong></p>
-              <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eos voluptatum ea nemo <a href="">vero natus dolore ipsam</a> recusandae commodi consequatur quibusdam iure mollitia magni nobis, nesciunt, autem ex, sed fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </li>
+            {% for qna in post.get_field('faq')|slice(0,post.get_field('faq')|length/2|round) %}
+              <li class="qna">
+                <p class="question"><strong>{{qna.question}}</strong></p>
+                <div class="answer">{{qna.answer}}</div>
+              </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="small-12 large-6 columns">
           <ul>
-            <li class="qna">
-              <p class="question"><strong>Can you help with the engagement ring too?</strong></p>
-              <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eos voluptatum ea nemo vero natus dolore ipsam recusandae commodi consequatur quibusdam iure mollitia magni nobis, nesciunt, autem ex, sed fuga.</p>
-            </li>
-            <li class="qna">
-              <p class="question"><strong>This is another question</strong></p>
-              <p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eos voluptatum ea nemo vero natus dolore. <a href="">Click Here</a></p>
-            </li>
+            {% for qna in post.get_field('faq')|slice(post.get_field('faq')|length/2|round, post.get_field('faq')|length) %}
+              <li class="qna">
+                <p class="question"><strong>{{qna.question}}</strong></p>
+                <div class="answer">{{qna.answer}}</div>
+              </li>
+            {% endfor %}
           </ul>
         </div>
      </div>

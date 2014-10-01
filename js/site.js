@@ -133,6 +133,11 @@ $(function() {
     if (!notInHeader) {
       $(".menu-wrapper").removeClass('shaded');
     }
+    if ($(".overlay").hasClass('open')) {
+      olark('api.box.hide');
+    } else {
+      olark('api.box.show');
+    }
   });
 
   // Redirect to different category pages
@@ -232,13 +237,13 @@ $(function() {
     $(".packages-select-active").removeClass("packages-select-active");
     $(this).parent().addClass("packages-select-active");
     $(".packages-tab, .packages-frame").hide();
-    $(".packages-" + $(this).text().toLowerCase()).fadeIn(300);
+    $(".packages-" + $(this).text().toLowerCase().split(' proposals')[0]).fadeIn(300);
   });
 
   // Each tab has expand button
   $(".packages-open").click(function(e){
     e.preventDefault();
-    $(".packages-" + $(".packages-select-active a").text().toLowerCase() + " .packages-frame").fadeIn(300);
+    $(".packages-" + $(".packages-select-active a").text().toLowerCase().split(' proposals')[0] + " .packages-frame").fadeIn(300);
   });
 
   $(".question").click(function(){
