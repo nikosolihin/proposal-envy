@@ -15,6 +15,14 @@ $(function() {
     mq = "xlarge";
   }
 
+  // Menu waypoint on packages page on small devices
+  if (mq == "small") {
+    $(".packages-tab").addClass('menu-waypoint');
+  } else {
+    // Menu waypoint on packages page on tablet up
+    $(".packages-table-menu").addClass('menu-waypoint');
+  }
+
   var masonryColumns = function( fn ) {
     // Detemine how many masonry columns to have based on Foundation's MQ
     if ( !matchMedia(Foundation.media_queries['medium']).matches ) {
@@ -83,7 +91,7 @@ $(function() {
       $('.menu-wrapper').addClass('closed');
       notInHeader = true;
     }
-  }, { offset: 250 });
+  }, { offset: 200 });
 
   // For anything that requires scrolltop value
   var lastST = 0;
