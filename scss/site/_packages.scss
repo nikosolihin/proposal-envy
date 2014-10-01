@@ -25,6 +25,9 @@
   display: inline-block;
   width: 100%;
 }
+.packages-book {
+  margin-left: rem-calc(15);
+}
 .packages-frame {
   border: 2px solid white;
   padding: rem-calc(25 25 0);

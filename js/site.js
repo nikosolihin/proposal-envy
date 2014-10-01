@@ -245,6 +245,14 @@ $(function() {
     e.preventDefault();
     $(".packages-" + $(".packages-select-active a").text().toLowerCase().split(' proposals')[0] + " .packages-frame").fadeIn(300);
   });
+  // Each tab has book now button
+  $(".packages-book").click(function(e){
+    e.preventDefault();
+    olark('api.box.show');
+    olark('api.box.expand');
+    $("#habla_wcsend_input, #habla_offline_body_input").val("I want to book the " +
+      $(".packages-select-active a").text() + " package. Please get back to me as soon as you can");
+  });
 
   // Book Now button
   $(".book").click(function(e){
