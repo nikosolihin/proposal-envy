@@ -43,7 +43,7 @@
     @include rfont(13);
   }
   .button {
-    background-color: #FF715F;
+    background-color: $primary-color;
     @include rfont(12);
     margin: rem-calc(30 20);
   }
