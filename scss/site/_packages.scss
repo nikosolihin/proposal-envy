@@ -47,6 +47,9 @@
     @include rfont(12);
     margin: rem-calc(30 20);
   }
+  .book {
+    margin: rem-calc(10 0 0);
+  }
   ul li {
     @include rfont(16);
   }
