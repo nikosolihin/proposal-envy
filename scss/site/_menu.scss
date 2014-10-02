@@ -123,7 +123,7 @@
   @extend %flicker-fix;
   @extend %vertical-align-parent;
   display: block;
-  height: calc(100% / 6);
+  height: calc(100%/5);
 }
 .overlay-list li a {
   @extend %vertical-align;
