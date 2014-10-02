@@ -145,9 +145,9 @@ perfect proposal within 7 business days after submission.</li>
 <section class="packages-table show-for-medium-up">
   <div class="row">
     <div class="small-12 large-10 xlarge-8 small-centered columns">
-      <div class="title-bold text-center white">Join other happy couples</div>
-      <h2 class="text-center white l-margin">Simple Packages, Everlasting Memories</h2>
-      <p class="white text-center m-margin">Whatever your engagement needs are, we’ve got just the right package. It’s your big day and we’re here to help.</p>
+      <div class="title-bold text-center white">{{post.get_field('tagline')}}</div>
+      <h2 class="text-center white l-margin">{{post.get_field('title')}}</h2>
+      <p class="white text-center m-margin">{{post.get_field('sentence')}}</p>
       <table class="packages-table-menu">
         <thead>
           <tr>
@@ -208,8 +208,8 @@ perfect proposal within 7 business days after submission.</li>
 <section class="packages-faq">
   <div class="row">
     <div class="small-12 large-10 large-offset-1 xlarge-8 xlarge-offset-2 columns">
-      <div class="title-bold text-center">Questions? We've got answers.</div>
-      <h2 class="text-center">Frequently Asked Questions</h2>
+      <div class="title-bold text-center">{{post.get_field('faq_tagline')}}</div>
+      <h2 class="text-center">{{post.get_field('faq_title')}}</h2>
       <hr>
       <div class="row">
         <div class="small-12 large-6 columns">
