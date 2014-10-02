@@ -152,48 +152,24 @@ perfect proposal within 7 business days after submission.</li>
         <thead>
           <tr>
             <th></th>
-            <th class="title-bold">Inception</th>
-            <th class="title-bold">Execution</th>
-            <th class="title-bold">Custom Proposals</th>
-            <th class="title-bold">Destination Proposals</th>
+            {% for package in packages %}
+              <th class="title-bold">{{package.name}}</th>
+            {% endfor %}
           </tr>
         </thead>
         <tbody>
+
+          {% for row in rows %}
           <tr>
-            <th class="title-lower">Ideas &amp; Vision</th>
-            <td>Ours</td>
-            <td>Yours</td>
-            <td>Ours</td>
-            <td>Ours</td>
+            <th class="title-lower">{{row.title}}</th>
+            {% set index = loop.index0 %}
+            {% for column in columns[index] %}
+              <td>{{column}}</td>
+            {% endfor %}
           </tr>
-          <tr>
-            <th class="title-lower">Concepts</th>
-            <td>Ours</td>
-            <td>Yours</td>
-            <td>Ours</td>
-            <td>Ours</td>
-          </tr>
-          <tr>
-            <th class="title-lower">Meetings</th>
-            <td>Scheduled</td>
-            <td>On Demand</td>
-            <td>On Demand</td>
-            <td>On Demand</td>
-          </tr>
-          <tr>
-            <th class="title-lower">Vendor &amp; Arrangements</th>
-            <td>-</td>
-            <td>Our Choice</td>
-            <td>Our Choice</td>
-            <td>Our Choice</td>
-          </tr>
-          <tr>
-            <th class="title-lower">Proposal Location</th>
-            <td>-</td>
-            <td>Jakarta</td>
-            <td>Jakarta</td>
-            <td>Bali</td>
-          </tr>
+          {% endfor %}
+
+
           <tr id="packages-detail-jump">
             <th></th>
             <td><a href="" class="inception button no-margin">Details</a></td>

@@ -45,9 +45,9 @@ function remove_menus(){
   // remove_submenu_page( 'themes.php', 'customize.php' );
   // remove_submenu_page( 'themes.php', 'themes.php' );
   // remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+    remove_meta_box('pageparentdiv', 'page', 'normal');
 }
 add_action( 'admin_menu', 'remove_menus' );
-
 
 /**
  * Change Some Generic Dashicons & Hide Confusing Plugin Menus for client
