@@ -158,7 +158,6 @@ perfect proposal within 7 business days after submission.</li>
           </tr>
         </thead>
         <tbody>
-
           {% for row in rows %}
           <tr>
             <th class="title-lower">{{row.title}}</th>
@@ -168,83 +167,27 @@ perfect proposal within 7 business days after submission.</li>
             {% endfor %}
           </tr>
           {% endfor %}
-
-
           <tr id="packages-detail-jump">
             <th></th>
-            <td><a href="" class="inception button no-margin">Details</a></td>
-            <td><a href="" class="execution button no-margin">Details</a></td>
-            <td><a href="" class="custom button no-margin">Details</a></td>
-            <td><a href="" class="destination button no-margin">Details</a></td>
+            {% for package in packages %}
+            {% set index = loop.index0 %}
+              <td><a href="" class="package-{{index}} button no-margin">Details</a></td>
+            {% endfor %}
           </tr>
           <tr class="packages-expand">
-            <td colspan="5">
-              <div class="row inception-details packages-details">
+            <td colspan="{{packages|length+1}}">
+              {% for package in packages %}
+              {% set index = loop.index0 %}
+              <div class="row package-{{index}}-details packages-details">
                 <div class="medium-10 large-8 columns small-centered text-left">
-                  <div class="title-bold white m-margin">Inception</div>
-                  <p>A unique and personalized marriage proposal. We will create one-of-a-kind proposal ideas for your partner based on you and your partner’s personality.</p>
-                  <p class="title-lower s-margin">Concepting details:</p>
-                  <ul class="m-margin">
-                    <li>Fill out simple questionnaire about yourself and your partner.</li>
-                    <li>Based on your answers we will create two different concepts for your perfect proposal.</li>
-                    <li>We will submit these concepts within 10 business days of questionnaire submission.</li>
-                    <li>Will be available for two meetings should you have any questions about the concept.</li>
-                  </ul>
+                  <div class="title-bold white m-margin">{{package.name}}</div>
+                  <div>
+                    {{package.description}}
+                  </div>
                   <a href="#" class="book button no-margin">Book Now</a>
                 </div>
               </div>
-              <div class="row execution-details packages-details">
-                <div class="medium-10 large-8 columns small-centered text-left">
-                  <div class="title-bold white m-margin">Execution</div>
-                  <p>Directing and organizing your thoughts into a proposal reality. With our lists of renowned vendors we will plan your proposal to perfection. Through our expertise and your vision we will create a dream proposal she could have never imagined.</p>
-                  <p class="title-lower s-margin">Package details:</p>
-                  <ul class="m-margin">
-                    <li>We will submit a quote based on your idea</li>
-                    <li>Must be at least a month before the date to ensure perfect execution and availability on locations and vendors</li>
-                    <li>We coordinate and make necessary reservations for top picks vendors</li>
-                    <li>Provide and create all necessary personal items for your proposal (if necessary)</li>
-                    <li>Available for meetings to discuss details about execution.</li>
-                    <li>Verify all needed arrangements on the big day</li>
-                    <li>Handle down payments for all the vendors (if necessary)</li>
-                    <li>Provide client with organized timeline</li>
-                    <li>Confirm preparations. </li>
-                  </ul>
-                  <a href="#" class="book button no-margin">Book Now</a>
-                </div>
-              </div>
-              <div class="row custom-details packages-details">
-                <div class="medium-10 large-8 columns small-centered text-left">
-                  <div class="title-bold white m-margin">Custom Designed Proposals</div>
-                  <p>We will work with you and come up with a unique one-of-a-kind proposal idea and turn it into a proposal reality. A custom designed concept made to each client and with our team of professionals we will ensure flawless execution. With our signature Proposal Planning Service, we handle everything from start to finish so that your proposal will be perfectly executed.</p>
-                  <p class="title-lower s-margin">Concepting details:</p>
-                  <ul class="m-margin">
-                    <li>Fill out simple questionnaire about yourself and your partner</li>
-                    <li>Based on your responds we will create one or two different concepts for your
-    perfect proposal within 7 business days after submission.</li>
-                    <li>Will be available for meetings and discussion over concept details and/or
-    questions.</li>
-                    <li>Finalize concept and necessary vendors (venue, flowers, photography, video, etc)</li>
-                  </ul>
-                  <p class="title-lower s-margin">Execution:</p>
-                  <ul>
-                    <li>Fill out simple questionnaire about yourself and your partner</li>
-                    <li>Based on your responds we will create one or two different concepts for your
-    perfect proposal within 7 business days after submission.</li>
-                    <li>Will be available for meetings and discussion over concept details and/or
-    questions.</li>
-                    <li>Finalize concept and necessary vendors (venue, flowers, photography, video, etc)</li>
-                  </ul>
-                  <a href="#" class="book button no-margin">Book Now</a>
-                </div>
-              </div>
-              <div class="row destination-details packages-details">
-                <div class="medium-10 large-8 columns small-centered text-left">
-                  <div class="title-bold white m-margin">Destination Proposals</div>
-                  <p>The perfect choice for someone who is willing to go the extra mile and give your love ones the ultimate proposal destination in the island of Gods, Bali. As probably the most famous island in Indonesia, Bali blends spectacular mountain scenery and beautiful beaches with vibrant culture and out of this world resorts. Internationally acclaimed five star villa and resorts. The Ultimate proposal envy.</p>
-                  <p><strong>Our proposal destination is not limited only to Bali, should you have any ideas please feel free to consult.</strong></p>
-                  <a href="#" class="book button no-margin">Book Now</a>
-                </div>
-              </div>
+              {% endfor %}
             </td>
           </tr>
         </tbody>

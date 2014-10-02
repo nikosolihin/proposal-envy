@@ -217,37 +217,11 @@ $(function() {
     });
   }
 
-  $(".inception").click(function(e){
+  $("[class^=package-]").click(function(e){
     e.preventDefault();
     $(".packages-expand td").children().hide();
-    $(".packages-expand, .inception-details").fadeIn(300);
-    $("html,body").animate({
-      scrollTop: $("#packages-detail-jump").offset().top
-    }, 400);
-    return false;
-  });
-  $(".execution").click(function(e){
-    e.preventDefault();
-    $(".packages-expand td").children().hide();
-    $(".packages-expand, .execution-details").fadeIn(300);
-    $("html,body").animate({
-      scrollTop: $("#packages-detail-jump").offset().top
-    }, 400);
-    return false;
-  });
-  $(".custom").click(function(e){
-    e.preventDefault();
-    $(".packages-expand td").children().hide();
-    $(".packages-expand, .custom-details").fadeIn(300);
-    $("html,body").animate({
-      scrollTop: $("#packages-detail-jump").offset().top
-    }, 400);
-    return false;
-  });
-  $(".destination").click(function(e){
-    e.preventDefault();
-    $(".packages-expand td").children().hide();
-    $(".packages-expand, .destination-details").fadeIn(300);
+    var package = $(this).attr('class').match("package-(.*) button")[1];
+    $(".packages-expand, .package-"+package+"-details").fadeIn(300);
     $("html,body").animate({
       scrollTop: $("#packages-detail-jump").offset().top
     }, 400);
