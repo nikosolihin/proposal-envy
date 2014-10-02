@@ -10,6 +10,9 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  .button {
+    margin-top: rem-calc(50);
+  }
 }
 .hero-bg {
   @extend %bg;
@@ -91,6 +94,21 @@
   }
 }
 
+/* Why
+* -------------------------------------
+*/
+.about-why {
+  background-color: rgb(99, 191, 190);
+  position: relative;
+}
+.reason-img {
+  margin-bottom: rem-calc(15);
+  @include rprop-plain(width, 20%, 80%, 60%, 40%);
+}
+.reason {
+  margin-bottom: rem-calc(20);
+}
+
 /* Packages
 * -------------------------------------
 */
@@ -117,18 +135,4 @@
   .button {
     margin-top: 0;
   }
-}
-
-/* Brands
-* -------------------------------------
-*/
-
-.brand, .brand-top, .brand-bottom {
-  @include rprop-plain(border-left, none, 1px solid #e5e5e5);
-}
-.brand-bottom-row {
-  border-top: 1px solid #e5e5e5;
-}
-.brand-bottom:first-child, .brand-top:first-child, .brand:first-child {
-  border: none;
 }

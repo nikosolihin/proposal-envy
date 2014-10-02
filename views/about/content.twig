@@ -23,27 +23,6 @@
   </div>
 </section>
 
-<section class="about-why">
-  <div class="row">
-    <div class="title-bold text-center white">We Plan, You Pop The Question</div>
-    <h2 class="text-center white">Why Hire Us?</h2>
-    <hr>
-    {% for reason in post.get_field('reasons') %}
-      <div class="reason small-12 medium-6 end columns">
-        <div class="row">
-          <div class="small-12 medium-3 end columns small-only-text-center text-right">
-            <img class="reason-img" src="{{TimberImage(reason.icon).src}}" />
-          </div>
-          <div class="small-12 medium-9 large-7 xlarge-7 end columns small-only-text-center">
-            <div class="title-bold white s-margin">{{reason.title}}</div>
-            <p class="white">{{reason.description}}</p>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</section>
-
 <section class="about-role">
   <div class="row">
     <div class="small-12 columns text-center">
@@ -73,7 +52,7 @@
       {% if options.brand_mention|length > 3 %}
         <div class="row">
         {% for brand in options.brand_mention[0:3] %}
-          <div class="small-12 medium-6 large-4 end columns brand-top">
+          <div class="small-12 medium-6 large-4 end columns">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>
@@ -82,7 +61,7 @@
         </div>
         <div class="row brand-bottom-row">
         {% for brand in options.brand_mention[3:3] %}
-          <div class="small-12 medium-6 large-4 end columns brand-bottom">
+          <div class="small-12 medium-6 large-4 end columns">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>
@@ -92,7 +71,7 @@
       {% else %}
         <div class="row">
         {% for brand in options.brand_mention %}
-          <div class="small-12 medium-6 large-4 columns end brand">
+          <div class="small-12 medium-6 large-4 columns end">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>

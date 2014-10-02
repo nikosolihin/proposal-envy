@@ -16,10 +16,8 @@
       {% include 'home/stories.twig' %}
     {% elseif item.home_section_name == "package" %}
       {% include 'home/packages.twig' %}
-    {% elseif item.home_section_name == "hint" %}
-      {% include 'home/hint.twig' %}
-    {% else %}
-      {% include 'home/instafeed.twig' %}
+{#     {% else %} #}
+      {# {% include 'home/instafeed.twig' %} #}
     {% endif %}
   {% endfor %}
 {% endblock %}

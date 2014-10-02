@@ -15,15 +15,6 @@
 .about-role {
   @extend %bg;
 }
-.about-why {
-  background-color: rgb(99, 191, 190);
-}
-.reason-img {
-  margin-bottom: rem-calc(15);
-}
-.reason {
-  margin-bottom: rem-calc(20);
-}
 .handy, .arista {
   @extend %bg;
   hr {
