@@ -46,13 +46,13 @@
 
 <section class="about-brands">
   <div class="row">
-    <div class="small-8 medium-8 large-8 xlarge-6 small-centered columns text-center">
+    <div class="large-8 large-centered columns text-center">
       <div class="title-bold m-margin">As seen on</div>
       <hr>
       {% if options.brand_mention|length > 3 %}
         <div class="row">
         {% for brand in options.brand_mention[0:3] %}
-          <div class="small-12 medium-6 large-4 end columns">
+          <div class="small-8 small-offset-2 medium-4 medium-offset-0 large-4 columns end">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>
@@ -61,7 +61,7 @@
         </div>
         <div class="row brand-bottom-row">
         {% for brand in options.brand_mention[3:3] %}
-          <div class="small-12 medium-6 large-4 end columns">
+          <div class="small-8 small-offset-2 medium-4 medium-offset-0 large-4 columns end">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>
@@ -71,7 +71,7 @@
       {% else %}
         <div class="row">
         {% for brand in options.brand_mention %}
-          <div class="small-12 medium-6 large-4 columns end">
+          <div class="small-8 small-offset-2 medium-4 medium-offset-0 large-4 columns end">
             <a href="{{brand.link}}">
               <img src="{{TimberImage(brand.logo).src}}">
             </a>
