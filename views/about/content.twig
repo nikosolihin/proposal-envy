@@ -4,21 +4,21 @@
       <h2 class="text-center">Who We Are</h2>
       <hr>
     <div class="small-12 medium-7 large-6 large-offset-1 xlarge-5 xlarge-offset-2 columns">
-      <div class="title-bold m-margin">Our Values</div>
-      <p><strong>We believe every human being deserves a life of joy and happiness, yet as we all know from our own experience joyful occurrence is a rarity in our culture.</strong></p>
-      <p class="gray">It is truly our desire to give you a piece of happiness you deserve by turning one of your dreams into reality. A dream every girl has been dreaming since a very young age, a dream of the perfect proposal.</p>
-      <p class="gray l-margin">We understand the numerous challenges in creating an unforgettable experience for your love ones and that is the reason why we exist; we make your dream come to life. We will guide you in executing a perfectly genuine gesture that not only will put her on cloud nine but also provokes envy compassions from others. A dream proposal identified with joyous envy.</p>
+      <div class="title-bold m-margin">{{post.get_field('values_title')}}</div>
+      <div>
+        {{post.get_field('values_content')}}
+      </div>
     </div>
     <div class="small-12 medium-5 large-3 large-offset-1 xlarge-2 end columns">
-      <div class="title-bold m-margin">Our Services</div>
-      <p class="gray">Our services include, but not limited to:</p>
-      <p><strong>Personalized Proposal Ideas<br>Proposal Planning<br>Proposal Packages<br>Do-It-Yourself Proposal<br>Date &amp; Anniversary Planning</strong></p>
-      <p class="gray">Browse our packages or feel free to chat with us to see how we can help out.</p>
+      <div class="title-bold m-margin">{{post.get_field('services_title')}}</div>
+      <div>
+        {{post.get_field('services_content')}}
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="small-12 columns text-center">
-      <a href="http://proposalenvy.com/packages" class="button coral no-margin l-margin">Browse Packages</a>
+      <a href="{{post.get_field('button_link')}}" class="button coral no-margin l-margin">{{post.get_field('button_text')}}</a>
     </div>
   </div>
 </section>

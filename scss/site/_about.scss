@@ -11,6 +11,16 @@
 .about-value {
   background-color: #ffffed;
   padding: rem-calc(20 0 35);
+  p {
+    color: #777;
+  }
+  strong {
+    color: #555;
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
 }
 .about-role {
   @extend %bg;
