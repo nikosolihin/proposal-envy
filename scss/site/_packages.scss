@@ -79,6 +79,7 @@
 }
 .insight-img {
   margin-top: rem-calc(40);
+  @include rprop-plain(width, 60%, 80%, 60%, 40%);
 }
 .question {
   color: #444;
