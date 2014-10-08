@@ -18,6 +18,3 @@ select:focus {
     @include rprop(padding, 10 15, 11 15);
   }
 }
-.inline-list > li:first-child {
-  margin-left: 0;
-}

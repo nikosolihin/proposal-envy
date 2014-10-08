@@ -90,6 +90,7 @@
   </div>
 
 {# The Spotlight Section - Horizontal mode for M and below #}
+  {% if spotlight is not empty %}
   <div class="row max-width horz-spotlight show-for-medium-down">
     <div class="small-12 medium-8 columns small-centered small-only-text-center">
       <div class="author-photo show-for-medium-down"></div>
@@ -100,7 +101,7 @@
       {{spotlight.get_field('test').lat|print_r}}
     </div>
   </div>
-
+  {% endif %}
 </section>
 
 {#           {% if layout.acf_fc_layout == "slideshow" %}
