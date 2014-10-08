@@ -8,7 +8,8 @@
 }
 .black-panel {
   background-color: rgba(0,0,0,.3);
-  padding: rem-calc(30 0 5);
+  padding: rem-calc(30 10 5);
+  margin-bottom: rem-calc(20);
 }
 .packages-select-active {
   color: $primary-color!important;

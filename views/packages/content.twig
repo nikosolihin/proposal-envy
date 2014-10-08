@@ -1,24 +1,24 @@
 <section class="packages-summary show-for-small-only">
-
   <div class="row">
     <div class="small-12 columns text-center">
       <p class="white">{{post.get_field('sentence')}}</p>
     </div>
   </div>
 
-  <div class="row black-panel m-margin">
+  <div class="row black-panel">
     <div class="small-10 small-centered columns">
       <div class="row">
       {% for package in packages|slice(0,4) %}
+      {% set index = loop.index0 %}
         <div class="small-6 end columns text-center">
-          <div class="title-bold white packages-tab">
+          <div class="title-bold white packages-tab packages-tab-{{index}}">
             <a href="#" class="white packages-select-link">{{package.name}}</a>
           </div>
         </div>
       {% endfor %}
       {% for package in packages|slice(4,1) if packages|length > 4 %}
         <div class="small-12 end columns text-center">
-          <div class="title-bold white packages-tab">
+          <div class="title-bold white packages-tab packages-tab-4">
             <a href="#" class="white packages-select-link">{{package.name}}</a>
           </div>
         </div>
@@ -28,43 +28,21 @@
   </div>
 
   {% for package in packages %}
-  <div class="row packages-inception packages-detail-mobile packages-mobile-waypoint black-panel">
+  {% set index = loop.index0 %}
+  <div class="row packages-{{index}} packages-detail-mobile packages-mobile-waypoint black-panel">
     <div class="small-12 small-centered columns text-center">
       <h2 class="white">{{package.name}}</h2>
       <hr>
-      <div>
+      <div class="white text-left">
         {{package.description}}
       </div>
     </div>
   </div>
   {% endfor %}
 
-  <div class="row packages-inception packages-detail-mobile packages-mobile-waypoint black-panel">
-    <div class="small-12 small-centered columns text-center">
-      <h2 class="white">Inception</h2>
-      <hr>
-      <p class="white text-left">A unique and personalized marriage proposal. We will create one-of-a-kind proposal ideas for your partner based on you and your partner’s personality.</p>
-      <p class="title-lower s-margin white text-left">Package summary:</p>
-      <ul class="white text-left m-margin">
-        <li>Our Ideas &amp; Vision</li>
-        <li>Our Concepts</li>
-        <li>2 Scheduled Follow-up Meetings</li>
-      </ul>
-      <div class="packages-frame m-margin">
-        <p class="title-lower s-margin white text-left">Concepting details:</p>
-        <ul class="m-margin white text-left">
-          <li>Fill out simple questionnaire about yourself and your partner.</li>
-          <li>Based on your answers we will create two different concepts for your perfect proposal.</li>
-          <li>We will submit these concepts within 10 business days of questionnaire submission.</li>
-          <li>Will be available for two meetings should you have any questions about the concept.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <div class="row">
     <div class="small-12 columns text-center">
-      <a href="#" class="packages-open button no-margin">Expand</a>
+      {# <a href="#" class="packages-open button no-margin">Expand</a> #}
       <a href="#" class="packages-book button no-margin">Book Now</a>
     </div>
   </div>

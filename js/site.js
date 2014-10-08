@@ -231,28 +231,29 @@ $(function() {
   // Make the first package the active tab
   $(".packages-tab").first().children('a').addClass('packages-select-active');
 
-  // Show Inception tab by default
-  $(".packages-inception").show();
+  // Show the first package tab by default
+  $(".packages-0").show();
   $(".packages-select-link").click(function(e){
     e.preventDefault();
     $(".packages-select-active").removeClass("packages-select-active");
-    $(this).parent().addClass("packages-select-active");
-    $(".packages-tab, .packages-frame").hide();
-    $(".packages-" + $(this).text().toLowerCase().split(' proposals')[0]).fadeIn(300);
+    $(this).addClass("packages-select-active");
+    $(".packages-detail-mobile").hide();
+    $(".packages-" + $(this).parent().attr('class').match(" packages-tab-(.*)")[1] ).fadeIn(180);
   });
 
   // Each tab has expand button
-  $(".packages-open").click(function(e){
-    e.preventDefault();
-    $(".packages-" + $(".packages-select-active a").text().toLowerCase().split(' proposals')[0] + " .packages-frame").fadeIn(300);
-  });
-  // Each tab has book now button
+  // $(".packages-open").click(function(e){
+  //   e.preventDefault();
+  //   $(".packages-" + $(".packages-select-active a").text().toLowerCase().split(' proposals')[0] + " .packages-frame").fadeIn(300);
+  // });
+
+  // Each tab has book button
   $(".packages-book").click(function(e){
     e.preventDefault();
     olark('api.box.show');
     olark('api.box.expand');
     $("#habla_wcsend_input, #habla_offline_body_input").val("I want to book the " +
-      $(".packages-select-active a").text() + " package. Please get back to me as soon as you can");
+      $(".packages-select-active").text().toLowerCase() + " package. Please get back to me as soon as you can");
   });
 
   // Book Now button
