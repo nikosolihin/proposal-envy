@@ -79,6 +79,8 @@
 }
 .story-social {
   list-style-type: none;
+  display: table;
+  margin: 0 auto;
 }
 .story-social-list {
   margin: rem-calc(0 20 15 0);
