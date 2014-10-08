@@ -1,37 +1,46 @@
 <section class="packages-summary show-for-small-only">
 
-  <div class="row max-width m-margin">
-    <div class="small-12 columns">
-      <p class="white text-center">Whatever your engagement needs are, we’ve got just the right package.</p>
-      <div class="row text-center packages-tab-top">
-        <div class="small-5 small-offset-1 columns">
-          <div class="title-bold white packages-select-item packages-select-active">
-            <a href="#" class="packages-select-link">Inception</a>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <p class="white">{{post.get_field('sentence')}}</p>
+    </div>
+  </div>
+
+  <div class="row black-panel m-margin">
+    <div class="small-10 small-centered columns">
+      <div class="row">
+      {% for package in packages|slice(0,4) %}
+        <div class="small-6 end columns text-center">
+          <div class="title-bold white packages-tab">
+            <a href="#" class="white packages-select-link">{{package.name}}</a>
           </div>
         </div>
-        <div class="small-5 end columns">
-          <div class="title-bold white packages-select-item">
-            <a href="#" class="packages-select-link">Execution</a>
+      {% endfor %}
+      {% for package in packages|slice(4,1) if packages|length > 4 %}
+        <div class="small-12 end columns text-center">
+          <div class="title-bold white packages-tab">
+            <a href="#" class="white packages-select-link">{{package.name}}</a>
           </div>
         </div>
-      </div>
-      <div class="row text-center packages-tab-bottom">
-        <div class="small-5 small-offset-1 columns">
-          <div class="title-bold white packages-select-item">
-            <a href="#" class="packages-select-link">Custom Proposals</a>
-          </div>
-        </div>
-        <div class="small-5 end columns">
-          <div class="title-bold white packages-select-item">
-            <a href="#" class="packages-select-link">Destination Proposals</a>
-          </div>
-        </div>
+      {% endfor %}
       </div>
     </div>
   </div>
 
-  <div class="row packages-inception packages-tab">
-    <div class="small-10 small-centered columns text-center">
+  {% for package in packages %}
+  <div class="row packages-inception packages-detail-mobile packages-mobile-waypoint black-panel">
+    <div class="small-12 small-centered columns text-center">
+      <h2 class="white">{{package.name}}</h2>
+      <hr>
+      <div>
+        {{package.description}}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="row packages-inception packages-detail-mobile packages-mobile-waypoint black-panel">
+    <div class="small-12 small-centered columns text-center">
       <h2 class="white">Inception</h2>
       <hr>
       <p class="white text-left">A unique and personalized marriage proposal. We will create one-of-a-kind proposal ideas for your partner based on you and your partner’s personality.</p>
@@ -52,88 +61,7 @@
       </div>
     </div>
   </div>
-  <div class="row packages-execution packages-tab">
-    <div class="small-10 small-centered columns text-center">
-      <h2 class="white">Execution</h2>
-      <hr>
-      <p class="white text-left">Directing and organizing your thoughts into a proposal reality. With our lists of renowned vendors we will plan your proposal to perfection. Through our expertise and your vision we will create a dream proposal she could have never imagined.</p>
-      <p class="title-lower s-margin white text-left">Package summary:</p>
-      <ul class="white text-left m-margin">
-        <li>Your Ideas &amp; Vision</li>
-        <li>Your Concepts</li>
-        <li>On Demand Meetings</li>
-        <li>Our Vendors &amp; Arrangements</li>
-        <li>Jakarta Proposal Location</li>
-      </ul>
-      <div class="packages-frame m-margin">
-        <p class="title-lower s-margin white text-left">Package details:</p>
-        <ul class="m-margin white text-left">
-          <li>We will submit a quote based on your idea</li>
-          <li>Must be at least a month before the date to ensure perfect execution and availability on locations and vendors</li>
-          <li>We coordinate and make necessary reservations for top picks vendors</li>
-          <li>Provide and create all necessary personal items for your proposal (if necessary)</li>
-          <li>Available for meetings to discuss details about execution.</li>
-          <li>Verify all needed arrangements on the big day</li>
-          <li>Handle down payments for all the vendors (if necessary)</li>
-          <li>Provide client with organized timeline</li>
-          <li>Confirm preparations. </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row packages-custom packages-tab">
-    <div class="small-10 small-centered columns text-center">
-      <h2 class="white">Custom Designed Proposals</h2>
-      <hr>
-      <p class="white text-left">We will work with you and come up with a unique one-of-a-kind proposal idea and turn it into a proposal reality. A custom designed concept made to each client and with our team of professionals we will ensure flawless execution. With our signature Proposal Planning Service, we handle everything from start to finish so that your proposal will be perfectly executed.</p>
-      <p class="title-lower s-margin white text-left">Package summary:</p>
-      <ul class="white text-left m-margin">
-        <li>Our Ideas &amp; Vision</li>
-        <li>Our Concepts</li>
-        <li>On Demand Meetings</li>
-        <li>Our Vendors &amp; Arrangements</li>
-        <li>Jakarta Proposal Location</li>
-      </ul>
-      <div class="packages-frame m-margin">
-        <p class="title-lower s-margin white text-left">Concepting details:</p>
-        <ul class="m-margin white text-left">
-          <li>Fill out simple questionnaire about yourself and your partner</li>
-          <li>Based on your responds we will create one or two different concepts for your
-perfect proposal within 7 business days after submission.</li>
-          <li>Will be available for meetings and discussion over concept details and/or
-    questions.</li>
-          <li>Finalize concept and necessary vendors (venue, flowers, photography, video, etc)</li>
-        </ul>
-        <p class="title-lower s-margin white text-left">Execution:</p>
-        <ul class="m-margin white text-left">
-          <li>Fill out simple questionnaire about yourself and your partner</li>
-          <li>Based on your responds we will create one or two different concepts for your
-  perfect proposal within 7 business days after submission.</li>
-          <li>Will be available for meetings and discussion over concept details and/or
-  questions.</li>
-          <li>Finalize concept and necessary vendors (venue, flowers, photography, video, etc)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row packages-destination packages-tab">
-    <div class="small-10 small-centered columns text-center">
-      <h2 class="white">Destination Proposals</h2>
-      <hr>
-      <p class="white text-left">The perfect choice for someone who is willing to go the extra mile and give your love ones the ultimate proposal destination in the island of Gods, Bali. As probably the most famous island in Indonesia, Bali blends spectacular mountain scenery and beautiful beaches with vibrant culture and out of this world resorts. Internationally acclaimed five star villa and resorts. The Ultimate proposal envy.</p>
-      <p class="title-lower s-margin white text-left">Package summary:</p>
-      <ul class="white text-left m-margin">
-        <li>Our Ideas &amp; Vision</li>
-        <li>Our Concepts</li>
-        <li>On Demand Meetings</li>
-        <li>Our Vendors &amp; Arrangements</li>
-        <li>Proposal Location of your choice</li>
-      </ul>
-      <div class="packages-frame m-margin">
-        <p class="white text-left"><strong>Our proposal destination is not limited only to Bali, should you have any ideas please feel free to consult.</strong></p>
-      </div>
-    </div>
-  </div>
+
   <div class="row">
     <div class="small-12 columns text-center">
       <a href="#" class="packages-open button no-margin">Expand</a>
@@ -219,7 +147,7 @@ perfect proposal within 7 business days after submission.</li>
           <ul>
             {% for qna in post.get_field('faq')|slice(0,post.get_field('faq')|length/2|round) %}
               <li class="qna">
-                <p class="question"><strong>{{qna.question}}</strong></p>
+                <p class="question title-lower no-spacing">{{qna.question}}</p>
                 <div class="answer">{{qna.answer}}</div>
               </li>
             {% endfor %}
@@ -229,7 +157,7 @@ perfect proposal within 7 business days after submission.</li>
           <ul>
             {% for qna in post.get_field('faq')|slice(post.get_field('faq')|length/2|round, post.get_field('faq')|length) %}
               <li class="qna">
-                <p class="question"><strong>{{qna.question}}</strong></p>
+                <p class="question title-lower no-spacing">{{qna.question}}</p>
                 <div class="answer">{{qna.answer}}</div>
               </li>
             {% endfor %}

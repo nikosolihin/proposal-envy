@@ -1889,7 +1889,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
   // Menu waypoint on packages page on small devices
   if (mq == "small") {
-    $(".packages-tab").addClass('menu-waypoint');
+    $(".packages-mobile-waypoint").addClass('menu-waypoint');
   } else {
     // Menu waypoint on packages page on tablet up
     $(".packages-table-menu").addClass('menu-waypoint');
@@ -2038,7 +2038,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     $("#slideshow").slick({
       dots: true,
       arrows: false,
-      fade: true,
+      fade: false,
       autoplay: true,
       autoplaySpeed: 10000,
       swipe: false,
@@ -2099,6 +2099,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     }, 400);
     return false;
   });
+
+  // Make the first package the active tab
+  $(".packages-tab").first().children('a').addClass('packages-select-active');
 
   // Show Inception tab by default
   $(".packages-inception").show();
