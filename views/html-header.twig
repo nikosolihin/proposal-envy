@@ -15,7 +15,8 @@ http://zerosixthree.se/minimal-ui-meta-tag/ #}
 {# Facebook OG Stuff #}
     <meta property="og:title" content="{{post.title}}" />
     <meta property="og:site_name" content="{{site.name}}"/>
-    <meta property="og:url" content="{{site.url}}/{{post.post_type}}/{{post.post_name}}" />
+    {# <meta property="og:url" content="{{site.url}}/{{post.post_type}}/{{post.post_name}}" /> #}
+    <meta property="og:url" content="{{site.url}}/{% if post.post_type == 'story' %}stories{% else %}{{post.post_type}}{%endif %}/{{post.post_name}}" />
     <meta property="og:description" content="{{post.get_field('post_excerpt')}}" />
     <meta property="fb:app_id" content="1518724951675226" />
     <meta property="og:type" content="article" />

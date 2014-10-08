@@ -27,6 +27,7 @@
     color: $jet;
     margin: rem-calc(40 0 13 0);
   }
+  padding-bottom: rem-calc(10);
 }
 .left, .right {
   margin-bottom: rem-calc(10);
@@ -71,14 +72,13 @@
   padding-top: 0;
   @include rprop(padding-bottom, 0,20,30,30);
 }
-.story-social {
-  margin-top: rem-calc(35);
-  padding-top: rem-calc(35);
-  border-top: 2px solid $white-smoke;
+.cta {
+  border-bottom: 2px solid $white-smoke;
+  padding-bottom: rem-calc(20);
+  margin-bottom: rem-calc(20);
 }
-.table {
-  display: table;
-  margin: 0 auto;
+.story-social {
+  list-style-type: none;
 }
 .story-social-list {
   margin: rem-calc(0 20 15 0);
